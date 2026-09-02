@@ -1,11 +1,22 @@
 ** Drc report for pl60c_dmx_mini.kicad_pcb **
-** Created on 2026-09-02T14:09:44 **
+** Created on 2026-09-02T14:11:05 **
 ** Report includes: Errors, Warnings, Exclusions **
 
-** Found 8 DRC violations **
+** Found 9 DRC violations **
 [track_dangling]: Track has unconnected end
     Local override; warning
     @(6.6500 mm, 21.3550 mm): Track [USB_D-] on F.Cu, length 4.6000 mm
+[isolated_copper]: Isolated copper fill
+    Local override; warning
+    @(0.5000 mm, 0.5000 mm): Zone 'plane' [+3V3] on In2.Cu, priority 0
+[silk_edge_clearance]: Silkscreen clipped by board edge
+    Rule: board setup constraints silk; warning
+    @(37.9000 mm, 28.5000 mm): Segment on Edge.Cuts
+    @(1.7000 mm, 27.4000 mm): Segment of J1 on F.Silkscreen
+[silk_edge_clearance]: Silkscreen clipped by board edge
+    Rule: board setup constraints silk; warning
+    @(37.9000 mm, 28.5000 mm): Segment on Edge.Cuts
+    @(11.1000 mm, 27.4000 mm): Segment of J1 on F.Silkscreen
 [silk_edge_clearance]: Silkscreen clipped by board edge
     Rule: board setup constraints silk; warning
     @(0.0000 mm, 27.9000 mm): Segment on Edge.Cuts
@@ -24,78 +35,50 @@
     @(38.6200 mm, 26.7800 mm): Segment of J2 on F.Silkscreen
 [silk_edge_clearance]: Silkscreen clipped by board edge
     Rule: board setup constraints silk; warning
-    @(37.9000 mm, 28.5000 mm): Segment on Edge.Cuts
-    @(1.7000 mm, 27.4000 mm): Segment of J1 on F.Silkscreen
-[silk_edge_clearance]: Silkscreen clipped by board edge
-    Rule: board setup constraints silk; warning
-    @(37.9000 mm, 28.5000 mm): Segment on Edge.Cuts
-    @(11.1000 mm, 27.4000 mm): Segment of J1 on F.Silkscreen
-[silk_edge_clearance]: Silkscreen clipped by board edge
-    Rule: board setup constraints silk; warning
     @(0.0000 mm, 27.9000 mm): Segment on Edge.Cuts
     @(0.2000 mm, 12.1000 mm): Footprint text of BZ1 (+)
 
-** Found 15 unconnected pads **
+** Found 10 unconnected pads **
 [unconnected_items]: Missing connection between items
     Local override; error
     @(11.9100 mm, 14.0000 mm): Pad 2 [LED_DATA_R] of R8 on B.Cu
     @(17.6500 mm, 3.0850 mm): Pad 3 [LED_DATA_R] of D2 on F.Cu
 [unconnected_items]: Missing connection between items
     Local override; error
-    @(10.8900 mm, 11.0000 mm): Track [+3V3] on B.Cu, length 1.5000 mm
     @(3.5500 mm, 15.8000 mm): Pad 3 [+3V3] of U1 on F.Cu
+    @(10.8900 mm, 12.5000 mm): Track [+3V3] on B.Cu, length 1.5000 mm
 [unconnected_items]: Missing connection between items
     Local override; error
+    @(10.6000 mm, 20.2800 mm): Pad 1 [+3V3] of C3 on B.Cu
     @(12.1200 mm, 15.6000 mm): Pad 1 [+3V3] of C8 on B.Cu
-    @(10.8900 mm, 11.0000 mm): Track [+3V3] on B.Cu, length 1.5000 mm
 [unconnected_items]: Missing connection between items
     Local override; error
-    @(13.7535 mm, 2.0640 mm): Track [+3V3] on B.Cu, length 0.6413 mm
-    @(16.5500 mm, 3.0850 mm): Pad 4 [+3V3] of D2 on F.Cu
-[unconnected_items]: Missing connection between items
-    Local override; error
-    @(14.9375 mm, 22.9500 mm): Pad 5 [+3V3] of U2 on B.Cu
-    @(11.5466 mm, 19.9341 mm): Track [+3V3] on B.Cu, length 0.8644 mm
-[unconnected_items]: Missing connection between items
-    Local override; error
-    @(17.1050 mm, 7.3250 mm): Pad 8 [+3V3] of U3 on B.Cu
-    @(14.2070 mm, 2.5175 mm): Track [+3V3] on B.Cu, length 2.2955 mm
-[unconnected_items]: Missing connection between items
-    Local override; error
-    @(28.5000 mm, 25.0000 mm): Pad 1 [+3V3] of TP1 on B.Cu
+    @(10.6000 mm, 20.2800 mm): Pad 1 [+3V3] of C3 on B.Cu
     @(14.9375 mm, 23.5875 mm): Track [+3V3] on B.Cu, length 0.6375 mm
 [unconnected_items]: Missing connection between items
     Local override; error
-    @(14.5650 mm, 12.2750 mm): Pad 3 [DMX_DE] of U3 on B.Cu
-    @(14.1900 mm, 14.5000 mm): Pad 1 [DMX_DE] of R7 on B.Cu
+    @(10.8900 mm, 12.5000 mm): Track [+3V3] on B.Cu, length 1.5000 mm
+    @(12.1200 mm, 15.6000 mm): Pad 1 [+3V3] of C8 on B.Cu
 [unconnected_items]: Missing connection between items
     Local override; error
-    @(14.8000 mm, 11.3500 mm): Pad 20 [DMX_DE] of U1 on F.Cu
-    @(14.5650 mm, 12.2750 mm): Pad 3 [DMX_DE] of U3 on B.Cu
+    @(13.7389 mm, 2.0586 mm): Track [+3V3] on B.Cu, length 0.7501 mm
+    @(16.5500 mm, 3.0850 mm): Pad 4 [+3V3] of D2 on F.Cu
 [unconnected_items]: Missing connection between items
     Local override; error
-    @(13.2950 mm, 12.2750 mm): Pad 4 [DMX_TX] of U3 on B.Cu
-    @(14.8000 mm, 10.5000 mm): Pad 21 [DMX_TX] of U1 on F.Cu
+    @(13.7250 mm, 24.8000 mm): Track [+3V3] on B.Cu, length 1.7147 mm
+    @(28.5000 mm, 25.0000 mm): Pad 1 [+3V3] of TP1 on B.Cu
 [unconnected_items]: Missing connection between items
     Local override; error
-    @(14.8000 mm, 8.8000 mm): Pad 23 [USB_D-] of U1 on F.Cu
-    @(6.6500 mm, 21.3550 mm): Track [USB_D-] on F.Cu, length 4.6000 mm
+    @(8.8500 mm, 21.3550 mm): Track [VBUS] on F.Cu, length 4.4000 mm
+    @(7.5375 mm, 26.5000 mm): Pad 5 [VBUS] of U4 on B.Cu
 [unconnected_items]: Missing connection between items
     Local override; error
-    @(5.6500 mm, 23.7550 mm): Track [USB_D+] on B.Cu, length 6.3569 mm
-    @(14.8000 mm, 7.9500 mm): Pad 24 [USB_D+] of U1 on F.Cu
+    @(4.8400 mm, 1.8000 mm): Pad 1 [BUZZER] of R9 on B.Cu
+    @(9.5000 mm, 15.8000 mm): Pad 10 [BUZZER] of U1 on F.Cu
 [unconnected_items]: Missing connection between items
     Local override; error
     @(1.8500 mm, 1.8000 mm): Pad 45 [EN] of U1 on F.Cu
     @(10.9200 mm, 8.9900 mm): Track [EN] on B.Cu, length 1.4001 mm
-[unconnected_items]: Missing connection between items
-    Local override; error
-    @(2.0806 mm, 20.0750 mm): Track [+5V] on B.Cu, length 0.9194 mm
-    @(12.6625 mm, 21.0500 mm): Pad 3 [+5V] of U2 on B.Cu
-[unconnected_items]: Missing connection between items
-    Local override; error
-    @(3.4375 mm, 3.5000 mm): Track [BZ_N] on B.Cu, length 0.5407 mm
-    @(10.1500 mm, 4.0000 mm): Pad 2 [BZ_N] of D3 on B.Cu
 
 ** Found 0 Footprint errors **
 
