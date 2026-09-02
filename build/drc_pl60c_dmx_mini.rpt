@@ -1,12 +1,11 @@
 ** Drc report for pl60c_dmx_mini.kicad_pcb **
-** Created on 2026-09-02T14:49:52 **
+** Created on 2026-09-02T14:51:50 **
 ** Report includes: Errors, Warnings, Exclusions **
 
-** Found 7 DRC violations **
-[courtyards_overlap]: Courtyards overlap
-    Rule: board setup constraints courtyard; error
-    @(13.6000 mm, 18.5000 mm): Footprint F1
-    @(10.6000 mm, 18.4000 mm): Footprint C1
+** Found 9 DRC violations **
+[track_dangling]: Track has unconnected end
+    Local override; warning
+    @(6.6500 mm, 21.8550 mm): Track [USB_D-] on F.Cu, length 2.4000 mm
 [silk_edge_clearance]: Silkscreen clipped by board edge
     Rule: board setup constraints silk; warning
     @(38.5000 mm, 0.6000 mm): Segment on Edge.Cuts
@@ -31,8 +30,28 @@
     Rule: board setup constraints silk; warning
     @(37.9000 mm, 29.0000 mm): Segment on Edge.Cuts
     @(11.1000 mm, 27.9000 mm): Segment of J1 on F.Silkscreen
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(19.7600 mm, 18.6400 mm): Segment of D1 on B.Silkscreen
+    @(21.3500 mm, 17.9200 mm): PTH pad 5 [<no net>] of J2
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(19.7600 mm, 20.1600 mm): Segment of D1 on B.Silkscreen
+    @(21.3500 mm, 17.9200 mm): PTH pad 5 [<no net>] of J2
 
-** Found 0 unconnected pads **
+** Found 3 unconnected pads **
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(14.8000 mm, 9.5000 mm): Pad 23 [USB_D-] of U1 on F.Cu
+    @(6.6500 mm, 21.8550 mm): Track [USB_D-] on F.Cu, length 2.4000 mm
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(7.5375 mm, 27.9500 mm): Track [USB_D+] on B.Cu, length 2.2750 mm
+    @(9.4517 mm, 28.0567 mm): Track [USB_D+] on In2.Cu, length 2.2393 mm
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(7.5375 mm, 27.0000 mm): Pad 5 [VBUS] of U4 on B.Cu
+    @(8.8500 mm, 21.8550 mm): Track [VBUS] on F.Cu, length 1.0000 mm
 
 ** Found 0 Footprint errors **
 

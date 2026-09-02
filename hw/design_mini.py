@@ -36,7 +36,7 @@ def build():
                {'1': 'USB_D+', '6': 'USB_D+', '3': 'USB_D-', '4': 'USB_D-', '2': 'GND', '5': 'VBUS'},
                lcsc='C7519', mpn='USBLC6-2SC6', desc='USB ESD protection array', sch_pos=(100, 100), pcb_pos=(6.4, 27.0), pcb_rot=0, **B))
     d.add(Part('F1', 'Device:Polyfuse', '1A PTC', 'Fuse:Fuse_1206_3216Metric', {'1': 'VBUS', '2': '+5V'},
-               lcsc='C5358568', mpn='BSMD1206-100-30V', desc='PTC resettable fuse 1206, 1 A hold / 1.8 A trip', sch_pos=(70, 40), pcb_pos=(13.6, 18.5), **B))
+               lcsc='C5358568', mpn='BSMD1206-100-30V', desc='PTC resettable fuse 1206, 1 A hold / 1.8 A trip', sch_pos=(70, 40), pcb_pos=(14.0, 18.5), **B))
     d.add(Part('C1', 'Device:C', '10uF', C0603, {'1': '+5V', '2': 'GND'}, lcsc='C19702', desc='10uF 10V X5R 0603', sch_pos=(82, 50), pcb_pos=(10.6, 18.4), pcb_rot=90, **B))
     d.add(Part('U2', 'Regulator_Linear:AP2112K-3.3', 'AP2112K-3.3', SOT23_5,
                {'1': '+5V', '2': 'GND', '3': '+5V', '4': None, '5': '+3V3'}, lcsc='C51118', mpn='AP2112K-3.3TRG1', desc='LDO 3.3V 600mA SOT-23-5',
@@ -73,7 +73,7 @@ def build():
     d.add(Part('C7', 'Device:C', '100nF', C0402, {'1': '+3V3', '2': 'GND'}, lcsc='C1525', desc='100nF 16V X7R 0402', sch_pos=(280, 45), pcb_pos=(14.5, 5.0), **B))
     d.add(Part('R7', 'Device:R', '10k', R0402, {'1': 'DMX_DE', '2': 'GND'}, lcsc='C25744', desc='10k 0402 (DE pull-down)', sch_pos=(282, 90), pcb_pos=(16.3, 14.8), **B))
     d.add(Part('D1', 'Diode:SM712_SOT23', 'PSM712', SOT23, {'1': 'DMX_A', '2': 'DMX_B', '3': 'GND'},
-               lcsc='C32677', mpn='PSM712-LF-T7', desc='RS-485 TVS array +12/-7 V SOT-23', sch_pos=(330, 90), pcb_pos=(17.9, 19.4), pcb_rot=90, **B))
+               lcsc='C32677', mpn='PSM712-LF-T7', desc='RS-485 TVS array +12/-7 V SOT-23', sch_pos=(330, 90), pcb_pos=(18.2, 19.4), pcb_rot=90, **B))
     d.add(Part('R6', 'Device:R', '120R', R0402, {'1': 'DMX_A', '2': 'DMX_B'}, lcsc='C25079', desc='120R termination - DNP', sch_pos=(345, 65), pcb_pos=(18.6, 14.4), pcb_rot=0, dnp=True, **B))
     d.add(Part('J2', 'Connector_Audio:XLR5_Ground', 'XLR-5 female (DMX OUT)', 'Connector_Audio:Jack_XLR_Neutrik_NC5FAH_Horizontal',
                {'1': 'GND', '2': 'DMX_B', '3': 'DMX_A', '4': None, '5': None, 'G': None},
