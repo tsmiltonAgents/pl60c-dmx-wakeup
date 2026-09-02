@@ -43,7 +43,7 @@ def add_zone(board, layer, net, pts, name='', priority=0, keepout=False):
     z = pcbnew.ZONE(board)
     z.SetLayer(layer)
     if keepout:
-        z.SetIsRuleArea(True); z.SetDoNotAllowCopperPour(True); z.SetDoNotAllowTracks(True); z.SetDoNotAllowVias(True)
+        z.SetIsRuleArea(True); z.SetDoNotAllowZoneFills(True); z.SetDoNotAllowTracks(True); z.SetDoNotAllowVias(True)
         z.SetDoNotAllowFootprints(False); z.SetDoNotAllowPads(False)
         ls = pcbnew.LSET(); ls.AddLayer(pcbnew.F_Cu); ls.AddLayer(pcbnew.B_Cu); z.SetLayerSet(ls)
     else:
@@ -120,6 +120,7 @@ def build(out_path):
         add_zone(board, pcbnew.F_Cu, None, [(x1, y1), (x2, y1), (x2, y2), (x1, y2)], 'keepout', keepout=True)
     # ---------------- silkscreen ----------------
     for (txt, x, y, size, rot, layer, mirror) in d.silk:
+        layer = board.GetLayerID(layer) if isinstance(layer, str) else layer
         add_text(board, txt, x, y, layer=layer, size=size, thick=max(0.12, size * 0.15), rot=rot, mirror=mirror)
     pcbnew.SaveBoard(out_path, board)
     return board, d
