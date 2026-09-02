@@ -181,7 +181,7 @@ def preroute_usb(board, fp, nets, W, d_vbus=5.4):
     def Vv(net, a):
         v = add_via(board, nets[net], a[0], a[1]); v.SetLocked(True)
     # D- : B7 and A7 -> interior stubs + link (the A6 lane between them is free beyond the pad)
-    dd = d_vbus - 0.4
+    dd = d_vbus - 1.0
     T('USB_D-', pt('B7', 0), pt('B7', 1.9)); T('USB_D-', pt('A7', 0), pt('A7', dd + 0.2)); T('USB_D-', pt('B7', 1.9), pt('A7', 1.9))
     # D+ : B6 -> interior stub -> via ; A6 -> under the body -> via ; inner/back diagonal joins them
     T('USB_D+', pt('B6', 0), pt('B6', dd - 0.6)); T('USB_D+', pt('B6', dd - 0.6), pt('B6', dd, 0.6)); Vv('USB_D+', pt('B6', dd, 0.6))

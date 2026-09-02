@@ -92,8 +92,8 @@ def build():
     d.add(Part('Q1', 'Transistor_BJT:S8050', 'S8050', SOT23, {'2': 'Q1_B', '1': 'GND', '3': 'BZ_N'},
                lcsc='C2146', mpn='S8050', desc='NPN 0.5A SOT-23 buzzer driver', sch_pos=(240, 250), pcb_pos=(3.0, 4.0), **B))
     d.add(Part('D3', 'Device:D_Schottky', 'B5819W', 'Diode_SMD:D_SOD-123', {'1': '+5V', '2': 'BZ_N'}, lcsc='C8598', mpn='B5819W SL', desc='Schottky flyback diode SOD-123', sch_pos=(232, 225), pcb_pos=(8.5, 4.5), **B))
-    d.add(Part('TP5', 'Connector:TestPoint', 'BZ+', TP, {'1': '+5V'}, desc='External buzzer pad (+5V)', sch_pos=(245, 200), pcb_pos=(28.5, 27.5), **B))
-    d.add(Part('TP6', 'Connector:TestPoint', 'BZ-', TP, {'1': 'BZ_N'}, desc='External buzzer pad (driver collector)', sch_pos=(255, 200), pcb_pos=(31.2, 27.5), **B))
+    d.add(Part('TP5', 'Connector:TestPoint', 'BZ+', TP, {'1': '+5V'}, desc='External buzzer pad (+5V)', sch_pos=(245, 200), pcb_pos=(34.0, 20.0), **B))
+    d.add(Part('TP6', 'Connector:TestPoint', 'BZ-', TP, {'1': 'BZ_N'}, desc='External buzzer pad (driver collector)', sch_pos=(255, 200), pcb_pos=(36.6, 20.0), **B))
     # ------------------------------------------------ test pads (I2C expansion, UART0)
     d.texts += [('Test pads: I2C expansion (RTC / sensor)', 272, 165, 2.5, True)]
     d.boxes += [(270, 158, 412, 230)]
@@ -109,6 +109,6 @@ def build():
         ('DMX mini rev A', 32.0, 14.5, 0.8, 0, 'B.SilkS', True),
         ('DMX OUT', 25.5, 3.0, 0.8, 0, 'B.SilkS', True),
         ('3V3 GND SDA SCL', 32.5, 23.5, 0.8, 0, 'B.SilkS', True),
-        ('BZ+ BZ-', 35.0, 27.5, 0.8, 0, 'B.SilkS', True),
+        ('BZ+ BZ-', 35.3, 18.4, 0.8, 0, 'B.SilkS', True),
     ]
     return d
