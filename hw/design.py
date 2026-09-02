@@ -74,12 +74,12 @@ def build():
                lcsc='C165948', mpn='TYPE-C-31-M-12', desc='USB-C receptacle 16P, USB 2.0 (HRO TYPE-C-31-M-12)',
                sch_pos=(45, 65), pcb_pos=(3.1, 31), pcb_rot=270))
     d.add(Part('R1', 'Device:R', '5.1k', R0603, {'1': 'CC1', '2': 'GND'}, lcsc='C23186', desc='5.1k 0603 1% (USB-C CC pull-down)',
-               sch_pos=(75, 80), pcb_pos=(12, 26.5), pcb_rot=90))
+               sch_pos=(75, 80), pcb_pos=(14, 26), pcb_rot=90))
     d.add(Part('R2', 'Device:R', '5.1k', R0603, {'1': 'CC2', '2': 'GND'}, lcsc='C23186', desc='5.1k 0603 1% (USB-C CC pull-down)',
-               sch_pos=(85, 80), pcb_pos=(12, 35.5), pcb_rot=90))
+               sch_pos=(85, 80), pcb_pos=(14, 36), pcb_rot=90))
     d.add(Part('U4', 'Power_Protection:USBLC6-2SC6', 'USBLC6-2SC6', SOT23_6,
                {'1': 'USB_D+', '6': 'USB_D+', '3': 'USB_D-', '4': 'USB_D-', '2': 'GND', '5': 'VBUS'},
-               lcsc='C7519', mpn='USBLC6-2SC6', desc='USB ESD protection array', sch_pos=(100, 100), pcb_pos=(14.5, 31), pcb_rot=90))
+               lcsc='C7519', mpn='USBLC6-2SC6', desc='USB ESD protection array', sch_pos=(100, 100), pcb_pos=(16.5, 31), pcb_rot=90))
     d.add(Part('F1', 'Device:Polyfuse', '1A PTC', 'Fuse:Fuse_1206_3216Metric', {'1': 'VBUS', '2': '+5V'},
                lcsc='C5358568', mpn='BSMD1206-100-30V', desc='PTC resettable fuse 1206, 1 A hold / 1.8 A trip, 30 V', sch_pos=(70, 40), sch_rot=90, pcb_pos=(12, 6), pcb_rot=0))
     d.add(Part('C1', 'Device:C', '10uF', C0805, {'1': '+5V', '2': 'GND'}, lcsc='C15850', desc='10uF 25V X5R 0805',
@@ -166,7 +166,7 @@ def build():
     d.silk = [
         ('DMX OUT', 66, 5.5, 1.2, 0, 'F.SilkS', False),
         ('1=GND 2=D- 3=D+', 69, 34.8, 0.8, 0, 'F.SilkS', False),
-        ('USB-C 5V', 12, 23.5, 0.8, 0, 'F.SilkS', False),
+        ('USB-C 5V', 12, 22.8, 0.8, 0, 'F.SilkS', False),
         ('RESET', 12.5, 52.3, 0.8, 0, 'F.SilkS', False),
         ('BOOT', 23.5, 52.3, 0.8, 0, 'F.SilkS', False),
         ('USER', 34.5, 52.3, 0.8, 0, 'F.SilkS', False),

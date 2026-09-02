@@ -153,6 +153,37 @@ def stitch_pad(board, obs, gnd, pad, fp):
                     return True
     return False
 
+def preroute_usb(board, fp, nets, W):
+    """Escape routing for the 16-pin USB-C receptacle. Pad row is vertical; 'in' = towards the board interior.
+    D+ : A6 (inner) leaves under the connector body to a via, crosses on B.Cu, joins B6's track at a via.
+    D- : B7 and A7 leave towards the interior and are joined by a short vertical link (the A6 lane is free there).
+    VBUS: both pad pairs leave to vias, joined on B.Cu.  CC1/CC2: straight stubs."""
+    P = {}
+    for pad in fp.Pads():
+        P[pad.GetNumber()] = (pad.GetPosition().x / 1e6, pad.GetPosition().y / 1e6)
+    xr = P['A6'][0]
+    s = 1 if (W / 2 - xr) > 0 else -1          # +1: interior is +x
+    y = lambda n: P[n][1]
+    w = 0.25
+    def T(net, x1, y1, x2, y2, layer=pcbnew.F_Cu, width=w):
+        t = add_track(board, nets[net], x1, y1, x2, y2, width, layer); t.SetLocked(True)
+    def Vv(net, x, yy):
+        v = add_via(board, nets[net], x, yy); v.SetLocked(True)
+    xi = lambda d: xr + s * d
+    # D- : B7 and A7 -> interior stubs + link
+    T('USB_D-', xr, y('B7'), xi(3.3), y('B7')); T('USB_D-', xr, y('A7'), xi(3.3), y('A7'))
+    T('USB_D-', xi(1.9), y('B7'), xi(1.9), y('A7'))
+    # D+ : B6 -> interior stub -> via ; A6 -> under body -> via ; B.Cu diagonal joins them
+    T('USB_D+', xr, y('B6'), xi(4.1), y('B6')); Vv('USB_D+', xi(4.1), y('B6'))
+    T('USB_D+', xr, y('A6'), xi(-1.9), y('A6')); T('USB_D+', xi(-1.9), y('A6'), xi(-2.4), y('A6') - 0.5); Vv('USB_D+', xi(-2.4), y('A6') - 0.5)
+    T('USB_D+', xi(-2.4), y('A6') - 0.5, xi(4.1), y('B6'), pcbnew.B_Cu)
+    # VBUS : both pairs -> vias, joined on B.Cu (0.4 mm)
+    for n in ('A4', 'B4'):
+        T('VBUS', xr, y(n), xi(4.7), y(n), width=0.3); Vv('VBUS', xi(4.7), y(n))
+    T('VBUS', xi(4.7), y('A4'), xi(4.7), y('B4'), pcbnew.B_Cu, 0.4)
+    # CC1 / CC2 stubs
+    T('CC1', xr, y('A5'), xi(3.3), y('A5')); T('CC2', xr, y('B5'), xi(3.3), y('B5'))
+
 def stitch_gnd(board, d, gnd, W, H):
     """Via next to every SMD GND pad + a sparse via grid, placed before autorouting so the router sees them."""
     obs = Obstacles(board, W, H)
@@ -184,11 +215,11 @@ def build(out_path):
     # ---------------- design rules (JLCPCB 2-layer capability with margin) ----------------
     ds = board.GetDesignSettings()
     ds.m_TrackMinWidth = FromMM(0.15); ds.m_ViasMinSize = FromMM(0.5); ds.m_MinThroughDrill = FromMM(0.3)
-    ds.m_MinClearance = FromMM(0.15); ds.m_CopperEdgeClearance = FromMM(0.3); ds.m_HoleClearance = FromMM(0.25)
+    ds.m_MinClearance = FromMM(0.127); ds.m_CopperEdgeClearance = FromMM(0.3); ds.m_HoleClearance = FromMM(0.25)
     ds.m_MinSilkTextHeight = FromMM(0.8); ds.m_HoleToHoleMin = FromMM(0.5)
     ns = ds.m_NetSettings
     dflt = ns.GetDefaultNetclass()
-    dflt.SetClearance(FromMM(0.2)); dflt.SetTrackWidth(FromMM(0.25)); dflt.SetViaDiameter(FromMM(0.7)); dflt.SetViaDrill(FromMM(0.35))
+    dflt.SetClearance(FromMM(0.15)); dflt.SetTrackWidth(FromMM(0.25)); dflt.SetViaDiameter(FromMM(0.7)); dflt.SetViaDrill(FromMM(0.35))
     pwr = pcbnew.NETCLASS('Power')
     pwr.SetClearance(FromMM(0.2)); pwr.SetTrackWidth(FromMM(0.4)); pwr.SetViaDiameter(FromMM(0.8)); pwr.SetViaDrill(FromMM(0.4))
     ns.SetNetclass('Power', pwr)
@@ -236,6 +267,8 @@ def build(out_path):
         p._fp = fp
     # ---------------- outline ----------------
     outline(board, W, H, R)
+    # ---------------- USB-C escape (hand-routed: the router cannot do the D+/D- pair swap at 0.5 mm pitch) ----------------
+    preroute_usb(board, d.by_ref('J1')._fp, nets, W)
     # ---------------- GND stitching (done before autorouting so the router sees the vias) ----------------
     stitch_gnd(board, d, nets['GND'], W, H)
     # ---------------- zones: GND pour both sides ----------------

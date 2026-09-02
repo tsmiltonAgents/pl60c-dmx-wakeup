@@ -1,16 +1,15 @@
 ** Drc report for pl60c_dmx.kicad_pcb **
-** Created on 2026-09-02T13:13:31 **
+** Created on 2026-09-02T13:16:39 **
 ** Report includes: Errors, Warnings, Exclusions **
 
-** Found 10 DRC violations **
-[silk_edge_clearance]: Silkscreen clipped by board edge
-    Rule: board setup constraints silk; warning
-    @(80.0000 mm, 2.5000 mm): Segment on Edge.Cuts
-    @(80.1200 mm, 7.6900 mm): Segment of J2 on F.Silkscreen
-[silk_edge_clearance]: Silkscreen clipped by board edge
-    Rule: board setup constraints silk; warning
-    @(80.0000 mm, 2.5000 mm): Segment on Edge.Cuts
-    @(80.1200 mm, 33.2300 mm): Segment of J2 on F.Silkscreen
+** Found 12 DRC violations **
+[clearance]: Clearance violation ( clearance 0.1500 mm; actual 0.0500 mm)
+    Local override; error
+    @(11.2450 mm, 31.7500 mm): Via [USB_D+] on F.Cu - B.Cu
+    @(11.8450 mm, 28.5500 mm): Track [VBUS] on B.Cu, length 4.9000 mm
+[track_dangling]: Track has unconnected end
+    Local override; warning
+    @(7.1450 mm, 30.2500 mm): Track [USB_D-] on F.Cu, length 3.3000 mm
 [silk_edge_clearance]: Silkscreen clipped by board edge
     Rule: board setup constraints silk; warning
     @(2.5000 mm, 0.0000 mm): Segment on Edge.Cuts
@@ -27,14 +26,22 @@
     Rule: board setup constraints silk; warning
     @(0.0000 mm, 51.5000 mm): Segment on Edge.Cuts
     @(1.1000 mm, 35.7000 mm): Segment of J1 on F.Silkscreen
+[silk_edge_clearance]: Silkscreen clipped by board edge
+    Rule: board setup constraints silk; warning
+    @(80.0000 mm, 2.5000 mm): Segment on Edge.Cuts
+    @(80.1200 mm, 7.6900 mm): Segment of J2 on F.Silkscreen
+[silk_edge_clearance]: Silkscreen clipped by board edge
+    Rule: board setup constraints silk; warning
+    @(80.0000 mm, 2.5000 mm): Segment on Edge.Cuts
+    @(80.1200 mm, 33.2300 mm): Segment of J2 on F.Silkscreen
 [silk_overlap]: Silkscreen clearance
     Rule: board setup constraints silk; warning
     @(69.2000 mm, 35.6000 mm): Reference field of BZ1
     @(69.0000 mm, 34.8000 mm): PCB text '1=GND 2=D- 3=D+' on F.Silkscreen
 [silk_overlap]: Silkscreen clearance
     Rule: board setup constraints silk; warning
-    @(11.7387 mm, 10.2350 mm): Segment of C1 on F.Silkscreen
     @(12.0000 mm, 10.5000 mm): Reference field of U2
+    @(11.7387 mm, 10.2350 mm): Segment of C1 on F.Silkscreen
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
     @(12.0000 mm, 10.5000 mm): Reference field of U2
@@ -44,27 +51,7 @@
     @(12.0000 mm, 10.5000 mm): Reference field of U2
     @(12.9500 mm, 9.5000 mm): Pad 2 [GND] of C1 on F.Cu
 
-** Found 5 unconnected pads **
-[unconnected_items]: Missing connection between items
-    Local override; error
-    @(7.1450 mm, 29.7500 mm): Pad A5 [CC1] of J1 on F.Cu
-    @(12.0000 mm, 27.3250 mm): Pad 1 [CC1] of R1 on F.Cu
-[unconnected_items]: Missing connection between items
-    Local override; error
-    @(7.1450 mm, 30.2500 mm): Pad B7 [USB_D-] of J1 on F.Cu
-    @(7.1450 mm, 31.2500 mm): Pad A7 [USB_D-] of J1 on F.Cu
-[unconnected_items]: Missing connection between items
-    Local override; error
-    @(7.1450 mm, 30.2500 mm): Pad B7 [USB_D-] of J1 on F.Cu
-    @(15.4500 mm, 32.1200 mm): Track [USB_D-] on F.Cu, length 2.2575 mm
-[unconnected_items]: Missing connection between items
-    Local override; error
-    @(7.1450 mm, 30.7500 mm): Pad A6 [USB_D+] of J1 on F.Cu
-    @(7.1450 mm, 31.7500 mm): Pad B6 [USB_D+] of J1 on F.Cu
-[unconnected_items]: Missing connection between items
-    Local override; error
-    @(12.6715 mm, 30.7410 mm): Track [USB_D+] on F.Cu, length 0.0567 mm
-    @(7.1450 mm, 30.7500 mm): Pad A6 [USB_D+] of J1 on F.Cu
+** Found 0 unconnected pads **
 
 ** Found 0 Footprint errors **
 
