@@ -171,7 +171,7 @@ def preroute_usb(board, fp, nets, W):
         v = add_via(board, nets[net], x, yy); v.SetLocked(True)
     xi = lambda d: xr + s * d
     # D- : B7 and A7 -> interior stubs + link
-    T('USB_D-', xr, y('B7'), xi(3.3), y('B7')); T('USB_D-', xr, y('A7'), xi(3.3), y('A7'))
+    T('USB_D-', xr, y('B7'), xi(1.9), y('B7')); T('USB_D-', xr, y('A7'), xi(3.3), y('A7'))
     T('USB_D-', xi(1.9), y('B7'), xi(1.9), y('A7'))
     # D+ : B6 -> interior stub -> via ; A6 -> under body -> via ; B.Cu diagonal joins them
     T('USB_D+', xr, y('B6'), xi(4.1), y('B6')); Vv('USB_D+', xi(4.1), y('B6'))
@@ -179,8 +179,8 @@ def preroute_usb(board, fp, nets, W):
     T('USB_D+', xi(-2.4), y('A6') - 0.5, xi(4.1), y('B6'), pcbnew.B_Cu)
     # VBUS : both pairs -> vias, joined on B.Cu (0.4 mm)
     for n in ('A4', 'B4'):
-        T('VBUS', xr, y(n), xi(4.7), y(n), width=0.3); Vv('VBUS', xi(4.7), y(n))
-    T('VBUS', xi(4.7), y('A4'), xi(4.7), y('B4'), pcbnew.B_Cu, 0.4)
+        T('VBUS', xr, y(n), xi(5.4), y(n), width=0.3); Vv('VBUS', xi(5.4), y(n))
+    T('VBUS', xi(5.4), y('A4'), xi(5.4), y('B4'), pcbnew.B_Cu, 0.4)
     # CC1 / CC2 stubs
     T('CC1', xr, y('A5'), xi(3.3), y('A5')); T('CC2', xr, y('B5'), xi(3.3), y('B5'))
 

@@ -1,15 +1,11 @@
 ** Drc report for pl60c_dmx.kicad_pcb **
-** Created on 2026-09-02T13:16:39 **
+** Created on 2026-09-02T13:17:52 **
 ** Report includes: Errors, Warnings, Exclusions **
 
-** Found 12 DRC violations **
-[clearance]: Clearance violation ( clearance 0.1500 mm; actual 0.0500 mm)
-    Local override; error
-    @(11.2450 mm, 31.7500 mm): Via [USB_D+] on F.Cu - B.Cu
-    @(11.8450 mm, 28.5500 mm): Track [VBUS] on B.Cu, length 4.9000 mm
+** Found 11 DRC violations **
 [track_dangling]: Track has unconnected end
     Local override; warning
-    @(7.1450 mm, 30.2500 mm): Track [USB_D-] on F.Cu, length 3.3000 mm
+    @(7.1450 mm, 31.2500 mm): Track [USB_D-] on F.Cu, length 3.3000 mm
 [silk_edge_clearance]: Silkscreen clipped by board edge
     Rule: board setup constraints silk; warning
     @(2.5000 mm, 0.0000 mm): Segment on Edge.Cuts
@@ -36,8 +32,8 @@
     @(80.1200 mm, 33.2300 mm): Segment of J2 on F.Silkscreen
 [silk_overlap]: Silkscreen clearance
     Rule: board setup constraints silk; warning
-    @(69.2000 mm, 35.6000 mm): Reference field of BZ1
     @(69.0000 mm, 34.8000 mm): PCB text '1=GND 2=D- 3=D+' on F.Silkscreen
+    @(69.2000 mm, 35.6000 mm): Reference field of BZ1
 [silk_overlap]: Silkscreen clearance
     Rule: board setup constraints silk; warning
     @(12.0000 mm, 10.5000 mm): Reference field of U2
@@ -51,7 +47,11 @@
     @(12.0000 mm, 10.5000 mm): Reference field of U2
     @(12.9500 mm, 9.5000 mm): Pad 2 [GND] of C1 on F.Cu
 
-** Found 0 unconnected pads **
+** Found 1 unconnected pads **
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(7.1450 mm, 31.2500 mm): Track [USB_D-] on F.Cu, length 3.3000 mm
+    @(17.4500 mm, 32.1375 mm): Pad 3 [USB_D-] of U4 on F.Cu
 
 ** Found 0 Footprint errors **
 
