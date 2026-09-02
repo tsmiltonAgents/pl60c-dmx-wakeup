@@ -13,7 +13,8 @@ def route(board_path, passes=40):
     board = pcbnew.LoadBoard(board_path)
     # Route GND with real tracks too: take the pours out of the DSN so the router does not assume a plane,
     # then put them back and fill after import. The pour then only adds copper on top of a complete routing.
-    zones = [z for z in board.Zones()]
+    # outer-layer pours are removed (router must make real connections); inner planes stay as DSN planes
+    zones = [z for z in board.Zones() if z.GetZoneName() != 'plane']
     for z in zones:
         board.Remove(z)
     # export with a slightly larger clearance than the DRC rule so rounding in the router never trips DRC
@@ -24,7 +25,7 @@ def route(board_path, passes=40):
     for nc in [ns.GetDefaultNetclass()] + [ns.GetNetClassByName(n) for n in ['Power']]:
         nc.SetClearance(nc.GetClearance() - pcbnew.FromMM(0.03))
     if os.path.exists(ses): os.remove(ses)
-    cmd = [JAVA, '-Djava.awt.headless=true', '-jar', JAR, '-de', dsn, '-do', ses, '-mp', str(passes), '-mt', '4',
+    cmd = [JAVA, '-Djava.awt.headless=true', '-jar', JAR, '-de', dsn, '-do', ses, '-mp', str(passes), '-mt', '6',
            '-l', 'en']
     print(' '.join(cmd))
     log = open(os.path.join(build, 'freerouting.log'), 'w')

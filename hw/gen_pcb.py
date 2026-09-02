@@ -227,8 +227,8 @@ def build(out_path):
         board.SetLayerType(pcbnew.In2_Cu, pcbnew.LT_SIGNAL)    # extra routing layer, GND pour fills the rest
     # ---------------- design rules (JLCPCB 2-layer capability with margin) ----------------
     ds = board.GetDesignSettings()
-    ds.m_TrackMinWidth = FromMM(0.15); ds.m_ViasMinSize = FromMM(0.5); ds.m_MinThroughDrill = FromMM(0.3)
-    ds.m_MinClearance = FromMM(0.127); ds.m_CopperEdgeClearance = FromMM(0.3); ds.m_HoleClearance = FromMM(0.25)
+    ds.m_TrackMinWidth = FromMM(d.board.get('min_width', 0.15)); ds.m_ViasMinSize = FromMM(0.5); ds.m_MinThroughDrill = FromMM(0.3)
+    ds.m_MinClearance = FromMM(d.board.get('min_clearance', 0.127)); ds.m_CopperEdgeClearance = FromMM(0.3); ds.m_HoleClearance = FromMM(0.25)
     ds.m_MinSilkTextHeight = FromMM(0.8); ds.m_HoleToHoleMin = FromMM(0.5)
     ns = ds.m_NetSettings
     dflt = ns.GetDefaultNetclass()
@@ -299,9 +299,9 @@ def build(out_path):
     rect = [(m, m), (W - m, m), (W - m, H - m), (m, H - m)]
     add_zone(board, pcbnew.F_Cu, nets['GND'], rect, 'GND_F')
     add_zone(board, pcbnew.B_Cu, nets['GND'], rect, 'GND_B')
-    if layers == 4:
-        add_zone(board, pcbnew.In1_Cu, nets['GND'], rect, 'GND_IN1')
-        add_zone(board, pcbnew.In2_Cu, nets['GND'], rect, 'GND_IN2')
+    for lname, net in d.board.get('inner_planes', {}).items():
+        z = add_zone(board, board.GetLayerID(lname), nets[net], rect, 'PLANE_' + net)
+        z.SetZoneName('plane'); z.SetPadConnection(pcbnew.ZONE_CONNECTION_THERMAL)
     # antenna keep-out: 15 mm around the module antenna, inside the board (antenna itself hangs off the top edge)
     u1 = d.by_ref('U1'); ux, uy = u1.pcb_pos
     for (x1, y1, x2, y2) in d.keepouts:
