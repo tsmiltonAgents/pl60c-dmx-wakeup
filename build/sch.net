@@ -2,7 +2,7 @@
 	(version "E")
 	(design
 		(source "/Users/milton/Documents/claude_sessions/09/20260902_pcbtests/pcb/pl60c_dmx.kicad_sch")
-		(date "2026-09-02T12:51:21")
+		(date "2026-09-02T13:19:59")
 		(tool "Eeschema 10.0.4")
 		(sheet
 			(number "1")
@@ -59,7 +59,7 @@
 			(value "MLT-8530")
 			(footprint "Buzzer_Beeper:MagneticBuzzer_CUI_CMT-8504-100-SMT")
 			(datasheet "~")
-			(description "Magnetic buzzer 8.5 mm SMD, 3-5 V, passive (drive with PWM ~2.7 kHz)")
+			(description "Magnetic buzzer 8.5x8.5 mm SMD, passive, 16 ohm, drive 2.7 kHz square wave")
 			(fields
 				(field
 					(name "LCSC") "C94599")
@@ -70,7 +70,7 @@
 				(field
 					(name "Datasheet") "~")
 				(field
-					(name "Description") "Magnetic buzzer 8.5 mm SMD, 3-5 V, passive (drive with PWM ~2.7 kHz)")
+					(name "Description") "Magnetic buzzer 8.5x8.5 mm SMD, passive, 16 ohm, drive 2.7 kHz square wave")
 			)
 			(libsource
 				(lib "Device")
@@ -87,11 +87,11 @@
 			)
 			(property
 				(name "Sheetname")
-				(value "Root")
+				(value "pl60c_dmx")
 			)
 			(property
 				(name "Sheetfile")
-				(value "pcb/pl60c_dmx.kicad_sch")
+				(value "pl60c_dmx.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -147,11 +147,11 @@
 			)
 			(property
 				(name "Sheetname")
-				(value "Root")
+				(value "pl60c_dmx")
 			)
 			(property
 				(name "Sheetfile")
-				(value "pcb/pl60c_dmx.kicad_sch")
+				(value "pl60c_dmx.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -207,11 +207,11 @@
 			)
 			(property
 				(name "Sheetname")
-				(value "Root")
+				(value "pl60c_dmx")
 			)
 			(property
 				(name "Sheetfile")
-				(value "pcb/pl60c_dmx.kicad_sch")
+				(value "pl60c_dmx.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -267,11 +267,11 @@
 			)
 			(property
 				(name "Sheetname")
-				(value "Root")
+				(value "pl60c_dmx")
 			)
 			(property
 				(name "Sheetfile")
-				(value "pcb/pl60c_dmx.kicad_sch")
+				(value "pl60c_dmx.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -327,11 +327,11 @@
 			)
 			(property
 				(name "Sheetname")
-				(value "Root")
+				(value "pl60c_dmx")
 			)
 			(property
 				(name "Sheetfile")
-				(value "pcb/pl60c_dmx.kicad_sch")
+				(value "pl60c_dmx.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -387,11 +387,11 @@
 			)
 			(property
 				(name "Sheetname")
-				(value "Root")
+				(value "pl60c_dmx")
 			)
 			(property
 				(name "Sheetfile")
-				(value "pcb/pl60c_dmx.kicad_sch")
+				(value "pl60c_dmx.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -423,18 +423,20 @@
 		(comp
 			(ref "C6")
 			(value "1uF")
-			(footprint "Capacitor_SMD:C_0603_1608Metric")
+			(footprint "Capacitor_SMD:C_0805_2012Metric")
 			(datasheet "~")
-			(description "1uF 50V X7R 0603")
+			(description "1uF 50V X7R 0805 (EN reset delay)")
 			(fields
 				(field
-					(name "LCSC") "C15849")
+					(name "LCSC") "C28323")
 				(field
-					(name "Footprint") "Capacitor_SMD:C_0603_1608Metric")
+					(name "MPN") "CL21B105KBFNNNE")
+				(field
+					(name "Footprint") "Capacitor_SMD:C_0805_2012Metric")
 				(field
 					(name "Datasheet") "~")
 				(field
-					(name "Description") "1uF 50V X7R 0603")
+					(name "Description") "1uF 50V X7R 0805 (EN reset delay)")
 			)
 			(libsource
 				(lib "Device")
@@ -443,15 +445,19 @@
 			)
 			(property
 				(name "LCSC")
-				(value "C15849")
+				(value "C28323")
+			)
+			(property
+				(name "MPN")
+				(value "CL21B105KBFNNNE")
 			)
 			(property
 				(name "Sheetname")
-				(value "Root")
+				(value "pl60c_dmx")
 			)
 			(property
 				(name "Sheetfile")
-				(value "pcb/pl60c_dmx.kicad_sch")
+				(value "pl60c_dmx.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -507,11 +513,11 @@
 			)
 			(property
 				(name "Sheetname")
-				(value "Root")
+				(value "pl60c_dmx")
 			)
 			(property
 				(name "Sheetfile")
-				(value "pcb/pl60c_dmx.kicad_sch")
+				(value "pl60c_dmx.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -567,11 +573,11 @@
 			)
 			(property
 				(name "Sheetname")
-				(value "Root")
+				(value "pl60c_dmx")
 			)
 			(property
 				(name "Sheetfile")
-				(value "pcb/pl60c_dmx.kicad_sch")
+				(value "pl60c_dmx.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -602,21 +608,21 @@
 		)
 		(comp
 			(ref "D1")
-			(value "SM712")
+			(value "PSM712")
 			(footprint "Package_TO_SOT_SMD:SOT-23")
 			(datasheet "~")
-			(description "RS-485 TVS array +12/-7V SOT-23")
+			(description "RS-485 TVS array +12/-7 V 600 W SOT-23")
 			(fields
 				(field
-					(name "LCSC") "C58274")
+					(name "LCSC") "C32677")
 				(field
-					(name "MPN") "SM712")
+					(name "MPN") "PSM712-LF-T7")
 				(field
 					(name "Footprint") "Package_TO_SOT_SMD:SOT-23")
 				(field
 					(name "Datasheet") "~")
 				(field
-					(name "Description") "RS-485 TVS array +12/-7V SOT-23")
+					(name "Description") "RS-485 TVS array +12/-7 V 600 W SOT-23")
 			)
 			(libsource
 				(lib "Diode")
@@ -625,19 +631,19 @@
 			)
 			(property
 				(name "LCSC")
-				(value "C58274")
+				(value "C32677")
 			)
 			(property
 				(name "MPN")
-				(value "SM712")
+				(value "PSM712-LF-T7")
 			)
 			(property
 				(name "Sheetname")
-				(value "Root")
+				(value "pl60c_dmx")
 			)
 			(property
 				(name "Sheetfile")
-				(value "pcb/pl60c_dmx.kicad_sch")
+				(value "pl60c_dmx.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -702,11 +708,11 @@
 			)
 			(property
 				(name "Sheetname")
-				(value "Root")
+				(value "pl60c_dmx")
 			)
 			(property
 				(name "Sheetfile")
-				(value "pcb/pl60c_dmx.kicad_sch")
+				(value "pl60c_dmx.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -743,44 +749,50 @@
 		)
 		(comp
 			(ref "D3")
-			(value "1N4148W")
+			(value "B5819W")
 			(footprint "Diode_SMD:D_SOD-123")
 			(datasheet "~")
-			(description "Flyback diode SOD-123")
+			(description "Schottky flyback diode 1 A 40 V SOD-123")
 			(fields
 				(field
-					(name "LCSC") "C81598")
+					(name "LCSC") "C8598")
+				(field
+					(name "MPN") "B5819W SL")
 				(field
 					(name "Footprint") "Diode_SMD:D_SOD-123")
 				(field
 					(name "Datasheet") "~")
 				(field
-					(name "Description") "Flyback diode SOD-123")
+					(name "Description") "Schottky flyback diode 1 A 40 V SOD-123")
 			)
 			(libsource
-				(lib "Diode")
-				(part "1N4148W")
-				(description "75V 0.15A Fast Switching Diode, SOD-123")
+				(lib "Device")
+				(part "D_Schottky")
+				(description "Schottky diode")
 			)
 			(property
 				(name "LCSC")
-				(value "C81598")
+				(value "C8598")
+			)
+			(property
+				(name "MPN")
+				(value "B5819W SL")
 			)
 			(property
 				(name "Sheetname")
-				(value "Root")
+				(value "pl60c_dmx")
 			)
 			(property
 				(name "Sheetfile")
-				(value "pcb/pl60c_dmx.kicad_sch")
+				(value "pl60c_dmx.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
-				(value "diode")
+				(value "diode Schottky")
 			)
 			(property
 				(name "ki_fp_filters")
-				(value "D*SOD?123*")
+				(value "TO-???* *_Diode_* *SingleDiode* D_*")
 			)
 			(sheetpath
 				(names "/")
@@ -803,19 +815,21 @@
 		)
 		(comp
 			(ref "F1")
-			(value "0.75A PTC")
+			(value "1A PTC")
 			(footprint "Fuse:Fuse_1206_3216Metric")
 			(datasheet "~")
-			(description "PTC resettable fuse 1206, 0.75 A hold")
+			(description "PTC resettable fuse 1206, 1 A hold / 1.8 A trip, 30 V")
 			(fields
 				(field
-					(name "LCSC") "C70069")
+					(name "LCSC") "C5358568")
+				(field
+					(name "MPN") "BSMD1206-100-30V")
 				(field
 					(name "Footprint") "Fuse:Fuse_1206_3216Metric")
 				(field
 					(name "Datasheet") "~")
 				(field
-					(name "Description") "PTC resettable fuse 1206, 0.75 A hold")
+					(name "Description") "PTC resettable fuse 1206, 1 A hold / 1.8 A trip, 30 V")
 			)
 			(libsource
 				(lib "Device")
@@ -824,15 +838,19 @@
 			)
 			(property
 				(name "LCSC")
-				(value "C70069")
+				(value "C5358568")
+			)
+			(property
+				(name "MPN")
+				(value "BSMD1206-100-30V")
 			)
 			(property
 				(name "Sheetname")
-				(value "Root")
+				(value "pl60c_dmx")
 			)
 			(property
 				(name "Sheetfile")
-				(value "pcb/pl60c_dmx.kicad_sch")
+				(value "pl60c_dmx.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -889,11 +907,11 @@
 			)
 			(property
 				(name "Sheetname")
-				(value "Root")
+				(value "pl60c_dmx")
 			)
 			(property
 				(name "Sheetfile")
-				(value "pcb/pl60c_dmx.kicad_sch")
+				(value "pl60c_dmx.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -943,11 +961,11 @@
 			)
 			(property
 				(name "Sheetname")
-				(value "Root")
+				(value "pl60c_dmx")
 			)
 			(property
 				(name "Sheetfile")
-				(value "pcb/pl60c_dmx.kicad_sch")
+				(value "pl60c_dmx.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -997,11 +1015,11 @@
 			)
 			(property
 				(name "Sheetname")
-				(value "Root")
+				(value "pl60c_dmx")
 			)
 			(property
 				(name "Sheetfile")
-				(value "pcb/pl60c_dmx.kicad_sch")
+				(value "pl60c_dmx.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -1051,11 +1069,11 @@
 			)
 			(property
 				(name "Sheetname")
-				(value "Root")
+				(value "pl60c_dmx")
 			)
 			(property
 				(name "Sheetfile")
-				(value "pcb/pl60c_dmx.kicad_sch")
+				(value "pl60c_dmx.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -1110,11 +1128,11 @@
 			)
 			(property
 				(name "Sheetname")
-				(value "Root")
+				(value "pl60c_dmx")
 			)
 			(property
 				(name "Sheetfile")
-				(value "pcb/pl60c_dmx.kicad_sch")
+				(value "pl60c_dmx.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -1193,11 +1211,10 @@
 			(value "XLR-5 female (DMX OUT)")
 			(footprint "Connector_Audio:Jack_XLR_Neutrik_NC5FAH_Horizontal")
 			(datasheet "~")
-			(description "XLR 5-pin female, horizontal PCB mount (DMX OUT)")
+			(description "Neutrik XLR 5-pin female, horizontal PCB mount (DMX OUT)")
 			(fields
 				(field
-					(name "LCSC")
-				)
+					(name "LCSC") "C368501")
 				(field
 					(name "MPN") "NC5FAH")
 				(field
@@ -1205,16 +1222,16 @@
 				(field
 					(name "Datasheet") "~")
 				(field
-					(name "Description") "XLR 5-pin female, horizontal PCB mount (DMX OUT)")
+					(name "Description") "Neutrik XLR 5-pin female, horizontal PCB mount (DMX OUT)")
 			)
 			(libsource
 				(lib "Connector_Audio")
-				(part "XLR5")
-				(description "XLR Connector, Male or Female, 5 Pins")
+				(part "XLR5_Ground")
+				(description "XLR Connector, Male or Female, 5 Pins, Discrete Ground Pin")
 			)
 			(property
 				(name "LCSC")
-				(value "")
+				(value "C368501")
 			)
 			(property
 				(name "MPN")
@@ -1222,11 +1239,11 @@
 			)
 			(property
 				(name "Sheetname")
-				(value "Root")
+				(value "pl60c_dmx")
 			)
 			(property
 				(name "Sheetfile")
-				(value "pcb/pl60c_dmx.kicad_sch")
+				(value "pl60c_dmx.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -1252,6 +1269,9 @@
 							(num "2")
 						)
 						(pin
+							(num "G")
+						)
+						(pin
 							(num "3")
 						)
 						(pin
@@ -1267,16 +1287,16 @@
 		(comp
 			(ref "J3")
 			(value "DMX pigtail")
-			(footprint "TerminalBlock:TerminalBlock_bornier-3_P5.08mm")
+			(footprint "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-3-5.08_1x03_P5.08mm_Horizontal")
 			(datasheet "~")
 			(description "Screw terminal 3P 5.08 mm (alt. DMX wire output: GND, D-, D+)")
 			(fields
 				(field
-					(name "LCSC") "C474881")
+					(name "LCSC") "C474953")
 				(field
-					(name "MPN") "KF301-5.0-3P")
+					(name "MPN") "KF128-5.08-3P-AA")
 				(field
-					(name "Footprint") "TerminalBlock:TerminalBlock_bornier-3_P5.08mm")
+					(name "Footprint") "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-3-5.08_1x03_P5.08mm_Horizontal")
 				(field
 					(name "Datasheet") "~")
 				(field
@@ -1289,19 +1309,19 @@
 			)
 			(property
 				(name "LCSC")
-				(value "C474881")
+				(value "C474953")
 			)
 			(property
 				(name "MPN")
-				(value "KF301-5.0-3P")
+				(value "KF128-5.08-3P-AA")
 			)
 			(property
 				(name "Sheetname")
-				(value "Root")
+				(value "pl60c_dmx")
 			)
 			(property
 				(name "Sheetfile")
-				(value "pcb/pl60c_dmx.kicad_sch")
+				(value "pl60c_dmx.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -1341,7 +1361,9 @@
 			(description "Pin header 1x6 2.54 mm")
 			(fields
 				(field
-					(name "LCSC") "C2337")
+					(name "LCSC") "C37208")
+				(field
+					(name "MPN") "2.54-1x6P")
 				(field
 					(name "Footprint") "Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical")
 				(field
@@ -1356,15 +1378,19 @@
 			)
 			(property
 				(name "LCSC")
-				(value "C2337")
+				(value "C37208")
+			)
+			(property
+				(name "MPN")
+				(value "2.54-1x6P")
 			)
 			(property
 				(name "Sheetname")
-				(value "Root")
+				(value "pl60c_dmx")
 			)
 			(property
 				(name "Sheetfile")
-				(value "pcb/pl60c_dmx.kicad_sch")
+				(value "pl60c_dmx.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -1413,7 +1439,9 @@
 			(description "Pin header 1x4 2.54 mm")
 			(fields
 				(field
-					(name "LCSC") "C2337")
+					(name "LCSC") "C124378")
+				(field
+					(name "MPN") "B-2100S04P-A110")
 				(field
 					(name "Footprint") "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical")
 				(field
@@ -1428,15 +1456,19 @@
 			)
 			(property
 				(name "LCSC")
-				(value "C2337")
+				(value "C124378")
+			)
+			(property
+				(name "MPN")
+				(value "B-2100S04P-A110")
 			)
 			(property
 				(name "Sheetname")
-				(value "Root")
+				(value "pl60c_dmx")
 			)
 			(property
 				(name "Sheetfile")
-				(value "pcb/pl60c_dmx.kicad_sch")
+				(value "pl60c_dmx.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -1504,11 +1536,11 @@
 			)
 			(property
 				(name "Sheetname")
-				(value "Root")
+				(value "pl60c_dmx")
 			)
 			(property
 				(name "Sheetfile")
-				(value "pcb/pl60c_dmx.kicad_sch")
+				(value "pl60c_dmx.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -1548,7 +1580,7 @@
 			(description "5.1k 0603 1% (USB-C CC pull-down)")
 			(fields
 				(field
-					(name "LCSC") "C25905")
+					(name "LCSC") "C23186")
 				(field
 					(name "Footprint") "Resistor_SMD:R_0603_1608Metric")
 				(field
@@ -1563,15 +1595,15 @@
 			)
 			(property
 				(name "LCSC")
-				(value "C25905")
+				(value "C23186")
 			)
 			(property
 				(name "Sheetname")
-				(value "Root")
+				(value "pl60c_dmx")
 			)
 			(property
 				(name "Sheetfile")
-				(value "pcb/pl60c_dmx.kicad_sch")
+				(value "pl60c_dmx.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -1608,7 +1640,7 @@
 			(description "5.1k 0603 1% (USB-C CC pull-down)")
 			(fields
 				(field
-					(name "LCSC") "C25905")
+					(name "LCSC") "C23186")
 				(field
 					(name "Footprint") "Resistor_SMD:R_0603_1608Metric")
 				(field
@@ -1623,15 +1655,15 @@
 			)
 			(property
 				(name "LCSC")
-				(value "C25905")
+				(value "C23186")
 			)
 			(property
 				(name "Sheetname")
-				(value "Root")
+				(value "pl60c_dmx")
 			)
 			(property
 				(name "Sheetfile")
-				(value "pcb/pl60c_dmx.kicad_sch")
+				(value "pl60c_dmx.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -1687,11 +1719,11 @@
 			)
 			(property
 				(name "Sheetname")
-				(value "Root")
+				(value "pl60c_dmx")
 			)
 			(property
 				(name "Sheetfile")
-				(value "pcb/pl60c_dmx.kicad_sch")
+				(value "pl60c_dmx.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -1747,11 +1779,11 @@
 			)
 			(property
 				(name "Sheetname")
-				(value "Root")
+				(value "pl60c_dmx")
 			)
 			(property
 				(name "Sheetfile")
-				(value "pcb/pl60c_dmx.kicad_sch")
+				(value "pl60c_dmx.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -1807,11 +1839,11 @@
 			)
 			(property
 				(name "Sheetname")
-				(value "Root")
+				(value "pl60c_dmx")
 			)
 			(property
 				(name "Sheetfile")
-				(value "pcb/pl60c_dmx.kicad_sch")
+				(value "pl60c_dmx.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -1867,11 +1899,11 @@
 			)
 			(property
 				(name "Sheetname")
-				(value "Root")
+				(value "pl60c_dmx")
 			)
 			(property
 				(name "Sheetfile")
-				(value "pcb/pl60c_dmx.kicad_sch")
+				(value "pl60c_dmx.kicad_sch")
 			)
 			(property
 				(name "dnp")
@@ -1930,11 +1962,11 @@
 			)
 			(property
 				(name "Sheetname")
-				(value "Root")
+				(value "pl60c_dmx")
 			)
 			(property
 				(name "Sheetfile")
-				(value "pcb/pl60c_dmx.kicad_sch")
+				(value "pl60c_dmx.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -1990,11 +2022,11 @@
 			)
 			(property
 				(name "Sheetname")
-				(value "Root")
+				(value "pl60c_dmx")
 			)
 			(property
 				(name "Sheetfile")
-				(value "pcb/pl60c_dmx.kicad_sch")
+				(value "pl60c_dmx.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -2050,11 +2082,11 @@
 			)
 			(property
 				(name "Sheetname")
-				(value "Root")
+				(value "pl60c_dmx")
 			)
 			(property
 				(name "Sheetfile")
-				(value "pcb/pl60c_dmx.kicad_sch")
+				(value "pl60c_dmx.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -2086,18 +2118,20 @@
 		(comp
 			(ref "SW1")
 			(value "RESET")
-			(footprint "Button_Switch_SMD:SW_SPST_PTS645Sx43SMTR92")
+			(footprint "Button_Switch_SMD:SW_SPST_SKQG_WithStem")
 			(datasheet "~")
-			(description "Tactile switch 6x6 SMD")
+			(description "Tactile switch 5.1x5.1x1.5 mm SMD")
 			(fields
 				(field
 					(name "LCSC") "C318884")
 				(field
-					(name "Footprint") "Button_Switch_SMD:SW_SPST_PTS645Sx43SMTR92")
+					(name "MPN") "TS-1187A-B-A-B")
+				(field
+					(name "Footprint") "Button_Switch_SMD:SW_SPST_SKQG_WithStem")
 				(field
 					(name "Datasheet") "~")
 				(field
-					(name "Description") "Tactile switch 6x6 SMD")
+					(name "Description") "Tactile switch 5.1x5.1x1.5 mm SMD")
 			)
 			(libsource
 				(lib "Switch")
@@ -2109,12 +2143,16 @@
 				(value "C318884")
 			)
 			(property
+				(name "MPN")
+				(value "TS-1187A-B-A-B")
+			)
+			(property
 				(name "Sheetname")
-				(value "Root")
+				(value "pl60c_dmx")
 			)
 			(property
 				(name "Sheetfile")
-				(value "pcb/pl60c_dmx.kicad_sch")
+				(value "pl60c_dmx.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -2142,18 +2180,20 @@
 		(comp
 			(ref "SW2")
 			(value "BOOT")
-			(footprint "Button_Switch_SMD:SW_SPST_PTS645Sx43SMTR92")
+			(footprint "Button_Switch_SMD:SW_SPST_SKQG_WithStem")
 			(datasheet "~")
-			(description "Tactile switch 6x6 SMD")
+			(description "Tactile switch 5.1x5.1x1.5 mm SMD")
 			(fields
 				(field
 					(name "LCSC") "C318884")
 				(field
-					(name "Footprint") "Button_Switch_SMD:SW_SPST_PTS645Sx43SMTR92")
+					(name "MPN") "TS-1187A-B-A-B")
+				(field
+					(name "Footprint") "Button_Switch_SMD:SW_SPST_SKQG_WithStem")
 				(field
 					(name "Datasheet") "~")
 				(field
-					(name "Description") "Tactile switch 6x6 SMD")
+					(name "Description") "Tactile switch 5.1x5.1x1.5 mm SMD")
 			)
 			(libsource
 				(lib "Switch")
@@ -2165,12 +2205,16 @@
 				(value "C318884")
 			)
 			(property
+				(name "MPN")
+				(value "TS-1187A-B-A-B")
+			)
+			(property
 				(name "Sheetname")
-				(value "Root")
+				(value "pl60c_dmx")
 			)
 			(property
 				(name "Sheetfile")
-				(value "pcb/pl60c_dmx.kicad_sch")
+				(value "pl60c_dmx.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -2198,18 +2242,20 @@
 		(comp
 			(ref "SW3")
 			(value "USER")
-			(footprint "Button_Switch_SMD:SW_SPST_PTS645Sx43SMTR92")
+			(footprint "Button_Switch_SMD:SW_SPST_SKQG_WithStem")
 			(datasheet "~")
-			(description "Tactile switch 6x6 SMD (snooze / manual on)")
+			(description "Tactile switch 5.1x5.1x1.5 mm SMD (snooze / manual on)")
 			(fields
 				(field
 					(name "LCSC") "C318884")
 				(field
-					(name "Footprint") "Button_Switch_SMD:SW_SPST_PTS645Sx43SMTR92")
+					(name "MPN") "TS-1187A-B-A-B")
+				(field
+					(name "Footprint") "Button_Switch_SMD:SW_SPST_SKQG_WithStem")
 				(field
 					(name "Datasheet") "~")
 				(field
-					(name "Description") "Tactile switch 6x6 SMD (snooze / manual on)")
+					(name "Description") "Tactile switch 5.1x5.1x1.5 mm SMD (snooze / manual on)")
 			)
 			(libsource
 				(lib "Switch")
@@ -2221,12 +2267,16 @@
 				(value "C318884")
 			)
 			(property
+				(name "MPN")
+				(value "TS-1187A-B-A-B")
+			)
+			(property
 				(name "Sheetname")
-				(value "Root")
+				(value "pl60c_dmx")
 			)
 			(property
 				(name "Sheetfile")
-				(value "pcb/pl60c_dmx.kicad_sch")
+				(value "pl60c_dmx.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -2253,21 +2303,21 @@
 		)
 		(comp
 			(ref "U1")
-			(value "ESP32-S3-WROOM-1-N8")
+			(value "ESP32-S3-WROOM-1-N16R8")
 			(footprint "RF_Module:ESP32-S3-WROOM-1")
 			(datasheet "~")
-			(description "ESP32-S3 WiFi/BLE module, 8 MB flash, PCB antenna")
+			(description "ESP32-S3 WiFi/BLE module, 16 MB flash + 8 MB PSRAM, PCB antenna")
 			(fields
 				(field
 					(name "LCSC") "C2913202")
 				(field
-					(name "MPN") "ESP32-S3-WROOM-1-N8")
+					(name "MPN") "ESP32-S3-WROOM-1-N16R8")
 				(field
 					(name "Footprint") "RF_Module:ESP32-S3-WROOM-1")
 				(field
 					(name "Datasheet") "~")
 				(field
-					(name "Description") "ESP32-S3 WiFi/BLE module, 8 MB flash, PCB antenna")
+					(name "Description") "ESP32-S3 WiFi/BLE module, 16 MB flash + 8 MB PSRAM, PCB antenna")
 			)
 			(libsource
 				(lib "RF_Module")
@@ -2280,15 +2330,15 @@
 			)
 			(property
 				(name "MPN")
-				(value "ESP32-S3-WROOM-1-N8")
+				(value "ESP32-S3-WROOM-1-N16R8")
 			)
 			(property
 				(name "Sheetname")
-				(value "Root")
+				(value "pl60c_dmx")
 			)
 			(property
 				(name "Sheetfile")
-				(value "pcb/pl60c_dmx.kicad_sch")
+				(value "pl60c_dmx.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -2467,11 +2517,11 @@
 			)
 			(property
 				(name "Sheetname")
-				(value "Root")
+				(value "pl60c_dmx")
 			)
 			(property
 				(name "Sheetfile")
-				(value "pcb/pl60c_dmx.kicad_sch")
+				(value "pl60c_dmx.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -2505,50 +2555,50 @@
 		)
 		(comp
 			(ref "U3")
-			(value "MAX3485")
+			(value "SP3485EN")
 			(footprint "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm")
 			(datasheet "~")
-			(description "RS-485 transceiver 3.3V half-duplex SOIC-8")
+			(description "RS-485 transceiver 3.3 V half-duplex SOIC-8 (MAX3485 pin-compatible)")
 			(fields
 				(field
-					(name "LCSC") "C6785")
+					(name "LCSC") "C8963")
 				(field
-					(name "MPN") "MAX3485ESA+T")
+					(name "MPN") "SP3485EN-L/TR")
 				(field
 					(name "Footprint") "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm")
 				(field
 					(name "Datasheet") "~")
 				(field
-					(name "Description") "RS-485 transceiver 3.3V half-duplex SOIC-8")
+					(name "Description") "RS-485 transceiver 3.3 V half-duplex SOIC-8 (MAX3485 pin-compatible)")
 			)
 			(libsource
 				(lib "Interface_UART")
-				(part "MAX3485")
-				(description "True RS-485/RS-422, 10Mbps, Slew-Rate Limited, with low-power shutdown, with receiver/driver enable, 32 receiver drive capacitity, DIP-8 and SOIC-8")
+				(part "SP3485EN")
+				(description "Industrial 3.3V Low Power Half-Duplex RS-485 Transceiver 10Mbps, SOIC-8")
 			)
 			(property
 				(name "LCSC")
-				(value "C6785")
+				(value "C8963")
 			)
 			(property
 				(name "MPN")
-				(value "MAX3485ESA+T")
+				(value "SP3485EN-L/TR")
 			)
 			(property
 				(name "Sheetname")
-				(value "Root")
+				(value "pl60c_dmx")
 			)
 			(property
 				(name "Sheetfile")
-				(value "pcb/pl60c_dmx.kicad_sch")
+				(value "pl60c_dmx.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
-				(value "RS-485 RS-422 UART line-driver transceiver")
+				(value "Low Power Half-Duplex RS-485 Transceiver 10Mbps")
 			)
 			(property
 				(name "ki_fp_filters")
-				(value "DIP*W7.62mm* SOIC*3.9x4.9mm*P1.27mm*")
+				(value "SOIC*3.9x4.9mm*P1.27mm*")
 			)
 			(sheetpath
 				(names "/")
@@ -2620,11 +2670,11 @@
 			)
 			(property
 				(name "Sheetname")
-				(value "Root")
+				(value "pl60c_dmx")
 			)
 			(property
 				(name "Sheetfile")
-				(value "pcb/pl60c_dmx.kicad_sch")
+				(value "pl60c_dmx.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -2819,8 +2869,8 @@
 		)
 		(libpart
 			(lib "Connector_Audio")
-			(part "XLR5")
-			(description "XLR Connector, Male or Female, 5 Pins")
+			(part "XLR5_Ground")
+			(description "XLR Connector, Male or Female, 5 Pins, Discrete Ground Pin")
 			(footprints
 				(fp "Jack*XLR*")
 			)
@@ -2828,7 +2878,7 @@
 				(field
 					(name "Reference") "J")
 				(field
-					(name "Value") "XLR5")
+					(name "Value") "XLR5_Ground")
 				(field
 					(name "Footprint")
 				)
@@ -2836,7 +2886,7 @@
 					(name "Datasheet")
 				)
 				(field
-					(name "Description") "XLR Connector, Male or Female, 5 Pins")
+					(name "Description") "XLR Connector, Male or Female, 5 Pins, Discrete Ground Pin")
 			)
 			(pins
 				(pin
@@ -2862,6 +2912,11 @@
 				(pin
 					(num "5")
 					(name "P5")
+					(type "passive")
+				)
+				(pin
+					(num "G")
+					(name "")
 					(type "passive")
 				)
 			)
@@ -3034,6 +3089,43 @@
 		)
 		(libpart
 			(lib "Device")
+			(part "D_Schottky")
+			(description "Schottky diode")
+			(footprints
+				(fp "TO-???*")
+				(fp "*_Diode_*")
+				(fp "*SingleDiode*")
+				(fp "D_*")
+			)
+			(fields
+				(field
+					(name "Reference") "D")
+				(field
+					(name "Value") "D_Schottky")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Schottky diode")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "K")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "A")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "Device")
 			(part "Polyfuse")
 			(description "Resettable fuse, polymeric positive temperature coefficient")
 			(footprints
@@ -3103,43 +3195,6 @@
 		)
 		(libpart
 			(lib "Diode")
-			(part "1N4148W")
-			(description "75V 0.15A Fast Switching Diode, SOD-123")
-			(docs "https://www.vishay.com/docs/85748/1n4148w.pdf")
-			(footprints
-				(fp "D*SOD?123*")
-			)
-			(fields
-				(field
-					(name "Reference") "D")
-				(field
-					(name "Value") "1N4148W")
-				(field
-					(name "Footprint") "Diode_SMD:D_SOD-123")
-				(field
-					(name "Datasheet") "https://www.vishay.com/docs/85748/1n4148w.pdf")
-				(field
-					(name "Description") "75V 0.15A Fast Switching Diode, SOD-123")
-				(field
-					(name "Sim.Device") "D")
-				(field
-					(name "Sim.Pins") "1=K 2=A")
-			)
-			(pins
-				(pin
-					(num "1")
-					(name "K")
-					(type "passive")
-				)
-				(pin
-					(num "2")
-					(name "A")
-					(type "passive")
-				)
-			)
-		)
-		(libpart
-			(lib "Diode")
 			(part "SM712_SOT23")
 			(description "7V/12V, 600W Asymmetrical TVS Diode Array, SOT-23")
 			(docs "https://www.littelfuse.com/~/media/electronics/datasheets/tvs_diode_arrays/littelfuse_tvs_diode_array_sm712_datasheet.pdf.pdf")
@@ -3178,25 +3233,23 @@
 		)
 		(libpart
 			(lib "Interface_UART")
-			(part "MAX3485")
-			(description "True RS-485/RS-422, 10Mbps, Slew-Rate Limited, with low-power shutdown, with receiver/driver enable, 32 receiver drive capacitity, DIP-8 and SOIC-8")
-			(docs "https://datasheets.maximintegrated.com/en/ds/MAX3483-MAX3491.pdf")
+			(part "SP3485EN")
+			(description "Industrial 3.3V Low Power Half-Duplex RS-485 Transceiver 10Mbps, SOIC-8")
+			(docs "http://www.icbase.com/pdf/SPX/SPX00480106.pdf")
 			(footprints
-				(fp "DIP*W7.62mm*")
 				(fp "SOIC*3.9x4.9mm*P1.27mm*")
 			)
 			(fields
 				(field
 					(name "Reference") "U")
 				(field
-					(name "Value") "MAX3485")
+					(name "Value") "SP3485EN")
 				(field
-					(name "Footprint")
-				)
+					(name "Footprint") "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm")
 				(field
-					(name "Datasheet") "https://datasheets.maximintegrated.com/en/ds/MAX3483-MAX3491.pdf")
+					(name "Datasheet") "http://www.icbase.com/pdf/SPX/SPX00480106.pdf")
 				(field
-					(name "Description") "True RS-485/RS-422, 10Mbps, Slew-Rate Limited, with low-power shutdown, with receiver/driver enable, 32 receiver drive capacitity, DIP-8 and SOIC-8")
+					(name "Description") "Industrial 3.3V Low Power Half-Duplex RS-485 Transceiver 10Mbps, SOIC-8")
 			)
 			(pins
 				(pin
@@ -3757,7 +3810,7 @@
 		(net
 			(code "1")
 			(name "+3V3")
-			(class "Default")
+			(class "Power")
 			(node
 				(ref "C2")
 				(pin "1")
@@ -3843,7 +3896,7 @@
 		(net
 			(code "2")
 			(name "+5V")
-			(class "Default")
+			(class "Power")
 			(node
 				(ref "BZ1")
 				(pin "1")
@@ -4408,7 +4461,7 @@
 		(net
 			(code "27")
 			(name "GND")
-			(class "Default")
+			(class "Power")
 			(node
 				(ref "C1")
 				(pin "2")
@@ -4648,6 +4701,16 @@
 		)
 		(net
 			(code "33")
+			(name "unconnected-(J2-PadG)")
+			(class "Default")
+			(node
+				(ref "J2")
+				(pin "G")
+				(pintype "passive+no_connect")
+			)
+		)
+		(net
+			(code "34")
 			(name "unconnected-(U1-IO1-Pad39)")
 			(class "Default")
 			(node
@@ -4658,7 +4721,7 @@
 			)
 		)
 		(net
-			(code "34")
+			(code "35")
 			(name "unconnected-(U1-IO2-Pad38)")
 			(class "Default")
 			(node
@@ -4669,7 +4732,7 @@
 			)
 		)
 		(net
-			(code "35")
+			(code "36")
 			(name "unconnected-(U1-IO3-Pad15)")
 			(class "Default")
 			(node
@@ -4680,7 +4743,7 @@
 			)
 		)
 		(net
-			(code "36")
+			(code "37")
 			(name "unconnected-(U1-IO4-Pad4)")
 			(class "Default")
 			(node
@@ -4691,7 +4754,7 @@
 			)
 		)
 		(net
-			(code "37")
+			(code "38")
 			(name "unconnected-(U1-IO7-Pad7)")
 			(class "Default")
 			(node
@@ -4702,7 +4765,7 @@
 			)
 		)
 		(net
-			(code "38")
+			(code "39")
 			(name "unconnected-(U1-IO12-Pad20)")
 			(class "Default")
 			(node
@@ -4713,7 +4776,7 @@
 			)
 		)
 		(net
-			(code "39")
+			(code "40")
 			(name "unconnected-(U1-IO13-Pad21)")
 			(class "Default")
 			(node
@@ -4724,7 +4787,7 @@
 			)
 		)
 		(net
-			(code "40")
+			(code "41")
 			(name "unconnected-(U1-IO14-Pad22)")
 			(class "Default")
 			(node
@@ -4735,7 +4798,7 @@
 			)
 		)
 		(net
-			(code "41")
+			(code "42")
 			(name "unconnected-(U1-IO15-Pad8)")
 			(class "Default")
 			(node
@@ -4746,7 +4809,7 @@
 			)
 		)
 		(net
-			(code "42")
+			(code "43")
 			(name "unconnected-(U1-IO21-Pad23)")
 			(class "Default")
 			(node
@@ -4757,7 +4820,7 @@
 			)
 		)
 		(net
-			(code "43")
+			(code "44")
 			(name "unconnected-(U1-IO35-Pad28)")
 			(class "Default")
 			(node
@@ -4768,7 +4831,7 @@
 			)
 		)
 		(net
-			(code "44")
+			(code "45")
 			(name "unconnected-(U1-IO36-Pad29)")
 			(class "Default")
 			(node
@@ -4779,7 +4842,7 @@
 			)
 		)
 		(net
-			(code "45")
+			(code "46")
 			(name "unconnected-(U1-IO37-Pad30)")
 			(class "Default")
 			(node
@@ -4790,7 +4853,7 @@
 			)
 		)
 		(net
-			(code "46")
+			(code "47")
 			(name "unconnected-(U1-IO38-Pad31)")
 			(class "Default")
 			(node
@@ -4801,7 +4864,7 @@
 			)
 		)
 		(net
-			(code "47")
+			(code "48")
 			(name "unconnected-(U1-IO39-Pad32)")
 			(class "Default")
 			(node
@@ -4812,7 +4875,7 @@
 			)
 		)
 		(net
-			(code "48")
+			(code "49")
 			(name "unconnected-(U1-IO40-Pad33)")
 			(class "Default")
 			(node
@@ -4823,7 +4886,7 @@
 			)
 		)
 		(net
-			(code "49")
+			(code "50")
 			(name "unconnected-(U1-IO41-Pad34)")
 			(class "Default")
 			(node
@@ -4834,7 +4897,7 @@
 			)
 		)
 		(net
-			(code "50")
+			(code "51")
 			(name "unconnected-(U1-IO42-Pad35)")
 			(class "Default")
 			(node
@@ -4845,7 +4908,7 @@
 			)
 		)
 		(net
-			(code "51")
+			(code "52")
 			(name "unconnected-(U1-IO45-Pad26)")
 			(class "Default")
 			(node
@@ -4856,7 +4919,7 @@
 			)
 		)
 		(net
-			(code "52")
+			(code "53")
 			(name "unconnected-(U1-IO46-Pad16)")
 			(class "Default")
 			(node
@@ -4867,7 +4930,7 @@
 			)
 		)
 		(net
-			(code "53")
+			(code "54")
 			(name "unconnected-(U1-IO47-Pad24)")
 			(class "Default")
 			(node

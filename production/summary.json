@@ -1,0 +1,24 @@
+{
+ "generated": "2026-09-02T13:20:33",
+ "gerber_files": [
+  "pl60c_dmx-B_Cu.gbl",
+  "pl60c_dmx-B_Mask.gbs",
+  "pl60c_dmx-B_Paste.gbp",
+  "pl60c_dmx-B_Silkscreen.gbo",
+  "pl60c_dmx-Edge_Cuts.gm1",
+  "pl60c_dmx-F_Cu.gtl",
+  "pl60c_dmx-F_Mask.gts",
+  "pl60c_dmx-F_Paste.gtp",
+  "pl60c_dmx-F_Silkscreen.gto",
+  "pl60c_dmx-NPTH-drl_map.gbr",
+  "pl60c_dmx-NPTH.drl",
+  "pl60c_dmx-PTH-drl_map.gbr",
+  "pl60c_dmx-PTH.drl",
+  "pl60c_dmx-job.gbrjob"
+ ],
+ "bom_lines": 25,
+ "placed_parts": 34,
+ "notes": [
+  "R6 is DNP (not placed): 120R termination - DNP (fit only if this board ends the DMX line)"
+ ]
+}

@@ -171,12 +171,12 @@ def preroute_usb(board, fp, nets, W):
         v = add_via(board, nets[net], x, yy); v.SetLocked(True)
     xi = lambda d: xr + s * d
     # D- : B7 and A7 -> interior stubs + link
-    T('USB_D-', xr, y('B7'), xi(1.9), y('B7')); T('USB_D-', xr, y('A7'), xi(3.3), y('A7'))
+    T('USB_D-', xr, y('B7'), xi(1.9), y('B7')); T('USB_D-', xr, y('A7'), xi(5.0), y('A7'))
     T('USB_D-', xi(1.9), y('B7'), xi(1.9), y('A7'))
     # D+ : B6 -> interior stub -> via ; A6 -> under body -> via ; B.Cu diagonal joins them
-    T('USB_D+', xr, y('B6'), xi(4.1), y('B6')); Vv('USB_D+', xi(4.1), y('B6'))
+    T('USB_D+', xr, y('B6'), xi(3.6), y('B6')); T('USB_D+', xi(3.6), y('B6'), xi(4.2), y('B6') + 0.6); Vv('USB_D+', xi(4.2), y('B6') + 0.6)
     T('USB_D+', xr, y('A6'), xi(-1.9), y('A6')); T('USB_D+', xi(-1.9), y('A6'), xi(-2.4), y('A6') - 0.5); Vv('USB_D+', xi(-2.4), y('A6') - 0.5)
-    T('USB_D+', xi(-2.4), y('A6') - 0.5, xi(4.1), y('B6'), pcbnew.B_Cu)
+    T('USB_D+', xi(-2.4), y('A6') - 0.5, xi(4.2), y('B6') + 0.6, pcbnew.B_Cu)
     # VBUS : both pairs -> vias, joined on B.Cu (0.4 mm)
     for n in ('A4', 'B4'):
         T('VBUS', xr, y(n), xi(5.4), y(n), width=0.3); Vv('VBUS', xi(5.4), y(n))
@@ -249,6 +249,9 @@ def build(out_path):
         if p.dnp:
             fp.SetDNP(True)
         fp.Value().SetVisible(False)
+        if p.ref_pcb_pos:
+            fp.Reference().SetPosition(V(*p.ref_pcb_pos[:2]))
+            if len(p.ref_pcb_pos) > 2: fp.Reference().SetTextAngleDegrees(p.ref_pcb_pos[2])
         # make refs small
         fp.Reference().SetTextSize(VECTOR2I(FromMM(0.8), FromMM(0.8))); fp.Reference().SetTextThickness(FromMM(0.12))
         for pad in fp.Pads():

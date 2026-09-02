@@ -8,7 +8,7 @@ import uuid
 class Part:
     def __init__(self, ref, lib_id, value, footprint, pins, lcsc='', mpn='', desc='', datasheet='',
                  sch_pos=(0, 0), sch_rot=0, pcb_pos=(0, 0), pcb_rot=0, side='top', dnp=False,
-                 stub=2.54, power_symbols_any=False, ref_pos=None, val_pos=None, jlc_rot=0, drill=None):
+                 stub=2.54, power_symbols_any=False, ref_pos=None, val_pos=None, jlc_rot=0, drill=None, ref_pcb_pos=None):
         self.ref, self.lib_id, self.value, self.footprint = ref, lib_id, value, footprint
         self.pins = pins  # pin number -> net name
         self.lcsc, self.mpn, self.desc, self.datasheet = lcsc, mpn, desc, datasheet
@@ -17,6 +17,7 @@ class Part:
         self.stub, self.power_symbols_any = stub, power_symbols_any
         self.ref_pos, self.val_pos = ref_pos, val_pos
         self.jlc_rot = jlc_rot   # extra rotation to add for the JLCPCB CPL file
+        self.ref_pcb_pos = ref_pcb_pos  # (x, y[, rot]) absolute silkscreen position of the reference designator
         self.drill = drill       # override THT pad drill (mm) for parts whose LCSC pins differ from the KiCad footprint
         self.uuid = str(uuid.uuid5(uuid.NAMESPACE_DNS, 'pl60c.' + ref))
 
@@ -86,7 +87,7 @@ def build():
                sch_pos=(82, 50), pcb_pos=(12, 9.5), pcb_rot=0))
     d.add(Part('U2', 'Regulator_Linear:AMS1117-3.3', 'AMS1117-3.3', 'Package_TO_SOT_SMD:SOT-223-3_TabPin2',
                {'3': '+5V', '2': '+3V3', '1': 'GND'}, lcsc='C6186', mpn='AMS1117-3.3', desc='LDO 3.3V 1A SOT-223',
-               sch_pos=(100, 40), pcb_pos=(12, 15), pcb_rot=0))
+               sch_pos=(100, 40), pcb_pos=(12, 15), pcb_rot=0, ref_pcb_pos=(5.6, 15, 90)))
     d.add(Part('C2', 'Device:C', '10uF', C0805, {'1': '+3V3', '2': 'GND'}, lcsc='C15850', desc='10uF 25V X5R 0805',
                sch_pos=(115, 50), pcb_pos=(9, 21), pcb_rot=0))
     d.add(Part('C3', 'Device:C', '100nF', C0603, {'1': '+3V3', '2': 'GND'}, lcsc='C14663', desc='100nF 50V X7R 0603',
@@ -147,7 +148,7 @@ def build():
                lcsc='C2146', mpn='S8050', desc='NPN 0.5A SOT-23 buzzer driver', sch_pos=(240, 250), pcb_pos=(55, 37), pcb_rot=0))
     d.add(Part('D3', 'Device:D_Schottky', 'B5819W', 'Diode_SMD:D_SOD-123', {'1': '+5V', '2': 'BZ_N'}, lcsc='C8598', mpn='B5819W SL', desc='Schottky flyback diode 1 A 40 V SOD-123', sch_pos=(255, 225), sch_rot=90, pcb_pos=(59.5, 37), pcb_rot=0))
     d.add(Part('BZ1', 'Device:Buzzer', 'MLT-8530', 'Buzzer_Beeper:MagneticBuzzer_CUI_CMT-8504-100-SMT', {'1': '+5V', '2': 'BZ_N'},
-               lcsc='C94599', mpn='MLT-8530', desc='Magnetic buzzer 8.5x8.5 mm SMD, passive, 16 ohm, drive 2.7 kHz square wave', sch_pos=(245, 200), sch_rot=0, pcb_pos=(69, 41.5), pcb_rot=0))
+               lcsc='C94599', mpn='MLT-8530', desc='Magnetic buzzer 8.5x8.5 mm SMD, passive, 16 ohm, drive 2.7 kHz square wave', sch_pos=(245, 200), sch_rot=0, pcb_pos=(69, 41.5), pcb_rot=0, ref_pcb_pos=(69, 47.6)))
     # =============================== Expansion / debug headers (x 270..410, y 130..200) ===============================
     d.texts += [('Expansion (I2C RTC / sensor) and UART0 debug headers', 272, 165, 2.5, True)]
     d.boxes += [(270, 158, 412, 230)]
