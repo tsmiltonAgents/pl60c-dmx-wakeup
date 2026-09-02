@@ -1,87 +1,77 @@
-"""Post-route pass: find GND items KiCad reports as unconnected (islands in the pour, pads without a path
-to the plane) and add stitching vias in free spots near them, checking clearance against pads, tracks and vias.
+"""Post-route pass:
+ 1. add stitching vias for GND items KiCad's DRC still reports as unconnected (checked against pads/tracks/vias),
+ 2. delete GND vias that end up dangling (connected on one layer only) after the final zone fill.
 Usage: <kicad python> fix_gnd.py <board.kicad_pcb>"""
 import os, sys, json, math, subprocess
 import pcbnew
-from pcbnew import VECTOR2I, FromMM
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from gen_pcb import _seg_dist, _pad_geo, add_via, add_track, V
+from gen_pcb import Obstacles, add_via, add_track, _rect_dist
 KC = '/Applications/KiCad/KiCad.app/Contents/MacOS/kicad-cli'
 
-def drc_unconnected(board_path):
+def drc_json(board_path):
     out = board_path + '.drc.json'
-    subprocess.run([KC, 'pcb', 'drc', '--format', 'json', '--output', out, board_path], capture_output=True)
+    subprocess.run([KC, 'pcb', 'drc', '--format', 'json', '--severity-all', '--output', out, board_path], capture_output=True)
     rep = json.load(open(out)); os.remove(out)
-    pts = []
-    for v in rep.get('unconnected_items', []):
-        items = v.get('items', [])
-        pts.append([(it['pos']['x'], it['pos']['y'], it.get('description', '')) for it in items])
-    return pts
+    return rep
+
+def items(v):
+    return [(it['pos']['x'] / 1e6, it['pos']['y'] / 1e6, it.get('description', '')) for it in v.get('items', [])]
+
+def refill_save(board, path):
+    filler = pcbnew.ZONE_FILLER(board); filler.Fill(board.Zones())
+    pcbnew.SaveBoard(path, board)
 
 def fix(board_path, rounds=4):
     for rnd in range(rounds):
-        unc = drc_unconnected(board_path)
-        gnd_unc = [u for u in unc if any('[GND]' in it[2] for it in u)]
-        print(f'round {rnd}: {len(unc)} unconnected, {len(gnd_unc)} on GND')
-        if not gnd_unc:
-            return len(unc)
+        rep = drc_json(board_path)
+        unc = [items(v) for v in rep.get('unconnected_items', [])]
+        gnd_pts = []
+        for u in unc:
+            for (x, y, desc) in u:
+                if '[GND]' in desc and 'Zone' not in desc:
+                    gnd_pts.append((x, y, desc))
+        print(f'round {rnd}: {len(unc)} unconnected, {len(gnd_pts)} GND anchor items')
+        if not gnd_pts:
+            break
         board = pcbnew.LoadBoard(board_path)
         gnd = board.FindNet('GND')
-        W = board.GetBoardEdgesBoundingBox().GetWidth() / 1e6; H = board.GetBoardEdgesBoundingBox().GetHeight() / 1e6
-        obstacles = []   # (kind, geometry, radius)
-        for fp in board.GetFootprints():
-            for pad in fp.Pads():
-                x, y, r = _pad_geo(pad)
-                obstacles.append(('pad', pad.GetNetname(), (x, y), r))
-        for t in board.GetTracks():
-            if t.GetClass() == 'PCB_VIA':
-                obstacles.append(('via', t.GetNetname(), (t.GetPosition().x / 1e6, t.GetPosition().y / 1e6), t.GetWidth() / 2e6))
-            else:
-                obstacles.append(('trk', t.GetNetname(), ((t.GetStart().x / 1e6, t.GetStart().y / 1e6), (t.GetEnd().x / 1e6, t.GetEnd().y / 1e6)), t.GetWidth() / 2e6))
-        via_r, clr = 0.35, 0.25
-        def clear(x, y):
-            if not (1.5 < x < W - 1.5 and 1.5 < y < H - 1.5): return False
-            for kind, net, g, r in obstacles:
-                if kind == 'trk':
-                    dist = _seg_dist((x, y), g[0], g[1])
-                else:
-                    dist = math.hypot(x - g[0], y - g[1])
-                need = r + via_r + (clr if net != 'GND' else 0.1)
-                if net == 'GND' and kind == 'pad': need = r + via_r + 0.1
-                if dist < need: return False
-            return True
-        def clear_track(a, b, w=0.3):
-            for kind, net, g, r in obstacles:
-                if net == 'GND': continue
-                if kind == 'trk':
-                    # segment-segment distance approx: sample points
-                    pts = [(a[0] + (b[0] - a[0]) * k / 8, a[1] + (b[1] - a[1]) * k / 8) for k in range(9)]
-                    if min(_seg_dist(pt, g[0], g[1]) for pt in pts) < r + w / 2 + clr: return False
-                else:
-                    if _seg_dist(g, a, b) < r + w / 2 + clr: return False
-            return True
+        bb = board.GetBoardEdgesBoundingBox(); W, H = bb.GetWidth() / 1e6, bb.GetHeight() / 1e6
+        obs = Obstacles(board, W, H)
         added = 0
-        for u in gnd_unc:
-            for (ux, uy, desc) in u:
-                if 'Zone' in desc: continue
-                px, py = ux / 1e6, uy / 1e6
-                done = False
-                for dist in [0.9, 1.2, 1.5, 1.9, 2.4, 3.0]:
-                    for k in range(16):
-                        ang = 2 * math.pi * k / 16
-                        x, y = px + dist * math.cos(ang), py + dist * math.sin(ang)
-                        if clear(x, y) and clear_track((px, py), (x, y)):
-                            add_via(board, gnd, x, y); add_track(board, gnd, px, py, x, y)
-                            obstacles.append(('via', 'GND', (x, y), via_r)); added += 1; done = True; break
+        for (px, py, desc) in gnd_pts:
+            done = False
+            for dist in [0.9, 1.2, 1.5, 1.9, 2.4, 3.0, 3.6]:
+                for k in range(16):
+                    ang = 2 * math.pi * k / 16
+                    x, y = px + dist * math.cos(ang), py + dist * math.sin(ang)
+                    for w in (0.3, 0.25):
+                        if obs.via_ok(x, y) and obs.track_ok((px, py), (x, y), w):
+                            add_via(board, gnd, x, y); add_track(board, gnd, px, py, x, y, w); obs.add_via(x, y)
+                            added += 1; done = True; break
                     if done: break
                 if done: break
-        # zone-zone islands: put a via inside the island: use the reported zone point? (KiCad reports zone origin) -> skip
+            if not done: print(f'  could not stitch {desc} at ({px:.2f},{py:.2f})')
         print(f'  added {added} vias')
-        filler = pcbnew.ZONE_FILLER(board); filler.Fill(board.Zones())
-        pcbnew.SaveBoard(board_path, board)
+        refill_save(board, board_path)
         if added == 0:
             break
-    unc = drc_unconnected(board_path)
+    # remove dangling GND vias (grid vias that landed in a spot with pour on one side only)
+    for rnd in range(3):
+        rep = drc_json(board_path)
+        dang = [items(v)[0] for v in rep.get('violations', []) if v.get('type') == 'via_dangling']
+        dang = [(x, y) for (x, y, desc) in dang if '[GND]' in desc]
+        if not dang: break
+        board = pcbnew.LoadBoard(board_path)
+        removed = 0
+        for t in list(board.GetTracks()):
+            if t.GetClass() == 'PCB_VIA' and t.GetNetname() == 'GND':
+                vx, vy = t.GetPosition().x / 1e6, t.GetPosition().y / 1e6
+                if any(math.hypot(vx - x, vy - y) < 0.05 for (x, y) in dang):
+                    board.Remove(t); removed += 1
+        print(f'removed {removed} dangling GND vias')
+        refill_save(board, board_path)
+    rep = drc_json(board_path)
+    unc = [items(v) for v in rep.get('unconnected_items', [])]
     print('final unconnected:', len(unc))
     for u in unc: print('  ', u)
     return len(unc)

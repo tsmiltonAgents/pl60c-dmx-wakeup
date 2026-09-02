@@ -13,7 +13,13 @@ def route(board_path, passes=40):
     # remove any existing tracks/vias before re-routing
     for t in list(board.GetTracks()):
         board.Remove(t)
+    # export with a slightly larger clearance than the DRC rule so rounding in the router never trips DRC
+    ns = board.GetDesignSettings().m_NetSettings
+    for nc in [ns.GetDefaultNetclass()] + [ns.GetNetClassByName(n) for n in ['Power']]:
+        nc.SetClearance(nc.GetClearance() + pcbnew.FromMM(0.03))
     assert pcbnew.ExportSpecctraDSN(board, dsn), 'DSN export failed'
+    for nc in [ns.GetDefaultNetclass()] + [ns.GetNetClassByName(n) for n in ['Power']]:
+        nc.SetClearance(nc.GetClearance() - pcbnew.FromMM(0.03))
     if os.path.exists(ses): os.remove(ses)
     cmd = [JAVA, '-Djava.awt.headless=true', '-jar', JAR, '-de', dsn, '-do', ses, '-mp', str(passes), '-mt', '4',
            '-l', 'en']

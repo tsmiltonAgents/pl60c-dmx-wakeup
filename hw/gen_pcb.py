@@ -68,9 +68,19 @@ def _seg_dist(p, a, b):
     t = max(0.0, min(1.0, ((px - ax) * dx + (py - ay) * dy) / (dx * dx + dy * dy)))
     return math.hypot(px - (ax + t * dx), py - (ay + t * dy))
 
+def _rect_dist(p, rect):
+    """Distance from point p to axis-aligned rect (x1,y1,x2,y2); 0 if inside."""
+    x1, y1, x2, y2 = rect
+    dx = max(x1 - p[0], 0, p[0] - x2); dy = max(y1 - p[1], 0, p[1] - y2)
+    return math.hypot(dx, dy)
+
+def _pad_rect(pad):
+    bb = pad.GetBoundingBox()
+    return (bb.GetLeft() / 1e6, bb.GetTop() / 1e6, bb.GetRight() / 1e6, bb.GetBottom() / 1e6)
+
 def _pad_geo(pad):
     pos = pad.GetPosition(); sz = pad.GetSize()
-    r = math.hypot(sz.x, sz.y) / 2 / 1e6   # conservative: circumscribed radius
+    r = math.hypot(sz.x, sz.y) / 2 / 1e6
     return (pos.x / 1e6, pos.y / 1e6, r)
 
 def add_via(board, net, x, y, dia=0.7, drill=0.35):
@@ -82,57 +92,86 @@ def add_track(board, net, x1, y1, x2, y2, w=0.3, layer=pcbnew.F_Cu):
     t = pcbnew.PCB_TRACK(board); t.SetStart(V(x1, y1)); t.SetEnd(V(x2, y2)); t.SetWidth(FromMM(w)); t.SetLayer(layer); t.SetNet(net); board.Add(t)
     return t
 
-def stitch_gnd(board, d, gnd, W, H, clearance=0.25, via_dia=0.7):
-    """Put a via next to every SMD GND pad (short track to it) and a sparse via grid through the pour,
-    so both GND pours stay connected after autorouting. Positions are checked against all other pads."""
-    other = []   # (x, y, r) of pads not on GND
-    gnd_smd = []
-    holes = []
+class Obstacles:
+    """Geometry of everything a new GND via/track must keep clear of (pads, tracks, vias of other nets)."""
+    def __init__(self, board, W, H, clearance=0.25, via_dia=0.7, edge=1.2):
+        self.W, self.H, self.clr, self.via_r, self.edge = W, H, clearance, via_dia / 2, edge
+        self.rects, self.segs, self.circles = [], [], []
+        self.gnd_vias = []
+        for fp in board.GetFootprints():
+            for pad in fp.Pads():
+                if pad.GetNetname() != 'GND':
+                    self.rects.append(_pad_rect(pad))
+                elif pad.GetAttribute() != pcbnew.PAD_ATTRIB_SMD:
+                    self.circles.append((pad.GetPosition().x / 1e6, pad.GetPosition().y / 1e6, pad.GetSize().x / 2e6, 'GND'))
+        for t in board.GetTracks():
+            if t.GetClass() == 'PCB_VIA':
+                self.circles.append((t.GetPosition().x / 1e6, t.GetPosition().y / 1e6, t.GetWidth() / 2e6, t.GetNetname()))
+            else:
+                self.segs.append(((t.GetStart().x / 1e6, t.GetStart().y / 1e6), (t.GetEnd().x / 1e6, t.GetEnd().y / 1e6), t.GetWidth() / 2e6, t.GetNetname()))
+    def via_ok(self, x, y, extra=0.0):
+        if not (self.edge < x < self.W - self.edge and self.edge < y < self.H - self.edge): return False
+        need = self.via_r + self.clr + extra
+        for r in self.rects:
+            if _rect_dist((x, y), r) < need: return False
+        for (a, b, hw, net) in self.segs:
+            if _seg_dist((x, y), a, b) < hw + (need if net != 'GND' else self.via_r + 0.1): return False
+        for (cx, cy, r, net) in self.circles:
+            if math.hypot(x - cx, y - cy) < r + (need if net != 'GND' else self.via_r + 0.15): return False
+        return True
+    def track_ok(self, a, b, w=0.3):
+        pts = [(a[0] + (b[0] - a[0]) * k / 10, a[1] + (b[1] - a[1]) * k / 10) for k in range(11)]
+        need = w / 2 + self.clr
+        for r in self.rects:
+            if min(_rect_dist(p, r) for p in pts) < need: return False
+        for (s0, s1, hw, net) in self.segs:
+            if net == 'GND': continue
+            if min(_seg_dist(p, s0, s1) for p in pts) < hw + need: return False
+        for (cx, cy, r, net) in self.circles:
+            if net == 'GND': continue
+            if _seg_dist((cx, cy), a, b) < r + need: return False
+        return True
+    def add_via(self, x, y):
+        self.circles.append((x, y, self.via_r, 'GND'))
+
+def stitch_pad(board, obs, gnd, pad, fp):
+    """Try to place a via next to a GND SMD pad joined by a short track. Returns True on success."""
+    px, py = pad.GetPosition().x / 1e6, pad.GetPosition().y / 1e6
+    rect = _pad_rect(pad)
+    hx, hy = (rect[2] - rect[0]) / 2, (rect[3] - rect[1]) / 2
+    c = fp.GetPosition(); ax, ay = px - c.x / 1e6, py - c.y / 1e6
+    # cardinal directions first, ordered by how far the pad sits from the footprint centre along that axis
+    cards = sorted([(1, 0), (-1, 0), (0, 1), (0, -1)], key=lambda d: -(d[0] * ax + d[1] * ay))
+    diags = [(0.707, 0.707), (-0.707, 0.707), (0.707, -0.707), (-0.707, -0.707)]
+    for (ux, uy) in cards + diags:
+        half = abs(ux) * hx + abs(uy) * hy
+        for extra in (0.75, 1.0, 1.3, 1.7, 2.2):
+            x, y = px + ux * (half + extra), py + uy * (half + extra)
+            for w in (0.3, 0.25):
+                if obs.via_ok(x, y) and obs.track_ok((px, py), (x, y), w):
+                    add_via(board, gnd, x, y); add_track(board, gnd, px, py, x, y, w); obs.add_via(x, y)
+                    return True
+    return False
+
+def stitch_gnd(board, d, gnd, W, H):
+    """Via next to every SMD GND pad + a sparse via grid, placed before autorouting so the router sees them."""
+    obs = Obstacles(board, W, H)
+    n_pad = 0; smd = []
     for fp in board.GetFootprints():
         for pad in fp.Pads():
-            x, y, r = _pad_geo(pad)
-            if pad.GetNetname() == 'GND':
-                if pad.GetAttribute() == pcbnew.PAD_ATTRIB_SMD:
-                    gnd_smd.append((pad, fp))
-            else:
-                other.append((x, y, r))
-    vias = []
-    def clear(x, y, extra=0.0):
-        if not (2.0 < x < W - 2.0 and 2.0 < y < H - 2.0): return False
-        for (ox, oy, orad) in other:
-            if math.hypot(x - ox, y - oy) < orad + via_dia / 2 + clearance + extra: return False
-        for (vx, vy) in vias:
-            if math.hypot(x - vx, y - vy) < via_dia + clearance: return False
-        return True
-    def clear_track(x1, y1, x2, y2, w=0.3):
-        for (ox, oy, orad) in other:
-            if _seg_dist((ox, oy), (x1, y1), (x2, y2)) < orad + w / 2 + clearance: return False
-        return True
-    dirs = [(1, 0), (-1, 0), (0, 1), (0, -1), (1, 1), (-1, 1), (1, -1), (-1, -1)]
-    n_pad = 0
-    for pad, fp in gnd_smd:
-        px, py, pr = _pad_geo(pad)
-        c = fp.GetPosition(); cx, cy = c.x / 1e6, c.y / 1e6
-        ax, ay = px - cx, py - cy
-        n = math.hypot(ax, ay) or 1.0
-        pref = [(ax / n, ay / n)] + [(dx / math.hypot(dx, dy), dy / math.hypot(dx, dy)) for dx, dy in dirs]
-        placed = False
-        for (ux, uy) in pref:
-            for dist in (pr + 0.75, pr + 1.1, pr + 1.5):
-                x, y = px + ux * dist, py + uy * dist
-                if clear(x, y) and clear_track(px, py, x, y):
-                    add_via(board, gnd, x, y); add_track(board, gnd, px, py, x, y)
-                    vias.append((x, y)); placed = True; n_pad += 1
-                    break
-            if placed: break
-        if not placed:
-            print(f'  no stitch via for {fp.GetReference()} pad {pad.GetNumber()} at ({px:.2f},{py:.2f})')
+            if pad.GetNetname() == 'GND' and pad.GetAttribute() == pcbnew.PAD_ATTRIB_SMD:
+                smd.append((pad, fp))
+    for pad, fp in smd:
+        if stitch_pad(board, obs, gnd, pad, fp):
+            n_pad += 1
+        else:
+            print(f'  no stitch via for {fp.GetReference()} pad {pad.GetNumber()}')
     n_grid = 0
     for gx in range(5, int(W) - 3, 5):
         for gy in range(5, int(H) - 3, 5):
-            if clear(gx, gy, extra=0.8):
-                add_via(board, gnd, gx, gy); vias.append((gx, gy)); n_grid += 1
-    print(f'GND stitching: {n_pad}/{len(gnd_smd)} SMD GND pads got a via, {n_grid} grid vias')
+            if obs.via_ok(gx, gy, extra=0.8):
+                add_via(board, gnd, gx, gy); obs.add_via(gx, gy); n_grid += 1
+    print(f'GND stitching: {n_pad}/{len(smd)} SMD GND pads got a via, {n_grid} grid vias')
 
 def build(out_path):
     d = design.build()
