@@ -22,7 +22,9 @@ def run(cmd):
 
 def gerbers():
     shutil.rmtree(GERB, ignore_errors=True); os.makedirs(GERB)
-    layers = 'F.Cu,B.Cu,F.Paste,B.Paste,F.SilkS,B.SilkS,F.Mask,B.Mask,Edge.Cuts'
+    n = pcbnew.LoadBoard(PCB).GetCopperLayerCount()
+    inner = ''.join(f'In{i}.Cu,' for i in range(1, n - 1))
+    layers = 'F.Cu,' + inner + 'B.Cu,F.Paste,B.Paste,F.SilkS,B.SilkS,F.Mask,B.Mask,Edge.Cuts'
     run([KC, 'pcb', 'export', 'gerbers', '--output', GERB + '/', '--layers', layers, '--no-x2', '--no-netlist',
          '--subtract-soldermask', '--check-zones', PCB])   # protel extensions (JLCPCB preferred) are the default
     run([KC, 'pcb', 'export', 'drill', '--output', GERB + '/', '--format', 'excellon', '--drill-origin', 'absolute',

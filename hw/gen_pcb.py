@@ -235,7 +235,7 @@ def build(out_path):
     dflt = ns.GetDefaultNetclass()
     dflt.SetClearance(FromMM(0.15)); dflt.SetTrackWidth(FromMM(0.25)); dflt.SetViaDiameter(FromMM(0.7)); dflt.SetViaDrill(FromMM(0.3))
     pwr = pcbnew.NETCLASS('Power')
-    pwr.SetClearance(FromMM(0.2)); pwr.SetTrackWidth(FromMM(0.4)); pwr.SetViaDiameter(FromMM(0.8)); pwr.SetViaDrill(FromMM(0.4))
+    pwr.SetClearance(FromMM(0.15)); pwr.SetTrackWidth(FromMM(0.4)); pwr.SetViaDiameter(FromMM(0.8)); pwr.SetViaDrill(FromMM(0.4))
     ns.SetNetclass('Power', pwr)
     for n in ['+5V', '+3V3', 'GND']:
         ns.SetNetclassPatternAssignment(n, 'Power')

@@ -9,15 +9,15 @@
   },
   "GeneralSpecs": {
     "ProjectId": {
-      "Name": "pl60c_dmx",
-      "GUID": "706c3630-635f-4646-9d78-2e6b69636164",
+      "Name": "pl60c_dmx_mini",
+      "GUID": "706c3630-635f-4646-9d78-5f6d696e692e",
       "Revision": "rev?"
     },
     "Size": {
-      "X": 80.1,
-      "Y": 54.1
+      "X": 38.6,
+      "Y": 29.1
     },
-    "LayerNumber": 2,
+    "LayerNumber": 4,
     "BoardThickness": 1.6,
     "Finish": "None"
   },
@@ -30,51 +30,70 @@
       "MinLineWidth": 0.1874,
       "TrackToRegion": 0.3,
       "RegionToRegion": 0.3
+    },
+    {
+      "Layers": "Inner",
+      "PadToPad": 0.15,
+      "PadToTrack": 0.15,
+      "TrackToTrack": 0.15,
+      "MinLineWidth": 0.25,
+      "TrackToRegion": 0.3,
+      "RegionToRegion": 0.3
     }
   ],
   "FilesAttributes": [
     {
-      "Path": "pl60c_dmx-F_Cu.gtl",
+      "Path": "pl60c_dmx_mini-F_Cu.gtl",
       "FileFunction": "Copper,L1,Top",
       "FilePolarity": "Positive"
     },
     {
-      "Path": "pl60c_dmx-B_Cu.gbl",
-      "FileFunction": "Copper,L2,Bot",
+      "Path": "pl60c_dmx_mini-In1_Cu.g1",
+      "FileFunction": "Copper,L2,Inr",
       "FilePolarity": "Positive"
     },
     {
-      "Path": "pl60c_dmx-F_Paste.gtp",
+      "Path": "pl60c_dmx_mini-In2_Cu.g2",
+      "FileFunction": "Copper,L3,Inr",
+      "FilePolarity": "Positive"
+    },
+    {
+      "Path": "pl60c_dmx_mini-B_Cu.gbl",
+      "FileFunction": "Copper,L4,Bot",
+      "FilePolarity": "Positive"
+    },
+    {
+      "Path": "pl60c_dmx_mini-F_Paste.gtp",
       "FileFunction": "SolderPaste,Top",
       "FilePolarity": "Positive"
     },
     {
-      "Path": "pl60c_dmx-B_Paste.gbp",
+      "Path": "pl60c_dmx_mini-B_Paste.gbp",
       "FileFunction": "SolderPaste,Bot",
       "FilePolarity": "Positive"
     },
     {
-      "Path": "pl60c_dmx-F_Silkscreen.gto",
+      "Path": "pl60c_dmx_mini-F_Silkscreen.gto",
       "FileFunction": "Legend,Top",
       "FilePolarity": "Positive"
     },
     {
-      "Path": "pl60c_dmx-B_Silkscreen.gbo",
+      "Path": "pl60c_dmx_mini-B_Silkscreen.gbo",
       "FileFunction": "Legend,Bot",
       "FilePolarity": "Positive"
     },
     {
-      "Path": "pl60c_dmx-F_Mask.gts",
+      "Path": "pl60c_dmx_mini-F_Mask.gts",
       "FileFunction": "SolderMask,Top",
       "FilePolarity": "Negative"
     },
     {
-      "Path": "pl60c_dmx-B_Mask.gbs",
+      "Path": "pl60c_dmx_mini-B_Mask.gbs",
       "FileFunction": "SolderMask,Bot",
       "FilePolarity": "Negative"
     },
     {
-      "Path": "pl60c_dmx-Edge_Cuts.gm1",
+      "Path": "pl60c_dmx_mini-Edge_Cuts.gm1",
       "FileFunction": "Profile",
       "FilePolarity": "Positive"
     }
@@ -100,10 +119,34 @@
     },
     {
       "Type": "Dielectric",
-      "Thickness": 1.51,
+      "Thickness": 0.48,
       "Material": "FR4",
-      "Name": "F.Cu/B.Cu",
-      "Notes": "Type: dielectric layer 1 (from F.Cu to B.Cu)"
+      "Name": "F.Cu/In1.Cu",
+      "Notes": "Type: dielectric layer 1 (from F.Cu to In1.Cu)"
+    },
+    {
+      "Type": "Copper",
+      "Thickness": 0.035,
+      "Name": "In1.Cu"
+    },
+    {
+      "Type": "Dielectric",
+      "Thickness": 0.48,
+      "Material": "FR4",
+      "Name": "In1.Cu/In2.Cu",
+      "Notes": "Type: dielectric layer 2 (from In1.Cu to In2.Cu)"
+    },
+    {
+      "Type": "Copper",
+      "Thickness": 0.035,
+      "Name": "In2.Cu"
+    },
+    {
+      "Type": "Dielectric",
+      "Thickness": 0.48,
+      "Material": "FR4",
+      "Name": "In2.Cu/B.Cu",
+      "Notes": "Type: dielectric layer 3 (from In2.Cu to B.Cu)"
     },
     {
       "Type": "Copper",

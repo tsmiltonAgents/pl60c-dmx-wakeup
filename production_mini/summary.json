@@ -1,0 +1,24 @@
+{
+ "generated": "2026-09-02T14:25:09",
+ "gerber_files": [
+  "pl60c_dmx_mini-B_Cu.gbl",
+  "pl60c_dmx_mini-B_Mask.gbs",
+  "pl60c_dmx_mini-B_Paste.gbp",
+  "pl60c_dmx_mini-B_Silkscreen.gbo",
+  "pl60c_dmx_mini-Edge_Cuts.gm1",
+  "pl60c_dmx_mini-F_Cu.gtl",
+  "pl60c_dmx_mini-F_Mask.gts",
+  "pl60c_dmx_mini-F_Paste.gtp",
+  "pl60c_dmx_mini-F_Silkscreen.gto",
+  "pl60c_dmx_mini-NPTH-drl_map.gbr",
+  "pl60c_dmx_mini-NPTH.drl",
+  "pl60c_dmx_mini-PTH-drl_map.gbr",
+  "pl60c_dmx_mini-PTH.drl",
+  "pl60c_dmx_mini-job.gbrjob"
+ ],
+ "bom_lines": 20,
+ "placed_parts": 29,
+ "notes": [
+  "R6 is DNP (not placed): 120R termination - DNP"
+ ]
+}
