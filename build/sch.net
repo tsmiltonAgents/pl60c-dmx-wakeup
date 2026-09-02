@@ -2,7 +2,7 @@
 	(version "E")
 	(design
 		(source "/Users/milton/Documents/claude_sessions/09/20260902_pcbtests/pcb/pl60c_dmx.kicad_sch")
-		(date "2026-09-02T13:23:23")
+		(date "2026-09-02T13:26:53")
 		(tool "Eeschema 10.0.4")
 		(sheet
 			(number "1")
@@ -87,11 +87,11 @@
 			)
 			(property
 				(name "Sheetname")
-				(value "pl60c_dmx")
+				(value "Root")
 			)
 			(property
 				(name "Sheetfile")
-				(value "pl60c_dmx.kicad_sch")
+				(value "pcb/pl60c_dmx.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -147,11 +147,11 @@
 			)
 			(property
 				(name "Sheetname")
-				(value "pl60c_dmx")
+				(value "Root")
 			)
 			(property
 				(name "Sheetfile")
-				(value "pl60c_dmx.kicad_sch")
+				(value "pcb/pl60c_dmx.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -207,11 +207,11 @@
 			)
 			(property
 				(name "Sheetname")
-				(value "pl60c_dmx")
+				(value "Root")
 			)
 			(property
 				(name "Sheetfile")
-				(value "pl60c_dmx.kicad_sch")
+				(value "pcb/pl60c_dmx.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -267,11 +267,11 @@
 			)
 			(property
 				(name "Sheetname")
-				(value "pl60c_dmx")
+				(value "Root")
 			)
 			(property
 				(name "Sheetfile")
-				(value "pl60c_dmx.kicad_sch")
+				(value "pcb/pl60c_dmx.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -327,11 +327,11 @@
 			)
 			(property
 				(name "Sheetname")
-				(value "pl60c_dmx")
+				(value "Root")
 			)
 			(property
 				(name "Sheetfile")
-				(value "pl60c_dmx.kicad_sch")
+				(value "pcb/pl60c_dmx.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -387,11 +387,11 @@
 			)
 			(property
 				(name "Sheetname")
-				(value "pl60c_dmx")
+				(value "Root")
 			)
 			(property
 				(name "Sheetfile")
-				(value "pl60c_dmx.kicad_sch")
+				(value "pcb/pl60c_dmx.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -453,11 +453,11 @@
 			)
 			(property
 				(name "Sheetname")
-				(value "pl60c_dmx")
+				(value "Root")
 			)
 			(property
 				(name "Sheetfile")
-				(value "pl60c_dmx.kicad_sch")
+				(value "pcb/pl60c_dmx.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -513,11 +513,11 @@
 			)
 			(property
 				(name "Sheetname")
-				(value "pl60c_dmx")
+				(value "Root")
 			)
 			(property
 				(name "Sheetfile")
-				(value "pl60c_dmx.kicad_sch")
+				(value "pcb/pl60c_dmx.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -573,11 +573,11 @@
 			)
 			(property
 				(name "Sheetname")
-				(value "pl60c_dmx")
+				(value "Root")
 			)
 			(property
 				(name "Sheetfile")
-				(value "pl60c_dmx.kicad_sch")
+				(value "pcb/pl60c_dmx.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -639,11 +639,11 @@
 			)
 			(property
 				(name "Sheetname")
-				(value "pl60c_dmx")
+				(value "Root")
 			)
 			(property
 				(name "Sheetfile")
-				(value "pl60c_dmx.kicad_sch")
+				(value "pcb/pl60c_dmx.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -708,11 +708,11 @@
 			)
 			(property
 				(name "Sheetname")
-				(value "pl60c_dmx")
+				(value "Root")
 			)
 			(property
 				(name "Sheetfile")
-				(value "pl60c_dmx.kicad_sch")
+				(value "pcb/pl60c_dmx.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -780,11 +780,11 @@
 			)
 			(property
 				(name "Sheetname")
-				(value "pl60c_dmx")
+				(value "Root")
 			)
 			(property
 				(name "Sheetfile")
-				(value "pl60c_dmx.kicad_sch")
+				(value "pcb/pl60c_dmx.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -846,11 +846,11 @@
 			)
 			(property
 				(name "Sheetname")
-				(value "pl60c_dmx")
+				(value "Root")
 			)
 			(property
 				(name "Sheetfile")
-				(value "pl60c_dmx.kicad_sch")
+				(value "pcb/pl60c_dmx.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -907,11 +907,11 @@
 			)
 			(property
 				(name "Sheetname")
-				(value "pl60c_dmx")
+				(value "Root")
 			)
 			(property
 				(name "Sheetfile")
-				(value "pl60c_dmx.kicad_sch")
+				(value "pcb/pl60c_dmx.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -961,11 +961,11 @@
 			)
 			(property
 				(name "Sheetname")
-				(value "pl60c_dmx")
+				(value "Root")
 			)
 			(property
 				(name "Sheetfile")
-				(value "pl60c_dmx.kicad_sch")
+				(value "pcb/pl60c_dmx.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -1015,11 +1015,11 @@
 			)
 			(property
 				(name "Sheetname")
-				(value "pl60c_dmx")
+				(value "Root")
 			)
 			(property
 				(name "Sheetfile")
-				(value "pl60c_dmx.kicad_sch")
+				(value "pcb/pl60c_dmx.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -1069,11 +1069,11 @@
 			)
 			(property
 				(name "Sheetname")
-				(value "pl60c_dmx")
+				(value "Root")
 			)
 			(property
 				(name "Sheetfile")
-				(value "pl60c_dmx.kicad_sch")
+				(value "pcb/pl60c_dmx.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -1128,11 +1128,11 @@
 			)
 			(property
 				(name "Sheetname")
-				(value "pl60c_dmx")
+				(value "Root")
 			)
 			(property
 				(name "Sheetfile")
-				(value "pl60c_dmx.kicad_sch")
+				(value "pcb/pl60c_dmx.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -1239,11 +1239,11 @@
 			)
 			(property
 				(name "Sheetname")
-				(value "pl60c_dmx")
+				(value "Root")
 			)
 			(property
 				(name "Sheetfile")
-				(value "pl60c_dmx.kicad_sch")
+				(value "pcb/pl60c_dmx.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -1317,11 +1317,11 @@
 			)
 			(property
 				(name "Sheetname")
-				(value "pl60c_dmx")
+				(value "Root")
 			)
 			(property
 				(name "Sheetfile")
-				(value "pl60c_dmx.kicad_sch")
+				(value "pcb/pl60c_dmx.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -1386,11 +1386,11 @@
 			)
 			(property
 				(name "Sheetname")
-				(value "pl60c_dmx")
+				(value "Root")
 			)
 			(property
 				(name "Sheetfile")
-				(value "pl60c_dmx.kicad_sch")
+				(value "pcb/pl60c_dmx.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -1464,11 +1464,11 @@
 			)
 			(property
 				(name "Sheetname")
-				(value "pl60c_dmx")
+				(value "Root")
 			)
 			(property
 				(name "Sheetfile")
-				(value "pl60c_dmx.kicad_sch")
+				(value "pcb/pl60c_dmx.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -1536,11 +1536,11 @@
 			)
 			(property
 				(name "Sheetname")
-				(value "pl60c_dmx")
+				(value "Root")
 			)
 			(property
 				(name "Sheetfile")
-				(value "pl60c_dmx.kicad_sch")
+				(value "pcb/pl60c_dmx.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -1599,11 +1599,11 @@
 			)
 			(property
 				(name "Sheetname")
-				(value "pl60c_dmx")
+				(value "Root")
 			)
 			(property
 				(name "Sheetfile")
-				(value "pl60c_dmx.kicad_sch")
+				(value "pcb/pl60c_dmx.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -1659,11 +1659,11 @@
 			)
 			(property
 				(name "Sheetname")
-				(value "pl60c_dmx")
+				(value "Root")
 			)
 			(property
 				(name "Sheetfile")
-				(value "pl60c_dmx.kicad_sch")
+				(value "pcb/pl60c_dmx.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -1719,11 +1719,11 @@
 			)
 			(property
 				(name "Sheetname")
-				(value "pl60c_dmx")
+				(value "Root")
 			)
 			(property
 				(name "Sheetfile")
-				(value "pl60c_dmx.kicad_sch")
+				(value "pcb/pl60c_dmx.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -1779,11 +1779,11 @@
 			)
 			(property
 				(name "Sheetname")
-				(value "pl60c_dmx")
+				(value "Root")
 			)
 			(property
 				(name "Sheetfile")
-				(value "pl60c_dmx.kicad_sch")
+				(value "pcb/pl60c_dmx.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -1839,11 +1839,11 @@
 			)
 			(property
 				(name "Sheetname")
-				(value "pl60c_dmx")
+				(value "Root")
 			)
 			(property
 				(name "Sheetfile")
-				(value "pl60c_dmx.kicad_sch")
+				(value "pcb/pl60c_dmx.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -1899,11 +1899,11 @@
 			)
 			(property
 				(name "Sheetname")
-				(value "pl60c_dmx")
+				(value "Root")
 			)
 			(property
 				(name "Sheetfile")
-				(value "pl60c_dmx.kicad_sch")
+				(value "pcb/pl60c_dmx.kicad_sch")
 			)
 			(property
 				(name "dnp")
@@ -1962,11 +1962,11 @@
 			)
 			(property
 				(name "Sheetname")
-				(value "pl60c_dmx")
+				(value "Root")
 			)
 			(property
 				(name "Sheetfile")
-				(value "pl60c_dmx.kicad_sch")
+				(value "pcb/pl60c_dmx.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -2022,11 +2022,11 @@
 			)
 			(property
 				(name "Sheetname")
-				(value "pl60c_dmx")
+				(value "Root")
 			)
 			(property
 				(name "Sheetfile")
-				(value "pl60c_dmx.kicad_sch")
+				(value "pcb/pl60c_dmx.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -2082,11 +2082,11 @@
 			)
 			(property
 				(name "Sheetname")
-				(value "pl60c_dmx")
+				(value "Root")
 			)
 			(property
 				(name "Sheetfile")
-				(value "pl60c_dmx.kicad_sch")
+				(value "pcb/pl60c_dmx.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -2148,11 +2148,11 @@
 			)
 			(property
 				(name "Sheetname")
-				(value "pl60c_dmx")
+				(value "Root")
 			)
 			(property
 				(name "Sheetfile")
-				(value "pl60c_dmx.kicad_sch")
+				(value "pcb/pl60c_dmx.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -2210,11 +2210,11 @@
 			)
 			(property
 				(name "Sheetname")
-				(value "pl60c_dmx")
+				(value "Root")
 			)
 			(property
 				(name "Sheetfile")
-				(value "pl60c_dmx.kicad_sch")
+				(value "pcb/pl60c_dmx.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -2272,11 +2272,11 @@
 			)
 			(property
 				(name "Sheetname")
-				(value "pl60c_dmx")
+				(value "Root")
 			)
 			(property
 				(name "Sheetfile")
-				(value "pl60c_dmx.kicad_sch")
+				(value "pcb/pl60c_dmx.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -2334,11 +2334,11 @@
 			)
 			(property
 				(name "Sheetname")
-				(value "pl60c_dmx")
+				(value "Root")
 			)
 			(property
 				(name "Sheetfile")
-				(value "pl60c_dmx.kicad_sch")
+				(value "pcb/pl60c_dmx.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -2517,11 +2517,11 @@
 			)
 			(property
 				(name "Sheetname")
-				(value "pl60c_dmx")
+				(value "Root")
 			)
 			(property
 				(name "Sheetfile")
-				(value "pl60c_dmx.kicad_sch")
+				(value "pcb/pl60c_dmx.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -2586,11 +2586,11 @@
 			)
 			(property
 				(name "Sheetname")
-				(value "pl60c_dmx")
+				(value "Root")
 			)
 			(property
 				(name "Sheetfile")
-				(value "pl60c_dmx.kicad_sch")
+				(value "pcb/pl60c_dmx.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -2670,11 +2670,11 @@
 			)
 			(property
 				(name "Sheetname")
-				(value "pl60c_dmx")
+				(value "Root")
 			)
 			(property
 				(name "Sheetfile")
-				(value "pl60c_dmx.kicad_sch")
+				(value "pcb/pl60c_dmx.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -3810,7 +3810,7 @@
 		(net
 			(code "1")
 			(name "+3V3")
-			(class "Power")
+			(class "Default")
 			(node
 				(ref "C2")
 				(pin "1")
@@ -3896,7 +3896,7 @@
 		(net
 			(code "2")
 			(name "+5V")
-			(class "Power")
+			(class "Default")
 			(node
 				(ref "BZ1")
 				(pin "1")
@@ -4461,7 +4461,7 @@
 		(net
 			(code "27")
 			(name "GND")
-			(class "Power")
+			(class "Default")
 			(node
 				(ref "C1")
 				(pin "2")
