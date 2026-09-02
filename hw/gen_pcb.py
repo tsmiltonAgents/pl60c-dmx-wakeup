@@ -181,16 +181,17 @@ def preroute_usb(board, fp, nets, W, d_vbus=5.4):
     def Vv(net, a):
         v = add_via(board, nets[net], a[0], a[1]); v.SetLocked(True)
     # D- : B7 and A7 -> interior stubs + link (the A6 lane between them is free beyond the pad)
-    T('USB_D-', pt('B7', 0), pt('B7', 1.9)); T('USB_D-', pt('A7', 0), pt('A7', 4.6)); T('USB_D-', pt('B7', 1.9), pt('A7', 1.9))
+    dd = d_vbus - 0.4
+    T('USB_D-', pt('B7', 0), pt('B7', 1.9)); T('USB_D-', pt('A7', 0), pt('A7', dd + 0.2)); T('USB_D-', pt('B7', 1.9), pt('A7', 1.9))
     # D+ : B6 -> interior stub -> via ; A6 -> under the body -> via ; inner/back diagonal joins them
-    T('USB_D+', pt('B6', 0), pt('B6', 3.0)); T('USB_D+', pt('B6', 3.0), pt('B6', 3.6, 0.6)); Vv('USB_D+', pt('B6', 3.6, 0.6))
+    T('USB_D+', pt('B6', 0), pt('B6', dd - 0.6)); T('USB_D+', pt('B6', dd - 0.6), pt('B6', dd, 0.6)); Vv('USB_D+', pt('B6', dd, 0.6))
     T('USB_D+', pt('A6', 0), pt('A6', -1.9)); T('USB_D+', pt('A6', -1.9), pt('A6', -2.4, -0.5)); Vv('USB_D+', pt('A6', -2.4, -0.5))
-    T('USB_D+', pt('A6', -2.4, -0.5), pt('B6', 3.6, 0.6), pcbnew.B_Cu)
-    # VBUS : both pairs -> vias, joined on B.Cu (0.4 mm)
+    T('USB_D+', pt('A6', -2.4, -0.5), pt('B6', dd, 0.6), pcbnew.B_Cu)
+    # VBUS : both pairs -> vias (pushed outwards along the row so the middle of the lane stays free), joined on B.Cu
     dv = d_vbus
-    for name in ('A4', 'B4'):
-        T('VBUS', pt(name, 0), pt(name, dv), width=0.3); Vv('VBUS', pt(name, dv))
-    T('VBUS', pt('A4', dv), pt('B4', dv), pcbnew.B_Cu, 0.4)
+    T('VBUS', pt('A4', 0), pt('A4', dv, -0.9), width=0.3); Vv('VBUS', pt('A4', dv, -0.9))
+    T('VBUS', pt('B4', 0), pt('B4', dv, 0.9), width=0.3); Vv('VBUS', pt('B4', dv, 0.9))
+    T('VBUS', pt('A4', dv, -0.9), pt('B4', dv, 0.9), pcbnew.B_Cu, 0.4)
 
 def stitch_gnd(board, d, gnd, W, H):
     """Via next to every SMD GND pad + a sparse via grid, placed before autorouting so the router sees them."""
@@ -224,7 +225,7 @@ def build(out_path):
     board.SetCopperLayerCount(layers)
     if layers == 4:
         board.SetLayerType(pcbnew.In1_Cu, pcbnew.LT_POWER)     # solid GND plane, not routed
-        board.SetLayerType(pcbnew.In2_Cu, pcbnew.LT_POWER)     # +3V3 plane, router only drops vias into it
+        board.SetLayerType(pcbnew.In2_Cu, pcbnew.LT_SIGNAL)    # routing layer; GND pour fills the rest after routing
     # ---------------- design rules (JLCPCB 2-layer capability with margin) ----------------
     ds = board.GetDesignSettings()
     ds.m_TrackMinWidth = FromMM(d.board.get('min_width', 0.15)); ds.m_ViasMinSize = FromMM(0.5); ds.m_MinThroughDrill = FromMM(0.3)
@@ -302,6 +303,8 @@ def build(out_path):
     for lname, net in d.board.get('inner_planes', {}).items():
         z = add_zone(board, board.GetLayerID(lname), nets[net], rect, 'PLANE_' + net)
         z.SetZoneName('plane'); z.SetPadConnection(pcbnew.ZONE_CONNECTION_THERMAL)
+    for lname in d.board.get('inner_pours', []):
+        add_zone(board, board.GetLayerID(lname), nets['GND'], rect, 'GND_' + lname)
     # antenna keep-out: 15 mm around the module antenna, inside the board (antenna itself hangs off the top edge)
     u1 = d.by_ref('U1'); ux, uy = u1.pcb_pos
     for (x1, y1, x2, y2) in d.keepouts:
