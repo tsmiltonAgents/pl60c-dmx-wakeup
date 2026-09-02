@@ -110,7 +110,7 @@ def build():
     d.add(Part('C4', 'Device:C', '10uF', C0805, {'1': '+3V3', '2': 'GND'}, lcsc='C15850', desc='10uF 25V X5R 0805', sch_pos=(150, 40), pcb_pos=(17.5, 3.5), pcb_rot=0))
     d.add(Part('C5', 'Device:C', '100nF', C0603, {'1': '+3V3', '2': 'GND'}, lcsc='C14663', desc='100nF 50V X7R 0603', sch_pos=(158, 40), pcb_pos=(18, 7), pcb_rot=90))
     d.add(Part('R3', 'Device:R', '10k', R0603, {'1': '+3V3', '2': 'EN'}, lcsc='C25804', desc='10k 0603', sch_pos=(150, 65), pcb_pos=(10.5, 42.5), pcb_rot=0))
-    d.add(Part('C6', 'Device:C', '1uF', C0603, {'1': 'EN', '2': 'GND'}, lcsc='C15849', desc='1uF 50V X7R 0603', sch_pos=(158, 78), pcb_pos=(15, 42.5), pcb_rot=0))
+    d.add(Part('C6', 'Device:C', '1uF', C0805, {'1': 'EN', '2': 'GND'}, lcsc='C28323', mpn='CL21B105KBFNNNE', desc='1uF 50V X7R 0805 (EN reset delay)', sch_pos=(158, 78), pcb_pos=(15, 42.5), pcb_rot=0))
     d.add(Part('SW1', 'Switch:SW_Push', 'RESET', SW_TACT, {'1': 'EN', '2': 'GND'}, lcsc='C318884', mpn='TS-1187A-B-A-B', desc='Tactile switch 5.1x5.1x1.5 mm SMD', sch_pos=(150, 90), pcb_pos=(12.5, 48), pcb_rot=0))
     d.add(Part('R4', 'Device:R', '10k', R0603, {'1': '+3V3', '2': 'IO0_BOOT'}, lcsc='C25804', desc='10k 0603', sch_pos=(150, 110), pcb_pos=(23.5, 42.5), pcb_rot=0))
     d.add(Part('SW2', 'Switch:SW_Push', 'BOOT', SW_TACT, {'1': 'IO0_BOOT', '2': 'GND'}, lcsc='C318884', mpn='TS-1187A-B-A-B', desc='Tactile switch 5.1x5.1x1.5 mm SMD', sch_pos=(150, 130), pcb_pos=(23.5, 48), pcb_rot=0))

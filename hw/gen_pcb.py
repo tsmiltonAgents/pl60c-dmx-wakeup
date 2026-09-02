@@ -59,6 +59,79 @@ def add_zone(board, layer, net, pts, name='', priority=0, keepout=False):
     board.Add(z)
     return z
 
+def _seg_dist(p, a, b):
+    """Distance from point p to segment ab (all mm tuples)."""
+    ax, ay = a; bx, by = b; px, py = p
+    dx, dy = bx - ax, by - ay
+    if dx == 0 and dy == 0:
+        return math.hypot(px - ax, py - ay)
+    t = max(0.0, min(1.0, ((px - ax) * dx + (py - ay) * dy) / (dx * dx + dy * dy)))
+    return math.hypot(px - (ax + t * dx), py - (ay + t * dy))
+
+def _pad_geo(pad):
+    pos = pad.GetPosition(); sz = pad.GetSize()
+    r = math.hypot(sz.x, sz.y) / 2 / 1e6   # conservative: circumscribed radius
+    return (pos.x / 1e6, pos.y / 1e6, r)
+
+def add_via(board, net, x, y, dia=0.7, drill=0.35):
+    v = pcbnew.PCB_VIA(board); v.SetPosition(V(x, y)); v.SetWidth(FromMM(dia)); v.SetDrill(FromMM(drill))
+    v.SetViaType(pcbnew.VIATYPE_THROUGH); v.SetLayerPair(pcbnew.F_Cu, pcbnew.B_Cu); v.SetNet(net); board.Add(v)
+    return v
+
+def add_track(board, net, x1, y1, x2, y2, w=0.3, layer=pcbnew.F_Cu):
+    t = pcbnew.PCB_TRACK(board); t.SetStart(V(x1, y1)); t.SetEnd(V(x2, y2)); t.SetWidth(FromMM(w)); t.SetLayer(layer); t.SetNet(net); board.Add(t)
+    return t
+
+def stitch_gnd(board, d, gnd, W, H, clearance=0.25, via_dia=0.7):
+    """Put a via next to every SMD GND pad (short track to it) and a sparse via grid through the pour,
+    so both GND pours stay connected after autorouting. Positions are checked against all other pads."""
+    other = []   # (x, y, r) of pads not on GND
+    gnd_smd = []
+    holes = []
+    for fp in board.GetFootprints():
+        for pad in fp.Pads():
+            x, y, r = _pad_geo(pad)
+            if pad.GetNetname() == 'GND':
+                if pad.GetAttribute() == pcbnew.PAD_ATTRIB_SMD:
+                    gnd_smd.append((pad, fp))
+            else:
+                other.append((x, y, r))
+    vias = []
+    def clear(x, y, extra=0.0):
+        if not (2.0 < x < W - 2.0 and 2.0 < y < H - 2.0): return False
+        for (ox, oy, orad) in other:
+            if math.hypot(x - ox, y - oy) < orad + via_dia / 2 + clearance + extra: return False
+        for (vx, vy) in vias:
+            if math.hypot(x - vx, y - vy) < via_dia + clearance: return False
+        return True
+    def clear_track(x1, y1, x2, y2, w=0.3):
+        for (ox, oy, orad) in other:
+            if _seg_dist((ox, oy), (x1, y1), (x2, y2)) < orad + w / 2 + clearance: return False
+        return True
+    dirs = [(1, 0), (-1, 0), (0, 1), (0, -1), (1, 1), (-1, 1), (1, -1), (-1, -1)]
+    n_pad = 0
+    for pad, fp in gnd_smd:
+        px, py, pr = _pad_geo(pad)
+        c = fp.GetPosition(); cx, cy = c.x / 1e6, c.y / 1e6
+        ax, ay = px - cx, py - cy
+        n = math.hypot(ax, ay) or 1.0
+        pref = [(ax / n, ay / n)] + [(dx / math.hypot(dx, dy), dy / math.hypot(dx, dy)) for dx, dy in dirs]
+        placed = False
+        for (ux, uy) in pref:
+            for dist in (pr + 0.75, pr + 1.1, pr + 1.5):
+                x, y = px + ux * dist, py + uy * dist
+                if clear(x, y) and clear_track(px, py, x, y):
+                    add_via(board, gnd, x, y); add_track(board, gnd, px, py, x, y)
+                    vias.append((x, y)); placed = True; n_pad += 1
+                    break
+            if placed: break
+    n_grid = 0
+    for gx in range(6, int(W) - 4, 7):
+        for gy in range(6, int(H) - 4, 7):
+            if clear(gx, gy, extra=0.8):
+                add_via(board, gnd, gx, gy); vias.append((gx, gy)); n_grid += 1
+    print(f'GND stitching: {n_pad}/{len(gnd_smd)} SMD GND pads got a via, {n_grid} grid vias')
+
 def build(out_path):
     d = design.build()
     W, H, R = d.board['w'], d.board['h'], d.board['corner']
@@ -73,10 +146,12 @@ def build(out_path):
     dflt = ns.GetDefaultNetclass()
     dflt.SetClearance(FromMM(0.2)); dflt.SetTrackWidth(FromMM(0.25)); dflt.SetViaDiameter(FromMM(0.7)); dflt.SetViaDrill(FromMM(0.35))
     pwr = pcbnew.NETCLASS('Power')
-    pwr.SetClearance(FromMM(0.2)); pwr.SetTrackWidth(FromMM(0.5)); pwr.SetViaDiameter(FromMM(0.8)); pwr.SetViaDrill(FromMM(0.4))
+    pwr.SetClearance(FromMM(0.2)); pwr.SetTrackWidth(FromMM(0.4)); pwr.SetViaDiameter(FromMM(0.8)); pwr.SetViaDrill(FromMM(0.4))
     ns.SetNetclass('Power', pwr)
-    for n in ['+5V', '+3V3', 'VBUS', 'GND']:
+    for n in ['+5V', '+3V3', 'GND']:
         ns.SetNetclassPatternAssignment(n, 'Power')
+    if hasattr(ds, 'm_MinResolvedSpokes'):
+        ds.m_MinResolvedSpokes = 1
     # ---------------- nets ----------------
     nets = {}
     for name in sorted(d.nets()):
@@ -117,6 +192,8 @@ def build(out_path):
         p._fp = fp
     # ---------------- outline ----------------
     outline(board, W, H, R)
+    # ---------------- GND stitching (done before autorouting so the router sees the vias) ----------------
+    stitch_gnd(board, d, nets['GND'], W, H)
     # ---------------- zones: GND pour both sides ----------------
     m = 0.5
     rect = [(m, m), (W - m, m), (W - m, H - m), (m, H - m)]
