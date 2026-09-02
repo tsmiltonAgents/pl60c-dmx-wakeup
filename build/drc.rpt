@@ -1,5 +1,5 @@
 ** Drc report for pl60c_dmx.kicad_pcb **
-** Created on 2026-09-02T13:23:40 **
+** Created on 2026-09-02T13:27:16 **
 ** Report includes: Errors, Warnings, Exclusions **
 
 ** Found 6 DRC violations **
@@ -13,20 +13,20 @@
     @(39.2000 mm, -6.1500 mm): Segment of U1 on F.Silkscreen
 [silk_edge_clearance]: Silkscreen clipped by board edge
     Rule: board setup constraints silk; warning
-    @(80.0000 mm, 2.5000 mm): Segment on Edge.Cuts
-    @(80.1200 mm, 7.6900 mm): Segment of J2 on F.Silkscreen
-[silk_edge_clearance]: Silkscreen clipped by board edge
-    Rule: board setup constraints silk; warning
-    @(80.0000 mm, 2.5000 mm): Segment on Edge.Cuts
-    @(80.1200 mm, 33.2300 mm): Segment of J2 on F.Silkscreen
-[silk_edge_clearance]: Silkscreen clipped by board edge
-    Rule: board setup constraints silk; warning
     @(0.0000 mm, 51.5000 mm): Segment on Edge.Cuts
     @(1.1000 mm, 26.3000 mm): Segment of J1 on F.Silkscreen
 [silk_edge_clearance]: Silkscreen clipped by board edge
     Rule: board setup constraints silk; warning
     @(0.0000 mm, 51.5000 mm): Segment on Edge.Cuts
     @(1.1000 mm, 35.7000 mm): Segment of J1 on F.Silkscreen
+[silk_edge_clearance]: Silkscreen clipped by board edge
+    Rule: board setup constraints silk; warning
+    @(80.0000 mm, 2.5000 mm): Segment on Edge.Cuts
+    @(80.1200 mm, 7.6900 mm): Segment of J2 on F.Silkscreen
+[silk_edge_clearance]: Silkscreen clipped by board edge
+    Rule: board setup constraints silk; warning
+    @(80.0000 mm, 2.5000 mm): Segment on Edge.Cuts
+    @(80.1200 mm, 33.2300 mm): Segment of J2 on F.Silkscreen
 
 ** Found 0 unconnected pads **
 
