@@ -61,15 +61,16 @@ def bom_cpl(d):
                 corr = r; break
         jrot = (rot + corr + p.jlc_rot) % 360
         layer = 'Top' if not fp.IsFlipped() else 'Bottom'
-        cpl.append((ref, round(pos.x / 1e6, 4), round(-pos.y / 1e6, 4), layer, round(jrot, 1)))
+        cpl.append((ref, round(pos.x / 1e6, 4), round(-pos.y / 1e6, 4), layer, round(jrot, 1), round(rot % 360, 1)))
     with open(os.path.join(OUT, 'pl60c_dmx_bom_jlcpcb.csv'), 'w', newline='') as f:
         w = csv.writer(f); w.writerow(['Comment', 'Designator', 'Footprint', 'LCSC Part #'])
         for (val, fpn, lcsc), refs in sorted(groups.items(), key=lambda kv: kv[1][0]):
             w.writerow([val, ','.join(sorted(refs, key=lambda r: (re.sub(r'\d', '', r), int(re.sub(r'\D', '', r) or 0)))), fpn, lcsc])
-    with open(os.path.join(OUT, 'pl60c_dmx_cpl_jlcpcb.csv'), 'w', newline='') as f:
-        w = csv.writer(f); w.writerow(['Designator', 'Mid X', 'Mid Y', 'Layer', 'Rotation'])
-        for row in sorted(cpl, key=lambda r: (re.sub(r'\d', '', r[0]), int(re.sub(r'\D', '', r[0]) or 0))):
-            w.writerow(row)
+    for fname, idx in (('pl60c_dmx_cpl_jlcpcb.csv', 4), ('pl60c_dmx_cpl_kicad_rotation.csv', 5)):
+        with open(os.path.join(OUT, fname), 'w', newline='') as f:
+            w = csv.writer(f); w.writerow(['Designator', 'Mid X', 'Mid Y', 'Layer', 'Rotation'])
+            for row in sorted(cpl, key=lambda r: (re.sub(r'\d', '', r[0]), int(re.sub(r'\D', '', r[0]) or 0))):
+                w.writerow(list(row[:4]) + [row[idx]])
     # full engineering BOM (every part incl. DNP / no-LCSC)
     with open(os.path.join(OUT, 'pl60c_dmx_bom_full.csv'), 'w', newline='') as f:
         w = csv.writer(f); w.writerow(['Ref', 'Value', 'MPN', 'LCSC', 'Footprint', 'DNP', 'Description'])

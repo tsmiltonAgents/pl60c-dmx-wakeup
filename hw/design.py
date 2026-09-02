@@ -82,7 +82,7 @@ def build():
                {'1': 'USB_D+', '6': 'USB_D+', '3': 'USB_D-', '4': 'USB_D-', '2': 'GND', '5': 'VBUS'},
                lcsc='C7519', mpn='USBLC6-2SC6', desc='USB ESD protection array', sch_pos=(100, 100), pcb_pos=(16.5, 31), pcb_rot=90))
     d.add(Part('F1', 'Device:Polyfuse', '1A PTC', 'Fuse:Fuse_1206_3216Metric', {'1': 'VBUS', '2': '+5V'},
-               lcsc='C5358568', mpn='BSMD1206-100-30V', desc='PTC resettable fuse 1206, 1 A hold / 1.8 A trip, 30 V', sch_pos=(70, 40), sch_rot=90, pcb_pos=(12, 6), pcb_rot=0))
+               lcsc='C5358568', mpn='BSMD1206-100-30V', desc='PTC resettable fuse 1206, 1 A hold / 1.8 A trip, 30 V', sch_pos=(70, 40), sch_rot=0, pcb_pos=(12, 6), pcb_rot=0))
     d.add(Part('C1', 'Device:C', '10uF', C0805, {'1': '+5V', '2': 'GND'}, lcsc='C15850', desc='10uF 25V X5R 0805',
                sch_pos=(82, 50), pcb_pos=(12, 9.5), pcb_rot=0))
     d.add(Part('U2', 'Regulator_Linear:AMS1117-3.3', 'AMS1117-3.3', 'Package_TO_SOT_SMD:SOT-223-3_TabPin2',
@@ -139,14 +139,14 @@ def build():
     d.add(Part('D2', 'LED:WS2812B', 'WS2812B', 'LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm',
                {'1': '+3V3', '2': None, '3': 'GND', '4': 'LED_DATA_R'},
                lcsc='C2761795', mpn='WS2812B-B/T', desc='Addressable RGB LED 5050 (powered from 3V3 as on ESP32-S3-DevKitC)', sch_pos=(160, 195), pcb_pos=(43.5, 48.5), pcb_rot=0))
-    d.add(Part('R8', 'Device:R', '330R', R0603, {'1': 'LED_DATA', '2': 'LED_DATA_R'}, lcsc='C23138', desc='330R 0603 series (WS2812 data)', sch_pos=(145, 210), sch_rot=90, pcb_pos=(43.5, 43.5), pcb_rot=0))
+    d.add(Part('R8', 'Device:R', '330R', R0603, {'1': 'LED_DATA', '2': 'LED_DATA_R'}, lcsc='C23138', desc='330R 0603 series (WS2812 data)', sch_pos=(145, 215), sch_rot=0, pcb_pos=(43.5, 43.5), pcb_rot=0))
     d.add(Part('C8', 'Device:C', '100nF', C0603, {'1': '+3V3', '2': 'GND'}, lcsc='C14663', desc='100nF 50V X7R 0603', sch_pos=(180, 195), pcb_pos=(39, 43.5), pcb_rot=0))
     d.add(Part('R5', 'Device:R', '10k', R0603, {'1': '+3V3', '2': 'BTN_USER'}, lcsc='C25804', desc='10k 0603', sch_pos=(200, 195), pcb_pos=(34.5, 42.5), pcb_rot=0))
     d.add(Part('SW3', 'Switch:SW_Push', 'USER', SW_TACT, {'1': 'BTN_USER', '2': 'GND'}, lcsc='C318884', mpn='TS-1187A-B-A-B', desc='Tactile switch 5.1x5.1x1.5 mm SMD (snooze / manual on)', sch_pos=(200, 215), pcb_pos=(34.5, 48), pcb_rot=0))
-    d.add(Part('R9', 'Device:R', '1k', R0603, {'1': 'BUZZER', '2': 'Q1_B'}, lcsc='C21190', desc='1k 0603', sch_pos=(220, 250), sch_rot=90, pcb_pos=(50.5, 37), pcb_rot=0))
+    d.add(Part('R9', 'Device:R', '1k', R0603, {'1': 'BUZZER', '2': 'Q1_B'}, lcsc='C21190', desc='1k 0603', sch_pos=(222, 250), sch_rot=0, pcb_pos=(50.5, 37), pcb_rot=0))
     d.add(Part('Q1', 'Transistor_BJT:S8050', 'S8050', SOT23, {'2': 'Q1_B', '1': 'GND', '3': 'BZ_N'},
                lcsc='C2146', mpn='S8050', desc='NPN 0.5A SOT-23 buzzer driver', sch_pos=(240, 250), pcb_pos=(55, 37), pcb_rot=0))
-    d.add(Part('D3', 'Device:D_Schottky', 'B5819W', 'Diode_SMD:D_SOD-123', {'1': '+5V', '2': 'BZ_N'}, lcsc='C8598', mpn='B5819W SL', desc='Schottky flyback diode 1 A 40 V SOD-123', sch_pos=(255, 225), sch_rot=90, pcb_pos=(59.5, 37), pcb_rot=0))
+    d.add(Part('D3', 'Device:D_Schottky', 'B5819W', 'Diode_SMD:D_SOD-123', {'1': '+5V', '2': 'BZ_N'}, lcsc='C8598', mpn='B5819W SL', desc='Schottky flyback diode 1 A 40 V SOD-123', sch_pos=(232, 225), sch_rot=0, pcb_pos=(59.5, 37), pcb_rot=0))
     d.add(Part('BZ1', 'Device:Buzzer', 'MLT-8530', 'Buzzer_Beeper:MagneticBuzzer_CUI_CMT-8504-100-SMT', {'1': '+5V', '2': 'BZ_N'},
                lcsc='C94599', mpn='MLT-8530', desc='Magnetic buzzer 8.5x8.5 mm SMD, passive, 16 ohm, drive 2.7 kHz square wave', sch_pos=(245, 200), sch_rot=0, pcb_pos=(69, 41.5), pcb_rot=0, ref_pcb_pos=(69, 47.6)))
     # =============================== Expansion / debug headers (x 270..410, y 130..200) ===============================
@@ -174,5 +174,7 @@ def build():
         ('GND  D-  D+', 55.6, 40.6, 0.8, 0, 'F.SilkS', False),
         ('PL60C DMX wake-up rev A', 30, 30, 1.0, 0, 'F.SilkS', False),
         ('amodo design 2026', 30, 32, 0.8, 0, 'F.SilkS', False),
+        ('github.com/tsmiltonAgents/pl60c-dmx-wakeup', 40, 27, 1.0, 0, 'B.SilkS', True),
+        ('PL60C DMX wake-up rev A  2026-09', 40, 30, 1.0, 0, 'B.SilkS', True),
     ]
     return d

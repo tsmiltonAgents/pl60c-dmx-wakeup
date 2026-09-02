@@ -7,3 +7,10 @@ fp-info-cache
 __pycache__/
 .DS_Store
 build/freerouting.log
+build/*.dsn
+build/*.ses
+build/freerouting.log
+build/*.png
+build/svg/
+build/*.pdf
+build/*.json

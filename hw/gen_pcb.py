@@ -181,8 +181,6 @@ def preroute_usb(board, fp, nets, W):
     for n in ('A4', 'B4'):
         T('VBUS', xr, y(n), xi(5.4), y(n), width=0.3); Vv('VBUS', xi(5.4), y(n))
     T('VBUS', xi(5.4), y('A4'), xi(5.4), y('B4'), pcbnew.B_Cu, 0.4)
-    # CC1 / CC2 stubs
-    T('CC1', xr, y('A5'), xi(3.3), y('A5')); T('CC2', xr, y('B5'), xi(3.3), y('B5'))
 
 def stitch_gnd(board, d, gnd, W, H):
     """Via next to every SMD GND pad + a sparse via grid, placed before autorouting so the router sees them."""
