@@ -2,7 +2,7 @@
 	(version "E")
 	(design
 		(source "/Users/milton/Documents/claude_sessions/09/20260902_pcbtests/pcb/pl60c_dmx_mini.kicad_sch")
-		(date "2026-09-02T13:49:36")
+		(date "2026-09-02T13:56:38")
 		(tool "Eeschema 10.0.4")
 		(sheet
 			(number "1")

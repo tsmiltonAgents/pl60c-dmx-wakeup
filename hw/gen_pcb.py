@@ -223,7 +223,8 @@ def build(out_path):
     layers = d.board.get('layers', 2)
     board.SetCopperLayerCount(layers)
     if layers == 4:
-        board.SetLayerType(pcbnew.In1_Cu, pcbnew.LT_POWER); board.SetLayerType(pcbnew.In2_Cu, pcbnew.LT_POWER)
+        board.SetLayerType(pcbnew.In1_Cu, pcbnew.LT_POWER)     # solid GND plane, not routed
+        board.SetLayerType(pcbnew.In2_Cu, pcbnew.LT_SIGNAL)    # extra routing layer, GND pour fills the rest
     # ---------------- design rules (JLCPCB 2-layer capability with margin) ----------------
     ds = board.GetDesignSettings()
     ds.m_TrackMinWidth = FromMM(0.15); ds.m_ViasMinSize = FromMM(0.5); ds.m_MinThroughDrill = FromMM(0.3)
@@ -231,7 +232,7 @@ def build(out_path):
     ds.m_MinSilkTextHeight = FromMM(0.8); ds.m_HoleToHoleMin = FromMM(0.5)
     ns = ds.m_NetSettings
     dflt = ns.GetDefaultNetclass()
-    dflt.SetClearance(FromMM(0.15)); dflt.SetTrackWidth(FromMM(0.25)); dflt.SetViaDiameter(FromMM(0.7)); dflt.SetViaDrill(FromMM(0.35))
+    dflt.SetClearance(FromMM(0.15)); dflt.SetTrackWidth(FromMM(0.25)); dflt.SetViaDiameter(FromMM(0.7)); dflt.SetViaDrill(FromMM(0.3))
     pwr = pcbnew.NETCLASS('Power')
     pwr.SetClearance(FromMM(0.2)); pwr.SetTrackWidth(FromMM(0.4)); pwr.SetViaDiameter(FromMM(0.8)); pwr.SetViaDrill(FromMM(0.4))
     ns.SetNetclass('Power', pwr)
