@@ -189,9 +189,9 @@ def preroute_usb(board, fp, nets, W, d_vbus=5.4):
     T('USB_D+', pt('A6', -2.4, -0.5), pt('B6', dd, 0.6), pcbnew.B_Cu)
     # VBUS : both pairs -> vias (pushed outwards along the row so the middle of the lane stays free), joined on B.Cu
     dv = d_vbus
-    T('VBUS', pt('A4', 0), pt('A4', dv, -0.9), width=0.3); Vv('VBUS', pt('A4', dv, -0.9))
-    T('VBUS', pt('B4', 0), pt('B4', dv, 0.9), width=0.3); Vv('VBUS', pt('B4', dv, 0.9))
-    T('VBUS', pt('A4', dv, -0.9), pt('B4', dv, 0.9), pcbnew.B_Cu, 0.4)
+    for name, off in (('A4', -0.7), ('B4', 0.7)):
+        T('VBUS', pt(name, 0), pt(name, 1.0), width=0.3); T('VBUS', pt(name, 1.0), pt(name, dv, off), width=0.3); Vv('VBUS', pt(name, dv, off))
+    T('VBUS', pt('A4', dv, -0.7), pt('B4', dv, 0.7), pcbnew.B_Cu, 0.4)
 
 def stitch_gnd(board, d, gnd, W, H):
     """Via next to every SMD GND pad + a sparse via grid, placed before autorouting so the router sees them."""

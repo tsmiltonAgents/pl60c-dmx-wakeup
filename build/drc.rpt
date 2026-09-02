@@ -1,73 +1,113 @@
 ** Drc report for pl60c_dmx_mini.kicad_pcb **
-** Created on 2026-09-02T14:12:06 **
+** Created on 2026-09-02T14:15:55 **
 ** Report includes: Errors, Warnings, Exclusions **
 
-** Found 8 DRC violations **
+** Found 25 DRC violations **
+[shorting_items]: Items shorting two nets (nets USB_D+ and VBUS)
+    Local override; error
+    @(7.7500 mm, 19.0550 mm): Via [USB_D+] on F.Cu - B.Cu
+    @(3.2500 mm, 18.6550 mm): Track [VBUS] on B.Cu, length 6.3000 mm
+[clearance]: Clearance violation ( clearance 0.1500 mm; actual 0.0750 mm)
+    Local override; error
+    @(3.2500 mm, 18.6550 mm): Track [VBUS] on B.Cu, length 6.3000 mm
+    @(5.6500 mm, 24.2550 mm): Track [USB_D+] on B.Cu, length 5.6080 mm
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; error
+    @(31.2000 mm, 25.5000 mm): Footprint TP2
+    @(31.2000 mm, 27.5000 mm): Footprint TP6
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; error
+    @(28.5000 mm, 25.5000 mm): Footprint TP1
+    @(28.5000 mm, 27.5000 mm): Footprint TP5
 [track_dangling]: Track has unconnected end
     Local override; warning
-    @(6.6500 mm, 21.3550 mm): Track [USB_D-] on F.Cu, length 4.6000 mm
-[silk_edge_clearance]: Silkscreen clipped by board edge
-    Rule: board setup constraints silk; warning
-    @(0.0000 mm, 27.9000 mm): Segment on Edge.Cuts
-    @(-5.1000 mm, 1.0000 mm): Segment of U1 on F.Silkscreen
-[silk_edge_clearance]: Silkscreen clipped by board edge
-    Rule: board setup constraints silk; warning
-    @(0.0000 mm, 27.9000 mm): Segment on Edge.Cuts
-    @(15.6000 mm, 16.6000 mm): Segment of U1 on F.Silkscreen
-[silk_edge_clearance]: Silkscreen clipped by board edge
-    Rule: board setup constraints silk; warning
-    @(37.9000 mm, 28.5000 mm): Segment on Edge.Cuts
-    @(1.7000 mm, 27.4000 mm): Segment of J1 on F.Silkscreen
-[silk_edge_clearance]: Silkscreen clipped by board edge
-    Rule: board setup constraints silk; warning
-    @(37.9000 mm, 28.5000 mm): Segment on Edge.Cuts
-    @(11.1000 mm, 27.4000 mm): Segment of J1 on F.Silkscreen
+    @(6.6500 mm, 21.8550 mm): Track [USB_D-] on F.Cu, length 3.0000 mm
 [silk_edge_clearance]: Silkscreen clipped by board edge
     Rule: board setup constraints silk; warning
     @(38.5000 mm, 0.6000 mm): Segment on Edge.Cuts
-    @(38.6200 mm, 1.2400 mm): Segment of J2 on F.Silkscreen
+    @(38.6200 mm, 1.4900 mm): Segment of J2 on F.Silkscreen
 [silk_edge_clearance]: Silkscreen clipped by board edge
     Rule: board setup constraints silk; warning
     @(38.5000 mm, 0.6000 mm): Segment on Edge.Cuts
-    @(38.6200 mm, 26.7800 mm): Segment of J2 on F.Silkscreen
+    @(38.6200 mm, 27.0300 mm): Segment of J2 on F.Silkscreen
 [silk_edge_clearance]: Silkscreen clipped by board edge
     Rule: board setup constraints silk; warning
-    @(0.0000 mm, 27.9000 mm): Segment on Edge.Cuts
-    @(0.2000 mm, 12.1000 mm): Footprint text of BZ1 (+)
+    @(37.9000 mm, 29.0000 mm): Segment on Edge.Cuts
+    @(1.7000 mm, 27.9000 mm): Segment of J1 on F.Silkscreen
+[silk_edge_clearance]: Silkscreen clipped by board edge
+    Rule: board setup constraints silk; warning
+    @(37.9000 mm, 29.0000 mm): Segment on Edge.Cuts
+    @(11.1000 mm, 27.9000 mm): Segment of J1 on F.Silkscreen
+[silk_edge_clearance]: Silkscreen clipped by board edge
+    Rule: board setup constraints silk; warning
+    @(0.0000 mm, 28.4000 mm): Segment on Edge.Cuts
+    @(-5.1000 mm, 1.7000 mm): Segment of U1 on F.Silkscreen
+[silk_edge_clearance]: Silkscreen clipped by board edge
+    Rule: board setup constraints silk; warning
+    @(0.0000 mm, 28.4000 mm): Segment on Edge.Cuts
+    @(15.6000 mm, 17.3000 mm): Segment of U1 on F.Silkscreen
+[silk_overlap]: Silkscreen clearance
+    Rule: board setup constraints silk; warning
+    @(32.1500 mm, 26.5500 mm): Segment of TP6 on B.Silkscreen
+    @(30.2500 mm, 24.5500 mm): Segment of TP2 on B.Silkscreen
+[silk_overlap]: Silkscreen clearance
+    Rule: board setup constraints silk; warning
+    @(30.2500 mm, 24.5500 mm): Segment of TP2 on B.Silkscreen
+    @(30.2500 mm, 26.5500 mm): Segment of TP6 on B.Silkscreen
+[silk_overlap]: Silkscreen clearance
+    Rule: board setup constraints silk; warning
+    @(32.1500 mm, 26.5500 mm): Segment of TP6 on B.Silkscreen
+    @(30.2500 mm, 26.4500 mm): Segment of TP2 on B.Silkscreen
+[silk_overlap]: Silkscreen clearance
+    Rule: board setup constraints silk; warning
+    @(30.2500 mm, 26.4500 mm): Segment of TP2 on B.Silkscreen
+    @(32.1500 mm, 28.4500 mm): Segment of TP6 on B.Silkscreen
+[silk_overlap]: Silkscreen clearance
+    Rule: board setup constraints silk; warning
+    @(30.2500 mm, 26.4500 mm): Segment of TP2 on B.Silkscreen
+    @(30.2500 mm, 26.5500 mm): Segment of TP6 on B.Silkscreen
+[silk_overlap]: Silkscreen clearance
+    Rule: board setup constraints silk; warning
+    @(32.1500 mm, 26.5500 mm): Segment of TP6 on B.Silkscreen
+    @(32.1500 mm, 26.4500 mm): Segment of TP2 on B.Silkscreen
+[silk_overlap]: Silkscreen clearance
+    Rule: board setup constraints silk; warning
+    @(32.1500 mm, 26.4500 mm): Segment of TP2 on B.Silkscreen
+    @(32.1500 mm, 28.4500 mm): Segment of TP6 on B.Silkscreen
+[silk_overlap]: Silkscreen clearance
+    Rule: board setup constraints silk; warning
+    @(27.5500 mm, 24.5500 mm): Segment of TP1 on B.Silkscreen
+    @(27.5500 mm, 26.5500 mm): Segment of TP5 on B.Silkscreen
+[silk_overlap]: Silkscreen clearance
+    Rule: board setup constraints silk; warning
+    @(27.5500 mm, 24.5500 mm): Segment of TP1 on B.Silkscreen
+    @(29.4500 mm, 26.5500 mm): Segment of TP5 on B.Silkscreen
+[silk_overlap]: Silkscreen clearance
+    Rule: board setup constraints silk; warning
+    @(29.4500 mm, 26.4500 mm): Segment of TP1 on B.Silkscreen
+    @(29.4500 mm, 26.5500 mm): Segment of TP5 on B.Silkscreen
+[silk_overlap]: Silkscreen clearance
+    Rule: board setup constraints silk; warning
+    @(29.4500 mm, 28.4500 mm): Segment of TP5 on B.Silkscreen
+    @(29.4500 mm, 26.4500 mm): Segment of TP1 on B.Silkscreen
+[silk_overlap]: Silkscreen clearance
+    Rule: board setup constraints silk; warning
+    @(27.5500 mm, 26.4500 mm): Segment of TP1 on B.Silkscreen
+    @(27.5500 mm, 26.5500 mm): Segment of TP5 on B.Silkscreen
+[silk_overlap]: Silkscreen clearance
+    Rule: board setup constraints silk; warning
+    @(27.5500 mm, 26.4500 mm): Segment of TP1 on B.Silkscreen
+    @(29.4500 mm, 26.5500 mm): Segment of TP5 on B.Silkscreen
+[silk_overlap]: Silkscreen clearance
+    Rule: board setup constraints silk; warning
+    @(29.4500 mm, 28.4500 mm): Segment of TP5 on B.Silkscreen
+    @(27.5500 mm, 26.4500 mm): Segment of TP1 on B.Silkscreen
 
-** Found 8 unconnected pads **
+** Found 1 unconnected pads **
 [unconnected_items]: Missing connection between items
     Local override; error
-    @(3.5500 mm, 15.8000 mm): Pad 3 [+3V3] of U1 on F.Cu
-    @(9.7968 mm, 19.6816 mm): Track [+3V3] on B.Cu, length 1.7584 mm
-[unconnected_items]: Missing connection between items
-    Local override; error
-    @(10.8900 mm, 11.0000 mm): Track [+3V3] on B.Cu, length 1.5000 mm
-    @(9.7968 mm, 17.9232 mm): Track [+3V3] on B.Cu, length 3.2855 mm
-[unconnected_items]: Missing connection between items
-    Local override; error
-    @(14.9375 mm, 23.5875 mm): Track [+3V3] on B.Cu, length 0.6375 mm
-    @(10.6000 mm, 20.2800 mm): Pad 1 [+3V3] of C3 on B.Cu
-[unconnected_items]: Missing connection between items
-    Local override; error
-    @(13.7250 mm, 24.8000 mm): Track [+3V3] on B.Cu, length 1.7147 mm
-    @(28.5000 mm, 25.0000 mm): Pad 1 [+3V3] of TP1 on B.Cu
-[unconnected_items]: Missing connection between items
-    Local override; error
-    @(7.7500 mm, 17.7550 mm): Via [USB_D+] on F.Cu - B.Cu
-    @(14.8000 mm, 7.9500 mm): Pad 24 [USB_D+] of U1 on F.Cu
-[unconnected_items]: Missing connection between items
-    Local override; error
-    @(1.8500 mm, 1.8000 mm): Pad 45 [EN] of U1 on F.Cu
-    @(10.9200 mm, 9.5000 mm): Track [EN] on B.Cu, length 0.5100 mm
-[unconnected_items]: Missing connection between items
-    Local override; error
-    @(12.6625 mm, 18.0000 mm): Pad 1 [VBUS] of F1 on B.Cu
-    @(8.8500 mm, 18.0849 mm): Track [VBUS] on B.Cu, length 1.1299 mm
-[unconnected_items]: Missing connection between items
-    Local override; error
-    @(3.7596 mm, 3.8221 mm): Track [BZ_N] on B.Cu, length 0.4555 mm
-    @(10.1500 mm, 4.0000 mm): Pad 2 [BZ_N] of D3 on B.Cu
+    @(12.6625 mm, 18.5000 mm): Pad 1 [VBUS] of F1 on B.Cu
+    @(3.2500 mm, 18.6550 mm): Track [VBUS] on B.Cu, length 6.3000 mm
 
 ** Found 0 Footprint errors **
 

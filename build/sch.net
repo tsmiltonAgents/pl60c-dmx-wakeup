@@ -2,7 +2,7 @@
 	(version "E")
 	(design
 		(source "/Users/milton/Documents/claude_sessions/09/20260902_pcbtests/pcb/pl60c_dmx_mini.kicad_sch")
-		(date "2026-09-02T14:07:22")
+		(date "2026-09-02T14:14:39")
 		(tool "Eeschema 10.0.4")
 		(sheet
 			(number "1")
@@ -54,72 +54,6 @@
 		)
 	)
 	(components
-		(comp
-			(ref "BZ1")
-			(value "MLT-8530")
-			(footprint "Buzzer_Beeper:MagneticBuzzer_CUI_CMT-8504-100-SMT")
-			(datasheet "~")
-			(description "Magnetic buzzer 8.5x8.5 mm SMD, passive, 16 ohm")
-			(fields
-				(field
-					(name "LCSC") "C94599")
-				(field
-					(name "MPN") "MLT-8530")
-				(field
-					(name "Footprint") "Buzzer_Beeper:MagneticBuzzer_CUI_CMT-8504-100-SMT")
-				(field
-					(name "Datasheet") "~")
-				(field
-					(name "Description") "Magnetic buzzer 8.5x8.5 mm SMD, passive, 16 ohm")
-			)
-			(libsource
-				(lib "Device")
-				(part "Buzzer")
-				(description "Buzzer, polarized")
-			)
-			(property
-				(name "LCSC")
-				(value "C94599")
-			)
-			(property
-				(name "MPN")
-				(value "MLT-8530")
-			)
-			(property
-				(name "Sheetname")
-				(value "pl60c_dmx_mini")
-			)
-			(property
-				(name "Sheetfile")
-				(value "pl60c_dmx_mini.kicad_sch")
-			)
-			(property
-				(name "ki_keywords")
-				(value "quartz resonator ceramic")
-			)
-			(property
-				(name "ki_fp_filters")
-				(value "*Buzzer*")
-			)
-			(sheetpath
-				(names "/")
-				(tstamps "/")
-			)
-			(tstamps "c3e68a42-1de2-5a06-9c7c-6d26e188581f")
-			(units
-				(unit
-					(name "A")
-					(pins
-						(pin
-							(num "1")
-						)
-						(pin
-							(num "2")
-						)
-					)
-				)
-			)
-		)
 		(comp
 			(ref "C1")
 			(value "10uF")
@@ -2031,6 +1965,122 @@
 			)
 		)
 		(comp
+			(ref "TP5")
+			(value "BZ+")
+			(footprint "TestPoint:TestPoint_Pad_1.5x1.5mm")
+			(datasheet "~")
+			(description "External buzzer pad (+5V)")
+			(fields
+				(field
+					(name "LCSC")
+				)
+				(field
+					(name "Footprint") "TestPoint:TestPoint_Pad_1.5x1.5mm")
+				(field
+					(name "Datasheet") "~")
+				(field
+					(name "Description") "External buzzer pad (+5V)")
+			)
+			(libsource
+				(lib "Connector")
+				(part "TestPoint")
+				(description "test point")
+			)
+			(property
+				(name "LCSC")
+				(value "")
+			)
+			(property
+				(name "Sheetname")
+				(value "pl60c_dmx_mini")
+			)
+			(property
+				(name "Sheetfile")
+				(value "pl60c_dmx_mini.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "test point tp")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "Pin* Test*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "64c2a909-f965-5bbe-9e26-ad8cd76045d5")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "TP6")
+			(value "BZ-")
+			(footprint "TestPoint:TestPoint_Pad_1.5x1.5mm")
+			(datasheet "~")
+			(description "External buzzer pad (driver collector)")
+			(fields
+				(field
+					(name "LCSC")
+				)
+				(field
+					(name "Footprint") "TestPoint:TestPoint_Pad_1.5x1.5mm")
+				(field
+					(name "Datasheet") "~")
+				(field
+					(name "Description") "External buzzer pad (driver collector)")
+			)
+			(libsource
+				(lib "Connector")
+				(part "TestPoint")
+				(description "test point")
+			)
+			(property
+				(name "LCSC")
+				(value "")
+			)
+			(property
+				(name "Sheetname")
+				(value "pl60c_dmx_mini")
+			)
+			(property
+				(name "Sheetfile")
+				(value "pl60c_dmx_mini.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "test point tp")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "Pin* Test*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "5aabd251-52d3-564b-9b7b-f8df3ec82eb9")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+					)
+				)
+			)
+		)
+		(comp
 			(ref "U1")
 			(value "ESP32-S3-MINI-1-N8")
 			(footprint "RF_Module:ESP32-S2-MINI-1")
@@ -2715,40 +2765,6 @@
 				(pin
 					(num "G")
 					(name "")
-					(type "passive")
-				)
-			)
-		)
-		(libpart
-			(lib "Device")
-			(part "Buzzer")
-			(description "Buzzer, polarized")
-			(footprints
-				(fp "*Buzzer*")
-			)
-			(fields
-				(field
-					(name "Reference") "BZ")
-				(field
-					(name "Value") "Buzzer")
-				(field
-					(name "Footprint")
-				)
-				(field
-					(name "Datasheet")
-				)
-				(field
-					(name "Description") "Buzzer, polarized")
-			)
-			(pins
-				(pin
-					(num "1")
-					(name "+")
-					(type "passive")
-				)
-				(pin
-					(num "2")
-					(name "-")
 					(type "passive")
 				)
 			)
@@ -3692,12 +3708,6 @@
 			(name "+5V")
 			(class "Power")
 			(node
-				(ref "BZ1")
-				(pin "1")
-				(pinfunction "+_1")
-				(pintype "passive")
-			)
-			(node
 				(ref "C1")
 				(pin "1")
 				(pintype "passive")
@@ -3711,6 +3721,12 @@
 			(node
 				(ref "F1")
 				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "TP5")
+				(pin "1")
+				(pinfunction "1_1")
 				(pintype "passive")
 			)
 			(node
@@ -3769,12 +3785,6 @@
 			(name "/BZ_N")
 			(class "Default")
 			(node
-				(ref "BZ1")
-				(pin "2")
-				(pinfunction "-_2")
-				(pintype "passive")
-			)
-			(node
 				(ref "D3")
 				(pin "2")
 				(pinfunction "A_2")
@@ -3784,6 +3794,12 @@
 				(ref "Q1")
 				(pin "3")
 				(pinfunction "C_3")
+				(pintype "passive")
+			)
+			(node
+				(ref "TP6")
+				(pin "1")
+				(pinfunction "1_1")
 				(pintype "passive")
 			)
 		)
