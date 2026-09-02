@@ -21,8 +21,8 @@ truth (`hw/design.py`), and every part number has been verified in stock on LCSC
 
 ![Board top](docs/board_top.png)
 
-Status: **designed and verified in software, not yet manufactured or bench-tested.** Read the
-"Before you order" section.
+Status: **designed, reviewed and verified in software, not yet manufactured or bench-tested.** Read the
+"Before you order" section and `docs/REVIEW.md` (design review: 3 wiring/spec bugs found and fixed).
 
 ---
 
@@ -96,12 +96,11 @@ the RS-485 standard part) clamps surges on both lines. R6 (120 Ω) is fitted **o
 board to terminate a line; it is marked DNP and JLCPCB will not place it. The same three signals are on
 screw terminal J3 (GND, D−, D+) so you can wire a cable pigtail instead of using the XLR.
 
-**User interface.** WS2812B RGB LED (D2) on GPIO48 through 330 Ω, powered from 3.3 V exactly like the
-ESP32-S3-DevKitC-1 (out of the datasheet's 3.5 V minimum but proven in Espressif's own reference
-design; if you prefer strict spec, the DevKit's approach is still what nearly every S3 board ships).
-USER button on GPIO5 with a 10 kΩ pull-up (snooze / manual on). Magnetic buzzer BZ1 (MLT-8530,
-passive, 2.7 kHz resonant) driven by an S8050 NPN (Q1) from GPIO6 via 1 kΩ, with a B5819W Schottky
-flyback diode (D3) across the coil, for an audible alarm fallback.
+**User interface.** WS2812B-2020-V6 RGB LED (D2) on GPIO48 through 330 Ω, powered from 3.3 V (the V6
+silicon is specified for 3.3 V supply, VIH = 0.55 VDD). USER button on GPIO5 with a 10 kΩ pull-up
+(snooze / manual on). Magnetic buzzer BZ1 (MLT-8530, passive, 2.7 kHz resonant, 16 Ω) driven from the
+5 V rail through a 10 Ω series resistor (R10, limits the coil to its 3.6 V rating) by an S8050 NPN (Q1,
+SOT-23, base via 470 Ω from GPIO6) with a B5819W Schottky flyback diode (D3) across the coil.
 
 **Expansion.** J4: 3V3, GND, GPIO8 (SDA), GPIO9 (SCL), GPIO10, GPIO11 (e.g. a DS3231 RTC or an ambient
 light sensor). J5: 3V3, GND, GPIO43 (TXD0), GPIO44 (RXD0). Four M3 mounting holes.
@@ -199,9 +198,9 @@ Steps:
 | U3 | SP3485EN-L/TR, SOIC-8 | C8963 | basic |
 | U4 | USBLC6-2SC6, SOT-23-6 | C7519 | extended |
 | D1 | PSM712-LF-T7 TVS, SOT-23 | C32677 | basic |
-| D2 | WS2812B-B/T 5050 | C2761795 | extended |
+| D2 | WS2812B-2020-V6 RGB LED | C52917434 | extended |
 | D3 | B5819W Schottky, SOD-123 | C8598 | basic |
-| Q1 | S8050 NPN, SOT-23 | C2146 | basic |
+| Q1 | S8050 NPN, SOT-23 (B-E-C) | C2146 | basic |
 | F1 | PTC 1 A hold, 1206 | C5358568 | extended |
 | J1 | USB-C 16P, HRO TYPE-C-31-M-12 | C165948 | extended |
 | J2 | Neutrik NC5FAH XLR-5 female, PCB horizontal | C368501 | extended (low stock, ~130) |
@@ -209,13 +208,15 @@ Steps:
 | J4 / J5 | 2.54 mm headers 1x6 / 1x4 | C37208 / C124378 | extended |
 | SW1–SW3 | TS-1187A-B-A-B tactile 5.1 mm | C318884 | basic |
 | BZ1 | MLT-8530 magnetic buzzer | C94599 | extended |
-| C1, C2, C4 | 10 µF 25 V 0805 | C15850 | basic |
+| C1, C4 | 10 µF 25 V 0805 | C15850 | basic |
+| C2 | 22 µF 25 V 0805 | C45783 | basic |
+| R10 | 10 Ω 1206 250 mW | C17903 | basic |
 | C6 | 1 µF 50 V 0805 | C28323 | basic |
 | C3, C5, C7, C8 | 100 nF 50 V 0603 | C14663 | basic |
 | R1, R2 | 5.1 kΩ 0603 | C23186 | basic |
 | R3, R4, R5, R7 | 10 kΩ 0603 | C25804 | basic |
 | R8 | 330 Ω 0603 | C23138 | basic |
-| R9 | 1 kΩ 0603 | C21190 | basic |
+| R9 | 470 Ω 0603 | C23179 | basic |
 | R6 | 120 Ω 0603, **DNP** | C22787 | – |
 
 If the NC5FAH is out of stock: CAX **XLR-5M-24WP** (C53431204, same NC5FAH footprint, female despite the
@@ -251,6 +252,7 @@ name) or order the Neutrik separately and hand-solder it. Rough parts cost per b
 
 | Check | Result |
 |---|---|
+| Design review against datasheets (`docs/REVIEW.md`) | 14 items; 3 bugs found and fixed (SOT-23 transistor pinout, LED supply spec, buzzer overdrive) |
 | KiCad ERC on the generated schematic | 0 findings |
 | Schematic netlist vs `hw/design.py` | 27/27 nets identical |
 | PCB pad-to-net vs `hw/design.py` | 27/27 nets identical |
@@ -306,11 +308,11 @@ What changed to get there:
 | XLR-5 female | on board | **on board** (Neutrik NC5FAH, right edge; its flange holes mount the board) |
 | Passives | 0603 / 0805 | **0402** (all JLCPCB Basic), 10 µF in 0603 |
 | LDO | AMS1117 SOT-223 | **AP2112K-3.3** SOT-23-5, 600 mA (C51118) |
-| RGB LED | WS2812B 5050 | **WS2812B-2020** (C52917434) |
+| RGB LED | WS2812B-2020-V6 | same |
 | Buttons | RESET, BOOT, USER (5.1 mm) | **BOOT, USER** (3.9 x 3 mm TS-1088, Basic); reset = re-plug USB or EN via the 10 k/1 µF network |
-| Buzzer | on board | **off board**: driver kept (S8050 + flyback), solder a passive magnetic buzzer to the `BZ+`/`BZ-` pads |
+| Buzzer | on board | **off board**: driver kept (S8050 + 10 Ω + flyback), solder a passive magnetic buzzer to the `BZ+`/`BZ-` pads |
 | Pigtail terminal, headers, mounting holes | yes | dropped; I2C expansion on 4 test pads (`3V3 GND SDA SCL`), UART0 not brought out (USB console) |
-| PTC | 1 A 1206 | 0.75 A 0805 (C7472571) |
+| PTC | 1 A 1206 | same |
 
 Top side: module, USB-C, XLR, two buttons, RGB LED. Bottom side: everything else. The USB-C body
 protrudes 0.55 mm from the bottom edge, the XLR flange protrudes from the right edge, and the module

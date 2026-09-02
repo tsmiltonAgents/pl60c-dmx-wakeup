@@ -175,7 +175,7 @@ def build():
         ('RESET', 12.5, 52.3, 0.8, 0, 'F.SilkS', False),
         ('BOOT', 23.5, 52.3, 0.8, 0, 'F.SilkS', False),
         ('USER', 34.5, 52.3, 0.8, 0, 'F.SilkS', False),
-        ('GND  D-  D+', 55.6, 42.0, 0.8, 0, 'F.SilkS', False),
+        ('GND  D-  D+', 58.5, 40.8, 0.8, 0, 'F.SilkS', False),
         ('PL60C DMX wake-up rev A', 30, 30, 1.0, 0, 'F.SilkS', False),
         ('amodo design 2026', 30, 32, 0.8, 0, 'F.SilkS', False),
         ('github.com/tsmiltonAgents/pl60c-dmx-wakeup', 26, 29, 0.8, 0, 'B.SilkS', True),

@@ -8,7 +8,7 @@
 
 /* ---- DMX512 transmitter (SP3485EN RS-485, half duplex) ---- */
 #define PIN_DMX_TX      17   /* UART TX  -> SP3485 DI          (use UART1 / dmx_port 1)        */
-#define PIN_DMX_RX      18   /* UART RX  <- SP3485 RO          (only needed for RDM / monitor) */
+#define PIN_DMX_RX      18   /* UART RX  <- SP3485 RO. RO floats while DE=1: enable the internal pull-up */
 #define PIN_DMX_DE      16   /* HIGH = drive the line (DE and /RE tied together, 10k pull-down) */
 
 /* ---- USB ---- */
@@ -18,9 +18,9 @@
 #define PIN_BTN_BOOT     0   /* BOOT button, active low (also strapping pin, safe to read after boot) */
 #define PIN_BTN_USER     5   /* USER button, active low, 10k pull-up on board (snooze / manual light) */
 #define PIN_RGB_LED     48   /* WS2812B data (330 R series), LED powered from 3V3 like the DevKitC   */
-#define PIN_BUZZER       6   /* NPN driver, HIGH = coil energised. Drive with a 2.7 kHz PWM, <=50 % duty */
+#define PIN_BUZZER       6   /* NPN driver, HIGH = coil energised. 2.7 kHz square wave, 50 % duty (10 R series limits coil current) */
 
-/* ---- Expansion header J4 (3V3, GND, SDA, SCL, IO10, IO11) ---- */
+/* ---- Expansion header J4 (3V3, GND, SDA, SCL, IO10, IO11); no on-board I2C pull-ups ---- */
 #define PIN_EXP_SDA      8
 #define PIN_EXP_SCL      9
 #define PIN_EXP_IO10    10
@@ -29,6 +29,8 @@
 /* ---- UART0 debug header J5 (3V3, GND, TX, RX) ---- */
 #define PIN_UART0_TX    43
 #define PIN_UART0_RX    44
+
+/* MINI thermal note: the SOT-23-5 LDO relies on Wi-Fi power-save (modem sleep); keep sustained full-power TX short. */
 
 /* ---- DMX512 timing (ANSI E1.11) ---- */
 #define DMX_BAUD              250000
