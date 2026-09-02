@@ -89,6 +89,9 @@ def add_via(board, net, x, y, dia=0.7, drill=0.35):
     v.SetViaType(pcbnew.VIATYPE_THROUGH); v.SetLayerPair(pcbnew.F_Cu, pcbnew.B_Cu); v.SetNet(net); board.Add(v)
     return v
 
+def pad_layer(pad):
+    return pcbnew.B_Cu if pad.IsOnLayer(pcbnew.B_Cu) and not pad.IsOnLayer(pcbnew.F_Cu) else pcbnew.F_Cu
+
 def add_track(board, net, x1, y1, x2, y2, w=0.3, layer=pcbnew.F_Cu):
     t = pcbnew.PCB_TRACK(board); t.SetStart(V(x1, y1)); t.SetEnd(V(x2, y2)); t.SetWidth(FromMM(w)); t.SetLayer(layer); t.SetNet(net); board.Add(t)
     return t
@@ -150,7 +153,7 @@ def stitch_pad(board, obs, gnd, pad, fp):
             x, y = px + ux * (half + extra), py + uy * (half + extra)
             for w in (0.3, 0.25):
                 if obs.via_ok(x, y) and obs.track_ok((px, py), (x, y), w):
-                    add_via(board, gnd, x, y); add_track(board, gnd, px, py, x, y, w); obs.add_via(x, y)
+                    add_via(board, gnd, x, y); add_track(board, gnd, px, py, x, y, w, pad_layer(pad)); obs.add_via(x, y)
                     return True
     return False
 
@@ -162,26 +165,31 @@ def preroute_usb(board, fp, nets, W):
     P = {}
     for pad in fp.Pads():
         P[pad.GetNumber()] = (pad.GetPosition().x / 1e6, pad.GetPosition().y / 1e6)
-    xr = P['A6'][0]
-    s = 1 if (W / 2 - xr) > 0 else -1          # +1: interior is +x
-    y = lambda n: P[n][1]
+    # row axis u: from A6 towards B6 ; interior normal n: perpendicular, pointing at the footprint centre's far side
+    ax, ay = P['A6']; bx, by = P['B6']
+    ul = math.hypot(bx - ax, by - ay); u = ((bx - ax) / ul, (by - ay) / ul)
+    c = fp.GetPosition(); cx, cy = c.x / 1e6, c.y / 1e6
+    n = (-u[1], u[0])
+    if (ax - cx) * n[0] + (ay - cy) * n[1] < 0:   # make n point away from the connector body (into the board)
+        n = (-n[0], -n[1])
+    def pt(name, d, along=0.0):
+        px, py = P[name]
+        return (px + n[0] * d + u[0] * along, py + n[1] * d + u[1] * along)
     w = 0.25
-    def T(net, x1, y1, x2, y2, layer=pcbnew.F_Cu, width=w):
-        t = add_track(board, nets[net], x1, y1, x2, y2, width, layer); t.SetLocked(True)
-    def Vv(net, x, yy):
-        v = add_via(board, nets[net], x, yy); v.SetLocked(True)
-    xi = lambda d: xr + s * d
-    # D- : B7 and A7 -> interior stubs + link
-    T('USB_D-', xr, y('B7'), xi(1.9), y('B7')); T('USB_D-', xr, y('A7'), xi(5.0), y('A7'))
-    T('USB_D-', xi(1.9), y('B7'), xi(1.9), y('A7'))
-    # D+ : B6 -> interior stub -> via ; A6 -> under body -> via ; B.Cu diagonal joins them
-    T('USB_D+', xr, y('B6'), xi(3.6), y('B6')); T('USB_D+', xi(3.6), y('B6'), xi(4.2), y('B6') + 0.6); Vv('USB_D+', xi(4.2), y('B6') + 0.6)
-    T('USB_D+', xr, y('A6'), xi(-1.9), y('A6')); T('USB_D+', xi(-1.9), y('A6'), xi(-2.4), y('A6') - 0.5); Vv('USB_D+', xi(-2.4), y('A6') - 0.5)
-    T('USB_D+', xi(-2.4), y('A6') - 0.5, xi(4.2), y('B6') + 0.6, pcbnew.B_Cu)
+    def T(net, a, b, layer=pcbnew.F_Cu, width=w):
+        t = add_track(board, nets[net], a[0], a[1], b[0], b[1], width, layer); t.SetLocked(True)
+    def Vv(net, a):
+        v = add_via(board, nets[net], a[0], a[1]); v.SetLocked(True)
+    # D- : B7 and A7 -> interior stubs + link (the A6 lane between them is free beyond the pad)
+    T('USB_D-', pt('B7', 0), pt('B7', 1.9)); T('USB_D-', pt('A7', 0), pt('A7', 5.0)); T('USB_D-', pt('B7', 1.9), pt('A7', 1.9))
+    # D+ : B6 -> interior stub -> via ; A6 -> under the body -> via ; inner/back diagonal joins them
+    T('USB_D+', pt('B6', 0), pt('B6', 3.6)); T('USB_D+', pt('B6', 3.6), pt('B6', 4.2, 0.6)); Vv('USB_D+', pt('B6', 4.2, 0.6))
+    T('USB_D+', pt('A6', 0), pt('A6', -1.9)); T('USB_D+', pt('A6', -1.9), pt('A6', -2.4, -0.5)); Vv('USB_D+', pt('A6', -2.4, -0.5))
+    T('USB_D+', pt('A6', -2.4, -0.5), pt('B6', 4.2, 0.6), pcbnew.B_Cu)
     # VBUS : both pairs -> vias, joined on B.Cu (0.4 mm)
-    for n in ('A4', 'B4'):
-        T('VBUS', xr, y(n), xi(5.4), y(n), width=0.3); Vv('VBUS', xi(5.4), y(n))
-    T('VBUS', xi(5.4), y('A4'), xi(5.4), y('B4'), pcbnew.B_Cu, 0.4)
+    for name in ('A4', 'B4'):
+        T('VBUS', pt(name, 0), pt(name, 5.4), width=0.3); Vv('VBUS', pt(name, 5.4))
+    T('VBUS', pt('A4', 5.4), pt('B4', 5.4), pcbnew.B_Cu, 0.4)
 
 def stitch_gnd(board, d, gnd, W, H):
     """Via next to every SMD GND pad + a sparse via grid, placed before autorouting so the router sees them."""
@@ -211,6 +219,10 @@ def build(out_path):
     W, H, R = d.board['w'], d.board['h'], d.board['corner']
     board = pcbnew.BOARD()
     board.SetFileName(out_path)
+    layers = d.board.get('layers', 2)
+    board.SetCopperLayerCount(layers)
+    if layers == 4:
+        board.SetLayerType(pcbnew.In1_Cu, pcbnew.LT_POWER); board.SetLayerType(pcbnew.In2_Cu, pcbnew.LT_POWER)
     # ---------------- design rules (JLCPCB 2-layer capability with margin) ----------------
     ds = board.GetDesignSettings()
     ds.m_TrackMinWidth = FromMM(0.15); ds.m_ViasMinSize = FromMM(0.5); ds.m_MinThroughDrill = FromMM(0.3)
@@ -241,6 +253,7 @@ def build(out_path):
         if p.lcsc: fp.GetField('LCSC').SetVisible(False)
         if p.mpn: fp.GetField('MPN').SetVisible(False)
         fp.SetPath(pcbnew.KIID_PATH('/' + d.sch_uuid + '/' + p.uuid))
+        board.Add(fp)
         fp.SetPosition(V(*p.pcb_pos))
         if p.side == 'bottom':
             fp.Flip(fp.GetPosition(), False)
@@ -265,7 +278,6 @@ def build(out_path):
                 pad.SetDrillSize(VECTOR2I(FromMM(0.3), FromMM(0.3)))
                 if pad.GetSize().x < FromMM(0.6):
                     pad.SetSize(VECTOR2I(FromMM(0.6), FromMM(0.6)))
-        board.Add(fp)
         p._fp = fp
     # ---------------- outline ----------------
     outline(board, W, H, R)
@@ -278,6 +290,9 @@ def build(out_path):
     rect = [(m, m), (W - m, m), (W - m, H - m), (m, H - m)]
     add_zone(board, pcbnew.F_Cu, nets['GND'], rect, 'GND_F')
     add_zone(board, pcbnew.B_Cu, nets['GND'], rect, 'GND_B')
+    if layers == 4:
+        add_zone(board, pcbnew.In1_Cu, nets['GND'], rect, 'GND_IN1')
+        add_zone(board, pcbnew.In2_Cu, nets['GND'], rect, 'GND_IN2')
     # antenna keep-out: 15 mm around the module antenna, inside the board (antenna itself hangs off the top edge)
     u1 = d.by_ref('U1'); ux, uy = u1.pcb_pos
     for (x1, y1, x2, y2) in d.keepouts:

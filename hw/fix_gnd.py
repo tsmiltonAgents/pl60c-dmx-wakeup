@@ -46,7 +46,8 @@ def fix(board_path, rounds=4):
                     x, y = px + dist * math.cos(ang), py + dist * math.sin(ang)
                     for w in (0.3, 0.25):
                         if obs.via_ok(x, y) and obs.track_ok((px, py), (x, y), w):
-                            add_via(board, gnd, x, y); add_track(board, gnd, px, py, x, y, w); obs.add_via(x, y)
+                            lay = pcbnew.B_Cu if 'on B.Cu' in desc else pcbnew.F_Cu
+                            add_via(board, gnd, x, y); add_track(board, gnd, px, py, x, y, w, lay); obs.add_via(x, y)
                             added += 1; done = True; break
                     if done: break
                 if done: break
