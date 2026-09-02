@@ -125,9 +125,11 @@ def stitch_gnd(board, d, gnd, W, H, clearance=0.25, via_dia=0.7):
                     vias.append((x, y)); placed = True; n_pad += 1
                     break
             if placed: break
+        if not placed:
+            print(f'  no stitch via for {fp.GetReference()} pad {pad.GetNumber()} at ({px:.2f},{py:.2f})')
     n_grid = 0
-    for gx in range(6, int(W) - 4, 7):
-        for gy in range(6, int(H) - 4, 7):
+    for gx in range(5, int(W) - 3, 5):
+        for gy in range(5, int(H) - 3, 5):
             if clear(gx, gy, extra=0.8):
                 add_via(board, gnd, gx, gy); vias.append((gx, gy)); n_grid += 1
     print(f'GND stitching: {n_pad}/{len(gnd_smd)} SMD GND pads got a via, {n_grid} grid vias')
