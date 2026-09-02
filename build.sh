@@ -15,7 +15,7 @@ $KC sch erc --output build/erc.rpt --severity-all --exit-code-violations pcb/$B.
 echo "   ERC: $(grep -c '^\[' build/erc.rpt || true) findings"; grep '^\[' build/erc.rpt | sort | uniq -c || true
 echo "== netlist check"; $KC sch export netlist --format kicadsexpr --output build/sch.net pcb/$B.kicad_sch 2>&1 | filt | tail -0
 python3 tools/verify_netlist.py
-for attempt in 1 2 3 4; do
+for attempt in 1 2 3 4 5 6; do
   echo "== pcb (attempt $attempt)"; $KP hw/gen_pcb.py 2>&1 | filt | head -1
   $KP hw/route.py pcb/$B.kicad_pcb 150 2>&1 | filt | tail -1
   $KP hw/fix_gnd.py pcb/$B.kicad_pcb 2>&1 | filt | tail -1
