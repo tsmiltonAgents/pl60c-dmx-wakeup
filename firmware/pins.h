@@ -1,7 +1,8 @@
 /*
  * PL60C DMX wake-up lamp controller - board pin map and DMX constants (rev A).
  * This is the only "firmware" file in this repo: it documents what the hardware expects.
- * Target: ESP32-S3-WROOM-1 (N16R8).  Framework: ESP-IDF or Arduino-ESP32; DMX via the esp_dmx library.
+ * Target: ESP32-S3-WROOM-1 (N16R8) on rev A, ESP32-S3-MINI-1 (N8) on the mini: identical GPIO map.
+ * Mini differences: no RESET button, no UART0 header, buzzer is external on the BZ+/BZ- pads.  Framework: ESP-IDF or Arduino-ESP32; DMX via the esp_dmx library.
  */
 #pragma once
 

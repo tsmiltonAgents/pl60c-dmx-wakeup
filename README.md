@@ -17,6 +17,7 @@ truth (`hw/design.py`), and every part number has been verified in stock on LCSC
 | UI | RESET, BOOT, USER buttons, WS2812B RGB status LED, magnetic buzzer (alarm fallback) |
 | Extras | I2C/GPIO expansion header (RTC, light sensor), UART0 header |
 | Files to order | `production/pl60c_dmx_gerbers.zip`, `production/pl60c_dmx_bom_jlcpcb.csv`, `production/pl60c_dmx_cpl_jlcpcb.csv` |
+| Mini variant | 38.5 x 29 mm, 4 layers, both sides, same circuit and pin map: see section 8 and `production_mini/` |
 
 ![Board top](docs/board_top.png)
 
@@ -266,6 +267,7 @@ name) or order the Neutrik separately and hand-solder it. Rough parts cost per b
 
 ```
 hw/design.py        single source of truth: parts, LCSC numbers, nets, schematic and PCB placement
+hw/design_mini.py   the MINI variant (same circuit, different parts/placement); hw/variant.py selects it
 hw/gen_sch.py       KiCad 10 schematic writer (labels + power symbols, ERC-clean)
 hw/gen_pcb.py       pcbnew script: board outline, footprints, nets, rules, pours, GND stitching, USB escape
 hw/route.py         Freerouting driver (DSN export, autoroute, SES import, zone fill)
@@ -280,10 +282,55 @@ firmware/pins.h     pin map and DMX constants for the firmware author
 build.sh            full pipeline; autocommit.sh commits and pushes every 2 minutes
 ```
 
-Regenerate with `./build.sh`. Requirements: KiCad 10.0.x app bundle at `/Applications/KiCad`
+Regenerate with `./build.sh` (rev A) or `./build.sh mini`. Requirements: KiCad 10.0.x app bundle at `/Applications/KiCad`
 (its bundled Python is used for `pcbnew`), Java 25+ (`brew install openjdk`) and
 `tools/freerouting.jar` (Freerouting 2.3.0, download from its GitHub releases), plus `gerbv` if you want
 the Gerber check images. Edit `hw/design.py`, never the KiCad files (they are overwritten).
+
+---
+
+## 8. MINI variant (38.5 x 29 mm, 4 layers, both sides)
+
+![Mini board](docs/mini_perspective.png)
+
+Same circuit, same GPIO map, one quarter of the area (1120 mm² vs 4320 mm²). Files: `production_mini/`
+(`pl60c_dmx_mini_gerbers.zip`, `pl60c_dmx_mini_bom_jlcpcb.csv`, `pl60c_dmx_mini_cpl_jlcpcb.csv`),
+KiCad project `pcb/pl60c_dmx_mini.*`, source `hw/design_mini.py`, build with `./build.sh mini`.
+
+What changed to get there:
+
+| | rev A | mini |
+|---|---|---|
+| Module | ESP32-S3-WROOM-1-N16R8 (18 x 25.5 mm) | **ESP32-S3-MINI-1-N8** (15.4 x 20.5 mm, C2913206), antenna off the left edge |
+| Layers / sides | 2 layers, top only | **4 layers** (JLC04161H-7628 stack: signal, solid GND plane, signal + GND pour, signal), parts on **both sides** |
+| XLR-5 female | on board | **on board** (Neutrik NC5FAH, right edge; its flange holes mount the board) |
+| Passives | 0603 / 0805 | **0402** (all JLCPCB Basic), 10 µF in 0603 |
+| LDO | AMS1117 SOT-223 | **AP2112K-3.3** SOT-23-5, 600 mA (C51118) |
+| RGB LED | WS2812B 5050 | **WS2812B-2020** (C52917434) |
+| Buttons | RESET, BOOT, USER (5.1 mm) | **BOOT, USER** (3.9 x 3 mm TS-1088, Basic); reset = re-plug USB or EN via the 10 k/1 µF network |
+| Buzzer | on board | **off board**: driver kept (S8050 + flyback), solder a passive magnetic buzzer to the `BZ+`/`BZ-` pads |
+| Pigtail terminal, headers, mounting holes | yes | dropped; I2C expansion on 4 test pads (`3V3 GND SDA SCL`), UART0 not brought out (USB console) |
+| PTC | 1 A 1206 | 0.75 A 0805 (C7472571) |
+
+Top side: module, USB-C, XLR, two buttons, RGB LED. Bottom side: everything else. The USB-C body
+protrudes 0.55 mm from the bottom edge, the XLR flange protrudes from the right edge, and the module
+antenna hangs 4.5 mm off the left edge, so the enclosure needs cut-outs on three sides.
+
+![Mini bottom](docs/mini_bottom_perspective.png)
+
+Verification, same procedure as rev A: ERC 0 findings, schematic and PCB netlists identical to the design
+(23 nets), 0 unrouted, DRC 0 errors (6 "silkscreen clipped by edge" warnings from the overhanging parts
+and one dangling stub warning inside the hand-routed USB escape), Gerbers for all four copper layers
+rendered and checked with gerbv (`docs/mini_gerber_*_check.png`), every LCSC part in stock
+(`PL60C_VARIANT=mini python3 tools/check_lcsc.py`). JLCPCB rules used: 0.1 mm min track/clearance
+(4-layer capability is 0.09 mm), 0.3 mm min via drill, 0.5 mm hole-to-hole, vias in the module's
+centre ground pads as in Espressif's reference layout.
+
+JLCPCB ordering differences: choose **4 layers**, and **both-side assembly** (higher setup fee) or, to save
+money, top-side assembly only and hand-solder the bottom (0402s are fiddly; not recommended).
+The KiCad library has no 3D model for the MINI-1 module, so it is missing from the renders (its land
+pattern is the 15.4 x 20.5 mm outline top-left). `pl60c_dmx_mini_cpl_jlcpcb.csv` marks bottom parts as
+`Bottom`; JLCPCB mirrors bottom-side X automatically, check their preview.
 
 ## Sources
 
