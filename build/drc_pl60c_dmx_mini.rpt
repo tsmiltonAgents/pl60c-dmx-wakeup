@@ -1,12 +1,20 @@
 ** Drc report for pl60c_dmx_mini.kicad_pcb **
-** Created on 2026-09-02T14:47:36 **
+** Created on 2026-09-02T14:49:52 **
 ** Report includes: Errors, Warnings, Exclusions **
 
 ** Found 7 DRC violations **
 [courtyards_overlap]: Courtyards overlap
     Rule: board setup constraints courtyard; error
-    @(10.6000 mm, 18.4000 mm): Footprint C1
     @(13.6000 mm, 18.5000 mm): Footprint F1
+    @(10.6000 mm, 18.4000 mm): Footprint C1
+[silk_edge_clearance]: Silkscreen clipped by board edge
+    Rule: board setup constraints silk; warning
+    @(38.5000 mm, 0.6000 mm): Segment on Edge.Cuts
+    @(38.6200 mm, 1.4900 mm): Segment of J2 on F.Silkscreen
+[silk_edge_clearance]: Silkscreen clipped by board edge
+    Rule: board setup constraints silk; warning
+    @(38.5000 mm, 0.6000 mm): Segment on Edge.Cuts
+    @(38.6200 mm, 27.0300 mm): Segment of J2 on F.Silkscreen
 [silk_edge_clearance]: Silkscreen clipped by board edge
     Rule: board setup constraints silk; warning
     @(0.0000 mm, 28.4000 mm): Segment on Edge.Cuts
@@ -23,24 +31,8 @@
     Rule: board setup constraints silk; warning
     @(37.9000 mm, 29.0000 mm): Segment on Edge.Cuts
     @(11.1000 mm, 27.9000 mm): Segment of J1 on F.Silkscreen
-[silk_edge_clearance]: Silkscreen clipped by board edge
-    Rule: board setup constraints silk; warning
-    @(38.5000 mm, 0.6000 mm): Segment on Edge.Cuts
-    @(38.6200 mm, 1.4900 mm): Segment of J2 on F.Silkscreen
-[silk_edge_clearance]: Silkscreen clipped by board edge
-    Rule: board setup constraints silk; warning
-    @(38.5000 mm, 0.6000 mm): Segment on Edge.Cuts
-    @(38.6200 mm, 27.0300 mm): Segment of J2 on F.Silkscreen
 
-** Found 2 unconnected pads **
-[unconnected_items]: Missing connection between items
-    Local override; error
-    @(5.6500 mm, 24.2550 mm): Track [USB_D+] on B.Cu, length 5.0567 mm
-    @(7.5375 mm, 27.9500 mm): Track [USB_D+] on B.Cu, length 2.2750 mm
-[unconnected_items]: Missing connection between items
-    Local override; error
-    @(8.8500 mm, 21.8550 mm): Track [VBUS] on F.Cu, length 1.0000 mm
-    @(7.5375 mm, 27.0000 mm): Pad 5 [VBUS] of U4 on B.Cu
+** Found 0 unconnected pads **
 
 ** Found 0 Footprint errors **
 
