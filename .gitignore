@@ -1,0 +1,9 @@
+tools/*.jar
+tools/fr.json
+*-backups/
+*.kicad_prl
+*.lck
+fp-info-cache
+__pycache__/
+.DS_Store
+build/freerouting.log
