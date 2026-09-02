@@ -5,6 +5,9 @@ sys.path.insert(0, os.path.join(ROOT, 'hw'))
 import pcbnew, variant
 design = variant.design()
 d = design.build(); want = d.nets()
+for p in d.parts:
+    for pin, net in p.extra_pads.items():
+        want.setdefault(net, []).append((p.ref, pin))
 board = pcbnew.LoadBoard(os.path.join(ROOT, 'pcb', variant.BOARD + '.kicad_pcb'))
 got = {}
 for fp in board.GetFootprints():

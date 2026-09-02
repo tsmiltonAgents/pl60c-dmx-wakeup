@@ -8,7 +8,7 @@ import uuid
 class Part:
     def __init__(self, ref, lib_id, value, footprint, pins, lcsc='', mpn='', desc='', datasheet='',
                  sch_pos=(0, 0), sch_rot=0, pcb_pos=(0, 0), pcb_rot=0, side='top', dnp=False,
-                 stub=2.54, power_symbols_any=False, ref_pos=None, val_pos=None, jlc_rot=0, drill=None, ref_pcb_pos=None):
+                 stub=2.54, power_symbols_any=False, ref_pos=None, val_pos=None, jlc_rot=0, drill=None, ref_pcb_pos=None, extra_pads=None):
         self.ref, self.lib_id, self.value, self.footprint = ref, lib_id, value, footprint
         self.pins = pins  # pin number -> net name
         self.lcsc, self.mpn, self.desc, self.datasheet = lcsc, mpn, desc, datasheet
@@ -17,6 +17,7 @@ class Part:
         self.stub, self.power_symbols_any = stub, power_symbols_any
         self.ref_pos, self.val_pos = ref_pos, val_pos
         self.jlc_rot = jlc_rot   # extra rotation to add for the JLCPCB CPL file
+        self.extra_pads = extra_pads or {}  # footprint pads with no symbol pin (mechanical pads) -> net
         self.ref_pcb_pos = ref_pcb_pos  # (x, y[, rot]) absolute silkscreen position of the reference designator
         self.drill = drill       # override THT pad drill (mm) for parts whose LCSC pins differ from the KiCad footprint
         self.uuid = str(uuid.uuid5(uuid.NAMESPACE_DNS, 'pl60c.' + ref))
@@ -36,6 +37,8 @@ class Design:
         self.board = dict(w=80.0, h=54.0, corner=2.5)
         self.keepouts = []  # (x1,y1,x2,y2) copper keep-outs on both layers
         self.silk = []      # (text, x, y, size, rot, layer, mirror)
+        self.silk_refs = True
+        self.via_in_pad = []   # ['REF:padnumber'] -> a via at the centre of each matching pad
 
     def add(self, *parts):
         self.parts.extend(parts)
