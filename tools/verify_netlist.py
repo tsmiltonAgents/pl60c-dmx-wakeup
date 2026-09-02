@@ -3,7 +3,8 @@ import os, sys
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, 'hw'))
 from sexp import parse, find, findall
-import design
+import variant
+design = variant.design()
 d = design.build(); want = d.nets()
 net = parse(open(os.path.join(ROOT, 'build', 'sch.net')).read())[0]
 got = {}

@@ -8,7 +8,8 @@ JAR = os.path.join(ROOT, 'tools', 'freerouting.jar')
 
 def route(board_path, passes=40):
     build = os.path.join(ROOT, 'build'); os.makedirs(build, exist_ok=True)
-    dsn = os.path.join(build, 'pl60c_dmx.dsn'); ses = os.path.join(build, 'pl60c_dmx.ses')
+    base = os.path.splitext(os.path.basename(board_path))[0]
+    dsn = os.path.join(build, base + '.dsn'); ses = os.path.join(build, base + '.ses')
     board = pcbnew.LoadBoard(board_path)
     # Route GND with real tracks too: take the pours out of the DSN so the router does not assume a plane,
     # then put them back and fill after import. The pour then only adds copper on top of a complete routing.

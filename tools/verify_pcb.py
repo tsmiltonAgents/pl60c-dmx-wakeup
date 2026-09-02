@@ -2,9 +2,10 @@
 import os, sys
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, 'hw'))
-import pcbnew, design
+import pcbnew, variant
+design = variant.design()
 d = design.build(); want = d.nets()
-board = pcbnew.LoadBoard(os.path.join(ROOT, 'pcb', 'pl60c_dmx.kicad_pcb'))
+board = pcbnew.LoadBoard(os.path.join(ROOT, 'pcb', variant.BOARD + '.kicad_pcb'))
 got = {}
 for fp in board.GetFootprints():
     for pad in fp.Pads():

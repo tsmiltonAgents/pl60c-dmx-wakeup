@@ -1,9 +1,10 @@
 import os, sys
 sys.path.insert(0, os.path.dirname(__file__))
-import design
+import variant
+design = variant.design()
 from gen_sch import write_schematic
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 d = design.build()
-out = os.path.join(ROOT, 'pcb', 'pl60c_dmx.kicad_sch')
-write_schematic(d, out, 'pl60c_dmx')
+out = os.path.join(ROOT, 'pcb', variant.BOARD + '.kicad_sch')
+write_schematic(d, out, variant.BOARD)
 print('wrote', out)

@@ -4,11 +4,13 @@ import os, sys, csv, re, json, subprocess, shutil, zipfile, datetime
 import pcbnew
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, 'hw'))
-import design
+import variant
+design = variant.design()
 KC = '/Applications/KiCad/KiCad.app/Contents/MacOS/kicad-cli'
-PCB = os.path.join(ROOT, 'pcb', 'pl60c_dmx.kicad_pcb')
-SCH = os.path.join(ROOT, 'pcb', 'pl60c_dmx.kicad_sch')
-OUT = os.path.join(ROOT, 'production')
+PCB = os.path.join(ROOT, 'pcb', variant.BOARD + '.kicad_pcb')
+SCH = os.path.join(ROOT, 'pcb', variant.BOARD + '.kicad_sch')
+OUT = os.path.join(ROOT, variant.PROD_DIR)
+B = variant.BOARD
 GERB = os.path.join(OUT, 'gerbers')
 
 def run(cmd):
@@ -25,7 +27,7 @@ def gerbers():
          '--subtract-soldermask', '--check-zones', PCB])   # protel extensions (JLCPCB preferred) are the default
     run([KC, 'pcb', 'export', 'drill', '--output', GERB + '/', '--format', 'excellon', '--drill-origin', 'absolute',
          '--excellon-units', 'mm', '--excellon-zeros-format', 'decimal', '--excellon-separate-th', '--generate-map', '--map-format', 'gerberx2', PCB])
-    zpath = os.path.join(OUT, 'pl60c_dmx_gerbers.zip')
+    zpath = os.path.join(OUT, B + '_gerbers.zip')
     with zipfile.ZipFile(zpath, 'w', zipfile.ZIP_DEFLATED) as z:
         for f in sorted(os.listdir(GERB)):
             z.write(os.path.join(GERB, f), f)
@@ -62,29 +64,29 @@ def bom_cpl(d):
         jrot = (rot + corr + p.jlc_rot) % 360
         layer = 'Top' if not fp.IsFlipped() else 'Bottom'
         cpl.append((ref, round(pos.x / 1e6, 4), round(-pos.y / 1e6, 4), layer, round(jrot, 1), round(rot % 360, 1)))
-    with open(os.path.join(OUT, 'pl60c_dmx_bom_jlcpcb.csv'), 'w', newline='') as f:
+    with open(os.path.join(OUT, B + '_bom_jlcpcb.csv'), 'w', newline='') as f:
         w = csv.writer(f); w.writerow(['Comment', 'Designator', 'Footprint', 'LCSC Part #'])
         for (val, fpn, lcsc), refs in sorted(groups.items(), key=lambda kv: kv[1][0]):
             w.writerow([val, ','.join(sorted(refs, key=lambda r: (re.sub(r'\d', '', r), int(re.sub(r'\D', '', r) or 0)))), fpn, lcsc])
-    for fname, idx in (('pl60c_dmx_cpl_jlcpcb.csv', 4), ('pl60c_dmx_cpl_kicad_rotation.csv', 5)):
+    for fname, idx in ((B + '_cpl_jlcpcb.csv', 4), (B + '_cpl_kicad_rotation.csv', 5)):
         with open(os.path.join(OUT, fname), 'w', newline='') as f:
             w = csv.writer(f); w.writerow(['Designator', 'Mid X', 'Mid Y', 'Layer', 'Rotation'])
             for row in sorted(cpl, key=lambda r: (re.sub(r'\d', '', r[0]), int(re.sub(r'\D', '', r[0]) or 0))):
                 w.writerow(list(row[:4]) + [row[idx]])
     # full engineering BOM (every part incl. DNP / no-LCSC)
-    with open(os.path.join(OUT, 'pl60c_dmx_bom_full.csv'), 'w', newline='') as f:
+    with open(os.path.join(OUT, B + '_bom_full.csv'), 'w', newline='') as f:
         w = csv.writer(f); w.writerow(['Ref', 'Value', 'MPN', 'LCSC', 'Footprint', 'DNP', 'Description'])
         for p in sorted(d.parts, key=lambda p: (re.sub(r'\d', '', p.ref), int(re.sub(r'\D', '', p.ref) or 0))):
             w.writerow([p.ref, p.value, p.mpn, p.lcsc, p.footprint, 'yes' if p.dnp else '', p.desc])
     return groups, cpl, notes
 
 def docs():
-    run([KC, 'sch', 'export', 'pdf', '--output', os.path.join(OUT, 'pl60c_dmx_schematic.pdf'), SCH])
-    run([KC, 'pcb', 'export', 'pdf', '--output', os.path.join(OUT, 'pl60c_dmx_pcb_top.pdf'), '--layers', 'F.Cu,F.SilkS,F.Mask,Edge.Cuts', '--include-border-title', PCB])
-    run([KC, 'pcb', 'export', 'pdf', '--output', os.path.join(OUT, 'pl60c_dmx_pcb_bottom.pdf'), '--layers', 'B.Cu,B.SilkS,B.Mask,Edge.Cuts', '--mirror', '--include-border-title', PCB])
+    run([KC, 'sch', 'export', 'pdf', '--output', os.path.join(OUT, B + '_schematic.pdf'), SCH])
+    run([KC, 'pcb', 'export', 'pdf', '--output', os.path.join(OUT, B + '_pcb_top.pdf'), '--layers', 'F.Cu,F.SilkS,F.Mask,Edge.Cuts', '--include-border-title', PCB])
+    run([KC, 'pcb', 'export', 'pdf', '--output', os.path.join(OUT, B + '_pcb_bottom.pdf'), '--layers', 'B.Cu,B.SilkS,B.Mask,Edge.Cuts', '--mirror', '--include-border-title', PCB])
     for side in ('top', 'bottom'):
         run([KC, 'pcb', 'render', '--output', os.path.join(OUT, f'render_{side}.png'), '--side', side, '--width', '1800', '--height', '1200', '--zoom', '1.1', '--quality', 'high', PCB])
-    run([KC, 'pcb', 'export', 'step', '--output', os.path.join(OUT, 'pl60c_dmx.step'), '--subst-models', PCB])
+    run([KC, 'pcb', 'export', 'step', '--output', os.path.join(OUT, B + '.step'), '--subst-models', PCB])
 
 if __name__ == '__main__':
     os.makedirs(OUT, exist_ok=True)

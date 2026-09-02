@@ -4,7 +4,8 @@ import os, sys, math
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import pcbnew
 from pcbnew import VECTOR2I, FromMM
-import design
+import variant
+design = variant.design()
 from kicad_libs import footprint_path
 
 def V(x, y):
@@ -289,7 +290,7 @@ def build(out_path):
     return board, d
 
 if __name__ == '__main__':
-    out = sys.argv[1] if len(sys.argv) > 1 else os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'pcb', 'pl60c_dmx.kicad_pcb')
+    out = sys.argv[1] if len(sys.argv) > 1 else os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'pcb', variant.BOARD + '.kicad_pcb')
     board, d = build(out)
     print('wrote', out, 'footprints', len(board.GetFootprints()), 'nets', board.GetNetCount())
     # report placement bounding boxes for sanity

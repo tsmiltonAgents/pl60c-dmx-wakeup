@@ -3,7 +3,8 @@
 Usage: python3 tools/check_lcsc.py"""
 import sys, os, json, urllib.request
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'hw'))
-import design
+import variant
+design = variant.design()
 
 def fetch(code):
     url = f'https://wmsc.lcsc.com/ftps/wm/product/detail?productCode={code}'
