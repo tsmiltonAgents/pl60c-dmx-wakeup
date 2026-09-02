@@ -224,7 +224,7 @@ def build(out_path):
     board.SetCopperLayerCount(layers)
     if layers == 4:
         board.SetLayerType(pcbnew.In1_Cu, pcbnew.LT_POWER)     # solid GND plane, not routed
-        board.SetLayerType(pcbnew.In2_Cu, pcbnew.LT_SIGNAL)    # extra routing layer, GND pour fills the rest
+        board.SetLayerType(pcbnew.In2_Cu, pcbnew.LT_POWER)     # +3V3 plane, router only drops vias into it
     # ---------------- design rules (JLCPCB 2-layer capability with margin) ----------------
     ds = board.GetDesignSettings()
     ds.m_TrackMinWidth = FromMM(d.board.get('min_width', 0.15)); ds.m_ViasMinSize = FromMM(0.5); ds.m_MinThroughDrill = FromMM(0.3)

@@ -2,7 +2,7 @@
 	(version "E")
 	(design
 		(source "/Users/milton/Documents/claude_sessions/09/20260902_pcbtests/pcb/pl60c_dmx_mini.kicad_sch")
-		(date "2026-09-02T13:56:38")
+		(date "2026-09-02T14:07:22")
 		(tool "Eeschema 10.0.4")
 		(sheet
 			(number "1")
@@ -2019,122 +2019,6 @@
 				(tstamps "/")
 			)
 			(tstamps "c1491818-10c3-576a-ad97-4b17d4621261")
-			(units
-				(unit
-					(name "A")
-					(pins
-						(pin
-							(num "1")
-						)
-					)
-				)
-			)
-		)
-		(comp
-			(ref "TP5")
-			(value "TXD0")
-			(footprint "TestPoint:TestPoint_Pad_1.5x1.5mm")
-			(datasheet "~")
-			(description "Test pad 1.5 mm")
-			(fields
-				(field
-					(name "LCSC")
-				)
-				(field
-					(name "Footprint") "TestPoint:TestPoint_Pad_1.5x1.5mm")
-				(field
-					(name "Datasheet") "~")
-				(field
-					(name "Description") "Test pad 1.5 mm")
-			)
-			(libsource
-				(lib "Connector")
-				(part "TestPoint")
-				(description "test point")
-			)
-			(property
-				(name "LCSC")
-				(value "")
-			)
-			(property
-				(name "Sheetname")
-				(value "pl60c_dmx_mini")
-			)
-			(property
-				(name "Sheetfile")
-				(value "pl60c_dmx_mini.kicad_sch")
-			)
-			(property
-				(name "ki_keywords")
-				(value "test point tp")
-			)
-			(property
-				(name "ki_fp_filters")
-				(value "Pin* Test*")
-			)
-			(sheetpath
-				(names "/")
-				(tstamps "/")
-			)
-			(tstamps "64c2a909-f965-5bbe-9e26-ad8cd76045d5")
-			(units
-				(unit
-					(name "A")
-					(pins
-						(pin
-							(num "1")
-						)
-					)
-				)
-			)
-		)
-		(comp
-			(ref "TP6")
-			(value "RXD0")
-			(footprint "TestPoint:TestPoint_Pad_1.5x1.5mm")
-			(datasheet "~")
-			(description "Test pad 1.5 mm")
-			(fields
-				(field
-					(name "LCSC")
-				)
-				(field
-					(name "Footprint") "TestPoint:TestPoint_Pad_1.5x1.5mm")
-				(field
-					(name "Datasheet") "~")
-				(field
-					(name "Description") "Test pad 1.5 mm")
-			)
-			(libsource
-				(lib "Connector")
-				(part "TestPoint")
-				(description "test point")
-			)
-			(property
-				(name "LCSC")
-				(value "")
-			)
-			(property
-				(name "Sheetname")
-				(value "pl60c_dmx_mini")
-			)
-			(property
-				(name "Sheetfile")
-				(value "pl60c_dmx_mini.kicad_sch")
-			)
-			(property
-				(name "ki_keywords")
-				(value "test point tp")
-			)
-			(property
-				(name "ki_fp_filters")
-				(value "Pin* Test*")
-			)
-			(sheetpath
-				(names "/")
-				(tstamps "/")
-			)
-			(tstamps "5aabd251-52d3-564b-9b7b-f8df3ec82eb9")
 			(units
 				(unit
 					(name "A")
@@ -4180,40 +4064,6 @@
 		)
 		(net
 			(code "20")
-			(name "/RXD0")
-			(class "Default")
-			(node
-				(ref "TP6")
-				(pin "1")
-				(pinfunction "1_1")
-				(pintype "passive")
-			)
-			(node
-				(ref "U1")
-				(pin "40")
-				(pinfunction "RXD0_40")
-				(pintype "bidirectional")
-			)
-		)
-		(net
-			(code "21")
-			(name "/TXD0")
-			(class "Default")
-			(node
-				(ref "TP5")
-				(pin "1")
-				(pinfunction "1_1")
-				(pintype "passive")
-			)
-			(node
-				(ref "U1")
-				(pin "39")
-				(pinfunction "TXD0_39")
-				(pintype "bidirectional")
-			)
-		)
-		(net
-			(code "22")
 			(name "/USB_D+")
 			(class "Default")
 			(node
@@ -4248,7 +4098,7 @@
 			)
 		)
 		(net
-			(code "23")
+			(code "21")
 			(name "/USB_D-")
 			(class "Default")
 			(node
@@ -4283,7 +4133,7 @@
 			)
 		)
 		(net
-			(code "24")
+			(code "22")
 			(name "/VBUS")
 			(class "Default")
 			(node
@@ -4323,7 +4173,7 @@
 			)
 		)
 		(net
-			(code "25")
+			(code "23")
 			(name "GND")
 			(class "Power")
 			(node
@@ -4617,7 +4467,7 @@
 			)
 		)
 		(net
-			(code "26")
+			(code "24")
 			(name "unconnected-(D2-DOUT-Pad1)")
 			(class "Default")
 			(node
@@ -4628,7 +4478,7 @@
 			)
 		)
 		(net
-			(code "27")
+			(code "25")
 			(name "unconnected-(J1-SBU1-PadA8)")
 			(class "Default")
 			(node
@@ -4639,7 +4489,7 @@
 			)
 		)
 		(net
-			(code "28")
+			(code "26")
 			(name "unconnected-(J1-SBU2-PadB8)")
 			(class "Default")
 			(node
@@ -4650,7 +4500,7 @@
 			)
 		)
 		(net
-			(code "29")
+			(code "27")
 			(name "unconnected-(J2-P3-Pad4)")
 			(class "Default")
 			(node
@@ -4661,7 +4511,7 @@
 			)
 		)
 		(net
-			(code "30")
+			(code "28")
 			(name "unconnected-(J2-P5-Pad5)")
 			(class "Default")
 			(node
@@ -4672,7 +4522,7 @@
 			)
 		)
 		(net
-			(code "31")
+			(code "29")
 			(name "unconnected-(J2-PadG)")
 			(class "Default")
 			(node
@@ -4682,7 +4532,7 @@
 			)
 		)
 		(net
-			(code "32")
+			(code "30")
 			(name "unconnected-(U1-IO1-Pad5)")
 			(class "Default")
 			(node
@@ -4693,7 +4543,7 @@
 			)
 		)
 		(net
-			(code "33")
+			(code "31")
 			(name "unconnected-(U1-IO2-Pad6)")
 			(class "Default")
 			(node
@@ -4704,7 +4554,7 @@
 			)
 		)
 		(net
-			(code "34")
+			(code "32")
 			(name "unconnected-(U1-IO3-Pad7)")
 			(class "Default")
 			(node
@@ -4715,7 +4565,7 @@
 			)
 		)
 		(net
-			(code "35")
+			(code "33")
 			(name "unconnected-(U1-IO4-Pad8)")
 			(class "Default")
 			(node
@@ -4726,7 +4576,7 @@
 			)
 		)
 		(net
-			(code "36")
+			(code "34")
 			(name "unconnected-(U1-IO7-Pad11)")
 			(class "Default")
 			(node
@@ -4737,7 +4587,7 @@
 			)
 		)
 		(net
-			(code "37")
+			(code "35")
 			(name "unconnected-(U1-IO10-Pad14)")
 			(class "Default")
 			(node
@@ -4748,7 +4598,7 @@
 			)
 		)
 		(net
-			(code "38")
+			(code "36")
 			(name "unconnected-(U1-IO11-Pad15)")
 			(class "Default")
 			(node
@@ -4759,7 +4609,7 @@
 			)
 		)
 		(net
-			(code "39")
+			(code "37")
 			(name "unconnected-(U1-IO12-Pad16)")
 			(class "Default")
 			(node
@@ -4770,7 +4620,7 @@
 			)
 		)
 		(net
-			(code "40")
+			(code "38")
 			(name "unconnected-(U1-IO13-Pad17)")
 			(class "Default")
 			(node
@@ -4781,7 +4631,7 @@
 			)
 		)
 		(net
-			(code "41")
+			(code "39")
 			(name "unconnected-(U1-IO14-Pad18)")
 			(class "Default")
 			(node
@@ -4792,7 +4642,7 @@
 			)
 		)
 		(net
-			(code "42")
+			(code "40")
 			(name "unconnected-(U1-IO15-Pad19)")
 			(class "Default")
 			(node
@@ -4803,7 +4653,7 @@
 			)
 		)
 		(net
-			(code "43")
+			(code "41")
 			(name "unconnected-(U1-IO21-Pad25)")
 			(class "Default")
 			(node
@@ -4814,7 +4664,7 @@
 			)
 		)
 		(net
-			(code "44")
+			(code "42")
 			(name "unconnected-(U1-IO26-Pad26)")
 			(class "Default")
 			(node
@@ -4825,7 +4675,7 @@
 			)
 		)
 		(net
-			(code "45")
+			(code "43")
 			(name "unconnected-(U1-IO33-Pad28)")
 			(class "Default")
 			(node
@@ -4836,7 +4686,7 @@
 			)
 		)
 		(net
-			(code "46")
+			(code "44")
 			(name "unconnected-(U1-IO34-Pad29)")
 			(class "Default")
 			(node
@@ -4847,7 +4697,7 @@
 			)
 		)
 		(net
-			(code "47")
+			(code "45")
 			(name "unconnected-(U1-IO35-Pad31)")
 			(class "Default")
 			(node
@@ -4858,7 +4708,7 @@
 			)
 		)
 		(net
-			(code "48")
+			(code "46")
 			(name "unconnected-(U1-IO36-Pad32)")
 			(class "Default")
 			(node
@@ -4869,7 +4719,7 @@
 			)
 		)
 		(net
-			(code "49")
+			(code "47")
 			(name "unconnected-(U1-IO37-Pad33)")
 			(class "Default")
 			(node
@@ -4880,7 +4730,7 @@
 			)
 		)
 		(net
-			(code "50")
+			(code "48")
 			(name "unconnected-(U1-IO38-Pad34)")
 			(class "Default")
 			(node
@@ -4891,7 +4741,7 @@
 			)
 		)
 		(net
-			(code "51")
+			(code "49")
 			(name "unconnected-(U1-IO39-Pad35)")
 			(class "Default")
 			(node
@@ -4902,7 +4752,7 @@
 			)
 		)
 		(net
-			(code "52")
+			(code "50")
 			(name "unconnected-(U1-IO40-Pad36)")
 			(class "Default")
 			(node
@@ -4913,7 +4763,7 @@
 			)
 		)
 		(net
-			(code "53")
+			(code "51")
 			(name "unconnected-(U1-IO41-Pad37)")
 			(class "Default")
 			(node
@@ -4924,7 +4774,7 @@
 			)
 		)
 		(net
-			(code "54")
+			(code "52")
 			(name "unconnected-(U1-IO42-Pad38)")
 			(class "Default")
 			(node
@@ -4935,7 +4785,7 @@
 			)
 		)
 		(net
-			(code "55")
+			(code "53")
 			(name "unconnected-(U1-IO45-Pad41)")
 			(class "Default")
 			(node
@@ -4946,7 +4796,7 @@
 			)
 		)
 		(net
-			(code "56")
+			(code "54")
 			(name "unconnected-(U1-IO46-Pad44)")
 			(class "Default")
 			(node
@@ -4957,13 +4807,35 @@
 			)
 		)
 		(net
-			(code "57")
+			(code "55")
 			(name "unconnected-(U1-IO47-Pad27)")
 			(class "Default")
 			(node
 				(ref "U1")
 				(pin "27")
 				(pinfunction "IO47_27")
+				(pintype "bidirectional+no_connect")
+			)
+		)
+		(net
+			(code "56")
+			(name "unconnected-(U1-RXD0-Pad40)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "40")
+				(pinfunction "RXD0_40")
+				(pintype "bidirectional+no_connect")
+			)
+		)
+		(net
+			(code "57")
+			(name "unconnected-(U1-TXD0-Pad39)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "39")
+				(pinfunction "TXD0_39")
 				(pintype "bidirectional+no_connect")
 			)
 		)
