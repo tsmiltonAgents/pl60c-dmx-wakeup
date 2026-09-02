@@ -104,6 +104,7 @@ def write_schematic(design, path, proj_name):
     items = []
     pwr_n = 0
     for part in design.parts:
+        part.sch_pos = (round(round(part.sch_pos[0] / 1.27) * 1.27, 4), round(round(part.sch_pos[1] / 1.27) * 1.27, 4))
         sym = lib_cache.setdefault(part.lib_id, get_symbol(part.lib_id))
         pins = symbol_pins(sym)
         part._pins = pins
@@ -131,6 +132,7 @@ def write_schematic(design, path, proj_name):
     # Power flags
     lib_cache.setdefault('power:PWR_FLAG', get_symbol('power:PWR_FLAG'))
     for net, (x, y) in design.pwr_flags.items():
+        x, y = round(round(x / 1.27) * 1.27, 4), round(round(y / 1.27) * 1.27, 4)
         pwr_n += 1
         outward = 270 if net == 'GND' else 90
         vx, vy = _dir_vec(outward)

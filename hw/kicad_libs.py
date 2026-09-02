@@ -46,9 +46,6 @@ def get_symbol(lib_id):
         sym = merged
     # prefix names with lib
     sym[1] = lib_id
-    for x in sym:
-        if isinstance(x, list) and x[0] == 'symbol':
-            x[1] = libname + ':' + x[1]
     return sym
 
 def symbol_pins(sym):

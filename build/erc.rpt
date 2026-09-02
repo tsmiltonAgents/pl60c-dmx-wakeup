@@ -1,0 +1,18 @@
+ERC report (2026-09-02T12:51:03, Encoding UTF8)
+Report includes: Errors, Warnings, Exclusions
+
+***** Sheet /
+[lib_symbol_mismatch]: Symbol 'MAX3485' doesn't match copy in library 'Interface_UART'
+    ; warning
+    @(299.72 mm, 59.69 mm): Symbol U3 [MAX3485]
+[footprint_link_issues]: Footprint 'TerminalBlock_bornier-3_P5.08mm' not found in library 'TerminalBlock'
+    ; warning
+    @(384.81 mm, 95.25 mm): Symbol J3 [Screw_Terminal_01x03]
+
+ ** ERC messages: 2  Errors 0  Warnings 2
+
+ ** Ignored checks:
+    - Global label only appears once in the schematic
+    - Four connection points are joined together
+    - SPICE model issue
+    - Assigned footprint doesn't match footprint filters
