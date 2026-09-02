@@ -105,6 +105,9 @@ def build(out_path):
             net = p.pins.get(pad.GetNumber())
             if net:
                 pad.SetNet(nets[net])
+            if p.drill and pad.GetDrillSize().x:
+                pad.SetDrillSize(VECTOR2I(FromMM(p.drill), FromMM(p.drill)))
+                pad.SetSize(VECTOR2I(FromMM(p.drill + 1.2), FromMM(p.drill + 1.2)))
             # JLCPCB: keep drills >= 0.3 mm (module thermal vias in the library are 0.2 mm)
             if pad.GetDrillSize().x and pad.GetDrillSize().x < FromMM(0.3):
                 pad.SetDrillSize(VECTOR2I(FromMM(0.3), FromMM(0.3)))
