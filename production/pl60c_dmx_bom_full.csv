@@ -1,7 +1,7 @@
 Ref,Value,MPN,LCSC,Footprint,DNP,Description
 BZ1,MLT-8530,MLT-8530,C94599,Buzzer_Beeper:MagneticBuzzer_CUI_CMT-8504-100-SMT,,"Magnetic buzzer 8.5x8.5 mm SMD, passive, 16 ohm, drive 2.7 kHz square wave"
 C1,10uF,,C15850,Capacitor_SMD:C_0805_2012Metric,,10uF 25V X5R 0805
-C2,10uF,,C15850,Capacitor_SMD:C_0805_2012Metric,,10uF 25V X5R 0805
+C2,22uF,,C45783,Capacitor_SMD:C_0805_2012Metric,,"22uF 25V X5R 0805 (AMS1117 output, datasheet asks for >=22uF)"
 C3,100nF,,C14663,Capacitor_SMD:C_0603_1608Metric,,100nF 50V X7R 0603
 C4,10uF,,C15850,Capacitor_SMD:C_0805_2012Metric,,10uF 25V X5R 0805
 C5,100nF,,C14663,Capacitor_SMD:C_0603_1608Metric,,100nF 50V X7R 0603
@@ -9,7 +9,7 @@ C6,1uF,CL21B105KBFNNNE,C28323,Capacitor_SMD:C_0805_2012Metric,,1uF 50V X7R 0805 
 C7,100nF,,C14663,Capacitor_SMD:C_0603_1608Metric,,100nF 50V X7R 0603
 C8,100nF,,C14663,Capacitor_SMD:C_0603_1608Metric,,100nF 50V X7R 0603
 D1,PSM712,PSM712-LF-T7,C32677,Package_TO_SOT_SMD:SOT-23,,RS-485 TVS array +12/-7 V 600 W SOT-23
-D2,WS2812B,WS2812B-B/T,C2761795,LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm,,Addressable RGB LED 5050 (powered from 3V3 as on ESP32-S3-DevKitC)
+D2,WS2812B-2020,WS2812B-2020-V6,C52917434,LED_SMD:LED_WS2812B-2020_PLCC4_2.0x2.0mm,,"Addressable RGB LED 2x2 mm, V6 silicon: 3.3 V supply supported, VIH = 0.55 VDD (datasheet)"
 D3,B5819W,B5819W SL,C8598,Diode_SMD:D_SOD-123,,Schottky flyback diode 1 A 40 V SOD-123
 F1,1A PTC,BSMD1206-100-30V,C5358568,Fuse:Fuse_1206_3216Metric,,"PTC resettable fuse 1206, 1 A hold / 1.8 A trip, 30 V"
 H1,M3,,,MountingHole:MountingHole_3.2mm_M3,,Mounting hole M3
@@ -30,7 +30,8 @@ R5,10k,,C25804,Resistor_SMD:R_0603_1608Metric,,10k 0603
 R6,120R,,C22787,Resistor_SMD:R_0603_1608Metric,yes,120R termination - DNP (fit only if this board ends the DMX line)
 R7,10k,,C25804,Resistor_SMD:R_0603_1608Metric,,10k 0603 (DE pull-down: receiver idle until firmware drives)
 R8,330R,,C23138,Resistor_SMD:R_0603_1608Metric,,330R 0603 series (WS2812 data)
-R9,1k,,C21190,Resistor_SMD:R_0603_1608Metric,,1k 0603
+R9,470R,,C23179,Resistor_SMD:R_0603_1608Metric,,470R 0603 base resistor (buzzer datasheet drive circuit)
+R10,10R,,C17903,Resistor_SMD:R_1206_3216Metric,,10R 1206 250mW buzzer series resistor: limits coil to ~180 mA / 2.9 V from the 5 V rail
 SW1,RESET,TS-1187A-B-A-B,C318884,Button_Switch_SMD:SW_SPST_SKQG_WithStem,,Tactile switch 5.1x5.1x1.5 mm SMD
 SW2,BOOT,TS-1187A-B-A-B,C318884,Button_Switch_SMD:SW_SPST_SKQG_WithStem,,Tactile switch 5.1x5.1x1.5 mm SMD
 SW3,USER,TS-1187A-B-A-B,C318884,Button_Switch_SMD:SW_SPST_SKQG_WithStem,,Tactile switch 5.1x5.1x1.5 mm SMD (snooze / manual on)

@@ -3433,7 +3433,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "LED:WS2812B"
+		(symbol "LED:WS2812B-2020"
 			(pin_names
 				(offset 0.254)
 			)
@@ -3453,7 +3453,7 @@
 					(justify right bottom)
 				)
 			)
-			(property "Value" "WS2812B"
+			(property "Value" "WS2812B-2020"
 				(at 1.27 -5.715 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -3464,7 +3464,7 @@
 					(justify left top)
 				)
 			)
-			(property "Footprint" "LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm"
+			(property "Footprint" "LED_SMD:LED_WS2812B-2020_PLCC4_2.0x2.0mm"
 				(at 1.27 -7.62 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -3476,7 +3476,7 @@
 					(justify left top)
 				)
 			)
-			(property "Datasheet" "https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf"
+			(property "Datasheet" "https://cdn-shop.adafruit.com/product-files/4684/4684_WS2812B-2020_V1.3_EN.pdf"
 				(at 2.54 -9.525 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -3488,7 +3488,7 @@
 					(justify left top)
 				)
 			)
-			(property "Description" "RGB LED with integrated controller"
+			(property "Description" "RGB LED with integrated controller, 2.0 x 2.0 mm, 12 mA"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -3499,7 +3499,7 @@
 					)
 				)
 			)
-			(property "ki_keywords" "RGB LED NeoPixel addressable"
+			(property "ki_keywords" "RGB LED NeoPixel Nano addressable"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -3510,7 +3510,7 @@
 					)
 				)
 			)
-			(property "ki_fp_filters" "LED*WS2812*PLCC*5.0x5.0mm*P3.2mm*"
+			(property "ki_fp_filters" "LED*WS2812*-2020_PLCC4*"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -3521,7 +3521,7 @@
 					)
 				)
 			)
-			(symbol "WS2812B_0_0"
+			(symbol "WS2812B-2020_0_0"
 				(text "RGB"
 					(at 2.286 -4.191 0)
 					(effects
@@ -3531,7 +3531,7 @@
 					)
 				)
 			)
-			(symbol "WS2812B_0_1"
+			(symbol "WS2812B-2020_0_1"
 				(polyline
 					(pts
 						(xy 1.27 -2.54)
@@ -3640,25 +3640,7 @@
 					)
 				)
 			)
-			(symbol "WS2812B_1_1"
-				(pin power_in line
-					(at 0 7.62 270)
-					(length 2.54)
-					(name "VDD"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
+			(symbol "WS2812B-2020_1_1"
 				(pin output line
 					(at 7.62 0 180)
 					(length 2.54)
@@ -3669,7 +3651,7 @@
 							)
 						)
 					)
-					(number "2"
+					(number "1"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -3687,7 +3669,7 @@
 							)
 						)
 					)
-					(number "3"
+					(number "2"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -3699,6 +3681,24 @@
 					(at -7.62 0 0)
 					(length 2.54)
 					(name "DIN"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 0 7.62 270)
+					(length 2.54)
+					(name "VDD"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -5497,7 +5497,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Transistor_BJT:S8050"
+		(symbol "Transistor_BJT:BC817"
 			(pin_names
 				(offset 0)
 				(hide yes)
@@ -5518,7 +5518,7 @@
 					(justify left)
 				)
 			)
-			(property "Value" "S8050"
+			(property "Value" "BC817"
 				(at 5.08 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -5529,7 +5529,7 @@
 					(justify left)
 				)
 			)
-			(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+			(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 				(at 5.08 -1.905 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -5542,7 +5542,7 @@
 					(justify left)
 				)
 			)
-			(property "Datasheet" "http://www.unisonic.com.tw/datasheet/S8050.pdf"
+			(property "Datasheet" "https://www.onsemi.com/pub/Collateral/BC818-D.pdf"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -5554,7 +5554,7 @@
 					(justify left)
 				)
 			)
-			(property "Description" "0.7A Ic, 20V Vce, Low Voltage High Current NPN Transistor, TO-92"
+			(property "Description" "0.8A Ic, 45V Vce, NPN Transistor, SOT-23"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -5576,7 +5576,7 @@
 					)
 				)
 			)
-			(property "Sim.Pins" "1=E 2=B 3=C"
+			(property "Sim.Pins" "1=B 2=E 3=C"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -5587,7 +5587,7 @@
 					)
 				)
 			)
-			(property "ki_keywords" "S8050 NPN Low Voltage High Current Transistor"
+			(property "ki_keywords" "NPN Transistor"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -5598,7 +5598,7 @@
 					)
 				)
 			)
-			(symbol "S8050_0_1"
+			(symbol "BC817_0_1"
 				(polyline
 					(pts
 						(xy -2.54 0)
@@ -5637,7 +5637,7 @@
 					)
 				)
 			)
-			(symbol "S8050_1_1"
+			(symbol "BC817_1_1"
 				(polyline
 					(pts
 						(xy 0.635 0.635)
@@ -5679,10 +5679,10 @@
 						(type outline)
 					)
 				)
-				(pin passive line
-					(at 2.54 -5.08 90)
+				(pin input line
+					(at -5.08 0 0)
 					(length 2.54)
-					(name "E"
+					(name "B"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -5697,10 +5697,10 @@
 						)
 					)
 				)
-				(pin input line
-					(at -5.08 0 0)
+				(pin passive line
+					(at 2.54 -5.08 90)
 					(length 2.54)
-					(name "B"
+					(name "E"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -5735,7 +5735,7 @@
 				)
 			)
 			(embedded_fonts no)
-			(property "ki_fp_filters" "TO?92*"
+			(property "ki_fp_filters" "SOT?23*"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -6343,55 +6343,55 @@
 			)
 		)
 		(pin "A1"
-			(uuid "3652e2b1-725c-4a54-acfb-32e601d1c33a")
+			(uuid "89e6faf8-a14e-43a2-bf80-95cc64e50c9a")
 		)
 		(pin "A4"
-			(uuid "976011ac-7692-441c-baf1-8db471944afa")
+			(uuid "b18885a3-fa71-4c87-8e41-680b98e1f2ae")
 		)
 		(pin "A5"
-			(uuid "d8da5d81-0519-4c0c-9b38-518dc45352df")
+			(uuid "267d9c95-ca67-4342-abb5-eb0752ac5e54")
 		)
 		(pin "A6"
-			(uuid "7f1a951d-d79b-4b22-ad01-a040a9361675")
+			(uuid "491fc3c5-fef4-4d4e-a184-bd362ff9e9be")
 		)
 		(pin "A7"
-			(uuid "5335c968-81da-4160-8775-3623a6106e20")
+			(uuid "89b4ba97-682a-4c05-91c7-7fc56ceb612c")
 		)
 		(pin "A8"
-			(uuid "28ba30ce-a755-4334-a39d-59f1fe1d843c")
+			(uuid "6155b84f-9d2a-439a-9008-90d19acac169")
 		)
 		(pin "A9"
-			(uuid "2af219a9-4ab4-4692-8131-e73048757ea1")
+			(uuid "bc903549-7fb2-41e8-9648-72f8902c26d2")
 		)
 		(pin "A12"
-			(uuid "a4c7e0d7-3ebe-4500-b362-09894c0ec8d6")
+			(uuid "27571231-a1cf-4d17-ad18-a940db73602e")
 		)
 		(pin "B1"
-			(uuid "da85b69c-1de3-45f1-b308-231593d48365")
+			(uuid "f7c19003-dd57-45d1-9705-e8951fca7880")
 		)
 		(pin "B4"
-			(uuid "26200c97-2be2-4a13-811f-7c2b7cae357e")
+			(uuid "448bad79-af92-49e7-8f8f-6fb2e975461e")
 		)
 		(pin "B5"
-			(uuid "ef9d48f9-ad2d-4246-98cb-79f897bd033b")
+			(uuid "b4ef51cd-598a-45b8-a09e-b17565e4c3e2")
 		)
 		(pin "B6"
-			(uuid "6363848e-5138-492f-8d52-97f03d14a8cd")
+			(uuid "865e408a-17f7-41c3-9a4b-13f6acbc8618")
 		)
 		(pin "B7"
-			(uuid "dbc38a1b-cd68-401d-a2b1-41bb3efd7be8")
+			(uuid "2045c53e-e387-4683-a259-c188fbc05c39")
 		)
 		(pin "B8"
-			(uuid "35c730f9-7d65-44bf-bcbc-362111b6a7e0")
+			(uuid "5b222501-638c-4778-8dfa-dac000c64e9e")
 		)
 		(pin "B9"
-			(uuid "02d6e302-aa2d-4da2-9375-be5c2d9981aa")
+			(uuid "8144b9ac-7b90-48bb-8c10-73c2eba180bc")
 		)
 		(pin "B12"
-			(uuid "35edcdff-013d-4578-9b43-72f04a2b015f")
+			(uuid "035e5659-633d-458c-b858-a9758dd79718")
 		)
 		(pin "SH"
-			(uuid "dd775eba-1f26-42dd-96f2-d82884210e53")
+			(uuid "35e4c202-ed9f-4524-bebd-f11475d8c892")
 		)
 		(instances
 			(project "pl60c_dmx"
@@ -6411,7 +6411,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "e4db1e1f-3e61-4984-8732-c2bd5216e1f1")
+		(uuid "942ab483-b342-45dd-a83b-6be4dac9e220")
 	)
 	(symbol
 		(lib_id "power:GND")
@@ -6421,7 +6421,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "53bba912-4b07-4879-b2cd-c8b1186e5b8a")
+		(uuid "c8f4f06f-0ee4-400a-b59d-b023b316180d")
 		(property "Reference" "#PWR001"
 			(at 44.45 90.17 0)
 			(effects
@@ -6467,7 +6467,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "db4e4ed4-d932-4170-a264-a348524771f8")
+			(uuid "0e52f8de-840f-42b2-8f86-ae2e067b5634")
 		)
 		(instances
 			(project "pl60c_dmx"
@@ -6487,7 +6487,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "6994bb8a-2fd5-4d8b-b2ce-6137a3a67c43")
+		(uuid "1e28a4ad-651e-452a-b40d-1ffa0decfc21")
 	)
 	(label "VBUS"
 		(at 62.23 49.53 0)
@@ -6498,7 +6498,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "50324b57-ae6b-4104-8688-e7323c034ea0")
+		(uuid "37f7af7b-4317-4b20-b028-0c65ba663366")
 	)
 	(wire
 		(pts
@@ -6509,7 +6509,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "224fe118-0969-4249-9da0-6bc98cc3279f")
+		(uuid "e8d7942d-2b89-40d7-b3cc-72b0b823a548")
 	)
 	(label "CC1"
 		(at 62.23 54.61 0)
@@ -6520,7 +6520,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "7d460e42-1696-4672-a926-cd00d850bb62")
+		(uuid "2f643f13-8386-49ff-9a4a-8573638a0f86")
 	)
 	(wire
 		(pts
@@ -6531,7 +6531,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "4d31eb3d-054b-45f0-a343-0e651db5e18b")
+		(uuid "2978b755-61ad-4594-a613-5e406723d15e")
 	)
 	(label "USB_D+"
 		(at 62.23 67.31 0)
@@ -6542,7 +6542,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "f91a8873-bf4d-4d17-aff6-22b554a48761")
+		(uuid "7d3b55ee-3d0c-4061-87db-bd72be11d67b")
 	)
 	(wire
 		(pts
@@ -6553,7 +6553,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "f8bfa1fa-f74b-4d2b-9d31-dbc853d822f0")
+		(uuid "2b5823d2-a6ca-44f7-b4b5-00314288690e")
 	)
 	(label "USB_D-"
 		(at 62.23 62.23 0)
@@ -6564,11 +6564,11 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "f7cb2594-564c-413d-b85d-e870d9c3504d")
+		(uuid "5a1601ad-febb-4953-b2fb-944d58b1d741")
 	)
 	(no_connect
 		(at 59.69 77.47)
-		(uuid "35a82440-1695-4d93-b633-06830c7af7ea")
+		(uuid "2e519756-f9de-439d-b01d-b3f989af313f")
 	)
 	(wire
 		(pts
@@ -6579,7 +6579,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "65d583e7-af48-4b14-be25-183b86ced69e")
+		(uuid "f8bd6609-cda6-4e81-b0c0-11e30c215ce6")
 	)
 	(label "CC2"
 		(at 62.23 57.15 0)
@@ -6590,7 +6590,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "07b53f2a-5407-429f-b59f-93b5cfbda8aa")
+		(uuid "263a6867-6ec6-4d29-9099-a357f7784ab1")
 	)
 	(wire
 		(pts
@@ -6601,7 +6601,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "6def8f2c-124e-403f-bfd1-ac532c80198f")
+		(uuid "68d7dccc-617b-4415-9ef8-c8d8ad14aa71")
 	)
 	(label "USB_D+"
 		(at 62.23 69.85 0)
@@ -6612,7 +6612,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "83c096fc-4605-463e-bfb2-56c8062b56df")
+		(uuid "b3679347-c5b4-4117-bd93-e1a864a6bd6f")
 	)
 	(wire
 		(pts
@@ -6623,7 +6623,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "63cf013c-e2f3-4818-9264-b493cf7d2254")
+		(uuid "dd1cf41a-e479-4501-8090-5fef7bdbeca1")
 	)
 	(label "USB_D-"
 		(at 62.23 64.77 0)
@@ -6634,11 +6634,11 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "3330252c-c8b4-4765-a474-f7c45e52d0c8")
+		(uuid "0c8058db-743e-48ee-acb9-c5b5056f3134")
 	)
 	(no_connect
 		(at 59.69 80.01)
-		(uuid "8cf5d526-9838-4786-895b-dc4f59bc22d9")
+		(uuid "88fc8473-fdfa-4431-b429-321d69e39f9b")
 	)
 	(wire
 		(pts
@@ -6649,7 +6649,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "8b9d03ac-8163-45bd-8165-c512e147128d")
+		(uuid "108dd9e7-6a42-414f-8267-e755995b094c")
 	)
 	(symbol
 		(lib_id "power:GND")
@@ -6659,7 +6659,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "17136bd4-e2f2-465c-9ce1-2753ac59eaa5")
+		(uuid "c1b582ed-1ffc-4ae8-b37c-8eda5f5d0e3f")
 		(property "Reference" "#PWR002"
 			(at 36.83 90.17 0)
 			(effects
@@ -6705,7 +6705,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "b3510991-039e-4d9a-ba22-84c7dbce7e80")
+			(uuid "a497d855-fbb9-4388-8796-a30a847d393f")
 		)
 		(instances
 			(project "pl60c_dmx"
@@ -6778,10 +6778,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "2a9d446e-614c-4068-8985-8b9edef49f10")
+			(uuid "9050ebab-50e2-4c95-a5b9-cd6200fd5b06")
 		)
 		(pin "2"
-			(uuid "1d5fab95-05ef-4248-aa4b-31587eec7685")
+			(uuid "acee485a-255b-4a21-aed9-c83a6ba2bba6")
 		)
 		(instances
 			(project "pl60c_dmx"
@@ -6801,7 +6801,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "e8fb4b06-a8eb-44f9-9391-36463cce95bc")
+		(uuid "7edc64ea-20d0-404b-9f12-2996e3626cc6")
 	)
 	(label "CC1"
 		(at 74.93 73.66 90)
@@ -6812,7 +6812,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "3e26da0f-d18b-405b-adb3-a91f924c64c5")
+		(uuid "d8bb6c51-e344-4852-8c83-2da4083066f2")
 	)
 	(wire
 		(pts
@@ -6823,7 +6823,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "00437267-6bed-4c0e-b5ad-8c77886cea73")
+		(uuid "e702022c-924d-42b3-99cd-a18800e30bd0")
 	)
 	(symbol
 		(lib_id "power:GND")
@@ -6833,7 +6833,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "82cad231-7f7a-4b5f-8de5-0452f3578819")
+		(uuid "85c5f401-aa9f-4dd8-89d0-80b93c4bff5e")
 		(property "Reference" "#PWR003"
 			(at 74.93 86.36 0)
 			(effects
@@ -6879,7 +6879,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "fdc64247-ae56-44cd-8577-e25d3f32bff0")
+			(uuid "ac4a32c6-a38b-424e-8b05-60b7cf1caf41")
 		)
 		(instances
 			(project "pl60c_dmx"
@@ -6952,10 +6952,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "7a8b9201-dac7-4eff-92c0-2935499fbec6")
+			(uuid "14c4419d-e0a9-43ab-b42f-b6fb7ba93259")
 		)
 		(pin "2"
-			(uuid "bfff3aa8-953f-4ed4-9c4a-0ea0b6988132")
+			(uuid "3401693d-5a8e-45d8-bb96-9f0ee6f91db2")
 		)
 		(instances
 			(project "pl60c_dmx"
@@ -6975,7 +6975,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "a6fe9761-1bd1-480d-ad46-1efc56222509")
+		(uuid "f2ff30db-1749-4ce0-a539-ef40077dca76")
 	)
 	(label "CC2"
 		(at 85.09 73.66 90)
@@ -6986,7 +6986,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "8632a47f-18bc-467c-b5a1-c5154a45e8f9")
+		(uuid "8ea5bbf9-e64d-42b9-ae27-acaaaa35eaf5")
 	)
 	(wire
 		(pts
@@ -6997,7 +6997,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "30619686-551c-428f-8e32-a3681ad10532")
+		(uuid "7021c96b-53b1-452f-95d5-49886d1989b7")
 	)
 	(symbol
 		(lib_id "power:GND")
@@ -7007,7 +7007,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "fac10911-6e8d-4da2-acf1-3c73b3142d1d")
+		(uuid "c2772915-7044-4c52-b359-d39506237bbe")
 		(property "Reference" "#PWR004"
 			(at 85.09 86.36 0)
 			(effects
@@ -7053,7 +7053,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "5943612d-4901-4070-b9fb-20e5b98b6888")
+			(uuid "4c5024f8-b77c-4f3a-b659-c350d6a178c9")
 		)
 		(instances
 			(project "pl60c_dmx"
@@ -7135,22 +7135,22 @@
 			)
 		)
 		(pin "1"
-			(uuid "c4fc94b0-a004-4f15-b0b6-d2ffde404d64")
+			(uuid "2a888b0d-9999-4cbf-a8f1-25135fa5292f")
 		)
 		(pin "2"
-			(uuid "3e926ca2-e85f-4f02-9f92-25b8780cc820")
+			(uuid "b27ac369-ed39-40c4-9530-6ac0670fa842")
 		)
 		(pin "3"
-			(uuid "ad6f70b5-572a-4cfd-a27b-331e74c8ef95")
+			(uuid "90e02aac-e982-430b-8877-2930152969fe")
 		)
 		(pin "4"
-			(uuid "627743bb-efd8-49f8-b3e7-be8c9b16c939")
+			(uuid "39ef90f0-6752-42fa-b992-7c35e69ee342")
 		)
 		(pin "5"
-			(uuid "bb2e761b-bcfa-4bdd-bae3-1e4bc45e748c")
+			(uuid "0f12fcd9-42f2-4e8b-a84f-470bd3f7b57b")
 		)
 		(pin "6"
-			(uuid "ce0d0e7f-1337-4720-94cd-0f48ad3e40dd")
+			(uuid "5ae3be5c-2eab-4bc0-b0bd-cda739de0cff")
 		)
 		(instances
 			(project "pl60c_dmx"
@@ -7170,7 +7170,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "d2baed76-9c18-4f9b-ab1b-03b0cef2ae89")
+		(uuid "21921fca-7973-4adb-9465-374582875405")
 	)
 	(label "USB_D+"
 		(at 92.71 100.33 180)
@@ -7181,7 +7181,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "54e5f5e1-8c5a-4c75-83e9-547bd5af4fbe")
+		(uuid "8d200b01-ffc1-4cdb-afe5-33425e8dffd3")
 	)
 	(wire
 		(pts
@@ -7192,7 +7192,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "47fca8a9-3a64-4f3e-88d0-1ec996358a67")
+		(uuid "298117b8-6ed5-43bb-905b-694cde696576")
 	)
 	(symbol
 		(lib_id "power:GND")
@@ -7202,7 +7202,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "f28f4f7d-a301-49ca-88d6-424bff9c939c")
+		(uuid "ece0d46f-d9ea-4cc5-88c5-c45d3698e2cf")
 		(property "Reference" "#PWR005"
 			(at 100.33 110.49 0)
 			(effects
@@ -7248,7 +7248,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "4e5acfee-6868-4cac-a817-e555ff6b4aa8")
+			(uuid "8b7a0808-d3ba-48e5-8d04-bc9db622b259")
 		)
 		(instances
 			(project "pl60c_dmx"
@@ -7268,7 +7268,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "4d00d121-f516-4bad-81c6-529211b82211")
+		(uuid "3f3085c9-d95a-42b9-8be1-b5a794d4463e")
 	)
 	(label "USB_D-"
 		(at 92.71 102.87 180)
@@ -7279,7 +7279,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "d26a7ccb-9020-4ae5-a3f2-bb12052420d7")
+		(uuid "becf1abf-e123-41f3-9555-0a277c6776be")
 	)
 	(wire
 		(pts
@@ -7290,7 +7290,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "8b0176ef-b0ef-4e73-8d74-e8ffd53863f8")
+		(uuid "39e6acd6-cfc9-4aff-ac0b-323c840e3537")
 	)
 	(label "USB_D-"
 		(at 107.95 102.87 0)
@@ -7301,7 +7301,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "43ab1d80-b515-4cb2-ba14-ae6bcc53d2b2")
+		(uuid "c7130f38-2b90-49ed-92be-a478fcc32bde")
 	)
 	(wire
 		(pts
@@ -7312,7 +7312,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "3405e8e6-7cd2-4338-8e42-8dda41ab0a70")
+		(uuid "94d898a5-7fd9-4ed0-b316-9a5d918cb19b")
 	)
 	(label "VBUS"
 		(at 100.33 92.71 90)
@@ -7323,7 +7323,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "d76de157-2ec1-41d3-8165-cfef9c33a516")
+		(uuid "3b14cae3-8470-438e-86ff-509f771e9341")
 	)
 	(wire
 		(pts
@@ -7334,7 +7334,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "93fb0ee5-67d3-42ef-973f-0be2165b9ae7")
+		(uuid "a467a29d-5da0-4ed6-be44-1c64d6b3e8a7")
 	)
 	(label "USB_D+"
 		(at 107.95 100.33 0)
@@ -7345,7 +7345,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "7558f31d-9423-4a52-a3d6-a00a97594aed")
+		(uuid "3e8baf20-f312-44ab-987d-3af142e765b7")
 	)
 	(symbol
 		(lib_id "Device:Polyfuse")
@@ -7418,10 +7418,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "97ebedd7-b3e6-4743-b361-c24457786343")
+			(uuid "b0ef1c85-05b7-440f-b4dd-bb9ccae89aa8")
 		)
 		(pin "2"
-			(uuid "0850c3b5-04ba-49a9-964a-bb12b248dfbf")
+			(uuid "0a14b99d-32bb-487d-b5b6-89c9e997e148")
 		)
 		(instances
 			(project "pl60c_dmx"
@@ -7441,7 +7441,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "dc8d0279-dfa2-4bc2-a8d9-b9ce2ebbfd36")
+		(uuid "9a2bef63-8972-4583-9a2f-de8890714746")
 	)
 	(label "VBUS"
 		(at 69.85 33.02 90)
@@ -7452,7 +7452,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "8708903a-d79b-4602-810e-04590b7ea28b")
+		(uuid "1209327e-2592-426e-a7b3-e69ab7c5b785")
 	)
 	(wire
 		(pts
@@ -7463,7 +7463,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "0d3162cd-54c8-4430-a579-9698da9aec5f")
+		(uuid "03902d1e-30f5-45d0-b179-21d4e67e1333")
 	)
 	(label "+5V"
 		(at 69.85 45.72 270)
@@ -7474,7 +7474,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "f02f8ad8-413f-4fd3-9dec-abb2a53ee05c")
+		(uuid "4c513f86-74d2-4866-9f71-43e5250959cb")
 	)
 	(symbol
 		(lib_id "Device:C")
@@ -7538,10 +7538,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "4cdadf81-9b7f-4c65-8393-8dab951e5868")
+			(uuid "f1aaced4-04f2-456a-8146-7b714817a5a1")
 		)
 		(pin "2"
-			(uuid "afe74853-6893-4fb1-88c1-4bd147cb3b1e")
+			(uuid "783dc43b-f53a-453f-89f1-8a83ee7013ba")
 		)
 		(instances
 			(project "pl60c_dmx"
@@ -7561,7 +7561,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "8bee8ef3-3640-4ea1-8726-dd65ff99048b")
+		(uuid "26633d07-dc15-4ea1-8762-0a30f8c5739d")
 	)
 	(symbol
 		(lib_id "power:+5V")
@@ -7571,7 +7571,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "1c0408c2-6bed-4e9f-8788-c07d43d1a909")
+		(uuid "6c07684f-4198-41ae-982d-d4d7787ac415")
 		(property "Reference" "#PWR006"
 			(at 82.55 43.18 0)
 			(effects
@@ -7617,7 +7617,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "bc1f3b63-4dd3-4260-bc5e-ab33377cbad4")
+			(uuid "460408e4-e4de-46c5-a128-09e929153d7b")
 		)
 		(instances
 			(project "pl60c_dmx"
@@ -7637,7 +7637,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "a2ad29cd-8cc3-4d3a-82c0-e414e9660197")
+		(uuid "b50e5bd6-3788-4f45-b7d7-4ab8d3b72804")
 	)
 	(symbol
 		(lib_id "power:GND")
@@ -7647,7 +7647,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "8448182a-f798-4f21-a741-ac77ba60b8e2")
+		(uuid "f064f765-1e73-4ec6-9ca4-3ab4c8119612")
 		(property "Reference" "#PWR007"
 			(at 82.55 55.88 0)
 			(effects
@@ -7693,7 +7693,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "a8209b59-688c-4d3b-8083-946cd242c672")
+			(uuid "e11271e9-59e3-43e2-bb33-f814e2e3eca7")
 		)
 		(instances
 			(project "pl60c_dmx"
@@ -7775,13 +7775,13 @@
 			)
 		)
 		(pin "1"
-			(uuid "8eb8305b-06ee-491a-8487-1161587da527")
+			(uuid "56239bee-87df-4f65-bce5-5bb0b676318c")
 		)
 		(pin "2"
-			(uuid "df0551c1-2f31-4bc7-83a9-962e72cbf8e1")
+			(uuid "3c4ea4fb-c8e6-4667-abca-cd4afe99cd8b")
 		)
 		(pin "3"
-			(uuid "9b4ec76a-fa53-43e9-a4fc-a67021aa5fc3")
+			(uuid "2bbf63b0-a9cc-4ec0-93e5-46520e744d3e")
 		)
 		(instances
 			(project "pl60c_dmx"
@@ -7801,7 +7801,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "b9fd1f6c-0f61-409b-8ea1-63ac5cd34a1d")
+		(uuid "d1ca6bf2-0def-4100-81ce-12f581cc70a3")
 	)
 	(symbol
 		(lib_id "power:GND")
@@ -7811,7 +7811,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "d6df2352-4eb4-47c0-a5fe-a923c7990908")
+		(uuid "1bf21a43-2c76-453b-a956-fc14bc60ac24")
 		(property "Reference" "#PWR008"
 			(at 100.33 49.53 0)
 			(effects
@@ -7857,7 +7857,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "b1d15a54-aedc-4f54-a9b0-bd5951f04e34")
+			(uuid "5afb790d-a2a6-4bba-a8ec-a9b1a790afe9")
 		)
 		(instances
 			(project "pl60c_dmx"
@@ -7877,7 +7877,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "66cd5f90-28e4-4d7f-9807-f8bbf7dd85f5")
+		(uuid "d8e51462-b3ac-4e06-84b4-659cad8299c5")
 	)
 	(label "+3V3"
 		(at 110.49 39.37 0)
@@ -7888,7 +7888,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "d8ddc723-8e19-4557-9bb0-6cbbc63f1e3d")
+		(uuid "20b193e4-8e5b-4e1a-b8f6-010dae4c5d2b")
 	)
 	(wire
 		(pts
@@ -7899,7 +7899,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "b7351555-9fd5-431e-9297-a8196c7ebe75")
+		(uuid "ab145376-1e42-4022-956b-8ae4508bbf95")
 	)
 	(label "+5V"
 		(at 90.17 39.37 180)
@@ -7910,7 +7910,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "6d13dcf5-9afa-4cd5-9158-15ec82ae0228")
+		(uuid "1df0d2a2-f9b1-4dfc-8320-682fcae41f7d")
 	)
 	(symbol
 		(lib_id "Device:C")
@@ -7929,7 +7929,7 @@
 				)
 			)
 		)
-		(property "Value" "10uF"
+		(property "Value" "22uF"
 			(at 115.57 57.15 0)
 			(effects
 				(font
@@ -7955,7 +7955,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "10uF 25V X5R 0805"
+		(property "Description" "22uF 25V X5R 0805 (AMS1117 output, datasheet asks for >=22uF)"
 			(at 115.57 49.53 0)
 			(effects
 				(font
@@ -7964,7 +7964,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C15850"
+		(property "LCSC" "C45783"
 			(at 115.57 49.53 0)
 			(effects
 				(font
@@ -7974,10 +7974,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "c51c7fb9-a04a-4659-a00e-6c7df44df778")
+			(uuid "2439f597-894b-4265-ba96-98b76200aaae")
 		)
 		(pin "2"
-			(uuid "72839bc8-8f02-4b47-a57b-d132505473b5")
+			(uuid "44eac961-0c0c-43c3-bd87-bd72207fb2dc")
 		)
 		(instances
 			(project "pl60c_dmx"
@@ -7997,7 +7997,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "4733c380-eaaa-4204-ade7-042a5c600f07")
+		(uuid "ad8f0ae5-3c29-44ab-8783-d829d10eeb76")
 	)
 	(symbol
 		(lib_id "power:+3V3")
@@ -8007,7 +8007,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "8f7e75d1-6b9a-4c00-b851-c37c964265b5")
+		(uuid "87c2c75a-83e4-4412-95f2-c9af25e1de17")
 		(property "Reference" "#PWR009"
 			(at 115.57 43.18 0)
 			(effects
@@ -8053,7 +8053,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "e5982887-c1b7-4278-9b0c-7ebb2353c480")
+			(uuid "42aa550b-0694-43ea-b97e-85a8cc7445b1")
 		)
 		(instances
 			(project "pl60c_dmx"
@@ -8073,7 +8073,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "09f24700-43b7-4d0c-b1a8-ed7dfd132b72")
+		(uuid "41d55ab0-1f74-4c3b-9352-0f84b1a12c5a")
 	)
 	(symbol
 		(lib_id "power:GND")
@@ -8083,7 +8083,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "fc65103f-4522-473a-8dc6-01efbac66f10")
+		(uuid "40db937c-25b0-4cc2-bc9a-ac54cffd4d5f")
 		(property "Reference" "#PWR010"
 			(at 115.57 55.88 0)
 			(effects
@@ -8129,7 +8129,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "0134056b-74aa-4e20-bf2c-57c677a8a298")
+			(uuid "b4230328-6810-403e-89f0-d1ac5748b0fd")
 		)
 		(instances
 			(project "pl60c_dmx"
@@ -8202,10 +8202,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "93d91771-bc0b-4a2f-8dca-f95257ed01c7")
+			(uuid "c7333513-d1bc-4f68-a80c-8cf8e2917c5a")
 		)
 		(pin "2"
-			(uuid "831c2b99-1b18-4e07-af0e-c11a00b936d1")
+			(uuid "cac7d6b1-c496-4c8a-9507-aaa583e84eb2")
 		)
 		(instances
 			(project "pl60c_dmx"
@@ -8225,7 +8225,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "9c9035d9-9d2c-4c66-88fe-6b5a46f3ad56")
+		(uuid "823810f2-7370-4dde-b705-9b84a72f3aa0")
 	)
 	(symbol
 		(lib_id "power:+3V3")
@@ -8235,7 +8235,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "fb44adad-bfb9-4db1-b2e8-ff841c71cb56")
+		(uuid "3fb2fce5-aa50-4de6-ac64-a6eb7a8dd430")
 		(property "Reference" "#PWR011"
 			(at 121.92 43.18 0)
 			(effects
@@ -8281,7 +8281,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "6f86b488-9ec7-499c-82f8-2539483a45fb")
+			(uuid "cab06c72-ac4f-41da-afcc-4c09f8b32206")
 		)
 		(instances
 			(project "pl60c_dmx"
@@ -8301,7 +8301,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "546d2090-274c-476b-adc9-bbe87067b9b4")
+		(uuid "5be04bb7-1e5d-42ca-88c5-a1c5702d0b60")
 	)
 	(symbol
 		(lib_id "power:GND")
@@ -8311,7 +8311,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "fbccbb05-14f7-466d-882e-f6398ab1e3ee")
+		(uuid "20224483-ccc9-482b-b782-9006eea678c2")
 		(property "Reference" "#PWR012"
 			(at 121.92 55.88 0)
 			(effects
@@ -8357,7 +8357,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "8596f9b7-d3f9-4915-93a2-08ae0eae632c")
+			(uuid "74822827-57bb-4fa0-b591-1c1d6301b1e8")
 		)
 		(instances
 			(project "pl60c_dmx"
@@ -8439,127 +8439,127 @@
 			)
 		)
 		(pin "1"
-			(uuid "7591dde9-11fd-4618-9451-2bafa8982c0e")
+			(uuid "a92c3d5b-3304-4cb4-9203-bd2c74647e01")
 		)
 		(pin "2"
-			(uuid "7bd1b7cb-ff5c-41bd-9314-1a9f3c3a35ee")
+			(uuid "57c96694-61ef-48ae-9268-58bb1617ae86")
 		)
 		(pin "3"
-			(uuid "5991e9f2-0ac6-4a92-9af1-dd77840baf51")
+			(uuid "b346a8dc-326d-4771-8950-6ff39235ece0")
 		)
 		(pin "4"
-			(uuid "8b8e2c1f-4f35-4c2d-ac85-1b387cf99817")
+			(uuid "089192bc-f4b9-491a-894b-26caa5253a94")
 		)
 		(pin "5"
-			(uuid "6d9c4271-acfd-4605-9c19-f313ccb3e73c")
+			(uuid "e27e4e30-a8c8-496b-aefd-468e573a2086")
 		)
 		(pin "6"
-			(uuid "cdffe7d6-34bb-4c37-a4dc-975de4dc092e")
+			(uuid "963eae71-a43f-4ba3-ba1c-5d3f193a2917")
 		)
 		(pin "7"
-			(uuid "752c6616-8f2d-4577-8050-645bedabc138")
+			(uuid "bc49e553-2c86-418b-8501-cf4fc649a360")
 		)
 		(pin "8"
-			(uuid "5bff51ea-5475-4172-8a54-ad8dbd145792")
+			(uuid "8712be46-a763-4152-8d0c-f8995ba25b77")
 		)
 		(pin "9"
-			(uuid "bc874944-adeb-46ec-a505-4f4cf0c5f983")
+			(uuid "943cfa12-e07a-4baf-84b6-c3fbca7569fc")
 		)
 		(pin "10"
-			(uuid "37a82385-c360-4962-817b-6e0d0bd9c7b8")
+			(uuid "07e839fb-2887-41e7-b16d-2b01d2a28222")
 		)
 		(pin "11"
-			(uuid "1eda7bba-f0d8-4483-b988-29bbdcd8283a")
+			(uuid "b102c810-bc31-466a-9723-04582c539bfc")
 		)
 		(pin "12"
-			(uuid "6fd56561-bf26-4726-9c2b-15e093c22c6f")
+			(uuid "2b756ba2-39f3-46ed-bd00-b9ffb30f5158")
 		)
 		(pin "13"
-			(uuid "5c73c184-af6c-4a35-83a1-cc63dba642e6")
+			(uuid "4b3355e3-8540-4a9c-b83b-2ba5572a33e0")
 		)
 		(pin "14"
-			(uuid "a294f781-bcbb-47a4-b5f4-3fb5ce059c74")
+			(uuid "f9345b2d-dc48-4f44-a5d5-d0ede577c222")
 		)
 		(pin "15"
-			(uuid "cd0c4f79-c28d-4dff-9f1f-10d44f5fd6f9")
+			(uuid "b48f9d70-58fc-4507-af4a-fb22feb4f34a")
 		)
 		(pin "16"
-			(uuid "2c78b97a-1a47-4ffc-98bb-a613374962d7")
+			(uuid "ac7d7d63-a56a-43c1-a408-fd1d8aff8eb0")
 		)
 		(pin "17"
-			(uuid "e675045b-68f4-43b0-96fc-557b00059adf")
+			(uuid "5384df92-4725-4e54-89ca-d28202642876")
 		)
 		(pin "18"
-			(uuid "89f686c0-e854-4b5b-a4fc-b98301eccc5b")
+			(uuid "98f7e29c-d2b0-42ef-abd6-ff569ef83095")
 		)
 		(pin "19"
-			(uuid "14b1b2be-4bf6-4e91-9a18-f56758950d11")
+			(uuid "67cda092-5e65-465c-97ee-3b7a8bfe55fd")
 		)
 		(pin "20"
-			(uuid "cddbefeb-ce59-4906-90ca-e9e29ab6e94d")
+			(uuid "ef27b712-1745-4eef-aded-ebfe01b415aa")
 		)
 		(pin "21"
-			(uuid "e65f31bb-0866-41e3-86de-0e44a07b9d36")
+			(uuid "007b13ad-8c9e-4bbd-8d6f-e995f18b9eb1")
 		)
 		(pin "22"
-			(uuid "d8a98d02-d4b2-4da5-b83e-48791871b1ed")
+			(uuid "11dcfdbb-f240-4e34-b2b8-bba32558e50c")
 		)
 		(pin "23"
-			(uuid "585ed0a1-6bea-42a7-9565-c97309bc5589")
+			(uuid "85c8521d-fa57-4888-a716-0a3742aaf2e2")
 		)
 		(pin "24"
-			(uuid "81e754ef-5eb9-46d7-98f6-06e9b81238ab")
+			(uuid "4fd0dc91-e283-4043-ac37-bc09d57f5640")
 		)
 		(pin "25"
-			(uuid "e79b5477-263f-498f-bc4f-a26bb7ff8bcb")
+			(uuid "e04e5ea2-dc9e-4764-a0d1-0ecde12d321d")
 		)
 		(pin "26"
-			(uuid "5d92bc5b-e345-49fc-b0d0-ef62521fe98f")
+			(uuid "d9f66d4d-b601-4aac-b24a-a39f89823f85")
 		)
 		(pin "27"
-			(uuid "ab32df2a-088c-4609-aa53-ea51fa30e138")
+			(uuid "0ded43f0-4e78-4350-9fcf-8d8a5704a790")
 		)
 		(pin "28"
-			(uuid "bc2de060-79ed-473b-a712-3d15b37cec20")
+			(uuid "af71e748-126c-4262-94e4-f962620061f0")
 		)
 		(pin "29"
-			(uuid "3825fe5a-5da5-4810-a229-ad0ac7fea22f")
+			(uuid "b90cc605-b016-4d4d-b623-5ecc3fd3facb")
 		)
 		(pin "30"
-			(uuid "b17e8cb7-d437-4bf4-8c45-3a01fc0bf1d9")
+			(uuid "e4c10e5f-b18e-46b9-aaea-dc0a9ae2837f")
 		)
 		(pin "31"
-			(uuid "48a5b72a-960e-40a4-88f5-26f5bc64cc65")
+			(uuid "e47cca06-c8dd-4c78-9324-0b2807fc4a73")
 		)
 		(pin "32"
-			(uuid "84540619-24ac-4b7c-9c47-dd307c18c824")
+			(uuid "4cd12cd5-c92a-4975-8cbf-f4c8467d8dcd")
 		)
 		(pin "33"
-			(uuid "921833bc-240a-4c61-875a-2dd6f4dc7737")
+			(uuid "5617e9a5-c0df-4e15-8259-1ea238171f88")
 		)
 		(pin "34"
-			(uuid "68e59f74-563b-4e31-8568-7a4bb4c7e3ac")
+			(uuid "0b7c20da-3b08-4efa-b6fd-902a5bdd479b")
 		)
 		(pin "35"
-			(uuid "c862106c-c3d2-4e31-88cf-c2ca62f801ed")
+			(uuid "03120c58-dca4-45ea-8fdf-1cec8ffbe01e")
 		)
 		(pin "36"
-			(uuid "7ab42f75-24f1-4fe0-b793-c58d1266b90a")
+			(uuid "046219f9-5ea6-41f7-9e72-57ed03e1e5bc")
 		)
 		(pin "37"
-			(uuid "314f9472-acb0-4ec5-9811-e694526c0845")
+			(uuid "1b2b3f2d-60cf-478c-808d-82136765af64")
 		)
 		(pin "38"
-			(uuid "c930464d-1140-404a-bb07-c4688b3f05b5")
+			(uuid "542e447e-3a5e-4ce6-a9b6-07669bc8f1cc")
 		)
 		(pin "39"
-			(uuid "2a3c3547-3782-4912-8c42-8a0e3d3264c5")
+			(uuid "caf8d405-4887-412b-af46-51f3ce6125ee")
 		)
 		(pin "40"
-			(uuid "c11ddcd5-b28a-48e4-8005-358cc8dfca18")
+			(uuid "e8f3235d-4b67-4c18-9251-54fbb2001a42")
 		)
 		(pin "41"
-			(uuid "4f5d4de5-0d36-4a64-aece-1510d8f0d022")
+			(uuid "07b21ceb-49ff-47d0-b59c-76d8a62e88bf")
 		)
 		(instances
 			(project "pl60c_dmx"
@@ -8579,7 +8579,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "5d7f5817-3d9a-4f86-a3e3-3049409db123")
+		(uuid "fd40919d-f259-4e2b-bbc4-58d4a08aca98")
 	)
 	(symbol
 		(lib_id "power:GND")
@@ -8589,7 +8589,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "03e7e29e-ad64-48e0-a883-832c9a9904c7")
+		(uuid "2f7010b3-42c6-4dec-bc79-90c01be5ff44")
 		(property "Reference" "#PWR013"
 			(at 199.39 110.49 0)
 			(effects
@@ -8635,7 +8635,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "c3cecaa9-780a-4ac1-901a-f0beafec9ae9")
+			(uuid "d23c20e6-00dd-46b6-a726-6c1ccc011b9b")
 		)
 		(instances
 			(project "pl60c_dmx"
@@ -8655,7 +8655,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "17d93441-f711-4725-a395-37c650b040df")
+		(uuid "ac0672e9-e1d1-4696-960f-c511c6ba8d3b")
 	)
 	(symbol
 		(lib_id "power:+3V3")
@@ -8665,7 +8665,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "d14ddaaf-f3e9-404b-bde2-804d68a64702")
+		(uuid "d0aed2f0-4e22-4d0c-bfb4-a611ac6a9794")
 		(property "Reference" "#PWR014"
 			(at 199.39 49.53 0)
 			(effects
@@ -8711,7 +8711,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "85cc02e9-70e8-43ac-8d2e-59f7d443f293")
+			(uuid "07d6801e-df01-431b-ac9e-d70c3dac3729")
 		)
 		(instances
 			(project "pl60c_dmx"
@@ -8731,7 +8731,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "a4f2e2e8-4923-45f5-9142-74da2d217779")
+		(uuid "b6121a54-1d18-4bbe-86ab-3154b8e34940")
 	)
 	(label "EN"
 		(at 181.61 57.15 180)
@@ -8742,11 +8742,11 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "dec0abb1-15f1-49ef-8d9a-4e0563de2bb0")
+		(uuid "f321ed87-a138-43cd-a2eb-e8f1081e821a")
 	)
 	(no_connect
 		(at 184.15 72.39)
-		(uuid "97b36d3f-b0bc-40e0-a870-2fb8b5635bf3")
+		(uuid "a875c7a8-8437-4f08-9069-3474a00cdc1f")
 	)
 	(wire
 		(pts
@@ -8757,7 +8757,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "67c3df25-2571-4b92-b7c4-990e81817d7f")
+		(uuid "d3ffbece-db14-483e-a207-4af3a45a11bf")
 	)
 	(label "BTN_USER"
 		(at 181.61 74.93 180)
@@ -8768,7 +8768,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "4312a470-a1e1-4a3f-969a-86898070c627")
+		(uuid "89c42d69-1384-46c0-bce7-fb377fd9782b")
 	)
 	(wire
 		(pts
@@ -8779,7 +8779,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "955a30ae-8466-417c-9461-d7ab7a714a19")
+		(uuid "a2c827c1-d080-4c9d-abe0-c1f92a7baeb3")
 	)
 	(label "BUZZER"
 		(at 181.61 77.47 180)
@@ -8790,15 +8790,15 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "d140ae4c-a1fb-455a-9146-006a7727b3e9")
+		(uuid "a8b84576-b12e-4a66-8a72-b0b2ceefdcc8")
 	)
 	(no_connect
 		(at 184.15 80.01)
-		(uuid "dab0d40c-3da9-4f1c-934f-1cc6fc2714e8")
+		(uuid "4d7a77ca-c1f6-4851-8a55-5e30c2e51d69")
 	)
 	(no_connect
 		(at 184.15 100.33)
-		(uuid "a776afb2-4ff9-4627-9202-9feaddc0b882")
+		(uuid "27a4cef2-f7b3-461a-a313-9c10c0686c1c")
 	)
 	(wire
 		(pts
@@ -8809,7 +8809,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "1cb778b5-8321-4f79-a5dc-83c6f68ecb0a")
+		(uuid "c814d88d-9e21-40db-a730-cb17df185c19")
 	)
 	(label "DMX_DE"
 		(at 181.61 102.87 180)
@@ -8820,7 +8820,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "67591f34-6c65-4063-95c1-1ae4cd444dc1")
+		(uuid "2a27e2d8-c7fd-4e7b-bddf-193d68836e75")
 	)
 	(wire
 		(pts
@@ -8831,7 +8831,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "a2d6d7b6-11bb-4762-9081-1c6cb0b55675")
+		(uuid "00e538e1-4306-4fca-895b-732514a18f24")
 	)
 	(label "DMX_TX"
 		(at 217.17 62.23 0)
@@ -8842,7 +8842,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "1be0937a-2986-4ba3-8989-1eb03dfa9a87")
+		(uuid "b7060ead-5614-4c9c-a724-aa2ffac2d17f")
 	)
 	(wire
 		(pts
@@ -8853,7 +8853,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "e06ee8a6-4805-4291-b9c9-ad9ed7dfa739")
+		(uuid "15d547b2-b3ac-4631-a810-c62ad0608a73")
 	)
 	(label "DMX_RX"
 		(at 217.17 64.77 0)
@@ -8864,7 +8864,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "626ab0a6-d36e-487f-bb89-7fc3a01db1d3")
+		(uuid "c031678b-72fb-4157-825d-eea69b967fb2")
 	)
 	(wire
 		(pts
@@ -8875,7 +8875,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "f9077d90-3e63-4f12-a97c-174e8ac47ca2")
+		(uuid "c799c4b0-2490-424c-b16a-837652e5a0be")
 	)
 	(label "EXP_SDA"
 		(at 181.61 82.55 180)
@@ -8886,7 +8886,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "d90240ae-a51e-4d1d-856f-cbdb046eb1d6")
+		(uuid "24d624a4-1b8f-4308-a5c3-3640d59f6c19")
 	)
 	(wire
 		(pts
@@ -8897,7 +8897,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "e916ac22-20ed-4d48-bc7b-9150b12eeef0")
+		(uuid "045875c0-9714-40c1-b5d4-64bc82c8e416")
 	)
 	(label "USB_D-"
 		(at 217.17 67.31 0)
@@ -8908,7 +8908,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "ab3dcb33-5748-44d5-8d6b-d6a827e0db79")
+		(uuid "e960b7ed-4c45-4790-b774-9fb51f3918e3")
 	)
 	(wire
 		(pts
@@ -8919,7 +8919,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "fafb4719-0fff-495a-a86b-d6befd44ebb0")
+		(uuid "7b720d33-331a-41f3-aec0-b8042ddb9c64")
 	)
 	(label "USB_D+"
 		(at 217.17 69.85 0)
@@ -8930,15 +8930,15 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "786e3760-b830-4d64-abfc-decfc67934bc")
+		(uuid "695178c3-3733-47a4-a58c-180a4d4dc04c")
 	)
 	(no_connect
 		(at 184.15 69.85)
-		(uuid "a6e9fe57-7583-4901-b7c9-71af662c0a53")
+		(uuid "bf4f6d8c-3f93-4117-ad4b-1d7a9f093baf")
 	)
 	(no_connect
 		(at 214.63 97.79)
-		(uuid "e59c89d3-a687-46ab-9ba7-ac7b5e791a06")
+		(uuid "5782fc00-e03a-4013-91d0-ab21ec0fe54c")
 	)
 	(wire
 		(pts
@@ -8949,7 +8949,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "5e17b87d-a039-4395-86c4-db3560ca5b6c")
+		(uuid "0326c63e-b9ac-4395-b1a6-e97558802a57")
 	)
 	(label "EXP_SCL"
 		(at 181.61 85.09 180)
@@ -8960,7 +8960,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "2bc363dc-0bd5-45a7-8619-001758bf5f31")
+		(uuid "51074052-c580-4436-9681-22743f26a9ab")
 	)
 	(wire
 		(pts
@@ -8971,7 +8971,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "2bc33e3f-07e2-48b2-affd-f2e51cbb7c56")
+		(uuid "923bc2d6-f167-48d1-b297-c252466db210")
 	)
 	(label "EXP_IO10"
 		(at 181.61 87.63 180)
@@ -8982,7 +8982,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "d90a3ba6-dcb2-4d95-8511-017cc4728edc")
+		(uuid "1cfae63e-375b-43aa-8120-8de3b0f28488")
 	)
 	(wire
 		(pts
@@ -8993,7 +8993,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "015ca116-0973-4f0b-a5a4-0ee093ae7787")
+		(uuid "1ecf7e74-17be-414d-9c5f-16a88250bcef")
 	)
 	(label "EXP_IO11"
 		(at 181.61 90.17 180)
@@ -9004,27 +9004,27 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "42a6c2f7-a508-4d0d-a3c6-67e0785dfabc")
+		(uuid "d4dab431-108d-4284-8131-98d733c8267b")
 	)
 	(no_connect
 		(at 184.15 92.71)
-		(uuid "7a6c86af-211e-42ac-9e1c-5488741a03a0")
+		(uuid "2c62c01c-c6de-4835-bcf6-c51239ecbb1d")
 	)
 	(no_connect
 		(at 184.15 95.25)
-		(uuid "4c60cf19-5a13-4e1c-8ac7-e28dc0472e9c")
+		(uuid "792379e1-f1e6-4f9a-b8c9-5b12b0398159")
 	)
 	(no_connect
 		(at 184.15 97.79)
-		(uuid "7d4b6cc4-74e9-44ea-bff9-7b8c7bbd068c")
+		(uuid "347c7df1-dbf6-4759-86df-f767ebd99291")
 	)
 	(no_connect
 		(at 214.63 72.39)
-		(uuid "b920ffdf-46a4-4b00-9037-34479d79db65")
+		(uuid "85c3019e-e333-44c3-b9aa-afece3de9210")
 	)
 	(no_connect
 		(at 214.63 100.33)
-		(uuid "ebc291be-b1ff-498c-b3a5-ccea99d1d67a")
+		(uuid "5a56c371-2f11-4f95-bbe7-022bb7634dd0")
 	)
 	(wire
 		(pts
@@ -9035,7 +9035,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "b9143771-3d52-41e1-87fb-58a992ee5047")
+		(uuid "9e0eb5b6-9297-4c9a-9f4e-873ba65e51a3")
 	)
 	(label "LED_DATA"
 		(at 217.17 102.87 0)
@@ -9046,11 +9046,11 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "573000eb-af94-4ac9-bbcd-9cfbe64739c2")
+		(uuid "ccd139c0-ec8e-4640-ac7a-59923bac6e50")
 	)
 	(no_connect
 		(at 214.63 95.25)
-		(uuid "50d991ea-08f4-46df-b573-85a4f94503fe")
+		(uuid "167233d2-3854-417c-a674-624ca57946c4")
 	)
 	(wire
 		(pts
@@ -9061,7 +9061,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "676be365-7942-4c70-a583-f8ca838b1085")
+		(uuid "351e18ef-8340-4995-9019-70135caae6d2")
 	)
 	(label "IO0_BOOT"
 		(at 181.61 62.23 180)
@@ -9072,39 +9072,39 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "58a8a518-740f-40bc-bfde-7b22049a3ecf")
+		(uuid "90c255f1-9fab-47af-86d0-ff13bdb2c092")
 	)
 	(no_connect
 		(at 214.63 74.93)
-		(uuid "6001b520-7101-4c00-8438-c5747c29cbcb")
+		(uuid "947de473-0f0f-4bf9-9466-68e088ae444b")
 	)
 	(no_connect
 		(at 214.63 77.47)
-		(uuid "28d4aa70-9ae4-4be9-81e8-37bc1e6890d3")
+		(uuid "2b8f61b6-5bcf-4f92-9dba-05cd9a1c6906")
 	)
 	(no_connect
 		(at 214.63 80.01)
-		(uuid "efd2bdac-2192-452f-92cc-8d14f4368714")
+		(uuid "c9f78d96-a000-4a2c-a6ac-0a23bf4e9fe7")
 	)
 	(no_connect
 		(at 214.63 82.55)
-		(uuid "d0f8802f-318c-4b5f-80fb-e2236a75ec21")
+		(uuid "110bbdcc-ea59-419d-b316-b928fd4a0ae0")
 	)
 	(no_connect
 		(at 214.63 85.09)
-		(uuid "c58fa64c-f7bb-49bb-bde6-77c776fe23f5")
+		(uuid "abcda78a-7d57-4d71-8b86-fa34f85445de")
 	)
 	(no_connect
 		(at 214.63 87.63)
-		(uuid "87a350db-22c2-492b-aca2-6ef92570659a")
+		(uuid "8024a4ad-2f81-490e-b539-e1b6534070c1")
 	)
 	(no_connect
 		(at 214.63 90.17)
-		(uuid "3a1f7bfc-bfb3-4b2c-8f62-2832ca32d3ba")
+		(uuid "1beb72d7-50bb-4be2-90b7-3ee48c0738f2")
 	)
 	(no_connect
 		(at 214.63 92.71)
-		(uuid "66aef64b-0b40-4f88-b819-0ad0c2fdd403")
+		(uuid "ae39d832-72cb-4354-9f4d-898d22c5b0cb")
 	)
 	(wire
 		(pts
@@ -9115,7 +9115,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "e37a698a-28eb-4959-bd00-4aff2e279e6d")
+		(uuid "f7f9d3bf-db0b-45e8-b064-68ee78f4b8c6")
 	)
 	(label "RXD0"
 		(at 217.17 59.69 0)
@@ -9126,7 +9126,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "514ab6b6-4e3d-4eea-9697-9158e9299b96")
+		(uuid "8b674e68-6cff-4881-9b7b-0e51dcd13f89")
 	)
 	(wire
 		(pts
@@ -9137,7 +9137,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "1639bd96-675c-49a4-a4c9-d21fc6acc184")
+		(uuid "b9b543e6-fdcc-4a1f-8b85-0ea86790d1f2")
 	)
 	(label "TXD0"
 		(at 217.17 57.15 0)
@@ -9148,15 +9148,15 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "5cc4beaf-619b-4b36-b10e-f377b24030d1")
+		(uuid "578b91c8-6115-471b-a049-dbdffa9d3096")
 	)
 	(no_connect
 		(at 184.15 67.31)
-		(uuid "43e180df-30db-4943-ad57-5c2c98bcfef5")
+		(uuid "a0f6d7a5-9d96-4e96-8303-98a94f5d4047")
 	)
 	(no_connect
 		(at 184.15 64.77)
-		(uuid "bad12c8e-f888-41fb-9c00-de9f177d81b2")
+		(uuid "c3e252f9-2523-4c12-8e81-e09a2853d05a")
 	)
 	(symbol
 		(lib_id "Device:C")
@@ -9220,10 +9220,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "dfd2e70b-7aaf-4af9-9d50-6df7925fd004")
+			(uuid "50ee2c07-9e1a-4c8e-b7bc-9acc7ba42e3d")
 		)
 		(pin "2"
-			(uuid "ab64667e-d87b-4d95-bfd9-dd0d19295bb6")
+			(uuid "75e8d3b1-130e-496d-bb2a-704c2afec2d1")
 		)
 		(instances
 			(project "pl60c_dmx"
@@ -9243,7 +9243,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "b23fe35c-2846-4e4e-aece-2588a5715cb2")
+		(uuid "dd791216-056c-4259-86be-f5acebfbec17")
 	)
 	(symbol
 		(lib_id "power:+3V3")
@@ -9253,7 +9253,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "c53487cc-4855-45f6-a026-29407ab7d1ce")
+		(uuid "83be92b0-6874-4ea3-8946-f79e1f0f3585")
 		(property "Reference" "#PWR015"
 			(at 149.86 33.02 0)
 			(effects
@@ -9299,7 +9299,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "6acae71f-15c4-4cfc-9b8d-1576e94328f7")
+			(uuid "f6f0edc0-0277-4c86-8d0a-b3af6338b996")
 		)
 		(instances
 			(project "pl60c_dmx"
@@ -9319,7 +9319,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "2a1b9543-c35e-4e16-9ed5-ceb152e8f289")
+		(uuid "30bad353-1d11-48bb-ad85-967f8e72923d")
 	)
 	(symbol
 		(lib_id "power:GND")
@@ -9329,7 +9329,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "c34a57d0-4c1c-48c1-a560-38544490077d")
+		(uuid "1bd864ac-a8d3-404c-b22b-eadd06189663")
 		(property "Reference" "#PWR016"
 			(at 149.86 45.72 0)
 			(effects
@@ -9375,7 +9375,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "f920f145-7141-4373-ae1a-1dd61e8424db")
+			(uuid "393e7a94-fe91-4fbf-b4cf-6453ff6a7d63")
 		)
 		(instances
 			(project "pl60c_dmx"
@@ -9448,10 +9448,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "64c18c6c-12ba-44b8-bf27-faac4c7990bf")
+			(uuid "f7cad519-00c0-4ca1-a7e1-52706467f73e")
 		)
 		(pin "2"
-			(uuid "8f2212c7-662d-4665-beee-7de50bd2bf03")
+			(uuid "15c0bf50-c679-4793-9f90-3ccdc92f229c")
 		)
 		(instances
 			(project "pl60c_dmx"
@@ -9471,7 +9471,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "1f93c9f6-1d5d-479f-b53e-a6427431747a")
+		(uuid "b73d7aeb-04b5-4955-9bdd-56cc3391ec01")
 	)
 	(symbol
 		(lib_id "power:+3V3")
@@ -9481,7 +9481,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "80bfc0fe-d1ce-4623-92d3-e150aee14dbd")
+		(uuid "ce486e78-9222-4ee7-8a2c-4a515e30cadd")
 		(property "Reference" "#PWR017"
 			(at 157.48 33.02 0)
 			(effects
@@ -9527,7 +9527,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "e7b800e9-2c55-4377-92e5-0a0028743b82")
+			(uuid "2d5545f5-dd38-4d04-b307-ffa24d6048ca")
 		)
 		(instances
 			(project "pl60c_dmx"
@@ -9547,7 +9547,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "cc430792-e2a4-4565-a478-0f450e9ebb3c")
+		(uuid "5820885a-8434-4cc9-9879-c666062824db")
 	)
 	(symbol
 		(lib_id "power:GND")
@@ -9557,7 +9557,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "600e91dd-6918-419e-b943-720df20ef2d6")
+		(uuid "e150e077-9463-4fb7-8b7c-0d95fd8b5b59")
 		(property "Reference" "#PWR018"
 			(at 157.48 45.72 0)
 			(effects
@@ -9603,7 +9603,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "3c202a0e-a5f6-452f-9444-63ec46baa4b8")
+			(uuid "72bc1771-56d7-41c2-afd7-970c9f69d9e2")
 		)
 		(instances
 			(project "pl60c_dmx"
@@ -9676,10 +9676,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "9b25dc49-2cc4-403b-8e04-7ab2cf0d74e8")
+			(uuid "1e7525c8-1e44-4690-9742-1b0a0f09106e")
 		)
 		(pin "2"
-			(uuid "60b7deed-f886-438f-bd0d-b6b6011021db")
+			(uuid "779ad67f-458e-4734-bca2-d2f3478bffc7")
 		)
 		(instances
 			(project "pl60c_dmx"
@@ -9699,7 +9699,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "ceca88fc-77d1-47f1-bb35-b079183f20d6")
+		(uuid "beea2e0a-502d-4557-828a-12fc64ff4712")
 	)
 	(symbol
 		(lib_id "power:+3V3")
@@ -9709,7 +9709,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "a016865d-2ca1-4023-a532-3a0daa0ca11f")
+		(uuid "ef6de08f-b742-4fbc-94ab-379e60242ad1")
 		(property "Reference" "#PWR019"
 			(at 149.86 58.42 0)
 			(effects
@@ -9755,7 +9755,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "3f6be30a-ac47-4759-88c7-9842ac6030ed")
+			(uuid "e14a8005-bfa6-43f2-8307-34f3404ee221")
 		)
 		(instances
 			(project "pl60c_dmx"
@@ -9775,7 +9775,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "10be90e3-3374-405b-ac51-4d794503e9a6")
+		(uuid "67ad21c2-5917-491a-822f-fbc20f37197c")
 	)
 	(label "EN"
 		(at 149.86 71.12 270)
@@ -9786,7 +9786,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "fc3b218c-b60f-41a7-bf6d-7d85b91322af")
+		(uuid "63470f6a-b51d-4ea9-9e49-34f136260bce")
 	)
 	(symbol
 		(lib_id "Device:C")
@@ -9859,10 +9859,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "aa7f5ff3-180f-4af2-8936-5165f91e9a8a")
+			(uuid "a2f7171c-9ff1-41f5-9593-a03fd056c46e")
 		)
 		(pin "2"
-			(uuid "97c34034-9758-4832-81f1-8e144dd11257")
+			(uuid "f9151710-f5c5-4b30-abd6-d4d949ceb7a6")
 		)
 		(instances
 			(project "pl60c_dmx"
@@ -9882,7 +9882,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "899eaeb6-31a7-42c2-9793-76d739ecf07f")
+		(uuid "315eda4e-0647-49e8-b010-2aa4d7e09dfa")
 	)
 	(label "EN"
 		(at 157.48 71.12 90)
@@ -9893,7 +9893,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "d4b09b39-e227-4c30-87c5-682d46bfe660")
+		(uuid "15cf2011-8ddf-4c91-a752-c6b612a5f564")
 	)
 	(wire
 		(pts
@@ -9904,7 +9904,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "7831b21d-dc8d-4c29-b663-1e3e16929bdd")
+		(uuid "b56d98ac-a53a-474c-948d-518780986024")
 	)
 	(symbol
 		(lib_id "power:GND")
@@ -9914,7 +9914,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "3b1746a9-1982-4c7f-bd3f-24de70e530b9")
+		(uuid "d8dea700-2864-4d59-93fc-5e02208ba6c4")
 		(property "Reference" "#PWR020"
 			(at 157.48 83.82 0)
 			(effects
@@ -9960,7 +9960,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "f89ebdac-8687-42f1-a404-525538d431c1")
+			(uuid "955d62cf-26b1-4e73-8414-fa4c021e2276")
 		)
 		(instances
 			(project "pl60c_dmx"
@@ -10042,10 +10042,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "49b879cc-1829-46cc-90b7-aea1bd72101e")
+			(uuid "9d8c2cd2-a869-453d-9275-795d8d46dd28")
 		)
 		(pin "2"
-			(uuid "59897fa9-cf9d-4f6b-b614-87f69d344cc3")
+			(uuid "b09509b2-fc43-4afb-a162-ebd4bfccae72")
 		)
 		(instances
 			(project "pl60c_dmx"
@@ -10065,7 +10065,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "9e7031c3-eeb3-4a1e-8d6a-99669c9e2bc9")
+		(uuid "3ad82d64-1b2f-4556-98b2-875572c1ab5b")
 	)
 	(label "EN"
 		(at 142.24 90.17 180)
@@ -10076,7 +10076,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "736bc203-5828-4eec-a151-9c257f0eab0d")
+		(uuid "8233258c-afef-4fff-bbde-efa6ceca1637")
 	)
 	(wire
 		(pts
@@ -10087,7 +10087,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "9086336b-0860-4fa9-9252-074052eeea2d")
+		(uuid "de14e621-7e8c-42b0-ae91-0e2c260b2150")
 	)
 	(label "GND"
 		(at 157.48 90.17 0)
@@ -10098,7 +10098,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "49a8f9a8-4495-4d07-9ee2-76cafff0f059")
+		(uuid "1ffdfc0e-3f9f-4185-80d0-4913a54f980d")
 	)
 	(symbol
 		(lib_id "Device:R")
@@ -10162,10 +10162,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "50e186dc-4850-4c07-9878-3fd65f1c9ddb")
+			(uuid "12b1bfab-8d03-4c6e-b0c6-c5ab123e4ed6")
 		)
 		(pin "2"
-			(uuid "3b000362-2372-4644-8676-fbca7fc07134")
+			(uuid "536cc224-a836-41ca-b255-e2e81f98a5e8")
 		)
 		(instances
 			(project "pl60c_dmx"
@@ -10185,7 +10185,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "5f51d44a-7a33-4f83-8955-dd8fbee6c01a")
+		(uuid "c4f2ebff-cbfb-4978-814f-596ab71562f7")
 	)
 	(symbol
 		(lib_id "power:+3V3")
@@ -10195,7 +10195,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "b0c6204b-2b13-48d1-9270-7db37bd73195")
+		(uuid "1b25df35-36e8-4426-a8b9-36d46bec7626")
 		(property "Reference" "#PWR021"
 			(at 149.86 104.14 0)
 			(effects
@@ -10241,7 +10241,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "a17eb7ac-5551-4664-94a9-387430412965")
+			(uuid "0ad00edd-e4ab-44d9-905a-bb85a50d64e5")
 		)
 		(instances
 			(project "pl60c_dmx"
@@ -10261,7 +10261,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "c5a1e54d-16c3-45c0-b70b-7c665d663e23")
+		(uuid "f9595574-babe-4943-93d4-c9bd1ddfa46c")
 	)
 	(label "IO0_BOOT"
 		(at 149.86 116.84 270)
@@ -10272,7 +10272,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "aae314fc-65d1-4075-ba20-d914086b215d")
+		(uuid "3e430148-2913-4a5f-b11a-82f853b93d72")
 	)
 	(symbol
 		(lib_id "Switch:SW_Push")
@@ -10345,10 +10345,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "5a49fb9d-db7a-483d-8f90-4036e622bca0")
+			(uuid "b3e8a562-637d-49f4-b971-7c54d459878f")
 		)
 		(pin "2"
-			(uuid "15d69aee-2fcd-47ed-b423-52fd8ef3f1f9")
+			(uuid "a05dd63e-1a91-4650-b983-58964b80404e")
 		)
 		(instances
 			(project "pl60c_dmx"
@@ -10368,7 +10368,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "0a424e94-2ac5-420f-843c-41d3360959b3")
+		(uuid "0f7de266-1a29-491a-97da-2473f5d97bc6")
 	)
 	(label "IO0_BOOT"
 		(at 142.24 129.54 180)
@@ -10379,7 +10379,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "1fbc4a98-fae9-4205-8c07-5656e53163ff")
+		(uuid "d2e0e5e6-3a87-4fdb-a39a-a34b9b9e714d")
 	)
 	(wire
 		(pts
@@ -10390,7 +10390,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "c3d39cfc-e930-4d74-8978-fc36d5975a1f")
+		(uuid "d882787f-b8e3-4d7f-a578-566699523c5b")
 	)
 	(label "GND"
 		(at 157.48 129.54 0)
@@ -10401,7 +10401,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "19ea9c8a-dfbf-47a2-8607-3069dbdce573")
+		(uuid "6b97ac3c-9dd7-4278-9a66-6142cbf624f7")
 	)
 	(symbol
 		(lib_id "Interface_UART:SP3485EN")
@@ -10474,28 +10474,28 @@
 			)
 		)
 		(pin "1"
-			(uuid "e9478b4a-0f86-4964-ae5f-6834085e8711")
+			(uuid "6e1a118d-2fa7-49e8-a70a-126d2bdc2749")
 		)
 		(pin "2"
-			(uuid "01ad8898-58f5-4b9b-91b0-5ac275223519")
+			(uuid "39b3e946-2a37-4e30-b8be-188e479a3d1e")
 		)
 		(pin "3"
-			(uuid "a02a6885-4822-44bf-a6d4-ae08a6d4761b")
+			(uuid "0f27044a-3836-463f-9731-51356fac76a5")
 		)
 		(pin "4"
-			(uuid "709debdf-59c8-4e61-bfe6-8354a2c9683a")
+			(uuid "60311ab2-11ee-4e51-b3e3-e811d8a78d0f")
 		)
 		(pin "5"
-			(uuid "9595a004-a7d4-4887-80af-15ab84d09b94")
+			(uuid "a6b071ae-933d-4b28-8218-13ca70134e2a")
 		)
 		(pin "6"
-			(uuid "1d216eaf-1a56-4ac8-af4d-aee7431870df")
+			(uuid "ab6c7643-1ed3-49a0-89e2-0fc799c3f72b")
 		)
 		(pin "7"
-			(uuid "229e31fc-a91c-4d81-bb7a-153754a95763")
+			(uuid "513ea894-7c8f-4b6d-8ebc-daf5ef38e584")
 		)
 		(pin "8"
-			(uuid "292ef347-c603-4fec-949b-375040f8c605")
+			(uuid "a6161dc6-093c-41f6-a9d2-a535458b2d84")
 		)
 		(instances
 			(project "pl60c_dmx"
@@ -10515,7 +10515,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "759587a6-4e6c-4018-abfe-fbefdd5288ba")
+		(uuid "142b084b-8bd4-4029-a69f-cc185c78976d")
 	)
 	(label "DMX_RX"
 		(at 287.02 54.61 180)
@@ -10526,7 +10526,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "2649d60e-de0c-42e2-bf16-75c9d831ae7c")
+		(uuid "7bb96d82-6d6f-4059-811f-2ada16b14fb9")
 	)
 	(wire
 		(pts
@@ -10537,7 +10537,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "0b7a074a-06c9-4a2d-a55c-2b0274c92ea6")
+		(uuid "c40d7418-f535-4802-9c64-cd9aaa2d0c6c")
 	)
 	(label "DMX_DE"
 		(at 287.02 57.15 180)
@@ -10548,7 +10548,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "71f5bd9d-7045-4f56-9200-b73b69077eae")
+		(uuid "2eb6d4a0-3498-4fd3-ae2c-07904db53642")
 	)
 	(wire
 		(pts
@@ -10559,7 +10559,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "57b3a58f-9274-4d13-a528-c21987bfe575")
+		(uuid "d3f8a06a-d713-41db-8587-8ec6721d3cc7")
 	)
 	(label "DMX_DE"
 		(at 287.02 59.69 180)
@@ -10570,7 +10570,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "a99e638a-114c-4c26-b1a3-be605b78c723")
+		(uuid "f244a374-838e-4111-b04e-c1a557edb069")
 	)
 	(wire
 		(pts
@@ -10581,7 +10581,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "5ba28e2c-f768-4d01-ac12-0b0a964fc832")
+		(uuid "a5a6567a-5a3b-470a-aca9-b7b9763f4b15")
 	)
 	(label "DMX_TX"
 		(at 287.02 64.77 180)
@@ -10592,7 +10592,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "ab3e55c9-5efb-47b7-bc21-f13be6357c09")
+		(uuid "0374db66-7514-4a7f-a551-922a1cbd0600")
 	)
 	(wire
 		(pts
@@ -10603,7 +10603,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "ee198ea6-f3c6-4153-9769-3875dea8d5d2")
+		(uuid "82f88706-2068-41a6-8378-b040cd1fa3b7")
 	)
 	(symbol
 		(lib_id "power:GND")
@@ -10613,7 +10613,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "3c83c2a9-b9b6-4f9c-85d9-39d8d545d3f9")
+		(uuid "715b5fe0-dee3-46b0-8117-6ada564c45c7")
 		(property "Reference" "#PWR022"
 			(at 299.72 77.47 0)
 			(effects
@@ -10659,7 +10659,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "6f231e68-0f1b-43bf-a9a5-d48dc04071b2")
+			(uuid "d277dfc2-0cbf-4e3e-8788-cebb25761797")
 		)
 		(instances
 			(project "pl60c_dmx"
@@ -10679,7 +10679,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "ec482f15-2f60-4f2d-b182-da4f52ad1e8f")
+		(uuid "4da05953-dfd4-482f-a15e-b6676a937033")
 	)
 	(label "DMX_A"
 		(at 312.42 52.07 0)
@@ -10690,7 +10690,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "6c29621f-78b9-43fc-97ab-9d97ef2c9482")
+		(uuid "c09445b2-020b-4cb0-b1c2-fb0e34c1c414")
 	)
 	(wire
 		(pts
@@ -10701,7 +10701,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "cf349397-5068-4896-9892-6972ebffdc01")
+		(uuid "9084482d-e8bd-4f61-a05b-050c8245ac78")
 	)
 	(label "DMX_B"
 		(at 312.42 57.15 0)
@@ -10712,7 +10712,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "a53ac747-6849-4e2c-bc9b-7bf8f79cdb66")
+		(uuid "7c192434-eaf4-47c8-b6c8-107b660ca973")
 	)
 	(wire
 		(pts
@@ -10723,7 +10723,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "b2cc8c8e-c81c-4d37-aeb2-293bb956ae5c")
+		(uuid "331b422d-06ca-4b50-87c4-fa5d9787faa3")
 	)
 	(symbol
 		(lib_id "power:+3V3")
@@ -10733,7 +10733,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "db0eb1d5-b7c5-456b-8573-7c8b54c4c8f8")
+		(uuid "33df142d-faf1-4ed7-8910-ae4c20ae2bd2")
 		(property "Reference" "#PWR023"
 			(at 299.72 41.91 0)
 			(effects
@@ -10779,7 +10779,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "78439b68-6c92-4715-8d68-a981eaf362b6")
+			(uuid "1e57ceb2-8ccb-4cb0-b908-8d010e39bcbe")
 		)
 		(instances
 			(project "pl60c_dmx"
@@ -10852,10 +10852,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "5a868d9b-fe9b-4bab-abe4-d89234dbbd9b")
+			(uuid "09268ea4-b5ce-43ee-880d-b8a37f45b75d")
 		)
 		(pin "2"
-			(uuid "f0d2cf09-4bb5-4fcd-9542-713fea240858")
+			(uuid "2a026a52-76f1-453a-baec-d1f767e72753")
 		)
 		(instances
 			(project "pl60c_dmx"
@@ -10875,7 +10875,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "7ea23beb-218d-4c7a-9ae7-adc01d119f45")
+		(uuid "35ec08e3-2608-4faf-987a-9d3523197bb5")
 	)
 	(symbol
 		(lib_id "power:+3V3")
@@ -10885,7 +10885,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "ea012952-fa19-459c-83d7-f809192afedd")
+		(uuid "3fc7bd54-0841-4835-bbcd-0c2d6339837e")
 		(property "Reference" "#PWR024"
 			(at 279.4 38.1 0)
 			(effects
@@ -10931,7 +10931,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "d1497e37-e31c-4a5c-acd1-323283a2e5c9")
+			(uuid "7527c616-1395-404b-9040-22b61ad95165")
 		)
 		(instances
 			(project "pl60c_dmx"
@@ -10951,7 +10951,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "0ed78b98-07fb-400f-8108-b4eac640a70f")
+		(uuid "00abd7bd-1981-40eb-bbbe-3cb5f15bdea4")
 	)
 	(symbol
 		(lib_id "power:GND")
@@ -10961,7 +10961,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "6094c1a3-5210-4401-8b4e-740be7e08853")
+		(uuid "285f017e-8498-4d10-b56f-0d41dd7d7c4c")
 		(property "Reference" "#PWR025"
 			(at 279.4 50.8 0)
 			(effects
@@ -11007,7 +11007,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "5430258c-6aae-48d4-8e81-30937bed727a")
+			(uuid "8ddc69bf-76d7-4b07-8ca3-abe5d8df8216")
 		)
 		(instances
 			(project "pl60c_dmx"
@@ -11080,10 +11080,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "1bd2641d-18cd-4626-bca5-ee8ad109964c")
+			(uuid "892830fc-1c51-48e8-bdef-dcc30a51b672")
 		)
 		(pin "2"
-			(uuid "8db7a15f-41bc-4bff-b693-627bce9c8570")
+			(uuid "10f41d8b-f2b3-4809-b750-2ddbf273b6c7")
 		)
 		(instances
 			(project "pl60c_dmx"
@@ -11103,7 +11103,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "965876c3-ed8a-4f53-9612-49cc31535119")
+		(uuid "0e57fdc0-10f8-4a6b-9eb8-8847ec4bf89e")
 	)
 	(label "DMX_DE"
 		(at 281.94 83.82 90)
@@ -11114,7 +11114,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "bf32bd67-b42f-4cdc-877b-2bf6ce0895df")
+		(uuid "374ab2a2-1551-4d81-9f9e-bad49a6a83da")
 	)
 	(wire
 		(pts
@@ -11125,7 +11125,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "b0bdb772-7ef3-45d4-b91c-efac24325833")
+		(uuid "c38e03b2-569b-4973-9973-625fa85c9c6b")
 	)
 	(symbol
 		(lib_id "power:GND")
@@ -11135,7 +11135,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "1f61ef11-4959-4da5-9640-13e5c7d32080")
+		(uuid "c03976ff-c0f4-49d5-a294-7954e59ef7fd")
 		(property "Reference" "#PWR026"
 			(at 281.94 96.52 0)
 			(effects
@@ -11181,7 +11181,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "86cd285c-5c70-49be-a794-c991e169bf16")
+			(uuid "df0ffdcd-af09-47f6-8a83-443e6bec7c9a")
 		)
 		(instances
 			(project "pl60c_dmx"
@@ -11263,13 +11263,13 @@
 			)
 		)
 		(pin "1"
-			(uuid "75052b2c-c0a2-423c-9ab3-3fb158f90eff")
+			(uuid "d8f0f463-93b7-4d95-a84f-893d51f32a68")
 		)
 		(pin "2"
-			(uuid "d6e37f13-870d-4e3c-ba6f-907146096cfe")
+			(uuid "5f9a566c-d942-41aa-aba6-9cc381af26e4")
 		)
 		(pin "3"
-			(uuid "21269131-d6f6-47b5-bfaf-3d60d66054b0")
+			(uuid "79369d81-1f85-463d-89b4-e5852fffab7c")
 		)
 		(instances
 			(project "pl60c_dmx"
@@ -11289,7 +11289,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "c20202e6-e512-4a13-81d6-bc3ecf23e5cc")
+		(uuid "bebbe2b7-010d-4a96-8108-a5331a550cb8")
 	)
 	(label "DMX_A"
 		(at 318.77 90.17 180)
@@ -11300,7 +11300,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "4648b1cf-e6bf-4507-9bd7-8dc830cb0e68")
+		(uuid "13b1a4ed-e2ee-45c4-841a-912eb116a2aa")
 	)
 	(wire
 		(pts
@@ -11311,7 +11311,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "c2184d82-2dea-4f02-b632-8184a36b93c5")
+		(uuid "6bc5cf66-0d8b-443a-b4ba-597f885652b1")
 	)
 	(label "DMX_B"
 		(at 341.63 90.17 0)
@@ -11322,7 +11322,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "450aa5b8-9667-4f7b-b8db-6e47a3f011f5")
+		(uuid "093ca92b-d67e-4cfa-b71d-156280a85615")
 	)
 	(wire
 		(pts
@@ -11333,7 +11333,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "c3a514e9-b6e2-4553-b088-f5a97ed280d8")
+		(uuid "95b80214-9fc5-4869-b4b8-2024ff013865")
 	)
 	(symbol
 		(lib_id "power:GND")
@@ -11343,7 +11343,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "b82283ac-5ecc-4240-a815-4517280bf400")
+		(uuid "66c2d1c1-423b-47c8-aabd-f844c310cff8")
 		(property "Reference" "#PWR027"
 			(at 330.2 96.52 0)
 			(effects
@@ -11389,7 +11389,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "7245cc84-e4e0-4d47-95b3-bec04f69a38f")
+			(uuid "4185e54f-ae4b-49e5-b5d2-53250e6766a9")
 		)
 		(instances
 			(project "pl60c_dmx"
@@ -11462,10 +11462,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "8810ecf8-2ef4-48b7-b80b-ed1a83b6f66f")
+			(uuid "d4f9f3ce-84dd-4f25-90c2-dfdbf7fdf958")
 		)
 		(pin "2"
-			(uuid "1b2dd046-a0a5-476a-97b3-7aab3f5c90e1")
+			(uuid "d8f594ff-6c4e-47d1-8709-96c6073b77e9")
 		)
 		(instances
 			(project "pl60c_dmx"
@@ -11485,7 +11485,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "04508e0b-68e2-4609-a742-b75dee1b4adb")
+		(uuid "b45fd646-cc07-4627-9258-5d4541496731")
 	)
 	(label "DMX_A"
 		(at 345.44 58.42 90)
@@ -11496,7 +11496,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "22468b1d-7175-4282-b2d2-9b4f5b56654a")
+		(uuid "1fc8964e-0817-418b-8c5c-c6d7bafe613b")
 	)
 	(wire
 		(pts
@@ -11507,7 +11507,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "a485bbed-85c0-4ef6-92a7-ec5a0f057e28")
+		(uuid "25dfd32b-ce98-4246-a710-b412c203f12e")
 	)
 	(label "DMX_B"
 		(at 345.44 71.12 270)
@@ -11518,7 +11518,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "7a12bd5f-e849-49ec-a861-ccb7ebb8def0")
+		(uuid "a272c18b-5156-4576-a2f4-dca07e4ea1f3")
 	)
 	(symbol
 		(lib_id "Connector_Audio:XLR5_Ground")
@@ -11591,22 +11591,22 @@
 			)
 		)
 		(pin "1"
-			(uuid "9f4d5e3e-6994-43f7-91fe-7d453521b597")
+			(uuid "d51adf03-78e3-4ba6-87d5-989211c92713")
 		)
 		(pin "2"
-			(uuid "1346a0bd-6de5-4f2c-862f-4d2edb1b1fa6")
+			(uuid "456c5a96-44a7-491f-bd19-8600b4b7b3ae")
 		)
 		(pin "3"
-			(uuid "720146df-18c5-464f-97a2-1e2f956f4399")
+			(uuid "381e5275-948b-4ec9-a678-3dbcac459921")
 		)
 		(pin "4"
-			(uuid "424e10b4-b433-4454-8804-38c4258fee5d")
+			(uuid "a3190ba4-d81c-4b70-b545-ccd47a34be4b")
 		)
 		(pin "5"
-			(uuid "95f16247-4987-4e3d-bd2d-269840b3792b")
+			(uuid "c1b58a75-af6c-4b24-b5eb-8956b9936844")
 		)
 		(pin "G"
-			(uuid "4410d296-7010-4b9a-bda6-f4956ae44b07")
+			(uuid "8cf0ac50-7fcf-4582-a3a6-da1bfed15c0d")
 		)
 		(instances
 			(project "pl60c_dmx"
@@ -11626,7 +11626,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "61b24fa7-6520-4501-88dd-a37df3ce32f1")
+		(uuid "33b7e893-c2ea-4171-85a7-800060bdcbee")
 	)
 	(label "GND"
 		(at 374.65 59.69 180)
@@ -11637,7 +11637,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "7fdf8ec3-9ca1-4d40-b405-46943e896383")
+		(uuid "0977b0b9-3b03-4664-966c-0e3650fff106")
 	)
 	(wire
 		(pts
@@ -11648,7 +11648,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "9baca6d2-43d9-4e7d-b5b0-2763403fb47a")
+		(uuid "48c3887a-6395-4c23-8b08-6dc3c1f59454")
 	)
 	(label "DMX_B"
 		(at 374.65 62.23 180)
@@ -11659,7 +11659,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "47110678-1219-41e9-b010-e506ff176358")
+		(uuid "79163ab5-72b8-49b6-88ee-a666a08d778b")
 	)
 	(wire
 		(pts
@@ -11670,7 +11670,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "d30fd8cf-3c89-4b02-9367-a28c1bb0ba68")
+		(uuid "0a1c4ae0-d169-4333-87c3-85ef2279469d")
 	)
 	(label "DMX_A"
 		(at 384.81 69.85 270)
@@ -11681,19 +11681,19 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "d8305d1a-8a3b-462f-9e5f-251d47867181")
+		(uuid "9d49cc34-9f3e-4f87-892a-689ebd5b5a56")
 	)
 	(no_connect
 		(at 392.43 62.23)
-		(uuid "d69be15f-f090-483d-8ece-550321db88a6")
+		(uuid "929100c6-c7f4-4176-bed1-263d892ef96b")
 	)
 	(no_connect
 		(at 392.43 59.69)
-		(uuid "7cf888f0-b846-4264-b083-a307faa3f357")
+		(uuid "dc3f93a0-5328-4e36-aefb-ce8bbdd07d73")
 	)
 	(no_connect
 		(at 382.27 67.31)
-		(uuid "ea5b15eb-8100-4703-a3d8-f6f54a857ea4")
+		(uuid "ad585b07-8a0e-4a00-9c2a-fed19e6963ed")
 	)
 	(symbol
 		(lib_id "Connector:Screw_Terminal_01x03")
@@ -11766,13 +11766,13 @@
 			)
 		)
 		(pin "1"
-			(uuid "88ae6f55-4042-4cd6-8c2b-6e199dafd5a6")
+			(uuid "b2db35ed-0b4b-4b9d-9648-bafc71654bf6")
 		)
 		(pin "2"
-			(uuid "b5b438f9-24a7-49f9-b860-afd279bb1b9e")
+			(uuid "892db84b-5428-4725-a5a5-6a2f5d581ceb")
 		)
 		(pin "3"
-			(uuid "6009f998-8716-4d7e-9ab7-0e5d204e15e6")
+			(uuid "38e6236c-7ee5-44ac-96a7-fadb852f9097")
 		)
 		(instances
 			(project "pl60c_dmx"
@@ -11792,7 +11792,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "6f1a94a1-4a3e-488c-b3c1-614cf28af520")
+		(uuid "4b5da742-7dee-4f78-b88f-3dd6f9a4fa33")
 	)
 	(label "GND"
 		(at 377.19 92.71 180)
@@ -11803,7 +11803,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "a504b033-2750-400a-b1ce-c18eca5e7097")
+		(uuid "f4456c82-db60-4d35-ac3d-e0ee69edb816")
 	)
 	(wire
 		(pts
@@ -11814,7 +11814,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "5a2f6118-0f4b-493c-b19b-4aaf93f31d14")
+		(uuid "b5d50377-74cc-46c5-b8bd-775afa66634f")
 	)
 	(label "DMX_B"
 		(at 377.19 95.25 180)
@@ -11825,7 +11825,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "f237d4a3-ee3f-4475-8f67-80b2a0a0aedd")
+		(uuid "c27c5e33-cf70-4cfe-a2da-965b009053cd")
 	)
 	(wire
 		(pts
@@ -11836,7 +11836,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "12f357db-4efc-4d42-ae3c-64f14f83a064")
+		(uuid "c5db96d0-f7fb-4275-97de-d090898d6431")
 	)
 	(label "DMX_A"
 		(at 377.19 97.79 180)
@@ -11847,10 +11847,10 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "4d2d91db-ea09-4cf7-a205-6437a46643d5")
+		(uuid "5e55f48b-a64d-42c2-8450-c13ffeed3703")
 	)
 	(symbol
-		(lib_id "LED:WS2812B")
+		(lib_id "LED:WS2812B-2020")
 		(at 160.02 195.58 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -11866,7 +11866,7 @@
 				)
 			)
 		)
-		(property "Value" "WS2812B"
+		(property "Value" "WS2812B-2020"
 			(at 160.02 207.01 0)
 			(effects
 				(font
@@ -11874,7 +11874,7 @@
 				)
 			)
 		)
-		(property "Footprint" "LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm"
+		(property "Footprint" "LED_SMD:LED_WS2812B-2020_PLCC4_2.0x2.0mm"
 			(at 160.02 195.58 0)
 			(effects
 				(font
@@ -11892,7 +11892,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Addressable RGB LED 5050 (powered from 3V3 as on ESP32-S3-DevKitC)"
+		(property "Description" "Addressable RGB LED 2x2 mm, V6 silicon: 3.3 V supply supported, VIH = 0.55 VDD (datasheet)"
 			(at 160.02 195.58 0)
 			(effects
 				(font
@@ -11901,7 +11901,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C2761795"
+		(property "LCSC" "C52917434"
 			(at 160.02 195.58 0)
 			(effects
 				(font
@@ -11910,7 +11910,7 @@
 				(hide yes)
 			)
 		)
-		(property "MPN" "WS2812B-B/T"
+		(property "MPN" "WS2812B-2020-V6"
 			(at 160.02 195.58 0)
 			(effects
 				(font
@@ -11920,16 +11920,16 @@
 			)
 		)
 		(pin "1"
-			(uuid "151541e6-1e0f-408d-8197-80c52176a0c6")
+			(uuid "e8717d13-0e46-4ac6-bd3c-ea6053800e22")
 		)
 		(pin "2"
-			(uuid "e3bb9497-1cca-45a5-8bf4-f79b766abe90")
+			(uuid "8089b6b0-f509-42cb-9b87-6dcaf908fb43")
 		)
 		(pin "3"
-			(uuid "ef74f500-85d5-4c9a-a597-13190c76bb34")
+			(uuid "469d6333-3180-45a6-8677-68362f2ae832")
 		)
 		(pin "4"
-			(uuid "f944a516-1240-405c-9ab5-21811f0dcbbb")
+			(uuid "53db1cbc-bcad-47ec-affd-65f5bff91673")
 		)
 		(instances
 			(project "pl60c_dmx"
@@ -11940,85 +11940,9 @@
 			)
 		)
 	)
-	(wire
-		(pts
-			(xy 160.02 187.96)
-			(xy 160.02 185.42)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "237c04f2-60c7-4d8e-8289-5076550ac38b")
-	)
-	(symbol
-		(lib_id "power:+3V3")
-		(at 160.02 185.42 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "75710b13-31ea-4abc-b2ca-86812fa9071a")
-		(property "Reference" "#PWR028"
-			(at 160.02 185.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+3V3"
-			(at 160.02 180.92 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 160.02 185.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 160.02 185.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 160.02 185.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "4b3a5206-3f44-4d6c-b4ce-6552c914eae8")
-		)
-		(instances
-			(project "pl60c_dmx"
-				(path "/e63f84e3-7254-5f79-8caa-7afae8cc707c"
-					(reference "#PWR028")
-					(unit 1)
-				)
-			)
-		)
-	)
 	(no_connect
 		(at 167.64 195.58)
-		(uuid "70759910-7040-4e14-ba30-90ab6343c063")
+		(uuid "a472b3b9-caa9-480e-92b8-0f6ca7d07ded")
 	)
 	(wire
 		(pts
@@ -12029,7 +11953,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "04b57be5-ddd6-477e-8f14-28daeefcc864")
+		(uuid "221a4c32-2f98-4af7-b6b7-c84be029b36d")
 	)
 	(symbol
 		(lib_id "power:GND")
@@ -12039,8 +11963,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "242c522e-a825-4646-baca-32f7c74c1062")
-		(property "Reference" "#PWR029"
+		(uuid "8021e451-4883-477a-81a6-8628ded97345")
+		(property "Reference" "#PWR028"
 			(at 160.02 205.74 0)
 			(effects
 				(font
@@ -12085,12 +12009,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "910faca5-7c30-41ee-b53b-ebf842f31f56")
+			(uuid "b8f16495-4a08-482d-91d1-c53dfc35120d")
 		)
 		(instances
 			(project "pl60c_dmx"
 				(path "/e63f84e3-7254-5f79-8caa-7afae8cc707c"
-					(reference "#PWR029")
+					(reference "#PWR028")
 					(unit 1)
 				)
 			)
@@ -12105,7 +12029,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "c9e0c9e9-ddf4-45bc-a802-a2cf543978c0")
+		(uuid "b843f99a-3262-4831-8262-777872f3c30a")
 	)
 	(label "LED_DATA_R"
 		(at 149.86 195.58 180)
@@ -12116,7 +12040,83 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "a82c0e9c-8fe2-4564-a39f-3cec8d3e2823")
+		(uuid "1cbff0c0-cc5a-42a4-9096-7cf0b771bd5d")
+	)
+	(wire
+		(pts
+			(xy 160.02 187.96)
+			(xy 160.02 185.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5a537ccc-4032-4b98-b56e-d5e3c1f2c5cf")
+	)
+	(symbol
+		(lib_id "power:+3V3")
+		(at 160.02 185.42 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "5ac881c8-826b-4e98-8d5f-ebaf16ec8357")
+		(property "Reference" "#PWR029"
+			(at 160.02 185.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+3V3"
+			(at 160.02 180.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 160.02 185.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 160.02 185.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 160.02 185.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "3df68808-532d-4a09-8106-b7f698544921")
+		)
+		(instances
+			(project "pl60c_dmx"
+				(path "/e63f84e3-7254-5f79-8caa-7afae8cc707c"
+					(reference "#PWR029")
+					(unit 1)
+				)
+			)
+		)
 	)
 	(symbol
 		(lib_id "Device:R")
@@ -12180,10 +12180,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "2a79622e-9f7a-42a1-a843-9188e502d679")
+			(uuid "9b954c66-ba5d-48ec-9e64-ad8d5ea72b54")
 		)
 		(pin "2"
-			(uuid "99f17506-6523-4975-9370-7b2ed1f26e3d")
+			(uuid "9bd9590b-e727-41ac-a4be-8d9cab1405d8")
 		)
 		(instances
 			(project "pl60c_dmx"
@@ -12203,7 +12203,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "6c440566-b641-48f3-987a-f54b424af6bf")
+		(uuid "d0d1ebdf-838a-41a9-9389-873d8d8e2786")
 	)
 	(label "LED_DATA"
 		(at 144.78 208.28 90)
@@ -12214,7 +12214,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "069860e2-235a-401e-b625-f81bece9d29f")
+		(uuid "da2c3f45-1a60-4c7f-ac9c-fbd65e77462b")
 	)
 	(wire
 		(pts
@@ -12225,7 +12225,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "aa84b7f1-5c44-447a-ad11-d08c031dfd1c")
+		(uuid "5285b49b-dc02-4c60-9a64-4421cea3a4a9")
 	)
 	(label "LED_DATA_R"
 		(at 144.78 220.98 270)
@@ -12236,7 +12236,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "4498bf90-bd1a-44b5-bde1-77fa9e779318")
+		(uuid "1c7a07d7-cc4f-4062-bf07-f3ec22d325d7")
 	)
 	(symbol
 		(lib_id "Device:C")
@@ -12300,10 +12300,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "c6d4386e-2da2-4ed6-92e7-9f0865869072")
+			(uuid "549d350c-f4c9-42ef-b9de-9018d90e3f0e")
 		)
 		(pin "2"
-			(uuid "67dd129d-8a2c-4ed6-b708-bfa885df6dce")
+			(uuid "9b0ea235-4044-4c34-b0df-3963ea596d1e")
 		)
 		(instances
 			(project "pl60c_dmx"
@@ -12323,7 +12323,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "da530191-a4a7-4ed4-8f54-a9d9ba68ab79")
+		(uuid "20b4348d-f17c-46ef-a77a-c5d580477982")
 	)
 	(symbol
 		(lib_id "power:+3V3")
@@ -12333,7 +12333,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "c0a5fa1e-bc2e-453b-ab77-d96378d17596")
+		(uuid "1e6cbf39-a782-468e-9b79-307579a8fd39")
 		(property "Reference" "#PWR030"
 			(at 180.34 189.23 0)
 			(effects
@@ -12379,7 +12379,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "e5683b82-3e9e-4574-b2e0-93e9bb564704")
+			(uuid "8a3c1b2b-4574-4588-a1cd-a88db34b95fd")
 		)
 		(instances
 			(project "pl60c_dmx"
@@ -12399,7 +12399,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "429dac25-7fef-4825-8d0d-2b550b3cfb3e")
+		(uuid "df00c7fe-5dd0-43d7-9f82-023faba755e2")
 	)
 	(symbol
 		(lib_id "power:GND")
@@ -12409,7 +12409,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "46178aac-b68f-4b2b-9475-bed362044e56")
+		(uuid "b847f250-b919-4b29-80a8-fe5c7799dee4")
 		(property "Reference" "#PWR031"
 			(at 180.34 201.93 0)
 			(effects
@@ -12455,7 +12455,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "cfdc390a-02e1-4b2c-9ce5-51e7cc650acf")
+			(uuid "0eb59f88-f699-4826-abf1-db19ffd2ebf6")
 		)
 		(instances
 			(project "pl60c_dmx"
@@ -12528,10 +12528,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "ad936895-c7e7-40de-aee1-340439717b92")
+			(uuid "92b76dd2-a435-4cb3-a0f7-e136644a7bb6")
 		)
 		(pin "2"
-			(uuid "4709f80b-4fcf-45e7-a0b5-809244a9817f")
+			(uuid "4eb20463-ce76-492b-83ed-789787e1c4f4")
 		)
 		(instances
 			(project "pl60c_dmx"
@@ -12551,7 +12551,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "93e6a1d5-947c-4ac2-96d2-017bca7a759e")
+		(uuid "a0171881-60df-48e0-adf5-7765ddb73dc7")
 	)
 	(symbol
 		(lib_id "power:+3V3")
@@ -12561,7 +12561,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "abca8b31-37a3-4ccd-a3c5-350c130955c4")
+		(uuid "b0e2d610-7be4-4f28-b793-a728d618e413")
 		(property "Reference" "#PWR032"
 			(at 199.39 189.23 0)
 			(effects
@@ -12607,7 +12607,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "db0e4a5e-322c-4f02-b1ba-1bded7eb6311")
+			(uuid "af3ea1fd-c69f-4c13-bffa-f61ce288413b")
 		)
 		(instances
 			(project "pl60c_dmx"
@@ -12627,7 +12627,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "eea44af2-f617-4adb-b406-97d7e1dbee7d")
+		(uuid "7eb58cbc-ef10-4c85-8d1d-9c237684b15b")
 	)
 	(label "BTN_USER"
 		(at 199.39 201.93 270)
@@ -12638,7 +12638,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "28affadc-4868-41c5-affe-9839fc3ef1b4")
+		(uuid "4efbcc3f-b948-4b80-8885-6159b9630177")
 	)
 	(symbol
 		(lib_id "Switch:SW_Push")
@@ -12711,10 +12711,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "438e1773-e6af-487e-854e-f4f76c93e3af")
+			(uuid "a5df183e-5b89-4777-93b2-7bbd1a83e5ac")
 		)
 		(pin "2"
-			(uuid "ff77a83e-3d0f-4721-89b1-578316d90561")
+			(uuid "20a4ab8d-de40-4f6b-bfa9-cfae32e381f4")
 		)
 		(instances
 			(project "pl60c_dmx"
@@ -12734,7 +12734,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "43f31b1f-fc0d-48a0-b7b0-09d7ccac95a0")
+		(uuid "74cd76d4-1f3b-4345-85bf-0c4750d80b77")
 	)
 	(label "BTN_USER"
 		(at 191.77 214.63 180)
@@ -12745,7 +12745,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "04861eda-6091-4ff6-9006-38ad1b8c836e")
+		(uuid "c52c8a70-b8d0-4e95-ba95-08135a7e9754")
 	)
 	(wire
 		(pts
@@ -12756,7 +12756,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "01cb4172-9ba0-491a-9414-6abc523572cd")
+		(uuid "40894d9b-d680-4ac1-a423-03d54b103717")
 	)
 	(label "GND"
 		(at 207.01 214.63 0)
@@ -12767,7 +12767,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "0da14dc6-5c6e-4527-8357-79756a6fdf84")
+		(uuid "776ccb1a-1113-4ff7-9091-a8d576478e52")
 	)
 	(symbol
 		(lib_id "Device:R")
@@ -12786,7 +12786,7 @@
 				)
 			)
 		)
-		(property "Value" "1k"
+		(property "Value" "470R"
 			(at 222.25 257.81 0)
 			(effects
 				(font
@@ -12812,7 +12812,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "1k 0603"
+		(property "Description" "470R 0603 base resistor (buzzer datasheet drive circuit)"
 			(at 222.25 250.19 0)
 			(effects
 				(font
@@ -12821,7 +12821,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C21190"
+		(property "LCSC" "C23179"
 			(at 222.25 250.19 0)
 			(effects
 				(font
@@ -12831,10 +12831,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "5559a70e-2f62-417d-9b5e-1c95ba1f70f9")
+			(uuid "c66065d3-258d-4fa1-889f-04baac3034e9")
 		)
 		(pin "2"
-			(uuid "892dae3b-0d4a-4c80-9319-5e34bd61e27f")
+			(uuid "0fe1fd15-921f-438e-baa6-d414dfe0a415")
 		)
 		(instances
 			(project "pl60c_dmx"
@@ -12854,7 +12854,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "fc9b7cbc-e0c0-4fbc-a6b2-07d35360fa5d")
+		(uuid "9daf178f-cc69-4639-b696-826127a3ed30")
 	)
 	(label "BUZZER"
 		(at 222.25 243.84 90)
@@ -12865,7 +12865,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "1513192a-b028-42d0-af76-0a71bf642cd9")
+		(uuid "3f65191b-999c-4b2a-968a-0b352207b5e0")
 	)
 	(wire
 		(pts
@@ -12876,7 +12876,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "ac2ac2ef-eae7-4737-8917-2a574a4c12e4")
+		(uuid "eb94b6c1-87c5-4d24-abfa-f10f5d25cc0c")
 	)
 	(label "Q1_B"
 		(at 222.25 256.54 270)
@@ -12887,10 +12887,10 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "904ffda3-e975-4625-b155-cbe39254f20c")
+		(uuid "b6089d87-3a1d-4d2b-ab9b-19d3d1875a5e")
 	)
 	(symbol
-		(lib_id "Transistor_BJT:S8050")
+		(lib_id "Transistor_BJT:BC817")
 		(at 240.03 250.19 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -12960,13 +12960,13 @@
 			)
 		)
 		(pin "1"
-			(uuid "fa8a3690-4abd-4fc6-b17d-95db6614310a")
+			(uuid "a167dde6-17d1-4d14-97f0-51943f582a21")
 		)
 		(pin "2"
-			(uuid "6143097f-493f-41a7-93bb-bd16048ec26e")
+			(uuid "7e5ea285-6999-448e-a2cc-72c68ae2ff10")
 		)
 		(pin "3"
-			(uuid "5ea48f12-6bbc-4d8c-8555-ac6b67a37742")
+			(uuid "951ab059-9a65-4ce8-b5c7-7bc6c24b24f6")
 		)
 		(instances
 			(project "pl60c_dmx"
@@ -12979,6 +12979,28 @@
 	)
 	(wire
 		(pts
+			(xy 234.95 250.19)
+			(xy 232.41 250.19)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6330aba1-d4ed-4a90-9d3e-ff4253cbbff3")
+	)
+	(label "Q1_B"
+		(at 232.41 250.19 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "0362bac6-b4c3-4011-863b-aa25146d1061")
+	)
+	(wire
+		(pts
 			(xy 242.57 255.27)
 			(xy 242.57 257.81)
 		)
@@ -12986,7 +13008,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "77865482-d5e0-4263-b544-c8edcf96be06")
+		(uuid "af4bab4c-9aff-4fd3-8c0f-fc2e6f462202")
 	)
 	(symbol
 		(lib_id "power:GND")
@@ -12996,7 +13018,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "d1638d96-5114-4968-8925-6f938ed5db35")
+		(uuid "f7ee65f6-336c-4dfb-ad08-b1c06970012f")
 		(property "Reference" "#PWR033"
 			(at 242.57 257.81 0)
 			(effects
@@ -13042,7 +13064,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "23d9afd2-1b39-4fe9-99e7-4e212bc2d656")
+			(uuid "83ccdae4-e70a-4f56-9573-0325a55a898b")
 		)
 		(instances
 			(project "pl60c_dmx"
@@ -13055,28 +13077,6 @@
 	)
 	(wire
 		(pts
-			(xy 234.95 250.19)
-			(xy 232.41 250.19)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f8ed3bf2-1269-4eb0-997a-7167fc615232")
-	)
-	(label "Q1_B"
-		(at 232.41 250.19 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "cc9d0b7e-91ed-4407-8f51-d0b9ec2e6afa")
-	)
-	(wire
-		(pts
 			(xy 242.57 245.11)
 			(xy 242.57 242.57)
 		)
@@ -13084,7 +13084,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "fc72614a-cc7a-42ac-a84b-9b6e2a2ef6a5")
+		(uuid "2a197897-08db-4439-9091-b9e8cf25b76e")
 	)
 	(label "BZ_N"
 		(at 242.57 242.57 90)
@@ -13095,7 +13095,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "a0d7e036-bbc7-4167-8e76-d3e3d64d8938")
+		(uuid "459ab16e-da30-4740-bae2-eb9af54c33e7")
 	)
 	(symbol
 		(lib_id "Device:D_Schottky")
@@ -13168,10 +13168,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "6f8dee6a-efde-42a1-983c-abe8e6ebe0ff")
+			(uuid "6d6f771c-fdb5-4a0b-abec-1ee27d7570f5")
 		)
 		(pin "2"
-			(uuid "77aaf2b8-22f4-4d3a-90ce-0bd5a1278af9")
+			(uuid "eb4e2bbc-9e28-4e6e-ba7b-84b81fd30ea4")
 		)
 		(instances
 			(project "pl60c_dmx"
@@ -13191,9 +13191,9 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "e6b8f96f-47c9-4a51-bb4d-3d396fae1530")
+		(uuid "baabaa73-221d-46f0-8cd8-e33d792ab80f")
 	)
-	(label "+5V"
+	(label "BZ_P"
 		(at 226.06 224.79 180)
 		(fields_autoplaced yes)
 		(effects
@@ -13202,7 +13202,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "9bfab07d-92bf-41d5-b5d8-89ebcbdaf66d")
+		(uuid "4fdaedd6-5592-4fad-a102-59e592182c5d")
 	)
 	(wire
 		(pts
@@ -13213,7 +13213,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "ec0dc894-0069-4a0d-a965-30ee82b59b14")
+		(uuid "4cee00f3-2f88-4773-80f9-80394afd0c25")
 	)
 	(label "BZ_N"
 		(at 238.76 224.79 0)
@@ -13224,7 +13224,181 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "2675e256-c0e5-4455-ad7a-c08fd3940f04")
+		(uuid "93f8c6eb-29d1-4952-866d-0ef558373ce0")
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 224.79 212.09 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "bdbfcf3f-bcc4-5824-97fd-f689eba33e65")
+		(property "Reference" "R10"
+			(at 224.79 204.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "10R"
+			(at 224.79 219.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_1206_3216Metric"
+			(at 224.79 212.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 224.79 212.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "10R 1206 250mW buzzer series resistor: limits coil to ~180 mA / 2.9 V from the 5 V rail"
+			(at 224.79 212.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C17903"
+			(at 224.79 212.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "2ff3d667-b5fd-4ce5-b655-71252b534fb0")
+		)
+		(pin "2"
+			(uuid "0402d38c-6dc8-4a15-a758-e76a9ad819dd")
+		)
+		(instances
+			(project "pl60c_dmx"
+				(path "/e63f84e3-7254-5f79-8caa-7afae8cc707c"
+					(reference "R10")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 224.79 208.28)
+			(xy 224.79 205.74)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "56ae6ec3-36f1-465e-b2f7-84ad4b0d2fb2")
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 224.79 205.74 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "96c42c98-6c70-4183-a6f4-067c419dbdee")
+		(property "Reference" "#PWR034"
+			(at 224.79 205.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 224.79 201.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 224.79 205.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 224.79 205.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 224.79 205.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "9f0eef85-d6f5-4a4d-9f61-d2288ddc7fa6")
+		)
+		(instances
+			(project "pl60c_dmx"
+				(path "/e63f84e3-7254-5f79-8caa-7afae8cc707c"
+					(reference "#PWR034")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 224.79 215.9)
+			(xy 224.79 218.44)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0fd1e931-1477-4efa-aefb-0587bcb9d93e")
+	)
+	(label "BZ_P"
+		(at 224.79 218.44 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "e3293ed7-a491-4dc0-ac7b-ee609b6ab98d")
 	)
 	(symbol
 		(lib_id "Device:Buzzer")
@@ -13297,10 +13471,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "b5ee1f53-ceeb-4433-be58-03cd2069f5b3")
+			(uuid "8196f8e2-b5d6-4227-bbc3-858b49f59f87")
 		)
 		(pin "2"
-			(uuid "49642a7e-bbec-43ad-b14c-36fa530346e0")
+			(uuid "fdfa647b-512c-4a57-928a-312b7d4394d9")
 		)
 		(instances
 			(project "pl60c_dmx"
@@ -13320,9 +13494,9 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "855a979e-1565-4fc3-b652-5804304cc76d")
+		(uuid "7e9fe496-4944-40e4-8fcf-bb1e81241a55")
 	)
-	(label "+5V"
+	(label "BZ_P"
 		(at 240.03 196.85 180)
 		(fields_autoplaced yes)
 		(effects
@@ -13331,7 +13505,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "8cc747c5-1f21-46df-b558-fa6ab6a03acc")
+		(uuid "f80554cf-249f-474d-bbe9-d1194bf4350a")
 	)
 	(wire
 		(pts
@@ -13342,7 +13516,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "087a1c56-124d-4dab-a420-428357035f29")
+		(uuid "d26f08d5-ef95-4e6b-b4ce-5c710f63fc36")
 	)
 	(label "BZ_N"
 		(at 240.03 201.93 180)
@@ -13353,7 +13527,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "49ac449c-83f3-4337-a941-9d2e4be46ac8")
+		(uuid "0db23366-5782-4a17-ae66-6156697a5acf")
 	)
 	(symbol
 		(lib_id "Connector_Generic:Conn_01x06")
@@ -13426,22 +13600,22 @@
 			)
 		)
 		(pin "1"
-			(uuid "db3a611f-ae60-413e-a9b9-3cfb6fc3842d")
+			(uuid "90ca123d-23e8-489f-9761-9129c7d53976")
 		)
 		(pin "2"
-			(uuid "70c6dd9a-dd37-44b4-ae3b-eade1ffe3abf")
+			(uuid "16c30545-ad00-42a5-9421-894cb62c4214")
 		)
 		(pin "3"
-			(uuid "ce2d79f9-16f1-4340-b4de-3314a950ce3d")
+			(uuid "cd1d832d-2185-4ae6-94fd-f8eaa4a00153")
 		)
 		(pin "4"
-			(uuid "7607a8da-286b-4f2b-b866-b87b35a415ad")
+			(uuid "ddc26d64-a71e-4207-8934-b853232b54b7")
 		)
 		(pin "5"
-			(uuid "c9d90207-292e-44e2-8580-3d29c5159e8e")
+			(uuid "03179ecc-49bf-45b2-9a92-1854ef8fd3ac")
 		)
 		(pin "6"
-			(uuid "de47e8b3-f3e1-4ddd-bdfe-7a20e6dc9cfd")
+			(uuid "0a93402a-9c30-4f5f-8a5b-a424102ed415")
 		)
 		(instances
 			(project "pl60c_dmx"
@@ -13461,7 +13635,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "f07915c1-98f1-439c-9d3f-67273aeb145b")
+		(uuid "e24f2e4e-8a95-4cc7-aaa7-ce6ca0d254f5")
 	)
 	(label "+3V3"
 		(at 292.1 185.42 180)
@@ -13472,7 +13646,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "8aad570c-c915-466a-b4f3-57722cce5f75")
+		(uuid "3dd6a14a-dc59-4a91-9d72-ac1342865f9c")
 	)
 	(wire
 		(pts
@@ -13483,7 +13657,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "b2a3d660-35a2-4bbb-bcbe-ee228747c570")
+		(uuid "93f55389-a5bf-46d5-b7ba-dd253776a7ad")
 	)
 	(label "GND"
 		(at 292.1 187.96 180)
@@ -13494,7 +13668,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "1d4d1007-692e-4bc5-ac9d-a4d477636018")
+		(uuid "db414e10-b15a-4d3c-8193-ddf5e841b623")
 	)
 	(wire
 		(pts
@@ -13505,7 +13679,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "19260cf4-66f5-4b39-8318-d30a0c3ef197")
+		(uuid "6219a65d-34ff-4c77-b618-3a5fe98d2543")
 	)
 	(label "EXP_SDA"
 		(at 292.1 190.5 180)
@@ -13516,7 +13690,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "6facfb78-44a8-45d8-8142-c1eb658eabb9")
+		(uuid "2e706dd2-4381-4de0-8de6-9560ed5ea8ac")
 	)
 	(wire
 		(pts
@@ -13527,7 +13701,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "278e927e-f19b-4a73-9cbf-c71195d6efcb")
+		(uuid "94a22cd7-338a-4dc8-814b-d5386022af48")
 	)
 	(label "EXP_SCL"
 		(at 292.1 193.04 180)
@@ -13538,7 +13712,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "68474ed1-4508-4fb9-8963-da70fc3dba0c")
+		(uuid "1c891fa7-a12c-4543-867c-0f6800702421")
 	)
 	(wire
 		(pts
@@ -13549,7 +13723,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "89c74adc-67ac-4707-93bf-0d9caad6e9b1")
+		(uuid "eb825180-cd62-4a61-b51a-affbeeedaecd")
 	)
 	(label "EXP_IO10"
 		(at 292.1 195.58 180)
@@ -13560,7 +13734,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "307bc460-cd18-4436-af54-95d653b6dc46")
+		(uuid "954366b4-b56c-41d2-bfa9-e2a86ba42c23")
 	)
 	(wire
 		(pts
@@ -13571,7 +13745,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "9ef16938-b0ec-4251-ab6e-a1da3a51b462")
+		(uuid "abc8d60d-418a-442a-b0d3-c1d2d9082a92")
 	)
 	(label "EXP_IO11"
 		(at 292.1 198.12 180)
@@ -13582,7 +13756,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "bc17fe40-9754-4e4d-902b-8bdfae1bc867")
+		(uuid "155833d7-7d78-4f20-9d36-0bf62de24d65")
 	)
 	(symbol
 		(lib_id "Connector_Generic:Conn_01x04")
@@ -13655,16 +13829,16 @@
 			)
 		)
 		(pin "1"
-			(uuid "5906206b-ce95-4795-b377-1f9e0994945e")
+			(uuid "594b47f7-3b9a-4798-946d-f509c7e25dc0")
 		)
 		(pin "2"
-			(uuid "785a955a-07bb-4648-a519-938d0739f6ac")
+			(uuid "9f59a458-e2cd-448f-9de9-e5ab59633b77")
 		)
 		(pin "3"
-			(uuid "d10e7fcb-ed05-4d48-84e2-598bc873cc6e")
+			(uuid "01041986-800f-45d8-ad50-0e3a2f8625ab")
 		)
 		(pin "4"
-			(uuid "b89affed-8196-4760-88f3-d51f36a71216")
+			(uuid "913d87de-df19-4561-b68f-cfd16a01b324")
 		)
 		(instances
 			(project "pl60c_dmx"
@@ -13684,7 +13858,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "c4797a59-dda3-456b-b096-cc108f9d31b1")
+		(uuid "d4f47892-9474-42e0-bc91-fca1843f9fd5")
 	)
 	(label "+3V3"
 		(at 351.79 187.96 180)
@@ -13695,7 +13869,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "9f11c0c7-4c9a-44d1-802f-9fe326f34e7d")
+		(uuid "8b460f02-e0e3-4259-a0ec-9aea1b1c9394")
 	)
 	(wire
 		(pts
@@ -13706,7 +13880,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "a419d7b9-4157-4420-a64d-f022b5e9f498")
+		(uuid "7c7d143c-0383-4418-a853-e1a935cfd82b")
 	)
 	(label "GND"
 		(at 351.79 190.5 180)
@@ -13717,7 +13891,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "ac3589bc-9481-4802-a1fd-2b1ddc58297b")
+		(uuid "4f7d5397-4f62-47d5-b9ee-cbf77d19c747")
 	)
 	(wire
 		(pts
@@ -13728,7 +13902,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "9b168eeb-1430-42d9-9d78-3a7f7b03778f")
+		(uuid "5d86dae5-4722-46b9-8d98-1c42afa68f28")
 	)
 	(label "TXD0"
 		(at 351.79 193.04 180)
@@ -13739,7 +13913,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "44c0dfdc-9b8d-4824-91cf-999f497da61c")
+		(uuid "50b4b357-b16c-45d7-af77-38d944424c29")
 	)
 	(wire
 		(pts
@@ -13750,7 +13924,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "61885837-dedf-456c-b169-6f04715a15a0")
+		(uuid "b258af5a-44d6-4bc8-86d0-f81ac2bafa35")
 	)
 	(label "RXD0"
 		(at 351.79 195.58 180)
@@ -13761,7 +13935,7 @@
 			)
 			(justify right bottom)
 		)
-		(uuid "e7151df5-8b44-47d5-8a06-a5fcf99bd53c")
+		(uuid "c6710f5f-a190-4177-8d5b-916c1dba5009")
 	)
 	(symbol
 		(lib_id "Mechanical:MountingHole")
@@ -14052,7 +14226,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "03fe68a5-d38d-4988-b264-41f01fabcf62")
+		(uuid "c13b20fe-27ec-4a0f-af91-f60179498759")
 	)
 	(symbol
 		(lib_id "power:+5V")
@@ -14062,8 +14236,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "c2c2f490-4080-42da-9253-a26c7e3d4abb")
-		(property "Reference" "#PWR034"
+		(uuid "1ab1361d-3b4c-41fb-8a8f-771c557e6469")
+		(property "Reference" "#PWR035"
 			(at 59.69 97.79 0)
 			(effects
 				(font
@@ -14108,12 +14282,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "bee5f329-f22e-4f3f-b441-4d92b54e3c1a")
+			(uuid "25e0e1f3-448c-439c-9192-cfb0bcccd211")
 		)
 		(instances
 			(project "pl60c_dmx"
 				(path "/e63f84e3-7254-5f79-8caa-7afae8cc707c"
-					(reference "#PWR034")
+					(reference "#PWR035")
 					(unit 1)
 				)
 			)
@@ -14127,8 +14301,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "79d82704-6788-4d74-9b8d-cadb40492e44")
-		(property "Reference" "#FLG035"
+		(uuid "7c75745c-feab-4152-9a5b-0527159db5f5")
+		(property "Reference" "#FLG036"
 			(at 59.69 100.33 0)
 			(effects
 				(font
@@ -14173,12 +14347,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "9cc935ed-f7a7-4c15-9809-6147b3bbef4d")
+			(uuid "ad60f679-11c9-451a-be3d-5232c2fde955")
 		)
 		(instances
 			(project "pl60c_dmx"
 				(path "/e63f84e3-7254-5f79-8caa-7afae8cc707c"
-					(reference "#FLG035")
+					(reference "#FLG036")
 					(unit 1)
 				)
 			)
@@ -14193,7 +14367,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "1016fd93-da7f-460c-83ea-78f0ef7ec4e2")
+		(uuid "1ac6f2e4-0197-44b8-89c9-ee8f42a70cea")
 	)
 	(symbol
 		(lib_id "power:GND")
@@ -14203,8 +14377,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "add46248-ca61-40cb-8d6f-6a554dfe27a8")
-		(property "Reference" "#PWR036"
+		(uuid "0c1d10fa-b458-4ab6-ad25-c579efd03abf")
+		(property "Reference" "#PWR037"
 			(at 59.69 110.49 0)
 			(effects
 				(font
@@ -14249,12 +14423,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "039bf65c-41ae-4099-af08-8aa4c42f164c")
+			(uuid "f7583480-1c70-486d-9ece-35b5f5540731")
 		)
 		(instances
 			(project "pl60c_dmx"
 				(path "/e63f84e3-7254-5f79-8caa-7afae8cc707c"
-					(reference "#PWR036")
+					(reference "#PWR037")
 					(unit 1)
 				)
 			)
@@ -14268,8 +14442,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "81324c26-44d8-4019-84fa-c9edb645350e")
-		(property "Reference" "#FLG037"
+		(uuid "affe77df-354f-4fbc-a4c2-c821e0f7b318")
+		(property "Reference" "#FLG038"
 			(at 59.69 107.95 0)
 			(effects
 				(font
@@ -14314,12 +14488,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "5736d425-d2fc-4a77-89fa-ce228d8907fd")
+			(uuid "3658eb3f-7777-4fbe-b89f-cc452371a0e7")
 		)
 		(instances
 			(project "pl60c_dmx"
 				(path "/e63f84e3-7254-5f79-8caa-7afae8cc707c"
-					(reference "#FLG037")
+					(reference "#FLG038")
 					(unit 1)
 				)
 			)
@@ -14335,7 +14509,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "fee47aba-daf1-486c-9c21-16e9639effda")
+		(uuid "6422db39-bc04-4601-8fbe-e08274df9a54")
 	)
 	(text "ESP32-S3-WROOM-1 module, reset / boot"
 		(exclude_from_sim no)
@@ -14347,7 +14521,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "d893f37d-53f3-4ec1-8b63-ca2ae506593b")
+		(uuid "aa5e7abf-6025-42c6-933d-ac0f84253747")
 	)
 	(text "DMX512 output (RS-485, 3.3 V transceiver)"
 		(exclude_from_sim no)
@@ -14359,7 +14533,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "4054fb05-537d-40d5-bdd0-a2434de23adf")
+		(uuid "23be4279-4989-404e-98b4-bdb020c220c0")
 	)
 	(text "User interface: RGB status LED, user button, alarm buzzer"
 		(exclude_from_sim no)
@@ -14371,7 +14545,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "6e29f7e9-fddb-4f57-bd03-a8aa82984796")
+		(uuid "81e4d185-cb0b-4239-9c0c-afaa213a9876")
 	)
 	(text "Expansion (I2C RTC / sensor) and UART0 debug headers"
 		(exclude_from_sim no)
@@ -14383,7 +14557,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "12ccec6a-0a2d-459c-95eb-2c9f1650dbc5")
+		(uuid "8b5b9846-2a5a-40c5-a48a-f3bcada0c2a9")
 	)
 	(text "Mounting holes M3"
 		(exclude_from_sim no)
@@ -14395,7 +14569,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "2fae4bc8-a1af-48e4-b71c-c79b9c463f1b")
+		(uuid "f3975743-0847-4877-8d70-e705ef5d9c75")
 	)
 	(rectangle
 		(start 18 14)
@@ -14407,7 +14581,7 @@
 		(fill
 			(type none)
 		)
-		(uuid "42e73c69-4ff2-4611-b5ab-b9309a3a001c")
+		(uuid "babb3d88-c1d8-4e78-bc30-9f5af151af00")
 	)
 	(rectangle
 		(start 138 14)
@@ -14419,7 +14593,7 @@
 		(fill
 			(type none)
 		)
-		(uuid "d18f1301-b40f-4601-b36d-64b902d1d9d4")
+		(uuid "9876648e-337c-486c-ba37-da00d332ee6d")
 	)
 	(rectangle
 		(start 270 14)
@@ -14431,7 +14605,7 @@
 		(fill
 			(type none)
 		)
-		(uuid "a5ce9e21-fb49-4934-aa04-3fc502e87b6a")
+		(uuid "0c61d5fc-d130-45bf-a411-109a02b06c6b")
 	)
 	(rectangle
 		(start 138 158)
@@ -14443,7 +14617,7 @@
 		(fill
 			(type none)
 		)
-		(uuid "b0c75b86-cc87-43cf-b31b-fa9e9601434e")
+		(uuid "811ae75e-7362-4ec9-883f-25949321184a")
 	)
 	(rectangle
 		(start 270 158)
@@ -14455,7 +14629,7 @@
 		(fill
 			(type none)
 		)
-		(uuid "9bdf2417-ff5b-4fb2-a6d5-5e4bbedd913b")
+		(uuid "a3816f44-c883-4583-9b0a-12f32ed4c9f9")
 	)
 	(sheet_instances
 		(path "/"

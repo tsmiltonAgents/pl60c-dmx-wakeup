@@ -17,9 +17,9 @@ echo "== netlist check"; $KC sch export netlist --format kicadsexpr --output bui
 python3 tools/verify_netlist.py
 for attempt in 1 2 3 4 5 6; do
   echo "== pcb (attempt $attempt)"; $KP hw/gen_pcb.py 2>&1 | filt | head -1
-  $KP hw/route.py pcb/$B.kicad_pcb 150 2>&1 | filt | tail -1
-  $KP hw/fix_gnd.py pcb/$B.kicad_pcb 2>&1 | filt | tail -1
-  $KC pcb drc --output build/drc_$B.rpt --severity-all pcb/$B.kicad_pcb 2>&1 | filt | tail -1
+  ($KP hw/route.py pcb/$B.kicad_pcb 150 2>&1 || true) | filt | tail -1
+  ($KP hw/fix_gnd.py pcb/$B.kicad_pcb 2>&1 || true) | filt | tail -1
+  ($KC pcb drc --output build/drc_$B.rpt --severity-all pcb/$B.kicad_pcb 2>&1 || true) | filt | tail -1
   ERR=$(grep -c "; error" build/drc_$B.rpt || true)
   echo "   DRC errors: $ERR"; grep '^\[' build/drc_$B.rpt | sort | uniq -c
   if [ "$ERR" = "0" ]; then break; fi

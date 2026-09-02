@@ -2,7 +2,7 @@
 	(version "E")
 	(design
 		(source "/Users/milton/Documents/claude_sessions/09/20260902_pcbtests/pcb/pl60c_dmx.kicad_sch")
-		(date "2026-09-02T14:44:29")
+		(date "2026-09-02T14:46:04")
 		(tool "Eeschema 10.0.4")
 		(sheet
 			(number "1")
@@ -182,19 +182,19 @@
 		)
 		(comp
 			(ref "C2")
-			(value "10uF")
+			(value "22uF")
 			(footprint "Capacitor_SMD:C_0805_2012Metric")
 			(datasheet "~")
-			(description "10uF 25V X5R 0805")
+			(description "22uF 25V X5R 0805 (AMS1117 output, datasheet asks for >=22uF)")
 			(fields
 				(field
-					(name "LCSC") "C15850")
+					(name "LCSC") "C45783")
 				(field
 					(name "Footprint") "Capacitor_SMD:C_0805_2012Metric")
 				(field
 					(name "Datasheet") "~")
 				(field
-					(name "Description") "10uF 25V X5R 0805")
+					(name "Description") "22uF 25V X5R 0805 (AMS1117 output, datasheet asks for >=22uF)")
 			)
 			(libsource
 				(lib "Device")
@@ -203,7 +203,7 @@
 			)
 			(property
 				(name "LCSC")
-				(value "C15850")
+				(value "C45783")
 			)
 			(property
 				(name "Sheetname")
@@ -677,34 +677,34 @@
 		)
 		(comp
 			(ref "D2")
-			(value "WS2812B")
-			(footprint "LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm")
+			(value "WS2812B-2020")
+			(footprint "LED_SMD:LED_WS2812B-2020_PLCC4_2.0x2.0mm")
 			(datasheet "~")
-			(description "Addressable RGB LED 5050 (powered from 3V3 as on ESP32-S3-DevKitC)")
+			(description "Addressable RGB LED 2x2 mm, V6 silicon: 3.3 V supply supported, VIH = 0.55 VDD (datasheet)")
 			(fields
 				(field
-					(name "LCSC") "C2761795")
+					(name "LCSC") "C52917434")
 				(field
-					(name "MPN") "WS2812B-B/T")
+					(name "MPN") "WS2812B-2020-V6")
 				(field
-					(name "Footprint") "LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm")
+					(name "Footprint") "LED_SMD:LED_WS2812B-2020_PLCC4_2.0x2.0mm")
 				(field
 					(name "Datasheet") "~")
 				(field
-					(name "Description") "Addressable RGB LED 5050 (powered from 3V3 as on ESP32-S3-DevKitC)")
+					(name "Description") "Addressable RGB LED 2x2 mm, V6 silicon: 3.3 V supply supported, VIH = 0.55 VDD (datasheet)")
 			)
 			(libsource
 				(lib "LED")
-				(part "WS2812B")
-				(description "RGB LED with integrated controller")
+				(part "WS2812B-2020")
+				(description "RGB LED with integrated controller, 2.0 x 2.0 mm, 12 mA")
 			)
 			(property
 				(name "LCSC")
-				(value "C2761795")
+				(value "C52917434")
 			)
 			(property
 				(name "MPN")
-				(value "WS2812B-B/T")
+				(value "WS2812B-2020-V6")
 			)
 			(property
 				(name "Sheetname")
@@ -716,11 +716,11 @@
 			)
 			(property
 				(name "ki_keywords")
-				(value "RGB LED NeoPixel addressable")
+				(value "RGB LED NeoPixel Nano addressable")
 			)
 			(property
 				(name "ki_fp_filters")
-				(value "LED*WS2812*PLCC*5.0x5.0mm*P3.2mm*")
+				(value "LED*WS2812*-2020_PLCC4*")
 			)
 			(sheetpath
 				(names "/")
@@ -732,16 +732,16 @@
 					(name "A")
 					(pins
 						(pin
-							(num "4")
-						)
-						(pin
-							(num "1")
-						)
-						(pin
 							(num "3")
 						)
 						(pin
+							(num "4")
+						)
+						(pin
 							(num "2")
+						)
+						(pin
+							(num "1")
 						)
 					)
 				)
@@ -1523,8 +1523,8 @@
 			)
 			(libsource
 				(lib "Transistor_BJT")
-				(part "S8050")
-				(description "0.7A Ic, 20V Vce, Low Voltage High Current NPN Transistor, TO-92")
+				(part "BC817")
+				(description "0.8A Ic, 45V Vce, NPN Transistor, SOT-23")
 			)
 			(property
 				(name "LCSC")
@@ -1544,11 +1544,11 @@
 			)
 			(property
 				(name "ki_keywords")
-				(value "S8050 NPN Low Voltage High Current Transistor")
+				(value "NPN Transistor")
 			)
 			(property
 				(name "ki_fp_filters")
-				(value "TO?92*")
+				(value "SOT?23*")
 			)
 			(sheetpath
 				(names "/")
@@ -1560,13 +1560,13 @@
 					(name "A")
 					(pins
 						(pin
-							(num "2")
+							(num "1")
 						)
 						(pin
 							(num "3")
 						)
 						(pin
-							(num "1")
+							(num "2")
 						)
 					)
 				)
@@ -2057,19 +2057,19 @@
 		)
 		(comp
 			(ref "R9")
-			(value "1k")
+			(value "470R")
 			(footprint "Resistor_SMD:R_0603_1608Metric")
 			(datasheet "~")
-			(description "1k 0603")
+			(description "470R 0603 base resistor (buzzer datasheet drive circuit)")
 			(fields
 				(field
-					(name "LCSC") "C21190")
+					(name "LCSC") "C23179")
 				(field
 					(name "Footprint") "Resistor_SMD:R_0603_1608Metric")
 				(field
 					(name "Datasheet") "~")
 				(field
-					(name "Description") "1k 0603")
+					(name "Description") "470R 0603 base resistor (buzzer datasheet drive circuit)")
 			)
 			(libsource
 				(lib "Device")
@@ -2078,7 +2078,7 @@
 			)
 			(property
 				(name "LCSC")
-				(value "C21190")
+				(value "C23179")
 			)
 			(property
 				(name "Sheetname")
@@ -2101,6 +2101,66 @@
 				(tstamps "/")
 			)
 			(tstamps "b5076057-578b-51fe-80c5-0101f07a4ae5")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R10")
+			(value "10R")
+			(footprint "Resistor_SMD:R_1206_3216Metric")
+			(datasheet "~")
+			(description "10R 1206 250mW buzzer series resistor: limits coil to ~180 mA / 2.9 V from the 5 V rail")
+			(fields
+				(field
+					(name "LCSC") "C17903")
+				(field
+					(name "Footprint") "Resistor_SMD:R_1206_3216Metric")
+				(field
+					(name "Datasheet") "~")
+				(field
+					(name "Description") "10R 1206 250mW buzzer series resistor: limits coil to ~180 mA / 2.9 V from the 5 V rail")
+			)
+			(libsource
+				(lib "Device")
+				(part "R")
+				(description "Resistor")
+			)
+			(property
+				(name "LCSC")
+				(value "C17903")
+			)
+			(property
+				(name "Sheetname")
+				(value "pl60c_dmx")
+			)
+			(property
+				(name "Sheetfile")
+				(value "pl60c_dmx.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R res resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "bdbfcf3f-bcc4-5824-97fd-f689eba33e65")
 			(units
 				(unit
 					(name "A")
@@ -3296,44 +3356,44 @@
 		)
 		(libpart
 			(lib "LED")
-			(part "WS2812B")
-			(description "RGB LED with integrated controller")
-			(docs "https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf")
+			(part "WS2812B-2020")
+			(description "RGB LED with integrated controller, 2.0 x 2.0 mm, 12 mA")
+			(docs "https://cdn-shop.adafruit.com/product-files/4684/4684_WS2812B-2020_V1.3_EN.pdf")
 			(footprints
-				(fp "LED*WS2812*PLCC*5.0x5.0mm*P3.2mm*")
+				(fp "LED*WS2812*-2020_PLCC4*")
 			)
 			(fields
 				(field
 					(name "Reference") "D")
 				(field
-					(name "Value") "WS2812B")
+					(name "Value") "WS2812B-2020")
 				(field
-					(name "Footprint") "LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm")
+					(name "Footprint") "LED_SMD:LED_WS2812B-2020_PLCC4_2.0x2.0mm")
 				(field
-					(name "Datasheet") "https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf")
+					(name "Datasheet") "https://cdn-shop.adafruit.com/product-files/4684/4684_WS2812B-2020_V1.3_EN.pdf")
 				(field
-					(name "Description") "RGB LED with integrated controller")
+					(name "Description") "RGB LED with integrated controller, 2.0 x 2.0 mm, 12 mA")
 			)
 			(pins
 				(pin
 					(num "1")
-					(name "VDD")
-					(type "power_in")
-				)
-				(pin
-					(num "2")
 					(name "DOUT")
 					(type "output")
 				)
 				(pin
-					(num "3")
+					(num "2")
 					(name "VSS")
 					(type "power_in")
 				)
 				(pin
-					(num "4")
+					(num "3")
 					(name "DIN")
 					(type "input")
+				)
+				(pin
+					(num "4")
+					(name "VDD")
+					(type "power_in")
 				)
 			)
 		)
@@ -3711,38 +3771,38 @@
 		)
 		(libpart
 			(lib "Transistor_BJT")
-			(part "S8050")
-			(description "0.7A Ic, 20V Vce, Low Voltage High Current NPN Transistor, TO-92")
-			(docs "http://www.unisonic.com.tw/datasheet/S8050.pdf")
+			(part "BC817")
+			(description "0.8A Ic, 45V Vce, NPN Transistor, SOT-23")
+			(docs "https://www.onsemi.com/pub/Collateral/BC818-D.pdf")
 			(footprints
-				(fp "TO?92*")
+				(fp "SOT?23*")
 			)
 			(fields
 				(field
 					(name "Reference") "Q")
 				(field
-					(name "Value") "S8050")
+					(name "Value") "BC817")
 				(field
-					(name "Footprint") "Package_TO_SOT_THT:TO-92_Inline")
+					(name "Footprint") "Package_TO_SOT_SMD:SOT-23")
 				(field
-					(name "Datasheet") "http://www.unisonic.com.tw/datasheet/S8050.pdf")
+					(name "Datasheet") "https://www.onsemi.com/pub/Collateral/BC818-D.pdf")
 				(field
-					(name "Description") "0.7A Ic, 20V Vce, Low Voltage High Current NPN Transistor, TO-92")
+					(name "Description") "0.8A Ic, 45V Vce, NPN Transistor, SOT-23")
 				(field
 					(name "Sim.Device") "NPN")
 				(field
-					(name "Sim.Pins") "1=E 2=B 3=C")
+					(name "Sim.Pins") "1=B 2=E 3=C")
 			)
 			(pins
 				(pin
 					(num "1")
-					(name "E")
-					(type "passive")
+					(name "B")
+					(type "input")
 				)
 				(pin
 					(num "2")
-					(name "B")
-					(type "input")
+					(name "E")
+					(type "passive")
 				)
 				(pin
 					(num "3")
@@ -3843,8 +3903,8 @@
 			)
 			(node
 				(ref "D2")
-				(pin "1")
-				(pinfunction "VDD_1")
+				(pin "4")
+				(pinfunction "VDD_4")
 				(pintype "power_in")
 			)
 			(node
@@ -3898,25 +3958,18 @@
 			(name "+5V")
 			(class "Power")
 			(node
-				(ref "BZ1")
-				(pin "1")
-				(pinfunction "+_1")
-				(pintype "passive")
-			)
-			(node
 				(ref "C1")
 				(pin "1")
 				(pintype "passive")
 			)
 			(node
-				(ref "D3")
-				(pin "1")
-				(pinfunction "K_1")
+				(ref "F1")
+				(pin "2")
 				(pintype "passive")
 			)
 			(node
-				(ref "F1")
-				(pin "2")
+				(ref "R10")
+				(pin "1")
 				(pintype "passive")
 			)
 			(node
@@ -3989,6 +4042,28 @@
 		)
 		(net
 			(code "6")
+			(name "/BZ_P")
+			(class "Default")
+			(node
+				(ref "BZ1")
+				(pin "1")
+				(pinfunction "+_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "D3")
+				(pin "1")
+				(pinfunction "K_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "R10")
+				(pin "2")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "7")
 			(name "/CC1")
 			(class "Default")
 			(node
@@ -4004,7 +4079,7 @@
 			)
 		)
 		(net
-			(code "7")
+			(code "8")
 			(name "/CC2")
 			(class "Default")
 			(node
@@ -4020,7 +4095,7 @@
 			)
 		)
 		(net
-			(code "8")
+			(code "9")
 			(name "/DMX_A")
 			(class "Default")
 			(node
@@ -4054,7 +4129,7 @@
 			)
 		)
 		(net
-			(code "9")
+			(code "10")
 			(name "/DMX_B")
 			(class "Default")
 			(node
@@ -4088,7 +4163,7 @@
 			)
 		)
 		(net
-			(code "10")
+			(code "11")
 			(name "/DMX_DE")
 			(class "Default")
 			(node
@@ -4116,7 +4191,7 @@
 			)
 		)
 		(net
-			(code "11")
+			(code "12")
 			(name "/DMX_RX")
 			(class "Default")
 			(node
@@ -4133,7 +4208,7 @@
 			)
 		)
 		(net
-			(code "12")
+			(code "13")
 			(name "/DMX_TX")
 			(class "Default")
 			(node
@@ -4150,7 +4225,7 @@
 			)
 		)
 		(net
-			(code "13")
+			(code "14")
 			(name "/EN")
 			(class "Default")
 			(node
@@ -4177,7 +4252,7 @@
 			)
 		)
 		(net
-			(code "14")
+			(code "15")
 			(name "/EXP_IO10")
 			(class "Default")
 			(node
@@ -4194,7 +4269,7 @@
 			)
 		)
 		(net
-			(code "15")
+			(code "16")
 			(name "/EXP_IO11")
 			(class "Default")
 			(node
@@ -4211,7 +4286,7 @@
 			)
 		)
 		(net
-			(code "16")
+			(code "17")
 			(name "/EXP_SCL")
 			(class "Default")
 			(node
@@ -4228,7 +4303,7 @@
 			)
 		)
 		(net
-			(code "17")
+			(code "18")
 			(name "/EXP_SDA")
 			(class "Default")
 			(node
@@ -4245,7 +4320,7 @@
 			)
 		)
 		(net
-			(code "18")
+			(code "19")
 			(name "/IO0_BOOT")
 			(class "Default")
 			(node
@@ -4267,7 +4342,7 @@
 			)
 		)
 		(net
-			(code "19")
+			(code "20")
 			(name "/LED_DATA")
 			(class "Default")
 			(node
@@ -4283,13 +4358,13 @@
 			)
 		)
 		(net
-			(code "20")
+			(code "21")
 			(name "/LED_DATA_R")
 			(class "Default")
 			(node
 				(ref "D2")
-				(pin "4")
-				(pinfunction "DIN_4")
+				(pin "3")
+				(pinfunction "DIN_3")
 				(pintype "input")
 			)
 			(node
@@ -4299,13 +4374,13 @@
 			)
 		)
 		(net
-			(code "21")
+			(code "22")
 			(name "/Q1_B")
 			(class "Default")
 			(node
 				(ref "Q1")
-				(pin "2")
-				(pinfunction "B_2")
+				(pin "1")
+				(pinfunction "B_1")
 				(pintype "input")
 			)
 			(node
@@ -4315,7 +4390,7 @@
 			)
 		)
 		(net
-			(code "22")
+			(code "23")
 			(name "/RXD0")
 			(class "Default")
 			(node
@@ -4332,7 +4407,7 @@
 			)
 		)
 		(net
-			(code "23")
+			(code "24")
 			(name "/TXD0")
 			(class "Default")
 			(node
@@ -4349,7 +4424,7 @@
 			)
 		)
 		(net
-			(code "24")
+			(code "25")
 			(name "/USB_D+")
 			(class "Default")
 			(node
@@ -4384,7 +4459,7 @@
 			)
 		)
 		(net
-			(code "25")
+			(code "26")
 			(name "/USB_D-")
 			(class "Default")
 			(node
@@ -4419,7 +4494,7 @@
 			)
 		)
 		(net
-			(code "26")
+			(code "27")
 			(name "/VBUS")
 			(class "Default")
 			(node
@@ -4459,7 +4534,7 @@
 			)
 		)
 		(net
-			(code "27")
+			(code "28")
 			(name "GND")
 			(class "Power")
 			(node
@@ -4510,8 +4585,8 @@
 			)
 			(node
 				(ref "D2")
-				(pin "3")
-				(pinfunction "VSS_3")
+				(pin "2")
+				(pinfunction "VSS_2")
 				(pintype "power_in")
 			)
 			(node
@@ -4570,8 +4645,8 @@
 			)
 			(node
 				(ref "Q1")
-				(pin "1")
-				(pinfunction "E_1")
+				(pin "2")
+				(pinfunction "E_2")
 				(pintype "passive")
 			)
 			(node
@@ -4645,18 +4720,18 @@
 			)
 		)
 		(net
-			(code "28")
-			(name "unconnected-(D2-DOUT-Pad2)")
+			(code "29")
+			(name "unconnected-(D2-DOUT-Pad1)")
 			(class "Default")
 			(node
 				(ref "D2")
-				(pin "2")
-				(pinfunction "DOUT_2")
+				(pin "1")
+				(pinfunction "DOUT_1")
 				(pintype "output+no_connect")
 			)
 		)
 		(net
-			(code "29")
+			(code "30")
 			(name "unconnected-(J1-SBU1-PadA8)")
 			(class "Default")
 			(node
@@ -4667,7 +4742,7 @@
 			)
 		)
 		(net
-			(code "30")
+			(code "31")
 			(name "unconnected-(J1-SBU2-PadB8)")
 			(class "Default")
 			(node
@@ -4678,7 +4753,7 @@
 			)
 		)
 		(net
-			(code "31")
+			(code "32")
 			(name "unconnected-(J2-P3-Pad4)")
 			(class "Default")
 			(node
@@ -4689,7 +4764,7 @@
 			)
 		)
 		(net
-			(code "32")
+			(code "33")
 			(name "unconnected-(J2-P5-Pad5)")
 			(class "Default")
 			(node
@@ -4700,7 +4775,7 @@
 			)
 		)
 		(net
-			(code "33")
+			(code "34")
 			(name "unconnected-(J2-PadG)")
 			(class "Default")
 			(node
@@ -4710,7 +4785,7 @@
 			)
 		)
 		(net
-			(code "34")
+			(code "35")
 			(name "unconnected-(U1-IO1-Pad39)")
 			(class "Default")
 			(node
@@ -4721,7 +4796,7 @@
 			)
 		)
 		(net
-			(code "35")
+			(code "36")
 			(name "unconnected-(U1-IO2-Pad38)")
 			(class "Default")
 			(node
@@ -4732,7 +4807,7 @@
 			)
 		)
 		(net
-			(code "36")
+			(code "37")
 			(name "unconnected-(U1-IO3-Pad15)")
 			(class "Default")
 			(node
@@ -4743,7 +4818,7 @@
 			)
 		)
 		(net
-			(code "37")
+			(code "38")
 			(name "unconnected-(U1-IO4-Pad4)")
 			(class "Default")
 			(node
@@ -4754,7 +4829,7 @@
 			)
 		)
 		(net
-			(code "38")
+			(code "39")
 			(name "unconnected-(U1-IO7-Pad7)")
 			(class "Default")
 			(node
@@ -4765,7 +4840,7 @@
 			)
 		)
 		(net
-			(code "39")
+			(code "40")
 			(name "unconnected-(U1-IO12-Pad20)")
 			(class "Default")
 			(node
@@ -4776,7 +4851,7 @@
 			)
 		)
 		(net
-			(code "40")
+			(code "41")
 			(name "unconnected-(U1-IO13-Pad21)")
 			(class "Default")
 			(node
@@ -4787,7 +4862,7 @@
 			)
 		)
 		(net
-			(code "41")
+			(code "42")
 			(name "unconnected-(U1-IO14-Pad22)")
 			(class "Default")
 			(node
@@ -4798,7 +4873,7 @@
 			)
 		)
 		(net
-			(code "42")
+			(code "43")
 			(name "unconnected-(U1-IO15-Pad8)")
 			(class "Default")
 			(node
@@ -4809,7 +4884,7 @@
 			)
 		)
 		(net
-			(code "43")
+			(code "44")
 			(name "unconnected-(U1-IO21-Pad23)")
 			(class "Default")
 			(node
@@ -4820,7 +4895,7 @@
 			)
 		)
 		(net
-			(code "44")
+			(code "45")
 			(name "unconnected-(U1-IO35-Pad28)")
 			(class "Default")
 			(node
@@ -4831,7 +4906,7 @@
 			)
 		)
 		(net
-			(code "45")
+			(code "46")
 			(name "unconnected-(U1-IO36-Pad29)")
 			(class "Default")
 			(node
@@ -4842,7 +4917,7 @@
 			)
 		)
 		(net
-			(code "46")
+			(code "47")
 			(name "unconnected-(U1-IO37-Pad30)")
 			(class "Default")
 			(node
@@ -4853,7 +4928,7 @@
 			)
 		)
 		(net
-			(code "47")
+			(code "48")
 			(name "unconnected-(U1-IO38-Pad31)")
 			(class "Default")
 			(node
@@ -4864,7 +4939,7 @@
 			)
 		)
 		(net
-			(code "48")
+			(code "49")
 			(name "unconnected-(U1-IO39-Pad32)")
 			(class "Default")
 			(node
@@ -4875,7 +4950,7 @@
 			)
 		)
 		(net
-			(code "49")
+			(code "50")
 			(name "unconnected-(U1-IO40-Pad33)")
 			(class "Default")
 			(node
@@ -4886,7 +4961,7 @@
 			)
 		)
 		(net
-			(code "50")
+			(code "51")
 			(name "unconnected-(U1-IO41-Pad34)")
 			(class "Default")
 			(node
@@ -4897,7 +4972,7 @@
 			)
 		)
 		(net
-			(code "51")
+			(code "52")
 			(name "unconnected-(U1-IO42-Pad35)")
 			(class "Default")
 			(node
@@ -4908,7 +4983,7 @@
 			)
 		)
 		(net
-			(code "52")
+			(code "53")
 			(name "unconnected-(U1-IO45-Pad26)")
 			(class "Default")
 			(node
@@ -4919,7 +4994,7 @@
 			)
 		)
 		(net
-			(code "53")
+			(code "54")
 			(name "unconnected-(U1-IO46-Pad16)")
 			(class "Default")
 			(node
@@ -4930,7 +5005,7 @@
 			)
 		)
 		(net
-			(code "54")
+			(code "55")
 			(name "unconnected-(U1-IO47-Pad24)")
 			(class "Default")
 			(node

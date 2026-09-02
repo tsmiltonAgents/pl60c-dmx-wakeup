@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-02T14:26:34",
+ "generated": "2026-09-02T14:46:34",
  "gerber_files": [
   "pl60c_dmx-B_Cu.gbl",
   "pl60c_dmx-B_Mask.gbs",
@@ -16,8 +16,8 @@
   "pl60c_dmx-PTH.drl",
   "pl60c_dmx-job.gbrjob"
  ],
- "bom_lines": 25,
- "placed_parts": 34,
+ "bom_lines": 27,
+ "placed_parts": 35,
  "notes": [
   "R6 is DNP (not placed): 120R termination - DNP (fit only if this board ends the DMX line)"
  ]
