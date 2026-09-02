@@ -1,8 +1,27 @@
 ** Drc report for pl60c_dmx_mini.kicad_pcb **
-** Created on 2026-09-02T14:21:37 **
+** Created on 2026-09-02T14:24:04 **
 ** Report includes: Errors, Warnings, Exclusions **
 
-** Found 6 DRC violations **
+** Found 9 DRC violations **
+[clearance]: Clearance violation ( clearance 0.2000 mm; actual 0.1877 mm)
+    Local override; error
+    @(18.6191 mm, 19.6036 mm): Track [USB_D-] on In2.Cu, length 6.5850 mm
+    @(14.8562 mm, 22.5000 mm): Via [+3V3] on F.Cu - B.Cu
+[clearance]: Clearance violation ( clearance 0.2000 mm; actual 0.1817 mm)
+    Local override; error
+    @(14.8562 mm, 22.5000 mm): Via [+3V3] on F.Cu - B.Cu
+    @(15.4629 mm, 23.6121 mm): Track [BTN_USER] on F.Cu, length 2.8624 mm
+[track_dangling]: Track has unconnected end
+    Local override; warning
+    @(6.6500 mm, 21.8550 mm): Track [USB_D-] on F.Cu, length 2.4000 mm
+[silk_edge_clearance]: Silkscreen clipped by board edge
+    Rule: board setup constraints silk; warning
+    @(38.5000 mm, 0.6000 mm): Segment on Edge.Cuts
+    @(38.6200 mm, 1.4900 mm): Segment of J2 on F.Silkscreen
+[silk_edge_clearance]: Silkscreen clipped by board edge
+    Rule: board setup constraints silk; warning
+    @(38.5000 mm, 0.6000 mm): Segment on Edge.Cuts
+    @(38.6200 mm, 27.0300 mm): Segment of J2 on F.Silkscreen
 [silk_edge_clearance]: Silkscreen clipped by board edge
     Rule: board setup constraints silk; warning
     @(0.0000 mm, 28.4000 mm): Segment on Edge.Cuts
@@ -19,20 +38,8 @@
     Rule: board setup constraints silk; warning
     @(37.9000 mm, 29.0000 mm): Segment on Edge.Cuts
     @(11.1000 mm, 27.9000 mm): Segment of J1 on F.Silkscreen
-[silk_edge_clearance]: Silkscreen clipped by board edge
-    Rule: board setup constraints silk; warning
-    @(38.5000 mm, 0.6000 mm): Segment on Edge.Cuts
-    @(38.6200 mm, 1.4900 mm): Segment of J2 on F.Silkscreen
-[silk_edge_clearance]: Silkscreen clipped by board edge
-    Rule: board setup constraints silk; warning
-    @(38.5000 mm, 0.6000 mm): Segment on Edge.Cuts
-    @(38.6200 mm, 27.0300 mm): Segment of J2 on F.Silkscreen
 
-** Found 1 unconnected pads **
-[unconnected_items]: Missing connection between items
-    Local override; error
-    @(7.5375 mm, 27.0000 mm): Pad 5 [VBUS] of U4 on B.Cu
-    @(8.8500 mm, 21.8550 mm): Track [VBUS] on F.Cu, length 1.0000 mm
+** Found 0 unconnected pads **
 
 ** Found 0 Footprint errors **
 
