@@ -91,7 +91,7 @@ def build():
     d.add(Part('U2', 'Regulator_Linear:AMS1117-3.3', 'AMS1117-3.3', 'Package_TO_SOT_SMD:SOT-223-3_TabPin2',
                {'3': '+5V', '2': '+3V3', '1': 'GND'}, lcsc='C6186', mpn='AMS1117-3.3', desc='LDO 3.3V 1A SOT-223',
                sch_pos=(100, 40), pcb_pos=(12, 15), pcb_rot=0, ref_pcb_pos=(5.6, 15, 90)))
-    d.add(Part('C2', 'Device:C', '10uF', C0805, {'1': '+3V3', '2': 'GND'}, lcsc='C15850', desc='10uF 25V X5R 0805',
+    d.add(Part('C2', 'Device:C', '22uF', C0805, {'1': '+3V3', '2': 'GND'}, lcsc='C45783', desc='22uF 25V X5R 0805 (AMS1117 output, datasheet asks for >=22uF)',
                sch_pos=(115, 50), pcb_pos=(9, 21), pcb_rot=0))
     d.add(Part('C3', 'Device:C', '100nF', C0603, {'1': '+3V3', '2': 'GND'}, lcsc='C14663', desc='100nF 50V X7R 0603',
                sch_pos=(122, 50), pcb_pos=(14, 21), pcb_rot=0))
@@ -139,18 +139,19 @@ def build():
     # =============================== UI: RGB LED, user button, buzzer (x 140..260, y 160..280) ===============================
     d.texts += [('User interface: RGB status LED, user button, alarm buzzer', 140, 165, 2.5, True)]
     d.boxes += [(138, 158, 262, 285)]
-    d.add(Part('D2', 'LED:WS2812B', 'WS2812B', 'LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm',
-               {'1': '+3V3', '2': None, '3': 'GND', '4': 'LED_DATA_R'},
-               lcsc='C2761795', mpn='WS2812B-B/T', desc='Addressable RGB LED 5050 (powered from 3V3 as on ESP32-S3-DevKitC)', sch_pos=(160, 195), pcb_pos=(43.5, 48.5), pcb_rot=0))
+    d.add(Part('D2', 'LED:WS2812B-2020', 'WS2812B-2020', 'LED_SMD:LED_WS2812B-2020_PLCC4_2.0x2.0mm',
+               {'4': '+3V3', '1': None, '2': 'GND', '3': 'LED_DATA_R'},
+               lcsc='C52917434', mpn='WS2812B-2020-V6', desc='Addressable RGB LED 2x2 mm, V6 silicon: 3.3 V supply supported, VIH = 0.55 VDD (datasheet)', sch_pos=(160, 195), pcb_pos=(43.5, 48.5), pcb_rot=0))
     d.add(Part('R8', 'Device:R', '330R', R0603, {'1': 'LED_DATA', '2': 'LED_DATA_R'}, lcsc='C23138', desc='330R 0603 series (WS2812 data)', sch_pos=(145, 215), sch_rot=0, pcb_pos=(43.5, 43.5), pcb_rot=0))
     d.add(Part('C8', 'Device:C', '100nF', C0603, {'1': '+3V3', '2': 'GND'}, lcsc='C14663', desc='100nF 50V X7R 0603', sch_pos=(180, 195), pcb_pos=(39, 43.5), pcb_rot=0))
     d.add(Part('R5', 'Device:R', '10k', R0603, {'1': '+3V3', '2': 'BTN_USER'}, lcsc='C25804', desc='10k 0603', sch_pos=(200, 195), pcb_pos=(34.5, 42.5), pcb_rot=0))
     d.add(Part('SW3', 'Switch:SW_Push', 'USER', SW_TACT, {'1': 'BTN_USER', '2': 'GND'}, lcsc='C318884', mpn='TS-1187A-B-A-B', desc='Tactile switch 5.1x5.1x1.5 mm SMD (snooze / manual on)', sch_pos=(200, 215), pcb_pos=(34.5, 48), pcb_rot=0))
-    d.add(Part('R9', 'Device:R', '1k', R0603, {'1': 'BUZZER', '2': 'Q1_B'}, lcsc='C21190', desc='1k 0603', sch_pos=(222, 250), sch_rot=0, pcb_pos=(50.5, 37), pcb_rot=0))
-    d.add(Part('Q1', 'Transistor_BJT:S8050', 'S8050', SOT23, {'2': 'Q1_B', '1': 'GND', '3': 'BZ_N'},
+    d.add(Part('R9', 'Device:R', '470R', R0603, {'1': 'BUZZER', '2': 'Q1_B'}, lcsc='C23179', desc='470R 0603 base resistor (buzzer datasheet drive circuit)', sch_pos=(222, 250), sch_rot=0, pcb_pos=(50.5, 37), pcb_rot=0))
+    d.add(Part('Q1', 'Transistor_BJT:BC817', 'S8050', SOT23, {'1': 'Q1_B', '2': 'GND', '3': 'BZ_N'},   # SOT-23 J3Y: 1=B 2=E 3=C (datasheet)
                lcsc='C2146', mpn='S8050', desc='NPN 0.5A SOT-23 buzzer driver', sch_pos=(240, 250), pcb_pos=(55, 37), pcb_rot=0))
-    d.add(Part('D3', 'Device:D_Schottky', 'B5819W', 'Diode_SMD:D_SOD-123', {'1': '+5V', '2': 'BZ_N'}, lcsc='C8598', mpn='B5819W SL', desc='Schottky flyback diode 1 A 40 V SOD-123', sch_pos=(232, 225), sch_rot=0, pcb_pos=(59.5, 37), pcb_rot=0))
-    d.add(Part('BZ1', 'Device:Buzzer', 'MLT-8530', 'Buzzer_Beeper:MagneticBuzzer_CUI_CMT-8504-100-SMT', {'1': '+5V', '2': 'BZ_N'},
+    d.add(Part('D3', 'Device:D_Schottky', 'B5819W', 'Diode_SMD:D_SOD-123', {'1': 'BZ_P', '2': 'BZ_N'}, lcsc='C8598', mpn='B5819W SL', desc='Schottky flyback diode 1 A 40 V SOD-123', sch_pos=(232, 225), sch_rot=0, pcb_pos=(59.5, 37), pcb_rot=0))
+    d.add(Part('R10', 'Device:R', '10R', 'Resistor_SMD:R_1206_3216Metric', {'1': '+5V', '2': 'BZ_P'}, lcsc='C17903', desc='10R 1206 250mW buzzer series resistor: limits coil to ~180 mA / 2.9 V from the 5 V rail', sch_pos=(225, 212), pcb_pos=(52, 40.5), pcb_rot=0))
+    d.add(Part('BZ1', 'Device:Buzzer', 'MLT-8530', 'Buzzer_Beeper:MagneticBuzzer_CUI_CMT-8504-100-SMT', {'1': 'BZ_P', '2': 'BZ_N'},
                lcsc='C94599', mpn='MLT-8530', desc='Magnetic buzzer 8.5x8.5 mm SMD, passive, 16 ohm, drive 2.7 kHz square wave', sch_pos=(245, 200), sch_rot=0, pcb_pos=(69, 41.5), pcb_rot=0, ref_pcb_pos=(69, 47.6)))
     # =============================== Expansion / debug headers (x 270..410, y 130..200) ===============================
     d.texts += [('Expansion (I2C RTC / sensor) and UART0 debug headers', 272, 165, 2.5, True)]
@@ -174,7 +175,7 @@ def build():
         ('RESET', 12.5, 52.3, 0.8, 0, 'F.SilkS', False),
         ('BOOT', 23.5, 52.3, 0.8, 0, 'F.SilkS', False),
         ('USER', 34.5, 52.3, 0.8, 0, 'F.SilkS', False),
-        ('GND  D-  D+', 55.6, 40.6, 0.8, 0, 'F.SilkS', False),
+        ('GND  D-  D+', 55.6, 42.0, 0.8, 0, 'F.SilkS', False),
         ('PL60C DMX wake-up rev A', 30, 30, 1.0, 0, 'F.SilkS', False),
         ('amodo design 2026', 30, 32, 0.8, 0, 'F.SilkS', False),
         ('github.com/tsmiltonAgents/pl60c-dmx-wakeup', 26, 29, 0.8, 0, 'B.SilkS', True),

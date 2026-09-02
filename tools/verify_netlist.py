@@ -6,7 +6,7 @@ from sexp import parse, find, findall
 import variant
 design = variant.design()
 d = design.build(); want = d.nets()
-net = parse(open(os.path.join(ROOT, 'build', 'sch.net')).read())[0]
+net = parse(open(os.path.join(ROOT, 'build', 'sch_' + variant.BOARD + '.net')).read())[0]
 got = {}
 for n in findall(find(net, 'nets'), 'net'):
     name = find(n, 'name')[1]

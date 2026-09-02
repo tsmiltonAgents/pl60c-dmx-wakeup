@@ -1,19 +1,19 @@
 (export
 	(version "E")
 	(design
-		(source "/Users/milton/Documents/claude_sessions/09/20260902_pcbtests/pcb/pl60c_dmx.kicad_sch")
-		(date "2026-09-02T14:44:09")
+		(source "/Users/milton/Documents/claude_sessions/09/20260902_pcbtests/pcb/pl60c_dmx_mini.kicad_sch")
+		(date "2026-09-02T14:45:24")
 		(tool "Eeschema 10.0.4")
 		(sheet
 			(number "1")
 			(name "/")
 			(tstamps "/")
 			(title_block
-				(title "PL60C DMX wake-up lamp controller")
+				(title "PL60C DMX wake-up lamp controller - MINI")
 				(company "amodo design")
-				(rev "A")
+				(rev "A-mini")
 				(date "2026-09-02")
-				(source "pl60c_dmx.kicad_sch")
+				(source "pl60c_dmx_mini.kicad_sch")
 				(comment
 					(number "1")
 					(value "")
@@ -55,86 +55,20 @@
 	)
 	(components
 		(comp
-			(ref "BZ1")
-			(value "MLT-8530")
-			(footprint "Buzzer_Beeper:MagneticBuzzer_CUI_CMT-8504-100-SMT")
-			(datasheet "~")
-			(description "Magnetic buzzer 8.5x8.5 mm SMD, passive, 16 ohm, drive 2.7 kHz square wave")
-			(fields
-				(field
-					(name "LCSC") "C94599")
-				(field
-					(name "MPN") "MLT-8530")
-				(field
-					(name "Footprint") "Buzzer_Beeper:MagneticBuzzer_CUI_CMT-8504-100-SMT")
-				(field
-					(name "Datasheet") "~")
-				(field
-					(name "Description") "Magnetic buzzer 8.5x8.5 mm SMD, passive, 16 ohm, drive 2.7 kHz square wave")
-			)
-			(libsource
-				(lib "Device")
-				(part "Buzzer")
-				(description "Buzzer, polarized")
-			)
-			(property
-				(name "LCSC")
-				(value "C94599")
-			)
-			(property
-				(name "MPN")
-				(value "MLT-8530")
-			)
-			(property
-				(name "Sheetname")
-				(value "pl60c_dmx")
-			)
-			(property
-				(name "Sheetfile")
-				(value "pl60c_dmx.kicad_sch")
-			)
-			(property
-				(name "ki_keywords")
-				(value "quartz resonator ceramic")
-			)
-			(property
-				(name "ki_fp_filters")
-				(value "*Buzzer*")
-			)
-			(sheetpath
-				(names "/")
-				(tstamps "/")
-			)
-			(tstamps "c3e68a42-1de2-5a06-9c7c-6d26e188581f")
-			(units
-				(unit
-					(name "A")
-					(pins
-						(pin
-							(num "1")
-						)
-						(pin
-							(num "2")
-						)
-					)
-				)
-			)
-		)
-		(comp
 			(ref "C1")
 			(value "10uF")
-			(footprint "Capacitor_SMD:C_0805_2012Metric")
+			(footprint "Capacitor_SMD:C_0603_1608Metric")
 			(datasheet "~")
-			(description "10uF 25V X5R 0805")
+			(description "10uF 10V X5R 0603")
 			(fields
 				(field
-					(name "LCSC") "C15850")
+					(name "LCSC") "C19702")
 				(field
-					(name "Footprint") "Capacitor_SMD:C_0805_2012Metric")
+					(name "Footprint") "Capacitor_SMD:C_0603_1608Metric")
 				(field
 					(name "Datasheet") "~")
 				(field
-					(name "Description") "10uF 25V X5R 0805")
+					(name "Description") "10uF 10V X5R 0603")
 			)
 			(libsource
 				(lib "Device")
@@ -143,15 +77,15 @@
 			)
 			(property
 				(name "LCSC")
-				(value "C15850")
+				(value "C19702")
 			)
 			(property
 				(name "Sheetname")
-				(value "pl60c_dmx")
+				(value "pl60c_dmx_mini")
 			)
 			(property
 				(name "Sheetfile")
-				(value "pl60c_dmx.kicad_sch")
+				(value "pl60c_dmx_mini.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -183,18 +117,18 @@
 		(comp
 			(ref "C2")
 			(value "10uF")
-			(footprint "Capacitor_SMD:C_0805_2012Metric")
+			(footprint "Capacitor_SMD:C_0603_1608Metric")
 			(datasheet "~")
-			(description "10uF 25V X5R 0805")
+			(description "10uF 10V X5R 0603")
 			(fields
 				(field
-					(name "LCSC") "C15850")
+					(name "LCSC") "C19702")
 				(field
-					(name "Footprint") "Capacitor_SMD:C_0805_2012Metric")
+					(name "Footprint") "Capacitor_SMD:C_0603_1608Metric")
 				(field
 					(name "Datasheet") "~")
 				(field
-					(name "Description") "10uF 25V X5R 0805")
+					(name "Description") "10uF 10V X5R 0603")
 			)
 			(libsource
 				(lib "Device")
@@ -203,15 +137,15 @@
 			)
 			(property
 				(name "LCSC")
-				(value "C15850")
+				(value "C19702")
 			)
 			(property
 				(name "Sheetname")
-				(value "pl60c_dmx")
+				(value "pl60c_dmx_mini")
 			)
 			(property
 				(name "Sheetfile")
-				(value "pl60c_dmx.kicad_sch")
+				(value "pl60c_dmx_mini.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -243,18 +177,18 @@
 		(comp
 			(ref "C3")
 			(value "100nF")
-			(footprint "Capacitor_SMD:C_0603_1608Metric")
+			(footprint "Capacitor_SMD:C_0402_1005Metric")
 			(datasheet "~")
-			(description "100nF 50V X7R 0603")
+			(description "100nF 16V X7R 0402")
 			(fields
 				(field
-					(name "LCSC") "C14663")
+					(name "LCSC") "C1525")
 				(field
-					(name "Footprint") "Capacitor_SMD:C_0603_1608Metric")
+					(name "Footprint") "Capacitor_SMD:C_0402_1005Metric")
 				(field
 					(name "Datasheet") "~")
 				(field
-					(name "Description") "100nF 50V X7R 0603")
+					(name "Description") "100nF 16V X7R 0402")
 			)
 			(libsource
 				(lib "Device")
@@ -263,15 +197,15 @@
 			)
 			(property
 				(name "LCSC")
-				(value "C14663")
+				(value "C1525")
 			)
 			(property
 				(name "Sheetname")
-				(value "pl60c_dmx")
+				(value "pl60c_dmx_mini")
 			)
 			(property
 				(name "Sheetfile")
-				(value "pl60c_dmx.kicad_sch")
+				(value "pl60c_dmx_mini.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -303,18 +237,18 @@
 		(comp
 			(ref "C4")
 			(value "10uF")
-			(footprint "Capacitor_SMD:C_0805_2012Metric")
+			(footprint "Capacitor_SMD:C_0603_1608Metric")
 			(datasheet "~")
-			(description "10uF 25V X5R 0805")
+			(description "10uF 10V X5R 0603")
 			(fields
 				(field
-					(name "LCSC") "C15850")
+					(name "LCSC") "C19702")
 				(field
-					(name "Footprint") "Capacitor_SMD:C_0805_2012Metric")
+					(name "Footprint") "Capacitor_SMD:C_0603_1608Metric")
 				(field
 					(name "Datasheet") "~")
 				(field
-					(name "Description") "10uF 25V X5R 0805")
+					(name "Description") "10uF 10V X5R 0603")
 			)
 			(libsource
 				(lib "Device")
@@ -323,15 +257,15 @@
 			)
 			(property
 				(name "LCSC")
-				(value "C15850")
+				(value "C19702")
 			)
 			(property
 				(name "Sheetname")
-				(value "pl60c_dmx")
+				(value "pl60c_dmx_mini")
 			)
 			(property
 				(name "Sheetfile")
-				(value "pl60c_dmx.kicad_sch")
+				(value "pl60c_dmx_mini.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -363,18 +297,18 @@
 		(comp
 			(ref "C5")
 			(value "100nF")
-			(footprint "Capacitor_SMD:C_0603_1608Metric")
+			(footprint "Capacitor_SMD:C_0402_1005Metric")
 			(datasheet "~")
-			(description "100nF 50V X7R 0603")
+			(description "100nF 16V X7R 0402")
 			(fields
 				(field
-					(name "LCSC") "C14663")
+					(name "LCSC") "C1525")
 				(field
-					(name "Footprint") "Capacitor_SMD:C_0603_1608Metric")
+					(name "Footprint") "Capacitor_SMD:C_0402_1005Metric")
 				(field
 					(name "Datasheet") "~")
 				(field
-					(name "Description") "100nF 50V X7R 0603")
+					(name "Description") "100nF 16V X7R 0402")
 			)
 			(libsource
 				(lib "Device")
@@ -383,15 +317,15 @@
 			)
 			(property
 				(name "LCSC")
-				(value "C14663")
+				(value "C1525")
 			)
 			(property
 				(name "Sheetname")
-				(value "pl60c_dmx")
+				(value "pl60c_dmx_mini")
 			)
 			(property
 				(name "Sheetfile")
-				(value "pl60c_dmx.kicad_sch")
+				(value "pl60c_dmx_mini.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -423,20 +357,18 @@
 		(comp
 			(ref "C6")
 			(value "1uF")
-			(footprint "Capacitor_SMD:C_0805_2012Metric")
+			(footprint "Capacitor_SMD:C_0402_1005Metric")
 			(datasheet "~")
-			(description "1uF 50V X7R 0805 (EN reset delay)")
+			(description "1uF 25V X5R 0402 (EN reset delay)")
 			(fields
 				(field
-					(name "LCSC") "C28323")
+					(name "LCSC") "C52923")
 				(field
-					(name "MPN") "CL21B105KBFNNNE")
-				(field
-					(name "Footprint") "Capacitor_SMD:C_0805_2012Metric")
+					(name "Footprint") "Capacitor_SMD:C_0402_1005Metric")
 				(field
 					(name "Datasheet") "~")
 				(field
-					(name "Description") "1uF 50V X7R 0805 (EN reset delay)")
+					(name "Description") "1uF 25V X5R 0402 (EN reset delay)")
 			)
 			(libsource
 				(lib "Device")
@@ -445,19 +377,15 @@
 			)
 			(property
 				(name "LCSC")
-				(value "C28323")
-			)
-			(property
-				(name "MPN")
-				(value "CL21B105KBFNNNE")
+				(value "C52923")
 			)
 			(property
 				(name "Sheetname")
-				(value "pl60c_dmx")
+				(value "pl60c_dmx_mini")
 			)
 			(property
 				(name "Sheetfile")
-				(value "pl60c_dmx.kicad_sch")
+				(value "pl60c_dmx_mini.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -489,18 +417,18 @@
 		(comp
 			(ref "C7")
 			(value "100nF")
-			(footprint "Capacitor_SMD:C_0603_1608Metric")
+			(footprint "Capacitor_SMD:C_0402_1005Metric")
 			(datasheet "~")
-			(description "100nF 50V X7R 0603")
+			(description "100nF 16V X7R 0402")
 			(fields
 				(field
-					(name "LCSC") "C14663")
+					(name "LCSC") "C1525")
 				(field
-					(name "Footprint") "Capacitor_SMD:C_0603_1608Metric")
+					(name "Footprint") "Capacitor_SMD:C_0402_1005Metric")
 				(field
 					(name "Datasheet") "~")
 				(field
-					(name "Description") "100nF 50V X7R 0603")
+					(name "Description") "100nF 16V X7R 0402")
 			)
 			(libsource
 				(lib "Device")
@@ -509,15 +437,15 @@
 			)
 			(property
 				(name "LCSC")
-				(value "C14663")
+				(value "C1525")
 			)
 			(property
 				(name "Sheetname")
-				(value "pl60c_dmx")
+				(value "pl60c_dmx_mini")
 			)
 			(property
 				(name "Sheetfile")
-				(value "pl60c_dmx.kicad_sch")
+				(value "pl60c_dmx_mini.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -549,18 +477,18 @@
 		(comp
 			(ref "C8")
 			(value "100nF")
-			(footprint "Capacitor_SMD:C_0603_1608Metric")
+			(footprint "Capacitor_SMD:C_0402_1005Metric")
 			(datasheet "~")
-			(description "100nF 50V X7R 0603")
+			(description "100nF 16V X7R 0402")
 			(fields
 				(field
-					(name "LCSC") "C14663")
+					(name "LCSC") "C1525")
 				(field
-					(name "Footprint") "Capacitor_SMD:C_0603_1608Metric")
+					(name "Footprint") "Capacitor_SMD:C_0402_1005Metric")
 				(field
 					(name "Datasheet") "~")
 				(field
-					(name "Description") "100nF 50V X7R 0603")
+					(name "Description") "100nF 16V X7R 0402")
 			)
 			(libsource
 				(lib "Device")
@@ -569,15 +497,15 @@
 			)
 			(property
 				(name "LCSC")
-				(value "C14663")
+				(value "C1525")
 			)
 			(property
 				(name "Sheetname")
-				(value "pl60c_dmx")
+				(value "pl60c_dmx_mini")
 			)
 			(property
 				(name "Sheetfile")
-				(value "pl60c_dmx.kicad_sch")
+				(value "pl60c_dmx_mini.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -611,7 +539,7 @@
 			(value "PSM712")
 			(footprint "Package_TO_SOT_SMD:SOT-23")
 			(datasheet "~")
-			(description "RS-485 TVS array +12/-7 V 600 W SOT-23")
+			(description "RS-485 TVS array +12/-7 V SOT-23")
 			(fields
 				(field
 					(name "LCSC") "C32677")
@@ -622,7 +550,7 @@
 				(field
 					(name "Datasheet") "~")
 				(field
-					(name "Description") "RS-485 TVS array +12/-7 V 600 W SOT-23")
+					(name "Description") "RS-485 TVS array +12/-7 V SOT-23")
 			)
 			(libsource
 				(lib "Diode")
@@ -639,11 +567,11 @@
 			)
 			(property
 				(name "Sheetname")
-				(value "pl60c_dmx")
+				(value "pl60c_dmx_mini")
 			)
 			(property
 				(name "Sheetfile")
-				(value "pl60c_dmx.kicad_sch")
+				(value "pl60c_dmx_mini.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -677,50 +605,50 @@
 		)
 		(comp
 			(ref "D2")
-			(value "WS2812B")
-			(footprint "LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm")
+			(value "WS2812B-2020")
+			(footprint "LED_SMD:LED_WS2812B-2020_PLCC4_2.0x2.0mm")
 			(datasheet "~")
-			(description "Addressable RGB LED 5050 (powered from 3V3 as on ESP32-S3-DevKitC)")
+			(description "Addressable RGB LED 2x2 mm (powered from 3V3 as on Espressif devkits)")
 			(fields
 				(field
-					(name "LCSC") "C2761795")
+					(name "LCSC") "C52917434")
 				(field
-					(name "MPN") "WS2812B-B/T")
+					(name "MPN") "WS2812B-2020-V6")
 				(field
-					(name "Footprint") "LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm")
+					(name "Footprint") "LED_SMD:LED_WS2812B-2020_PLCC4_2.0x2.0mm")
 				(field
 					(name "Datasheet") "~")
 				(field
-					(name "Description") "Addressable RGB LED 5050 (powered from 3V3 as on ESP32-S3-DevKitC)")
+					(name "Description") "Addressable RGB LED 2x2 mm (powered from 3V3 as on Espressif devkits)")
 			)
 			(libsource
 				(lib "LED")
-				(part "WS2812B")
-				(description "RGB LED with integrated controller")
+				(part "WS2812B-2020")
+				(description "RGB LED with integrated controller, 2.0 x 2.0 mm, 12 mA")
 			)
 			(property
 				(name "LCSC")
-				(value "C2761795")
+				(value "C52917434")
 			)
 			(property
 				(name "MPN")
-				(value "WS2812B-B/T")
+				(value "WS2812B-2020-V6")
 			)
 			(property
 				(name "Sheetname")
-				(value "pl60c_dmx")
+				(value "pl60c_dmx_mini")
 			)
 			(property
 				(name "Sheetfile")
-				(value "pl60c_dmx.kicad_sch")
+				(value "pl60c_dmx_mini.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
-				(value "RGB LED NeoPixel addressable")
+				(value "RGB LED NeoPixel Nano addressable")
 			)
 			(property
 				(name "ki_fp_filters")
-				(value "LED*WS2812*PLCC*5.0x5.0mm*P3.2mm*")
+				(value "LED*WS2812*-2020_PLCC4*")
 			)
 			(sheetpath
 				(names "/")
@@ -732,16 +660,16 @@
 					(name "A")
 					(pins
 						(pin
-							(num "4")
-						)
-						(pin
-							(num "1")
-						)
-						(pin
 							(num "3")
 						)
 						(pin
+							(num "4")
+						)
+						(pin
 							(num "2")
+						)
+						(pin
+							(num "1")
 						)
 					)
 				)
@@ -752,7 +680,7 @@
 			(value "B5819W")
 			(footprint "Diode_SMD:D_SOD-123")
 			(datasheet "~")
-			(description "Schottky flyback diode 1 A 40 V SOD-123")
+			(description "Schottky flyback diode SOD-123")
 			(fields
 				(field
 					(name "LCSC") "C8598")
@@ -763,7 +691,7 @@
 				(field
 					(name "Datasheet") "~")
 				(field
-					(name "Description") "Schottky flyback diode 1 A 40 V SOD-123")
+					(name "Description") "Schottky flyback diode SOD-123")
 			)
 			(libsource
 				(lib "Device")
@@ -780,11 +708,11 @@
 			)
 			(property
 				(name "Sheetname")
-				(value "pl60c_dmx")
+				(value "pl60c_dmx_mini")
 			)
 			(property
 				(name "Sheetfile")
-				(value "pl60c_dmx.kicad_sch")
+				(value "pl60c_dmx_mini.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -818,7 +746,7 @@
 			(value "1A PTC")
 			(footprint "Fuse:Fuse_1206_3216Metric")
 			(datasheet "~")
-			(description "PTC resettable fuse 1206, 1 A hold / 1.8 A trip, 30 V")
+			(description "PTC resettable fuse 1206, 1 A hold / 1.8 A trip")
 			(fields
 				(field
 					(name "LCSC") "C5358568")
@@ -829,7 +757,7 @@
 				(field
 					(name "Datasheet") "~")
 				(field
-					(name "Description") "PTC resettable fuse 1206, 1 A hold / 1.8 A trip, 30 V")
+					(name "Description") "PTC resettable fuse 1206, 1 A hold / 1.8 A trip")
 			)
 			(libsource
 				(lib "Device")
@@ -846,11 +774,11 @@
 			)
 			(property
 				(name "Sheetname")
-				(value "pl60c_dmx")
+				(value "pl60c_dmx_mini")
 			)
 			(property
 				(name "Sheetfile")
-				(value "pl60c_dmx.kicad_sch")
+				(value "pl60c_dmx_mini.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -876,222 +804,6 @@
 							(num "2")
 						)
 					)
-				)
-			)
-		)
-		(comp
-			(ref "H1")
-			(value "M3")
-			(footprint "MountingHole:MountingHole_3.2mm_M3")
-			(datasheet "~")
-			(description "Mounting hole M3")
-			(fields
-				(field
-					(name "LCSC")
-				)
-				(field
-					(name "Footprint") "MountingHole:MountingHole_3.2mm_M3")
-				(field
-					(name "Datasheet") "~")
-				(field
-					(name "Description") "Mounting hole M3")
-			)
-			(libsource
-				(lib "Mechanical")
-				(part "MountingHole")
-				(description "Mounting Hole without connection")
-			)
-			(property
-				(name "LCSC")
-				(value "")
-			)
-			(property
-				(name "Sheetname")
-				(value "pl60c_dmx")
-			)
-			(property
-				(name "Sheetfile")
-				(value "pl60c_dmx.kicad_sch")
-			)
-			(property
-				(name "ki_keywords")
-				(value "mounting hole")
-			)
-			(property
-				(name "ki_fp_filters")
-				(value "MountingHole*")
-			)
-			(sheetpath
-				(names "/")
-				(tstamps "/")
-			)
-			(tstamps "5317592f-32dc-5fb2-8402-516118a6b61a")
-			(units
-				(unit
-					(name "A")
-					(pins)
-				)
-			)
-		)
-		(comp
-			(ref "H2")
-			(value "M3")
-			(footprint "MountingHole:MountingHole_3.2mm_M3")
-			(datasheet "~")
-			(description "Mounting hole M3")
-			(fields
-				(field
-					(name "LCSC")
-				)
-				(field
-					(name "Footprint") "MountingHole:MountingHole_3.2mm_M3")
-				(field
-					(name "Datasheet") "~")
-				(field
-					(name "Description") "Mounting hole M3")
-			)
-			(libsource
-				(lib "Mechanical")
-				(part "MountingHole")
-				(description "Mounting Hole without connection")
-			)
-			(property
-				(name "LCSC")
-				(value "")
-			)
-			(property
-				(name "Sheetname")
-				(value "pl60c_dmx")
-			)
-			(property
-				(name "Sheetfile")
-				(value "pl60c_dmx.kicad_sch")
-			)
-			(property
-				(name "ki_keywords")
-				(value "mounting hole")
-			)
-			(property
-				(name "ki_fp_filters")
-				(value "MountingHole*")
-			)
-			(sheetpath
-				(names "/")
-				(tstamps "/")
-			)
-			(tstamps "7c0b0388-3fbd-517b-ab5f-e620c5406f41")
-			(units
-				(unit
-					(name "A")
-					(pins)
-				)
-			)
-		)
-		(comp
-			(ref "H3")
-			(value "M3")
-			(footprint "MountingHole:MountingHole_3.2mm_M3")
-			(datasheet "~")
-			(description "Mounting hole M3")
-			(fields
-				(field
-					(name "LCSC")
-				)
-				(field
-					(name "Footprint") "MountingHole:MountingHole_3.2mm_M3")
-				(field
-					(name "Datasheet") "~")
-				(field
-					(name "Description") "Mounting hole M3")
-			)
-			(libsource
-				(lib "Mechanical")
-				(part "MountingHole")
-				(description "Mounting Hole without connection")
-			)
-			(property
-				(name "LCSC")
-				(value "")
-			)
-			(property
-				(name "Sheetname")
-				(value "pl60c_dmx")
-			)
-			(property
-				(name "Sheetfile")
-				(value "pl60c_dmx.kicad_sch")
-			)
-			(property
-				(name "ki_keywords")
-				(value "mounting hole")
-			)
-			(property
-				(name "ki_fp_filters")
-				(value "MountingHole*")
-			)
-			(sheetpath
-				(names "/")
-				(tstamps "/")
-			)
-			(tstamps "99a528fa-0e6e-5850-95c2-4ec03e814154")
-			(units
-				(unit
-					(name "A")
-					(pins)
-				)
-			)
-		)
-		(comp
-			(ref "H4")
-			(value "M3")
-			(footprint "MountingHole:MountingHole_3.2mm_M3")
-			(datasheet "~")
-			(description "Mounting hole M3")
-			(fields
-				(field
-					(name "LCSC")
-				)
-				(field
-					(name "Footprint") "MountingHole:MountingHole_3.2mm_M3")
-				(field
-					(name "Datasheet") "~")
-				(field
-					(name "Description") "Mounting hole M3")
-			)
-			(libsource
-				(lib "Mechanical")
-				(part "MountingHole")
-				(description "Mounting Hole without connection")
-			)
-			(property
-				(name "LCSC")
-				(value "")
-			)
-			(property
-				(name "Sheetname")
-				(value "pl60c_dmx")
-			)
-			(property
-				(name "Sheetfile")
-				(value "pl60c_dmx.kicad_sch")
-			)
-			(property
-				(name "ki_keywords")
-				(value "mounting hole")
-			)
-			(property
-				(name "ki_fp_filters")
-				(value "MountingHole*")
-			)
-			(sheetpath
-				(names "/")
-				(tstamps "/")
-			)
-			(tstamps "9131130f-cf66-5ce2-9128-bba9d0d14158")
-			(units
-				(unit
-					(name "A")
-					(pins)
 				)
 			)
 		)
@@ -1128,11 +840,11 @@
 			)
 			(property
 				(name "Sheetname")
-				(value "pl60c_dmx")
+				(value "pl60c_dmx_mini")
 			)
 			(property
 				(name "Sheetfile")
-				(value "pl60c_dmx.kicad_sch")
+				(value "pl60c_dmx_mini.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -1239,11 +951,11 @@
 			)
 			(property
 				(name "Sheetname")
-				(value "pl60c_dmx")
+				(value "pl60c_dmx_mini")
 			)
 			(property
 				(name "Sheetfile")
-				(value "pl60c_dmx.kicad_sch")
+				(value "pl60c_dmx_mini.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -1285,225 +997,6 @@
 			)
 		)
 		(comp
-			(ref "J3")
-			(value "DMX pigtail")
-			(footprint "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-3-5.08_1x03_P5.08mm_Horizontal")
-			(datasheet "~")
-			(description "Screw terminal 3P 5.08 mm (alt. DMX wire output: GND, D-, D+)")
-			(fields
-				(field
-					(name "LCSC") "C474953")
-				(field
-					(name "MPN") "KF128-5.08-3P-AA")
-				(field
-					(name "Footprint") "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-3-5.08_1x03_P5.08mm_Horizontal")
-				(field
-					(name "Datasheet") "~")
-				(field
-					(name "Description") "Screw terminal 3P 5.08 mm (alt. DMX wire output: GND, D-, D+)")
-			)
-			(libsource
-				(lib "Connector")
-				(part "Screw_Terminal_01x03")
-				(description "Generic screw terminal, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)")
-			)
-			(property
-				(name "LCSC")
-				(value "C474953")
-			)
-			(property
-				(name "MPN")
-				(value "KF128-5.08-3P-AA")
-			)
-			(property
-				(name "Sheetname")
-				(value "pl60c_dmx")
-			)
-			(property
-				(name "Sheetfile")
-				(value "pl60c_dmx.kicad_sch")
-			)
-			(property
-				(name "ki_keywords")
-				(value "screw terminal")
-			)
-			(property
-				(name "ki_fp_filters")
-				(value "TerminalBlock*:*")
-			)
-			(sheetpath
-				(names "/")
-				(tstamps "/")
-			)
-			(tstamps "a321648f-924a-59e1-88ac-3e155f288ee6")
-			(units
-				(unit
-					(name "A")
-					(pins
-						(pin
-							(num "1")
-						)
-						(pin
-							(num "2")
-						)
-						(pin
-							(num "3")
-						)
-					)
-				)
-			)
-		)
-		(comp
-			(ref "J4")
-			(value "EXPANSION")
-			(footprint "Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical")
-			(datasheet "~")
-			(description "Pin header 1x6 2.54 mm")
-			(fields
-				(field
-					(name "LCSC") "C37208")
-				(field
-					(name "MPN") "2.54-1x6P")
-				(field
-					(name "Footprint") "Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical")
-				(field
-					(name "Datasheet") "~")
-				(field
-					(name "Description") "Pin header 1x6 2.54 mm")
-			)
-			(libsource
-				(lib "Connector_Generic")
-				(part "Conn_01x06")
-				(description "Generic connector, single row, 01x06, script generated (kicad-library-utils/schlib/autogen/connector/)")
-			)
-			(property
-				(name "LCSC")
-				(value "C37208")
-			)
-			(property
-				(name "MPN")
-				(value "2.54-1x6P")
-			)
-			(property
-				(name "Sheetname")
-				(value "pl60c_dmx")
-			)
-			(property
-				(name "Sheetfile")
-				(value "pl60c_dmx.kicad_sch")
-			)
-			(property
-				(name "ki_keywords")
-				(value "connector")
-			)
-			(property
-				(name "ki_fp_filters")
-				(value "Connector*:*_1x??_*")
-			)
-			(sheetpath
-				(names "/")
-				(tstamps "/")
-			)
-			(tstamps "585c9287-52f3-56a2-80ff-e8670c174534")
-			(units
-				(unit
-					(name "A")
-					(pins
-						(pin
-							(num "1")
-						)
-						(pin
-							(num "2")
-						)
-						(pin
-							(num "3")
-						)
-						(pin
-							(num "4")
-						)
-						(pin
-							(num "5")
-						)
-						(pin
-							(num "6")
-						)
-					)
-				)
-			)
-		)
-		(comp
-			(ref "J5")
-			(value "UART0")
-			(footprint "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical")
-			(datasheet "~")
-			(description "Pin header 1x4 2.54 mm")
-			(fields
-				(field
-					(name "LCSC") "C124378")
-				(field
-					(name "MPN") "B-2100S04P-A110")
-				(field
-					(name "Footprint") "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical")
-				(field
-					(name "Datasheet") "~")
-				(field
-					(name "Description") "Pin header 1x4 2.54 mm")
-			)
-			(libsource
-				(lib "Connector_Generic")
-				(part "Conn_01x04")
-				(description "Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)")
-			)
-			(property
-				(name "LCSC")
-				(value "C124378")
-			)
-			(property
-				(name "MPN")
-				(value "B-2100S04P-A110")
-			)
-			(property
-				(name "Sheetname")
-				(value "pl60c_dmx")
-			)
-			(property
-				(name "Sheetfile")
-				(value "pl60c_dmx.kicad_sch")
-			)
-			(property
-				(name "ki_keywords")
-				(value "connector")
-			)
-			(property
-				(name "ki_fp_filters")
-				(value "Connector*:*_1x??_*")
-			)
-			(sheetpath
-				(names "/")
-				(tstamps "/")
-			)
-			(tstamps "0424b6be-5942-518f-a7d9-318716d14430")
-			(units
-				(unit
-					(name "A")
-					(pins
-						(pin
-							(num "1")
-						)
-						(pin
-							(num "2")
-						)
-						(pin
-							(num "3")
-						)
-						(pin
-							(num "4")
-						)
-					)
-				)
-			)
-		)
-		(comp
 			(ref "Q1")
 			(value "S8050")
 			(footprint "Package_TO_SOT_SMD:SOT-23")
@@ -1523,8 +1016,8 @@
 			)
 			(libsource
 				(lib "Transistor_BJT")
-				(part "S8050")
-				(description "0.7A Ic, 20V Vce, Low Voltage High Current NPN Transistor, TO-92")
+				(part "BC817")
+				(description "0.8A Ic, 45V Vce, NPN Transistor, SOT-23")
 			)
 			(property
 				(name "LCSC")
@@ -1536,19 +1029,19 @@
 			)
 			(property
 				(name "Sheetname")
-				(value "pl60c_dmx")
+				(value "pl60c_dmx_mini")
 			)
 			(property
 				(name "Sheetfile")
-				(value "pl60c_dmx.kicad_sch")
+				(value "pl60c_dmx_mini.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
-				(value "S8050 NPN Low Voltage High Current Transistor")
+				(value "NPN Transistor")
 			)
 			(property
 				(name "ki_fp_filters")
-				(value "TO?92*")
+				(value "SOT?23*")
 			)
 			(sheetpath
 				(names "/")
@@ -1560,13 +1053,13 @@
 					(name "A")
 					(pins
 						(pin
-							(num "2")
+							(num "1")
 						)
 						(pin
 							(num "3")
 						)
 						(pin
-							(num "1")
+							(num "2")
 						)
 					)
 				)
@@ -1575,18 +1068,18 @@
 		(comp
 			(ref "R1")
 			(value "5.1k")
-			(footprint "Resistor_SMD:R_0603_1608Metric")
+			(footprint "Resistor_SMD:R_0402_1005Metric")
 			(datasheet "~")
-			(description "5.1k 0603 1% (USB-C CC pull-down)")
+			(description "5.1k 0402 1% (USB-C CC pull-down)")
 			(fields
 				(field
-					(name "LCSC") "C23186")
+					(name "LCSC") "C25905")
 				(field
-					(name "Footprint") "Resistor_SMD:R_0603_1608Metric")
+					(name "Footprint") "Resistor_SMD:R_0402_1005Metric")
 				(field
 					(name "Datasheet") "~")
 				(field
-					(name "Description") "5.1k 0603 1% (USB-C CC pull-down)")
+					(name "Description") "5.1k 0402 1% (USB-C CC pull-down)")
 			)
 			(libsource
 				(lib "Device")
@@ -1595,15 +1088,15 @@
 			)
 			(property
 				(name "LCSC")
-				(value "C23186")
+				(value "C25905")
 			)
 			(property
 				(name "Sheetname")
-				(value "pl60c_dmx")
+				(value "pl60c_dmx_mini")
 			)
 			(property
 				(name "Sheetfile")
-				(value "pl60c_dmx.kicad_sch")
+				(value "pl60c_dmx_mini.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -1635,18 +1128,18 @@
 		(comp
 			(ref "R2")
 			(value "5.1k")
-			(footprint "Resistor_SMD:R_0603_1608Metric")
+			(footprint "Resistor_SMD:R_0402_1005Metric")
 			(datasheet "~")
-			(description "5.1k 0603 1% (USB-C CC pull-down)")
+			(description "5.1k 0402 1% (USB-C CC pull-down)")
 			(fields
 				(field
-					(name "LCSC") "C23186")
+					(name "LCSC") "C25905")
 				(field
-					(name "Footprint") "Resistor_SMD:R_0603_1608Metric")
+					(name "Footprint") "Resistor_SMD:R_0402_1005Metric")
 				(field
 					(name "Datasheet") "~")
 				(field
-					(name "Description") "5.1k 0603 1% (USB-C CC pull-down)")
+					(name "Description") "5.1k 0402 1% (USB-C CC pull-down)")
 			)
 			(libsource
 				(lib "Device")
@@ -1655,15 +1148,15 @@
 			)
 			(property
 				(name "LCSC")
-				(value "C23186")
+				(value "C25905")
 			)
 			(property
 				(name "Sheetname")
-				(value "pl60c_dmx")
+				(value "pl60c_dmx_mini")
 			)
 			(property
 				(name "Sheetfile")
-				(value "pl60c_dmx.kicad_sch")
+				(value "pl60c_dmx_mini.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -1695,18 +1188,18 @@
 		(comp
 			(ref "R3")
 			(value "10k")
-			(footprint "Resistor_SMD:R_0603_1608Metric")
+			(footprint "Resistor_SMD:R_0402_1005Metric")
 			(datasheet "~")
-			(description "10k 0603")
+			(description "10k 0402")
 			(fields
 				(field
-					(name "LCSC") "C25804")
+					(name "LCSC") "C25744")
 				(field
-					(name "Footprint") "Resistor_SMD:R_0603_1608Metric")
+					(name "Footprint") "Resistor_SMD:R_0402_1005Metric")
 				(field
 					(name "Datasheet") "~")
 				(field
-					(name "Description") "10k 0603")
+					(name "Description") "10k 0402")
 			)
 			(libsource
 				(lib "Device")
@@ -1715,15 +1208,15 @@
 			)
 			(property
 				(name "LCSC")
-				(value "C25804")
+				(value "C25744")
 			)
 			(property
 				(name "Sheetname")
-				(value "pl60c_dmx")
+				(value "pl60c_dmx_mini")
 			)
 			(property
 				(name "Sheetfile")
-				(value "pl60c_dmx.kicad_sch")
+				(value "pl60c_dmx_mini.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -1755,18 +1248,18 @@
 		(comp
 			(ref "R4")
 			(value "10k")
-			(footprint "Resistor_SMD:R_0603_1608Metric")
+			(footprint "Resistor_SMD:R_0402_1005Metric")
 			(datasheet "~")
-			(description "10k 0603")
+			(description "10k 0402")
 			(fields
 				(field
-					(name "LCSC") "C25804")
+					(name "LCSC") "C25744")
 				(field
-					(name "Footprint") "Resistor_SMD:R_0603_1608Metric")
+					(name "Footprint") "Resistor_SMD:R_0402_1005Metric")
 				(field
 					(name "Datasheet") "~")
 				(field
-					(name "Description") "10k 0603")
+					(name "Description") "10k 0402")
 			)
 			(libsource
 				(lib "Device")
@@ -1775,15 +1268,15 @@
 			)
 			(property
 				(name "LCSC")
-				(value "C25804")
+				(value "C25744")
 			)
 			(property
 				(name "Sheetname")
-				(value "pl60c_dmx")
+				(value "pl60c_dmx_mini")
 			)
 			(property
 				(name "Sheetfile")
-				(value "pl60c_dmx.kicad_sch")
+				(value "pl60c_dmx_mini.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -1815,18 +1308,18 @@
 		(comp
 			(ref "R5")
 			(value "10k")
-			(footprint "Resistor_SMD:R_0603_1608Metric")
+			(footprint "Resistor_SMD:R_0402_1005Metric")
 			(datasheet "~")
-			(description "10k 0603")
+			(description "10k 0402")
 			(fields
 				(field
-					(name "LCSC") "C25804")
+					(name "LCSC") "C25744")
 				(field
-					(name "Footprint") "Resistor_SMD:R_0603_1608Metric")
+					(name "Footprint") "Resistor_SMD:R_0402_1005Metric")
 				(field
 					(name "Datasheet") "~")
 				(field
-					(name "Description") "10k 0603")
+					(name "Description") "10k 0402")
 			)
 			(libsource
 				(lib "Device")
@@ -1835,15 +1328,15 @@
 			)
 			(property
 				(name "LCSC")
-				(value "C25804")
+				(value "C25744")
 			)
 			(property
 				(name "Sheetname")
-				(value "pl60c_dmx")
+				(value "pl60c_dmx_mini")
 			)
 			(property
 				(name "Sheetfile")
-				(value "pl60c_dmx.kicad_sch")
+				(value "pl60c_dmx_mini.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -1875,18 +1368,18 @@
 		(comp
 			(ref "R6")
 			(value "120R")
-			(footprint "Resistor_SMD:R_0603_1608Metric")
+			(footprint "Resistor_SMD:R_0402_1005Metric")
 			(datasheet "~")
-			(description "120R termination - DNP (fit only if this board ends the DMX line)")
+			(description "120R termination - DNP")
 			(fields
 				(field
-					(name "LCSC") "C22787")
+					(name "LCSC") "C25079")
 				(field
-					(name "Footprint") "Resistor_SMD:R_0603_1608Metric")
+					(name "Footprint") "Resistor_SMD:R_0402_1005Metric")
 				(field
 					(name "Datasheet") "~")
 				(field
-					(name "Description") "120R termination - DNP (fit only if this board ends the DMX line)")
+					(name "Description") "120R termination - DNP")
 			)
 			(libsource
 				(lib "Device")
@@ -1895,15 +1388,15 @@
 			)
 			(property
 				(name "LCSC")
-				(value "C22787")
+				(value "C25079")
 			)
 			(property
 				(name "Sheetname")
-				(value "pl60c_dmx")
+				(value "pl60c_dmx_mini")
 			)
 			(property
 				(name "Sheetfile")
-				(value "pl60c_dmx.kicad_sch")
+				(value "pl60c_dmx_mini.kicad_sch")
 			)
 			(property
 				(name "dnp")
@@ -1938,18 +1431,18 @@
 		(comp
 			(ref "R7")
 			(value "10k")
-			(footprint "Resistor_SMD:R_0603_1608Metric")
+			(footprint "Resistor_SMD:R_0402_1005Metric")
 			(datasheet "~")
-			(description "10k 0603 (DE pull-down: receiver idle until firmware drives)")
+			(description "10k 0402 (DE pull-down)")
 			(fields
 				(field
-					(name "LCSC") "C25804")
+					(name "LCSC") "C25744")
 				(field
-					(name "Footprint") "Resistor_SMD:R_0603_1608Metric")
+					(name "Footprint") "Resistor_SMD:R_0402_1005Metric")
 				(field
 					(name "Datasheet") "~")
 				(field
-					(name "Description") "10k 0603 (DE pull-down: receiver idle until firmware drives)")
+					(name "Description") "10k 0402 (DE pull-down)")
 			)
 			(libsource
 				(lib "Device")
@@ -1958,15 +1451,15 @@
 			)
 			(property
 				(name "LCSC")
-				(value "C25804")
+				(value "C25744")
 			)
 			(property
 				(name "Sheetname")
-				(value "pl60c_dmx")
+				(value "pl60c_dmx_mini")
 			)
 			(property
 				(name "Sheetfile")
-				(value "pl60c_dmx.kicad_sch")
+				(value "pl60c_dmx_mini.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -1998,18 +1491,18 @@
 		(comp
 			(ref "R8")
 			(value "330R")
-			(footprint "Resistor_SMD:R_0603_1608Metric")
+			(footprint "Resistor_SMD:R_0402_1005Metric")
 			(datasheet "~")
-			(description "330R 0603 series (WS2812 data)")
+			(description "330R 0402 series (WS2812 data)")
 			(fields
 				(field
-					(name "LCSC") "C23138")
+					(name "LCSC") "C25104")
 				(field
-					(name "Footprint") "Resistor_SMD:R_0603_1608Metric")
+					(name "Footprint") "Resistor_SMD:R_0402_1005Metric")
 				(field
 					(name "Datasheet") "~")
 				(field
-					(name "Description") "330R 0603 series (WS2812 data)")
+					(name "Description") "330R 0402 series (WS2812 data)")
 			)
 			(libsource
 				(lib "Device")
@@ -2018,15 +1511,15 @@
 			)
 			(property
 				(name "LCSC")
-				(value "C23138")
+				(value "C25104")
 			)
 			(property
 				(name "Sheetname")
-				(value "pl60c_dmx")
+				(value "pl60c_dmx_mini")
 			)
 			(property
 				(name "Sheetfile")
-				(value "pl60c_dmx.kicad_sch")
+				(value "pl60c_dmx_mini.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -2057,19 +1550,19 @@
 		)
 		(comp
 			(ref "R9")
-			(value "1k")
-			(footprint "Resistor_SMD:R_0603_1608Metric")
+			(value "470R")
+			(footprint "Resistor_SMD:R_0402_1005Metric")
 			(datasheet "~")
-			(description "1k 0603")
+			(description "470R 0402 base resistor")
 			(fields
 				(field
-					(name "LCSC") "C21190")
+					(name "LCSC") "C25117")
 				(field
-					(name "Footprint") "Resistor_SMD:R_0603_1608Metric")
+					(name "Footprint") "Resistor_SMD:R_0402_1005Metric")
 				(field
 					(name "Datasheet") "~")
 				(field
-					(name "Description") "1k 0603")
+					(name "Description") "470R 0402 base resistor")
 			)
 			(libsource
 				(lib "Device")
@@ -2078,15 +1571,15 @@
 			)
 			(property
 				(name "LCSC")
-				(value "C21190")
+				(value "C25117")
 			)
 			(property
 				(name "Sheetname")
-				(value "pl60c_dmx")
+				(value "pl60c_dmx_mini")
 			)
 			(property
 				(name "Sheetfile")
-				(value "pl60c_dmx.kicad_sch")
+				(value "pl60c_dmx_mini.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -2116,53 +1609,51 @@
 			)
 		)
 		(comp
-			(ref "SW1")
-			(value "RESET")
-			(footprint "Button_Switch_SMD:SW_SPST_SKQG_WithStem")
+			(ref "R10")
+			(value "10R")
+			(footprint "Resistor_SMD:R_1206_3216Metric")
 			(datasheet "~")
-			(description "Tactile switch 5.1x5.1x1.5 mm SMD")
+			(description "10R 1206 250mW buzzer series resistor")
 			(fields
 				(field
-					(name "LCSC") "C318884")
+					(name "LCSC") "C17903")
 				(field
-					(name "MPN") "TS-1187A-B-A-B")
-				(field
-					(name "Footprint") "Button_Switch_SMD:SW_SPST_SKQG_WithStem")
+					(name "Footprint") "Resistor_SMD:R_1206_3216Metric")
 				(field
 					(name "Datasheet") "~")
 				(field
-					(name "Description") "Tactile switch 5.1x5.1x1.5 mm SMD")
+					(name "Description") "10R 1206 250mW buzzer series resistor")
 			)
 			(libsource
-				(lib "Switch")
-				(part "SW_Push")
-				(description "Push button switch, generic, two pins")
+				(lib "Device")
+				(part "R")
+				(description "Resistor")
 			)
 			(property
 				(name "LCSC")
-				(value "C318884")
-			)
-			(property
-				(name "MPN")
-				(value "TS-1187A-B-A-B")
+				(value "C17903")
 			)
 			(property
 				(name "Sheetname")
-				(value "pl60c_dmx")
+				(value "pl60c_dmx_mini")
 			)
 			(property
 				(name "Sheetfile")
-				(value "pl60c_dmx.kicad_sch")
+				(value "pl60c_dmx_mini.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
-				(value "switch normally-open pushbutton push-button")
+				(value "R res resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
 			)
 			(sheetpath
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "661adb82-b5f5-5586-9ec8-e0516e56e0b5")
+			(tstamps "bdbfcf3f-bcc4-5824-97fd-f689eba33e65")
 			(units
 				(unit
 					(name "A")
@@ -2180,20 +1671,20 @@
 		(comp
 			(ref "SW2")
 			(value "BOOT")
-			(footprint "Button_Switch_SMD:SW_SPST_SKQG_WithStem")
+			(footprint "Button_Switch_SMD:SW_SPST_TS-1088-xR020")
 			(datasheet "~")
-			(description "Tactile switch 5.1x5.1x1.5 mm SMD")
+			(description "Tactile switch 3.9x3x2 mm SMD")
 			(fields
 				(field
-					(name "LCSC") "C318884")
+					(name "LCSC") "C720477")
 				(field
-					(name "MPN") "TS-1187A-B-A-B")
+					(name "MPN") "TS-1088-AR02016")
 				(field
-					(name "Footprint") "Button_Switch_SMD:SW_SPST_SKQG_WithStem")
+					(name "Footprint") "Button_Switch_SMD:SW_SPST_TS-1088-xR020")
 				(field
 					(name "Datasheet") "~")
 				(field
-					(name "Description") "Tactile switch 5.1x5.1x1.5 mm SMD")
+					(name "Description") "Tactile switch 3.9x3x2 mm SMD")
 			)
 			(libsource
 				(lib "Switch")
@@ -2202,19 +1693,19 @@
 			)
 			(property
 				(name "LCSC")
-				(value "C318884")
+				(value "C720477")
 			)
 			(property
 				(name "MPN")
-				(value "TS-1187A-B-A-B")
+				(value "TS-1088-AR02016")
 			)
 			(property
 				(name "Sheetname")
-				(value "pl60c_dmx")
+				(value "pl60c_dmx_mini")
 			)
 			(property
 				(name "Sheetfile")
-				(value "pl60c_dmx.kicad_sch")
+				(value "pl60c_dmx_mini.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -2242,20 +1733,20 @@
 		(comp
 			(ref "SW3")
 			(value "USER")
-			(footprint "Button_Switch_SMD:SW_SPST_SKQG_WithStem")
+			(footprint "Button_Switch_SMD:SW_SPST_TS-1088-xR020")
 			(datasheet "~")
-			(description "Tactile switch 5.1x5.1x1.5 mm SMD (snooze / manual on)")
+			(description "Tactile switch 3.9x3x2 mm SMD (snooze / manual on)")
 			(fields
 				(field
-					(name "LCSC") "C318884")
+					(name "LCSC") "C720477")
 				(field
-					(name "MPN") "TS-1187A-B-A-B")
+					(name "MPN") "TS-1088-AR02016")
 				(field
-					(name "Footprint") "Button_Switch_SMD:SW_SPST_SKQG_WithStem")
+					(name "Footprint") "Button_Switch_SMD:SW_SPST_TS-1088-xR020")
 				(field
 					(name "Datasheet") "~")
 				(field
-					(name "Description") "Tactile switch 5.1x5.1x1.5 mm SMD (snooze / manual on)")
+					(name "Description") "Tactile switch 3.9x3x2 mm SMD (snooze / manual on)")
 			)
 			(libsource
 				(lib "Switch")
@@ -2264,19 +1755,19 @@
 			)
 			(property
 				(name "LCSC")
-				(value "C318884")
+				(value "C720477")
 			)
 			(property
 				(name "MPN")
-				(value "TS-1187A-B-A-B")
+				(value "TS-1088-AR02016")
 			)
 			(property
 				(name "Sheetname")
-				(value "pl60c_dmx")
+				(value "pl60c_dmx_mini")
 			)
 			(property
 				(name "Sheetfile")
-				(value "pl60c_dmx.kicad_sch")
+				(value "pl60c_dmx_mini.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -2302,51 +1793,399 @@
 			)
 		)
 		(comp
-			(ref "U1")
-			(value "ESP32-S3-WROOM-1-N16R8")
-			(footprint "RF_Module:ESP32-S3-WROOM-1")
+			(ref "TP1")
+			(value "+3V3")
+			(footprint "TestPoint:TestPoint_Pad_1.5x1.5mm")
 			(datasheet "~")
-			(description "ESP32-S3 WiFi/BLE module, 16 MB flash + 8 MB PSRAM, PCB antenna")
+			(description "Test pad 1.5 mm")
 			(fields
 				(field
-					(name "LCSC") "C2913202")
+					(name "LCSC")
+				)
 				(field
-					(name "MPN") "ESP32-S3-WROOM-1-N16R8")
-				(field
-					(name "Footprint") "RF_Module:ESP32-S3-WROOM-1")
+					(name "Footprint") "TestPoint:TestPoint_Pad_1.5x1.5mm")
 				(field
 					(name "Datasheet") "~")
 				(field
-					(name "Description") "ESP32-S3 WiFi/BLE module, 16 MB flash + 8 MB PSRAM, PCB antenna")
+					(name "Description") "Test pad 1.5 mm")
 			)
 			(libsource
-				(lib "RF_Module")
-				(part "ESP32-S3-WROOM-1")
-				(description "RF Module, ESP32-S3 SoC, Wi-Fi 802.11b/g/n, Bluetooth, BLE, 32-bit, 3.3V, onboard antenna, SMD")
+				(lib "Connector")
+				(part "TestPoint")
+				(description "test point")
 			)
 			(property
 				(name "LCSC")
-				(value "C2913202")
-			)
-			(property
-				(name "MPN")
-				(value "ESP32-S3-WROOM-1-N16R8")
+				(value "")
 			)
 			(property
 				(name "Sheetname")
-				(value "pl60c_dmx")
+				(value "pl60c_dmx_mini")
 			)
 			(property
 				(name "Sheetfile")
-				(value "pl60c_dmx.kicad_sch")
+				(value "pl60c_dmx_mini.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
-				(value "RF Radio BT ESP ESP32-S3 Espressif onboard PCB antenna")
+				(value "test point tp")
 			)
 			(property
 				(name "ki_fp_filters")
-				(value "ESP32?S3?WROOM?1*")
+				(value "Pin* Test*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "8bb5090a-d40a-5bce-b498-02606f604206")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "TP2")
+			(value "GND")
+			(footprint "TestPoint:TestPoint_Pad_1.5x1.5mm")
+			(datasheet "~")
+			(description "Test pad 1.5 mm")
+			(fields
+				(field
+					(name "LCSC")
+				)
+				(field
+					(name "Footprint") "TestPoint:TestPoint_Pad_1.5x1.5mm")
+				(field
+					(name "Datasheet") "~")
+				(field
+					(name "Description") "Test pad 1.5 mm")
+			)
+			(libsource
+				(lib "Connector")
+				(part "TestPoint")
+				(description "test point")
+			)
+			(property
+				(name "LCSC")
+				(value "")
+			)
+			(property
+				(name "Sheetname")
+				(value "pl60c_dmx_mini")
+			)
+			(property
+				(name "Sheetfile")
+				(value "pl60c_dmx_mini.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "test point tp")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "Pin* Test*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "c08e4095-91a9-5bad-ad9f-516f90930ba8")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "TP3")
+			(value "EXP_SDA")
+			(footprint "TestPoint:TestPoint_Pad_1.5x1.5mm")
+			(datasheet "~")
+			(description "Test pad 1.5 mm")
+			(fields
+				(field
+					(name "LCSC")
+				)
+				(field
+					(name "Footprint") "TestPoint:TestPoint_Pad_1.5x1.5mm")
+				(field
+					(name "Datasheet") "~")
+				(field
+					(name "Description") "Test pad 1.5 mm")
+			)
+			(libsource
+				(lib "Connector")
+				(part "TestPoint")
+				(description "test point")
+			)
+			(property
+				(name "LCSC")
+				(value "")
+			)
+			(property
+				(name "Sheetname")
+				(value "pl60c_dmx_mini")
+			)
+			(property
+				(name "Sheetfile")
+				(value "pl60c_dmx_mini.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "test point tp")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "Pin* Test*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "9c068517-f984-5a6a-9d63-cd71c5241183")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "TP4")
+			(value "EXP_SCL")
+			(footprint "TestPoint:TestPoint_Pad_1.5x1.5mm")
+			(datasheet "~")
+			(description "Test pad 1.5 mm")
+			(fields
+				(field
+					(name "LCSC")
+				)
+				(field
+					(name "Footprint") "TestPoint:TestPoint_Pad_1.5x1.5mm")
+				(field
+					(name "Datasheet") "~")
+				(field
+					(name "Description") "Test pad 1.5 mm")
+			)
+			(libsource
+				(lib "Connector")
+				(part "TestPoint")
+				(description "test point")
+			)
+			(property
+				(name "LCSC")
+				(value "")
+			)
+			(property
+				(name "Sheetname")
+				(value "pl60c_dmx_mini")
+			)
+			(property
+				(name "Sheetfile")
+				(value "pl60c_dmx_mini.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "test point tp")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "Pin* Test*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "c1491818-10c3-576a-ad97-4b17d4621261")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "TP5")
+			(value "BZ+")
+			(footprint "TestPoint:TestPoint_Pad_1.5x1.5mm")
+			(datasheet "~")
+			(description "External buzzer pad (+5V via 10R)")
+			(fields
+				(field
+					(name "LCSC")
+				)
+				(field
+					(name "Footprint") "TestPoint:TestPoint_Pad_1.5x1.5mm")
+				(field
+					(name "Datasheet") "~")
+				(field
+					(name "Description") "External buzzer pad (+5V via 10R)")
+			)
+			(libsource
+				(lib "Connector")
+				(part "TestPoint")
+				(description "test point")
+			)
+			(property
+				(name "LCSC")
+				(value "")
+			)
+			(property
+				(name "Sheetname")
+				(value "pl60c_dmx_mini")
+			)
+			(property
+				(name "Sheetfile")
+				(value "pl60c_dmx_mini.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "test point tp")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "Pin* Test*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "64c2a909-f965-5bbe-9e26-ad8cd76045d5")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "TP6")
+			(value "BZ-")
+			(footprint "TestPoint:TestPoint_Pad_1.5x1.5mm")
+			(datasheet "~")
+			(description "External buzzer pad (driver collector)")
+			(fields
+				(field
+					(name "LCSC")
+				)
+				(field
+					(name "Footprint") "TestPoint:TestPoint_Pad_1.5x1.5mm")
+				(field
+					(name "Datasheet") "~")
+				(field
+					(name "Description") "External buzzer pad (driver collector)")
+			)
+			(libsource
+				(lib "Connector")
+				(part "TestPoint")
+				(description "test point")
+			)
+			(property
+				(name "LCSC")
+				(value "")
+			)
+			(property
+				(name "Sheetname")
+				(value "pl60c_dmx_mini")
+			)
+			(property
+				(name "Sheetfile")
+				(value "pl60c_dmx_mini.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "test point tp")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "Pin* Test*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "5aabd251-52d3-564b-9b7b-f8df3ec82eb9")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "U1")
+			(value "ESP32-S3-MINI-1-N8")
+			(footprint "RF_Module:ESP32-S2-MINI-1")
+			(datasheet "~")
+			(description "ESP32-S3 module 15.4x20.5 mm, 8 MB flash, PCB antenna (same land pattern as ESP32-S2-MINI-1)")
+			(fields
+				(field
+					(name "LCSC") "C2913206")
+				(field
+					(name "MPN") "ESP32-S3-MINI-1-N8")
+				(field
+					(name "Footprint") "RF_Module:ESP32-S2-MINI-1")
+				(field
+					(name "Datasheet") "~")
+				(field
+					(name "Description") "ESP32-S3 module 15.4x20.5 mm, 8 MB flash, PCB antenna (same land pattern as ESP32-S2-MINI-1)")
+			)
+			(libsource
+				(lib "RF_Module")
+				(part "ESP32-S3-MINI-1")
+				(description "RF Module, ESP32-S3 SoC, Wi-Fi 802.11b/g/n, Bluetooth, BLE, 32-bit, 3.3V, SMD, onboard antenna")
+			)
+			(property
+				(name "LCSC")
+				(value "C2913206")
+			)
+			(property
+				(name "MPN")
+				(value "ESP32-S3-MINI-1-N8")
+			)
+			(property
+				(name "Sheetname")
+				(value "pl60c_dmx_mini")
+			)
+			(property
+				(name "Sheetfile")
+				(value "pl60c_dmx_mini.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "RF Radio BT ESP ESP32-S3 Espressif")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "ESP32?S*MINI?1")
 			)
 			(sheetpath
 				(names "/")
@@ -2358,19 +2197,7 @@
 					(name "A")
 					(pins
 						(pin
-							(num "3")
-						)
-						(pin
-							(num "27")
-						)
-						(pin
-							(num "39")
-						)
-						(pin
-							(num "38")
-						)
-						(pin
-							(num "15")
+							(num "45")
 						)
 						(pin
 							(num "4")
@@ -2385,7 +2212,31 @@
 							(num "7")
 						)
 						(pin
+							(num "8")
+						)
+						(pin
+							(num "9")
+						)
+						(pin
+							(num "10")
+						)
+						(pin
+							(num "11")
+						)
+						(pin
 							(num "12")
+						)
+						(pin
+							(num "13")
+						)
+						(pin
+							(num "14")
+						)
+						(pin
+							(num "15")
+						)
+						(pin
+							(num "16")
 						)
 						(pin
 							(num "17")
@@ -2406,52 +2257,103 @@
 							(num "22")
 						)
 						(pin
-							(num "8")
+							(num "3")
 						)
 						(pin
-							(num "9")
+							(num "65")
 						)
 						(pin
 							(num "2")
 						)
 						(pin
+							(num "54")
+						)
+						(pin
+							(num "53")
+						)
+						(pin
+							(num "52")
+						)
+						(pin
+							(num "64")
+						)
+						(pin
+							(num "51")
+						)
+						(pin
+							(num "50")
+						)
+						(pin
+							(num "63")
+						)
+						(pin
+							(num "49")
+						)
+						(pin
+							(num "48")
+						)
+						(pin
 							(num "1")
+						)
+						(pin
+							(num "62")
+						)
+						(pin
+							(num "61")
+						)
+						(pin
+							(num "60")
+						)
+						(pin
+							(num "59")
+						)
+						(pin
+							(num "58")
+						)
+						(pin
+							(num "56")
+						)
+						(pin
+							(num "47")
+						)
+						(pin
+							(num "57")
+						)
+						(pin
+							(num "42")
+						)
+						(pin
+							(num "43")
+						)
+						(pin
+							(num "46")
+						)
+						(pin
+							(num "55")
+						)
+						(pin
+							(num "39")
 						)
 						(pin
 							(num "40")
 						)
 						(pin
-							(num "41")
-						)
-						(pin
-							(num "37")
-						)
-						(pin
-							(num "36")
-						)
-						(pin
-							(num "10")
-						)
-						(pin
-							(num "11")
-						)
-						(pin
-							(num "13")
-						)
-						(pin
-							(num "14")
-						)
-						(pin
 							(num "23")
+						)
+						(pin
+							(num "24")
+						)
+						(pin
+							(num "25")
+						)
+						(pin
+							(num "26")
 						)
 						(pin
 							(num "28")
 						)
 						(pin
 							(num "29")
-						)
-						(pin
-							(num "30")
 						)
 						(pin
 							(num "31")
@@ -2469,16 +2371,25 @@
 							(num "35")
 						)
 						(pin
-							(num "26")
+							(num "36")
 						)
 						(pin
-							(num "16")
+							(num "37")
 						)
 						(pin
-							(num "24")
+							(num "38")
 						)
 						(pin
-							(num "25")
+							(num "41")
+						)
+						(pin
+							(num "44")
+						)
+						(pin
+							(num "27")
+						)
+						(pin
+							(num "30")
 						)
 					)
 				)
@@ -2486,42 +2397,42 @@
 		)
 		(comp
 			(ref "U2")
-			(value "AMS1117-3.3")
-			(footprint "Package_TO_SOT_SMD:SOT-223-3_TabPin2")
+			(value "AP2112K-3.3")
+			(footprint "Package_TO_SOT_SMD:SOT-23-5")
 			(datasheet "~")
-			(description "LDO 3.3V 1A SOT-223")
+			(description "LDO 3.3V 600mA SOT-23-5")
 			(fields
 				(field
-					(name "LCSC") "C6186")
+					(name "LCSC") "C51118")
 				(field
-					(name "MPN") "AMS1117-3.3")
+					(name "MPN") "AP2112K-3.3TRG1")
 				(field
-					(name "Footprint") "Package_TO_SOT_SMD:SOT-223-3_TabPin2")
+					(name "Footprint") "Package_TO_SOT_SMD:SOT-23-5")
 				(field
 					(name "Datasheet") "~")
 				(field
-					(name "Description") "LDO 3.3V 1A SOT-223")
+					(name "Description") "LDO 3.3V 600mA SOT-23-5")
 			)
 			(libsource
 				(lib "Regulator_Linear")
-				(part "AMS1117-3.3")
-				(description "1A Low Dropout regulator, positive, 3.3V fixed output, SOT-223")
+				(part "AP2112K-3.3")
+				(description "600mA low dropout linear regulator, with enable pin, 3.8V-6V input voltage range, 3.3V fixed positive output, SOT-23-5")
 			)
 			(property
 				(name "LCSC")
-				(value "C6186")
+				(value "C51118")
 			)
 			(property
 				(name "MPN")
-				(value "AMS1117-3.3")
+				(value "AP2112K-3.3TRG1")
 			)
 			(property
 				(name "Sheetname")
-				(value "pl60c_dmx")
+				(value "pl60c_dmx_mini")
 			)
 			(property
 				(name "Sheetfile")
-				(value "pl60c_dmx.kicad_sch")
+				(value "pl60c_dmx_mini.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -2529,7 +2440,7 @@
 			)
 			(property
 				(name "ki_fp_filters")
-				(value "SOT?223*TabPin2*")
+				(value "SOT?23?5*")
 			)
 			(sheetpath
 				(names "/")
@@ -2541,13 +2452,19 @@
 					(name "A")
 					(pins
 						(pin
-							(num "3")
-						)
-						(pin
 							(num "1")
 						)
 						(pin
+							(num "3")
+						)
+						(pin
 							(num "2")
+						)
+						(pin
+							(num "4")
+						)
+						(pin
+							(num "5")
 						)
 					)
 				)
@@ -2558,7 +2475,7 @@
 			(value "SP3485EN")
 			(footprint "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm")
 			(datasheet "~")
-			(description "RS-485 transceiver 3.3 V half-duplex SOIC-8 (MAX3485 pin-compatible)")
+			(description "RS-485 transceiver 3.3 V half-duplex SOIC-8")
 			(fields
 				(field
 					(name "LCSC") "C8963")
@@ -2569,7 +2486,7 @@
 				(field
 					(name "Datasheet") "~")
 				(field
-					(name "Description") "RS-485 transceiver 3.3 V half-duplex SOIC-8 (MAX3485 pin-compatible)")
+					(name "Description") "RS-485 transceiver 3.3 V half-duplex SOIC-8")
 			)
 			(libsource
 				(lib "Interface_UART")
@@ -2586,11 +2503,11 @@
 			)
 			(property
 				(name "Sheetname")
-				(value "pl60c_dmx")
+				(value "pl60c_dmx_mini")
 			)
 			(property
 				(name "Sheetfile")
-				(value "pl60c_dmx.kicad_sch")
+				(value "pl60c_dmx_mini.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -2670,11 +2587,11 @@
 			)
 			(property
 				(name "Sheetname")
-				(value "pl60c_dmx")
+				(value "pl60c_dmx_mini")
 			)
 			(property
 				(name "Sheetfile")
-				(value "pl60c_dmx.kicad_sch")
+				(value "pl60c_dmx_mini.kicad_sch")
 			)
 			(property
 				(name "ki_keywords")
@@ -2721,16 +2638,17 @@
 	(libparts
 		(libpart
 			(lib "Connector")
-			(part "Screw_Terminal_01x03")
-			(description "Generic screw terminal, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)")
+			(part "TestPoint")
+			(description "test point")
 			(footprints
-				(fp "TerminalBlock*:*")
+				(fp "Pin*")
+				(fp "Test*")
 			)
 			(fields
 				(field
-					(name "Reference") "J")
+					(name "Reference") "TP")
 				(field
-					(name "Value") "Screw_Terminal_01x03")
+					(name "Value") "TestPoint")
 				(field
 					(name "Footprint")
 				)
@@ -2738,22 +2656,12 @@
 					(name "Datasheet")
 				)
 				(field
-					(name "Description") "Generic screw terminal, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)")
+					(name "Description") "test point")
 			)
 			(pins
 				(pin
 					(num "1")
-					(name "Pin_1")
-					(type "passive")
-				)
-				(pin
-					(num "2")
-					(name "Pin_2")
-					(type "passive")
-				)
-				(pin
-					(num "3")
-					(name "Pin_3")
+					(name "1")
 					(type "passive")
 				)
 			)
@@ -2917,138 +2825,6 @@
 				(pin
 					(num "G")
 					(name "")
-					(type "passive")
-				)
-			)
-		)
-		(libpart
-			(lib "Connector_Generic")
-			(part "Conn_01x04")
-			(description "Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)")
-			(footprints
-				(fp "Connector*:*_1x??_*")
-			)
-			(fields
-				(field
-					(name "Reference") "J")
-				(field
-					(name "Value") "Conn_01x04")
-				(field
-					(name "Footprint")
-				)
-				(field
-					(name "Datasheet")
-				)
-				(field
-					(name "Description") "Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)")
-			)
-			(pins
-				(pin
-					(num "1")
-					(name "Pin_1")
-					(type "passive")
-				)
-				(pin
-					(num "2")
-					(name "Pin_2")
-					(type "passive")
-				)
-				(pin
-					(num "3")
-					(name "Pin_3")
-					(type "passive")
-				)
-				(pin
-					(num "4")
-					(name "Pin_4")
-					(type "passive")
-				)
-			)
-		)
-		(libpart
-			(lib "Connector_Generic")
-			(part "Conn_01x06")
-			(description "Generic connector, single row, 01x06, script generated (kicad-library-utils/schlib/autogen/connector/)")
-			(footprints
-				(fp "Connector*:*_1x??_*")
-			)
-			(fields
-				(field
-					(name "Reference") "J")
-				(field
-					(name "Value") "Conn_01x06")
-				(field
-					(name "Footprint")
-				)
-				(field
-					(name "Datasheet")
-				)
-				(field
-					(name "Description") "Generic connector, single row, 01x06, script generated (kicad-library-utils/schlib/autogen/connector/)")
-			)
-			(pins
-				(pin
-					(num "1")
-					(name "Pin_1")
-					(type "passive")
-				)
-				(pin
-					(num "2")
-					(name "Pin_2")
-					(type "passive")
-				)
-				(pin
-					(num "3")
-					(name "Pin_3")
-					(type "passive")
-				)
-				(pin
-					(num "4")
-					(name "Pin_4")
-					(type "passive")
-				)
-				(pin
-					(num "5")
-					(name "Pin_5")
-					(type "passive")
-				)
-				(pin
-					(num "6")
-					(name "Pin_6")
-					(type "passive")
-				)
-			)
-		)
-		(libpart
-			(lib "Device")
-			(part "Buzzer")
-			(description "Buzzer, polarized")
-			(footprints
-				(fp "*Buzzer*")
-			)
-			(fields
-				(field
-					(name "Reference") "BZ")
-				(field
-					(name "Value") "Buzzer")
-				(field
-					(name "Footprint")
-				)
-				(field
-					(name "Datasheet")
-				)
-				(field
-					(name "Description") "Buzzer, polarized")
-			)
-			(pins
-				(pin
-					(num "1")
-					(name "+")
-					(type "passive")
-				)
-				(pin
-					(num "2")
-					(name "-")
 					(type "passive")
 				)
 			)
@@ -3296,67 +3072,45 @@
 		)
 		(libpart
 			(lib "LED")
-			(part "WS2812B")
-			(description "RGB LED with integrated controller")
-			(docs "https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf")
+			(part "WS2812B-2020")
+			(description "RGB LED with integrated controller, 2.0 x 2.0 mm, 12 mA")
+			(docs "https://cdn-shop.adafruit.com/product-files/4684/4684_WS2812B-2020_V1.3_EN.pdf")
 			(footprints
-				(fp "LED*WS2812*PLCC*5.0x5.0mm*P3.2mm*")
+				(fp "LED*WS2812*-2020_PLCC4*")
 			)
 			(fields
 				(field
 					(name "Reference") "D")
 				(field
-					(name "Value") "WS2812B")
+					(name "Value") "WS2812B-2020")
 				(field
-					(name "Footprint") "LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm")
+					(name "Footprint") "LED_SMD:LED_WS2812B-2020_PLCC4_2.0x2.0mm")
 				(field
-					(name "Datasheet") "https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf")
+					(name "Datasheet") "https://cdn-shop.adafruit.com/product-files/4684/4684_WS2812B-2020_V1.3_EN.pdf")
 				(field
-					(name "Description") "RGB LED with integrated controller")
+					(name "Description") "RGB LED with integrated controller, 2.0 x 2.0 mm, 12 mA")
 			)
 			(pins
 				(pin
 					(num "1")
-					(name "VDD")
-					(type "power_in")
-				)
-				(pin
-					(num "2")
 					(name "DOUT")
 					(type "output")
 				)
 				(pin
-					(num "3")
+					(num "2")
 					(name "VSS")
 					(type "power_in")
 				)
 				(pin
-					(num "4")
+					(num "3")
 					(name "DIN")
 					(type "input")
 				)
-			)
-		)
-		(libpart
-			(lib "Mechanical")
-			(part "MountingHole")
-			(description "Mounting Hole without connection")
-			(footprints
-				(fp "MountingHole*")
-			)
-			(fields
-				(field
-					(name "Reference") "H")
-				(field
-					(name "Value") "MountingHole")
-				(field
-					(name "Footprint")
+				(pin
+					(num "4")
+					(name "VDD")
+					(type "power_in")
 				)
-				(field
-					(name "Datasheet")
-				)
-				(field
-					(name "Description") "Mounting Hole without connection")
 			)
 		)
 		(libpart
@@ -3414,23 +3168,23 @@
 		)
 		(libpart
 			(lib "RF_Module")
-			(part "ESP32-S3-WROOM-1")
-			(description "RF Module, ESP32-S3 SoC, Wi-Fi 802.11b/g/n, Bluetooth, BLE, 32-bit, 3.3V, onboard antenna, SMD")
-			(docs "https://www.espressif.com/sites/default/files/documentation/esp32-s3-wroom-1_wroom-1u_datasheet_en.pdf")
+			(part "ESP32-S3-MINI-1")
+			(description "RF Module, ESP32-S3 SoC, Wi-Fi 802.11b/g/n, Bluetooth, BLE, 32-bit, 3.3V, SMD, onboard antenna")
+			(docs "https://www.espressif.com/sites/default/files/documentation/esp32-s3-mini-1_mini-1u_datasheet_en.pdf")
 			(footprints
-				(fp "ESP32?S3?WROOM?1*")
+				(fp "ESP32?S*MINI?1")
 			)
 			(fields
 				(field
 					(name "Reference") "U")
 				(field
-					(name "Value") "ESP32-S3-WROOM-1")
+					(name "Value") "ESP32-S3-MINI-1")
 				(field
-					(name "Footprint") "RF_Module:ESP32-S3-WROOM-1")
+					(name "Footprint") "RF_Module:ESP32-S2-MINI-1")
 				(field
-					(name "Datasheet") "https://www.espressif.com/sites/default/files/documentation/esp32-s3-wroom-1_wroom-1u_datasheet_en.pdf")
+					(name "Datasheet") "https://www.espressif.com/sites/default/files/documentation/esp32-s3-mini-1_mini-1u_datasheet_en.pdf")
 				(field
-					(name "Description") "RF Module, ESP32-S3 SoC, Wi-Fi 802.11b/g/n, Bluetooth, BLE, 32-bit, 3.3V, onboard antenna, SMD")
+					(name "Description") "RF Module, ESP32-S3 SoC, Wi-Fi 802.11b/g/n, Bluetooth, BLE, 32-bit, 3.3V, SMD, onboard antenna")
 			)
 			(pins
 				(pin
@@ -3440,52 +3194,52 @@
 				)
 				(pin
 					(num "2")
+					(name "GND")
+					(type "passive")
+				)
+				(pin
+					(num "3")
 					(name "3V3")
 					(type "power_in")
 				)
 				(pin
-					(num "3")
-					(name "EN")
-					(type "input")
-				)
-				(pin
 					(num "4")
-					(name "IO4")
+					(name "IO0")
 					(type "bidirectional")
 				)
 				(pin
 					(num "5")
-					(name "IO5")
+					(name "IO1")
 					(type "bidirectional")
 				)
 				(pin
 					(num "6")
-					(name "IO6")
+					(name "IO2")
 					(type "bidirectional")
 				)
 				(pin
 					(num "7")
-					(name "IO7")
+					(name "IO3")
 					(type "bidirectional")
 				)
 				(pin
 					(num "8")
-					(name "IO15")
+					(name "IO4")
 					(type "bidirectional")
 				)
 				(pin
 					(num "9")
-					(name "IO16")
+					(name "IO5")
 					(type "bidirectional")
 				)
 				(pin
 					(num "10")
-					(name "IO17")
+					(name "IO6")
 					(type "bidirectional")
 				)
 				(pin
 					(num "11")
-					(name "IO18")
+					(name "IO7")
 					(type "bidirectional")
 				)
 				(pin
@@ -3495,146 +3249,266 @@
 				)
 				(pin
 					(num "13")
-					(name "USB_D-")
-					(type "bidirectional")
-				)
-				(pin
-					(num "14")
-					(name "USB_D+")
-					(type "bidirectional")
-				)
-				(pin
-					(num "15")
-					(name "IO3")
-					(type "bidirectional")
-				)
-				(pin
-					(num "16")
-					(name "IO46")
-					(type "bidirectional")
-				)
-				(pin
-					(num "17")
 					(name "IO9")
 					(type "bidirectional")
 				)
 				(pin
-					(num "18")
+					(num "14")
 					(name "IO10")
 					(type "bidirectional")
 				)
 				(pin
-					(num "19")
+					(num "15")
 					(name "IO11")
 					(type "bidirectional")
 				)
 				(pin
-					(num "20")
+					(num "16")
 					(name "IO12")
 					(type "bidirectional")
 				)
 				(pin
-					(num "21")
+					(num "17")
 					(name "IO13")
 					(type "bidirectional")
 				)
 				(pin
-					(num "22")
+					(num "18")
 					(name "IO14")
 					(type "bidirectional")
 				)
 				(pin
+					(num "19")
+					(name "IO15")
+					(type "bidirectional")
+				)
+				(pin
+					(num "20")
+					(name "IO16")
+					(type "bidirectional")
+				)
+				(pin
+					(num "21")
+					(name "IO17")
+					(type "bidirectional")
+				)
+				(pin
+					(num "22")
+					(name "IO18")
+					(type "bidirectional")
+				)
+				(pin
 					(num "23")
-					(name "IO21")
+					(name "USB_D-")
 					(type "bidirectional")
 				)
 				(pin
 					(num "24")
-					(name "IO47")
+					(name "USB_D+")
 					(type "bidirectional")
 				)
 				(pin
 					(num "25")
-					(name "IO48")
+					(name "IO21")
 					(type "bidirectional")
 				)
 				(pin
 					(num "26")
-					(name "IO45")
+					(name "IO26")
 					(type "bidirectional")
 				)
 				(pin
 					(num "27")
-					(name "IO0")
+					(name "IO47")
 					(type "bidirectional")
 				)
 				(pin
 					(num "28")
-					(name "IO35")
+					(name "IO33")
 					(type "bidirectional")
 				)
 				(pin
 					(num "29")
-					(name "IO36")
+					(name "IO34")
 					(type "bidirectional")
 				)
 				(pin
 					(num "30")
-					(name "IO37")
+					(name "IO48")
 					(type "bidirectional")
 				)
 				(pin
 					(num "31")
-					(name "IO38")
+					(name "IO35")
 					(type "bidirectional")
 				)
 				(pin
 					(num "32")
-					(name "IO39")
+					(name "IO36")
 					(type "bidirectional")
 				)
 				(pin
 					(num "33")
-					(name "IO40")
+					(name "IO37")
 					(type "bidirectional")
 				)
 				(pin
 					(num "34")
-					(name "IO41")
+					(name "IO38")
 					(type "bidirectional")
 				)
 				(pin
 					(num "35")
-					(name "IO42")
+					(name "IO39")
 					(type "bidirectional")
 				)
 				(pin
 					(num "36")
-					(name "RXD0")
+					(name "IO40")
 					(type "bidirectional")
 				)
 				(pin
 					(num "37")
-					(name "TXD0")
+					(name "IO41")
 					(type "bidirectional")
 				)
 				(pin
 					(num "38")
-					(name "IO2")
+					(name "IO42")
 					(type "bidirectional")
 				)
 				(pin
 					(num "39")
-					(name "IO1")
+					(name "TXD0")
 					(type "bidirectional")
 				)
 				(pin
 					(num "40")
+					(name "RXD0")
+					(type "bidirectional")
+				)
+				(pin
+					(num "41")
+					(name "IO45")
+					(type "bidirectional")
+				)
+				(pin
+					(num "42")
 					(name "GND")
 					(type "passive")
 				)
 				(pin
-					(num "41")
+					(num "43")
+					(name "GND")
+					(type "passive")
+				)
+				(pin
+					(num "44")
+					(name "IO46")
+					(type "bidirectional")
+				)
+				(pin
+					(num "45")
+					(name "EN")
+					(type "input")
+				)
+				(pin
+					(num "46")
+					(name "GND")
+					(type "passive")
+				)
+				(pin
+					(num "47")
+					(name "GND")
+					(type "passive")
+				)
+				(pin
+					(num "48")
+					(name "GND")
+					(type "passive")
+				)
+				(pin
+					(num "49")
+					(name "GND")
+					(type "passive")
+				)
+				(pin
+					(num "50")
+					(name "GND")
+					(type "passive")
+				)
+				(pin
+					(num "51")
+					(name "GND")
+					(type "passive")
+				)
+				(pin
+					(num "52")
+					(name "GND")
+					(type "passive")
+				)
+				(pin
+					(num "53")
+					(name "GND")
+					(type "passive")
+				)
+				(pin
+					(num "54")
+					(name "GND")
+					(type "passive")
+				)
+				(pin
+					(num "55")
+					(name "GND")
+					(type "passive")
+				)
+				(pin
+					(num "56")
+					(name "GND")
+					(type "passive")
+				)
+				(pin
+					(num "57")
+					(name "GND")
+					(type "passive")
+				)
+				(pin
+					(num "58")
+					(name "GND")
+					(type "passive")
+				)
+				(pin
+					(num "59")
+					(name "GND")
+					(type "passive")
+				)
+				(pin
+					(num "60")
+					(name "GND")
+					(type "passive")
+				)
+				(pin
+					(num "61")
+					(name "GND")
+					(type "passive")
+				)
+				(pin
+					(num "62")
+					(name "GND")
+					(type "passive")
+				)
+				(pin
+					(num "63")
+					(name "GND")
+					(type "passive")
+				)
+				(pin
+					(num "64")
+					(name "GND")
+					(type "passive")
+				)
+				(pin
+					(num "65")
 					(name "GND")
 					(type "passive")
 				)
@@ -3642,39 +3516,49 @@
 		)
 		(libpart
 			(lib "Regulator_Linear")
-			(part "AMS1117-3.3")
-			(description "1A Low Dropout regulator, positive, 3.3V fixed output, SOT-223")
-			(docs "http://www.advanced-monolithic.com/pdf/ds1117.pdf")
+			(part "AP2112K-3.3")
+			(description "600mA low dropout linear regulator, with enable pin, 3.8V-6V input voltage range, 3.3V fixed positive output, SOT-23-5")
+			(docs "https://www.diodes.com/assets/Datasheets/AP2112.pdf")
 			(footprints
-				(fp "SOT?223*TabPin2*")
+				(fp "SOT?23?5*")
 			)
 			(fields
 				(field
 					(name "Reference") "U")
 				(field
-					(name "Value") "AMS1117-3.3")
+					(name "Value") "AP2112K-3.3")
 				(field
-					(name "Footprint") "Package_TO_SOT_SMD:SOT-223-3_TabPin2")
+					(name "Footprint") "Package_TO_SOT_SMD:SOT-23-5")
 				(field
-					(name "Datasheet") "http://www.advanced-monolithic.com/pdf/ds1117.pdf")
+					(name "Datasheet") "https://www.diodes.com/assets/Datasheets/AP2112.pdf")
 				(field
-					(name "Description") "1A Low Dropout regulator, positive, 3.3V fixed output, SOT-223")
+					(name "Description") "600mA low dropout linear regulator, with enable pin, 3.8V-6V input voltage range, 3.3V fixed positive output, SOT-23-5")
 			)
 			(pins
 				(pin
 					(num "1")
-					(name "GND")
+					(name "VIN")
 					(type "power_in")
 				)
 				(pin
 					(num "2")
-					(name "VO")
-					(type "power_out")
+					(name "GND")
+					(type "power_in")
 				)
 				(pin
 					(num "3")
-					(name "VI")
-					(type "power_in")
+					(name "EN")
+					(type "input")
+				)
+				(pin
+					(num "4")
+					(name "NC")
+					(type "no_connect")
+				)
+				(pin
+					(num "5")
+					(name "VOUT")
+					(type "power_out")
 				)
 			)
 		)
@@ -3711,38 +3595,38 @@
 		)
 		(libpart
 			(lib "Transistor_BJT")
-			(part "S8050")
-			(description "0.7A Ic, 20V Vce, Low Voltage High Current NPN Transistor, TO-92")
-			(docs "http://www.unisonic.com.tw/datasheet/S8050.pdf")
+			(part "BC817")
+			(description "0.8A Ic, 45V Vce, NPN Transistor, SOT-23")
+			(docs "https://www.onsemi.com/pub/Collateral/BC818-D.pdf")
 			(footprints
-				(fp "TO?92*")
+				(fp "SOT?23*")
 			)
 			(fields
 				(field
 					(name "Reference") "Q")
 				(field
-					(name "Value") "S8050")
+					(name "Value") "BC817")
 				(field
-					(name "Footprint") "Package_TO_SOT_THT:TO-92_Inline")
+					(name "Footprint") "Package_TO_SOT_SMD:SOT-23")
 				(field
-					(name "Datasheet") "http://www.unisonic.com.tw/datasheet/S8050.pdf")
+					(name "Datasheet") "https://www.onsemi.com/pub/Collateral/BC818-D.pdf")
 				(field
-					(name "Description") "0.7A Ic, 20V Vce, Low Voltage High Current NPN Transistor, TO-92")
+					(name "Description") "0.8A Ic, 45V Vce, NPN Transistor, SOT-23")
 				(field
 					(name "Sim.Device") "NPN")
 				(field
-					(name "Sim.Pins") "1=E 2=B 3=C")
+					(name "Sim.Pins") "1=B 2=E 3=C")
 			)
 			(pins
 				(pin
 					(num "1")
-					(name "E")
-					(type "passive")
+					(name "B")
+					(type "input")
 				)
 				(pin
 					(num "2")
-					(name "B")
-					(type "input")
+					(name "E")
+					(type "passive")
 				)
 				(pin
 					(num "3")
@@ -3762,10 +3646,6 @@
 			(uri "/Users/milton/Applications/KiCad/KiCad.app/Contents/SharedSupport/symbols/Connector_Audio.kicad_sym")
 		)
 		(library
-			(logical "Connector_Generic")
-			(uri "/Users/milton/Applications/KiCad/KiCad.app/Contents/SharedSupport/symbols/Connector_Generic.kicad_sym")
-		)
-		(library
 			(logical "Device")
 			(uri "/Users/milton/Applications/KiCad/KiCad.app/Contents/SharedSupport/symbols/Device.kicad_sym")
 		)
@@ -3780,10 +3660,6 @@
 		(library
 			(logical "LED")
 			(uri "/Users/milton/Applications/KiCad/KiCad.app/Contents/SharedSupport/symbols/LED.kicad_sym")
-		)
-		(library
-			(logical "Mechanical")
-			(uri "/Users/milton/Applications/KiCad/KiCad.app/Contents/SharedSupport/symbols/Mechanical.kicad_sym")
 		)
 		(library
 			(logical "Power_Protection")
@@ -3843,21 +3719,9 @@
 			)
 			(node
 				(ref "D2")
-				(pin "1")
-				(pinfunction "VDD_1")
+				(pin "4")
+				(pinfunction "VDD_4")
 				(pintype "power_in")
-			)
-			(node
-				(ref "J4")
-				(pin "1")
-				(pinfunction "Pin_1_1")
-				(pintype "passive")
-			)
-			(node
-				(ref "J5")
-				(pin "1")
-				(pinfunction "Pin_1_1")
-				(pintype "passive")
 			)
 			(node
 				(ref "R3")
@@ -3875,15 +3739,21 @@
 				(pintype "passive")
 			)
 			(node
+				(ref "TP1")
+				(pin "1")
+				(pinfunction "1_1")
+				(pintype "passive")
+			)
+			(node
 				(ref "U1")
-				(pin "2")
-				(pinfunction "3V3_2")
+				(pin "3")
+				(pinfunction "3V3_3")
 				(pintype "power_in")
 			)
 			(node
 				(ref "U2")
-				(pin "2")
-				(pinfunction "VO_2")
+				(pin "5")
+				(pinfunction "VOUT_5")
 				(pintype "power_out")
 			)
 			(node
@@ -3898,20 +3768,8 @@
 			(name "+5V")
 			(class "Power")
 			(node
-				(ref "BZ1")
-				(pin "1")
-				(pinfunction "+_1")
-				(pintype "passive")
-			)
-			(node
 				(ref "C1")
 				(pin "1")
-				(pintype "passive")
-			)
-			(node
-				(ref "D3")
-				(pin "1")
-				(pinfunction "K_1")
 				(pintype "passive")
 			)
 			(node
@@ -3920,10 +3778,21 @@
 				(pintype "passive")
 			)
 			(node
+				(ref "R10")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U2")
+				(pin "1")
+				(pinfunction "VIN_1")
+				(pintype "power_in")
+			)
+			(node
 				(ref "U2")
 				(pin "3")
-				(pinfunction "VI_3")
-				(pintype "power_in")
+				(pinfunction "EN_3")
+				(pintype "input")
 			)
 		)
 		(net
@@ -3943,8 +3812,8 @@
 			)
 			(node
 				(ref "U1")
-				(pin "5")
-				(pinfunction "IO5_5")
+				(pin "9")
+				(pinfunction "IO5_9")
 				(pintype "bidirectional")
 			)
 		)
@@ -3959,8 +3828,8 @@
 			)
 			(node
 				(ref "U1")
-				(pin "6")
-				(pinfunction "IO6_6")
+				(pin "10")
+				(pinfunction "IO6_10")
 				(pintype "bidirectional")
 			)
 		)
@@ -3968,12 +3837,6 @@
 			(code "5")
 			(name "/BZ_N")
 			(class "Default")
-			(node
-				(ref "BZ1")
-				(pin "2")
-				(pinfunction "-_2")
-				(pintype "passive")
-			)
 			(node
 				(ref "D3")
 				(pin "2")
@@ -3986,9 +3849,37 @@
 				(pinfunction "C_3")
 				(pintype "passive")
 			)
+			(node
+				(ref "TP6")
+				(pin "1")
+				(pinfunction "1_1")
+				(pintype "passive")
+			)
 		)
 		(net
 			(code "6")
+			(name "/BZ_P")
+			(class "Default")
+			(node
+				(ref "D3")
+				(pin "1")
+				(pinfunction "K_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "R10")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "TP5")
+				(pin "1")
+				(pinfunction "1_1")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "7")
 			(name "/CC1")
 			(class "Default")
 			(node
@@ -4004,7 +3895,7 @@
 			)
 		)
 		(net
-			(code "7")
+			(code "8")
 			(name "/CC2")
 			(class "Default")
 			(node
@@ -4020,7 +3911,7 @@
 			)
 		)
 		(net
-			(code "8")
+			(code "9")
 			(name "/DMX_A")
 			(class "Default")
 			(node
@@ -4036,12 +3927,6 @@
 				(pintype "passive")
 			)
 			(node
-				(ref "J3")
-				(pin "3")
-				(pinfunction "Pin_3_3")
-				(pintype "passive")
-			)
-			(node
 				(ref "R6")
 				(pin "1")
 				(pintype "passive")
@@ -4054,7 +3939,7 @@
 			)
 		)
 		(net
-			(code "9")
+			(code "10")
 			(name "/DMX_B")
 			(class "Default")
 			(node
@@ -4070,12 +3955,6 @@
 				(pintype "passive")
 			)
 			(node
-				(ref "J3")
-				(pin "2")
-				(pinfunction "Pin_2_2")
-				(pintype "passive")
-			)
-			(node
 				(ref "R6")
 				(pin "2")
 				(pintype "passive")
@@ -4088,7 +3967,7 @@
 			)
 		)
 		(net
-			(code "10")
+			(code "11")
 			(name "/DMX_DE")
 			(class "Default")
 			(node
@@ -4098,8 +3977,8 @@
 			)
 			(node
 				(ref "U1")
-				(pin "9")
-				(pinfunction "IO16_9")
+				(pin "20")
+				(pinfunction "IO16_20")
 				(pintype "bidirectional")
 			)
 			(node
@@ -4116,13 +3995,13 @@
 			)
 		)
 		(net
-			(code "11")
+			(code "12")
 			(name "/DMX_RX")
 			(class "Default")
 			(node
 				(ref "U1")
-				(pin "11")
-				(pinfunction "IO18_11")
+				(pin "22")
+				(pinfunction "IO18_22")
 				(pintype "bidirectional")
 			)
 			(node
@@ -4133,13 +4012,13 @@
 			)
 		)
 		(net
-			(code "12")
+			(code "13")
 			(name "/DMX_TX")
 			(class "Default")
 			(node
 				(ref "U1")
-				(pin "10")
-				(pinfunction "IO17_10")
+				(pin "21")
+				(pinfunction "IO17_21")
 				(pintype "bidirectional")
 			)
 			(node
@@ -4150,7 +4029,7 @@
 			)
 		)
 		(net
-			(code "13")
+			(code "14")
 			(name "/EN")
 			(class "Default")
 			(node
@@ -4164,77 +4043,37 @@
 				(pintype "passive")
 			)
 			(node
-				(ref "SW1")
+				(ref "U1")
+				(pin "45")
+				(pinfunction "EN_45")
+				(pintype "input")
+			)
+		)
+		(net
+			(code "15")
+			(name "/EXP_SCL")
+			(class "Default")
+			(node
+				(ref "TP4")
 				(pin "1")
 				(pinfunction "1_1")
 				(pintype "passive")
 			)
 			(node
 				(ref "U1")
-				(pin "3")
-				(pinfunction "EN_3")
-				(pintype "input")
-			)
-		)
-		(net
-			(code "14")
-			(name "/EXP_IO10")
-			(class "Default")
-			(node
-				(ref "J4")
-				(pin "5")
-				(pinfunction "Pin_5_5")
-				(pintype "passive")
-			)
-			(node
-				(ref "U1")
-				(pin "18")
-				(pinfunction "IO10_18")
-				(pintype "bidirectional")
-			)
-		)
-		(net
-			(code "15")
-			(name "/EXP_IO11")
-			(class "Default")
-			(node
-				(ref "J4")
-				(pin "6")
-				(pinfunction "Pin_6_6")
-				(pintype "passive")
-			)
-			(node
-				(ref "U1")
-				(pin "19")
-				(pinfunction "IO11_19")
+				(pin "13")
+				(pinfunction "IO9_13")
 				(pintype "bidirectional")
 			)
 		)
 		(net
 			(code "16")
-			(name "/EXP_SCL")
-			(class "Default")
-			(node
-				(ref "J4")
-				(pin "4")
-				(pinfunction "Pin_4_4")
-				(pintype "passive")
-			)
-			(node
-				(ref "U1")
-				(pin "17")
-				(pinfunction "IO9_17")
-				(pintype "bidirectional")
-			)
-		)
-		(net
-			(code "17")
 			(name "/EXP_SDA")
 			(class "Default")
 			(node
-				(ref "J4")
-				(pin "3")
-				(pinfunction "Pin_3_3")
+				(ref "TP3")
+				(pin "1")
+				(pinfunction "1_1")
 				(pintype "passive")
 			)
 			(node
@@ -4245,7 +4084,7 @@
 			)
 		)
 		(net
-			(code "18")
+			(code "17")
 			(name "/IO0_BOOT")
 			(class "Default")
 			(node
@@ -4261,13 +4100,13 @@
 			)
 			(node
 				(ref "U1")
-				(pin "27")
-				(pinfunction "IO0_27")
+				(pin "4")
+				(pinfunction "IO0_4")
 				(pintype "bidirectional")
 			)
 		)
 		(net
-			(code "19")
+			(code "18")
 			(name "/LED_DATA")
 			(class "Default")
 			(node
@@ -4277,19 +4116,19 @@
 			)
 			(node
 				(ref "U1")
-				(pin "25")
-				(pinfunction "IO48_25")
+				(pin "30")
+				(pinfunction "IO48_30")
 				(pintype "bidirectional")
 			)
 		)
 		(net
-			(code "20")
+			(code "19")
 			(name "/LED_DATA_R")
 			(class "Default")
 			(node
 				(ref "D2")
-				(pin "4")
-				(pinfunction "DIN_4")
+				(pin "3")
+				(pinfunction "DIN_3")
 				(pintype "input")
 			)
 			(node
@@ -4299,13 +4138,13 @@
 			)
 		)
 		(net
-			(code "21")
+			(code "20")
 			(name "/Q1_B")
 			(class "Default")
 			(node
 				(ref "Q1")
-				(pin "2")
-				(pinfunction "B_2")
+				(pin "1")
+				(pinfunction "B_1")
 				(pintype "input")
 			)
 			(node
@@ -4315,41 +4154,7 @@
 			)
 		)
 		(net
-			(code "22")
-			(name "/RXD0")
-			(class "Default")
-			(node
-				(ref "J5")
-				(pin "4")
-				(pinfunction "Pin_4_4")
-				(pintype "passive")
-			)
-			(node
-				(ref "U1")
-				(pin "36")
-				(pinfunction "RXD0_36")
-				(pintype "bidirectional")
-			)
-		)
-		(net
-			(code "23")
-			(name "/TXD0")
-			(class "Default")
-			(node
-				(ref "J5")
-				(pin "3")
-				(pinfunction "Pin_3_3")
-				(pintype "passive")
-			)
-			(node
-				(ref "U1")
-				(pin "37")
-				(pinfunction "TXD0_37")
-				(pintype "bidirectional")
-			)
-		)
-		(net
-			(code "24")
+			(code "21")
 			(name "/USB_D+")
 			(class "Default")
 			(node
@@ -4366,8 +4171,8 @@
 			)
 			(node
 				(ref "U1")
-				(pin "14")
-				(pinfunction "USB_D+_14")
+				(pin "24")
+				(pinfunction "USB_D+_24")
 				(pintype "bidirectional")
 			)
 			(node
@@ -4384,7 +4189,7 @@
 			)
 		)
 		(net
-			(code "25")
+			(code "22")
 			(name "/USB_D-")
 			(class "Default")
 			(node
@@ -4401,8 +4206,8 @@
 			)
 			(node
 				(ref "U1")
-				(pin "13")
-				(pinfunction "USB_D-_13")
+				(pin "23")
+				(pinfunction "USB_D-_23")
 				(pintype "bidirectional")
 			)
 			(node
@@ -4419,7 +4224,7 @@
 			)
 		)
 		(net
-			(code "26")
+			(code "23")
 			(name "/VBUS")
 			(class "Default")
 			(node
@@ -4459,7 +4264,7 @@
 			)
 		)
 		(net
-			(code "27")
+			(code "24")
 			(name "GND")
 			(class "Power")
 			(node
@@ -4510,8 +4315,8 @@
 			)
 			(node
 				(ref "D2")
-				(pin "3")
-				(pinfunction "VSS_3")
+				(pin "2")
+				(pinfunction "VSS_2")
 				(pintype "power_in")
 			)
 			(node
@@ -4551,27 +4356,9 @@
 				(pintype "passive")
 			)
 			(node
-				(ref "J3")
-				(pin "1")
-				(pinfunction "Pin_1_1")
-				(pintype "passive")
-			)
-			(node
-				(ref "J4")
-				(pin "2")
-				(pinfunction "Pin_2_2")
-				(pintype "passive")
-			)
-			(node
-				(ref "J5")
-				(pin "2")
-				(pinfunction "Pin_2_2")
-				(pintype "passive")
-			)
-			(node
 				(ref "Q1")
-				(pin "1")
-				(pinfunction "E_1")
+				(pin "2")
+				(pinfunction "E_2")
 				(pintype "passive")
 			)
 			(node
@@ -4590,12 +4377,6 @@
 				(pintype "passive")
 			)
 			(node
-				(ref "SW1")
-				(pin "2")
-				(pinfunction "2_2")
-				(pintype "passive")
-			)
-			(node
 				(ref "SW2")
 				(pin "2")
 				(pinfunction "2_2")
@@ -4608,6 +4389,12 @@
 				(pintype "passive")
 			)
 			(node
+				(ref "TP2")
+				(pin "1")
+				(pinfunction "1_1")
+				(pintype "passive")
+			)
+			(node
 				(ref "U1")
 				(pin "1")
 				(pinfunction "GND_1")
@@ -4615,20 +4402,146 @@
 			)
 			(node
 				(ref "U1")
-				(pin "40")
-				(pinfunction "GND_40")
+				(pin "2")
+				(pinfunction "GND_2")
 				(pintype "passive")
 			)
 			(node
 				(ref "U1")
-				(pin "41")
-				(pinfunction "GND_41")
+				(pin "42")
+				(pinfunction "GND_42")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "43")
+				(pinfunction "GND_43")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "46")
+				(pinfunction "GND_46")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "47")
+				(pinfunction "GND_47")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "48")
+				(pinfunction "GND_48")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "49")
+				(pinfunction "GND_49")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "50")
+				(pinfunction "GND_50")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "51")
+				(pinfunction "GND_51")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "52")
+				(pinfunction "GND_52")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "53")
+				(pinfunction "GND_53")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "54")
+				(pinfunction "GND_54")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "55")
+				(pinfunction "GND_55")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "56")
+				(pinfunction "GND_56")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "57")
+				(pinfunction "GND_57")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "58")
+				(pinfunction "GND_58")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "59")
+				(pinfunction "GND_59")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "60")
+				(pinfunction "GND_60")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "61")
+				(pinfunction "GND_61")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "62")
+				(pinfunction "GND_62")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "63")
+				(pinfunction "GND_63")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "64")
+				(pinfunction "GND_64")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "65")
+				(pinfunction "GND_65")
 				(pintype "passive")
 			)
 			(node
 				(ref "U2")
-				(pin "1")
-				(pinfunction "GND_1")
+				(pin "2")
+				(pinfunction "GND_2")
 				(pintype "power_in")
 			)
 			(node
@@ -4645,18 +4558,18 @@
 			)
 		)
 		(net
-			(code "28")
-			(name "unconnected-(D2-DOUT-Pad2)")
+			(code "25")
+			(name "unconnected-(D2-DOUT-Pad1)")
 			(class "Default")
 			(node
 				(ref "D2")
-				(pin "2")
-				(pinfunction "DOUT_2")
+				(pin "1")
+				(pinfunction "DOUT_1")
 				(pintype "output+no_connect")
 			)
 		)
 		(net
-			(code "29")
+			(code "26")
 			(name "unconnected-(J1-SBU1-PadA8)")
 			(class "Default")
 			(node
@@ -4667,7 +4580,7 @@
 			)
 		)
 		(net
-			(code "30")
+			(code "27")
 			(name "unconnected-(J1-SBU2-PadB8)")
 			(class "Default")
 			(node
@@ -4678,7 +4591,7 @@
 			)
 		)
 		(net
-			(code "31")
+			(code "28")
 			(name "unconnected-(J2-P3-Pad4)")
 			(class "Default")
 			(node
@@ -4689,7 +4602,7 @@
 			)
 		)
 		(net
-			(code "32")
+			(code "29")
 			(name "unconnected-(J2-P5-Pad5)")
 			(class "Default")
 			(node
@@ -4700,7 +4613,7 @@
 			)
 		)
 		(net
-			(code "33")
+			(code "30")
 			(name "unconnected-(J2-PadG)")
 			(class "Default")
 			(node
@@ -4710,234 +4623,322 @@
 			)
 		)
 		(net
-			(code "34")
-			(name "unconnected-(U1-IO1-Pad39)")
+			(code "31")
+			(name "unconnected-(U1-IO1-Pad5)")
 			(class "Default")
 			(node
 				(ref "U1")
-				(pin "39")
-				(pinfunction "IO1_39")
+				(pin "5")
+				(pinfunction "IO1_5")
+				(pintype "bidirectional+no_connect")
+			)
+		)
+		(net
+			(code "32")
+			(name "unconnected-(U1-IO2-Pad6)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "6")
+				(pinfunction "IO2_6")
+				(pintype "bidirectional+no_connect")
+			)
+		)
+		(net
+			(code "33")
+			(name "unconnected-(U1-IO3-Pad7)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "7")
+				(pinfunction "IO3_7")
+				(pintype "bidirectional+no_connect")
+			)
+		)
+		(net
+			(code "34")
+			(name "unconnected-(U1-IO4-Pad8)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "8")
+				(pinfunction "IO4_8")
 				(pintype "bidirectional+no_connect")
 			)
 		)
 		(net
 			(code "35")
-			(name "unconnected-(U1-IO2-Pad38)")
+			(name "unconnected-(U1-IO7-Pad11)")
 			(class "Default")
 			(node
 				(ref "U1")
-				(pin "38")
-				(pinfunction "IO2_38")
+				(pin "11")
+				(pinfunction "IO7_11")
 				(pintype "bidirectional+no_connect")
 			)
 		)
 		(net
 			(code "36")
-			(name "unconnected-(U1-IO3-Pad15)")
+			(name "unconnected-(U1-IO10-Pad14)")
 			(class "Default")
 			(node
 				(ref "U1")
-				(pin "15")
-				(pinfunction "IO3_15")
+				(pin "14")
+				(pinfunction "IO10_14")
 				(pintype "bidirectional+no_connect")
 			)
 		)
 		(net
 			(code "37")
-			(name "unconnected-(U1-IO4-Pad4)")
+			(name "unconnected-(U1-IO11-Pad15)")
 			(class "Default")
 			(node
 				(ref "U1")
-				(pin "4")
-				(pinfunction "IO4_4")
+				(pin "15")
+				(pinfunction "IO11_15")
 				(pintype "bidirectional+no_connect")
 			)
 		)
 		(net
 			(code "38")
-			(name "unconnected-(U1-IO7-Pad7)")
+			(name "unconnected-(U1-IO12-Pad16)")
 			(class "Default")
 			(node
 				(ref "U1")
-				(pin "7")
-				(pinfunction "IO7_7")
+				(pin "16")
+				(pinfunction "IO12_16")
 				(pintype "bidirectional+no_connect")
 			)
 		)
 		(net
 			(code "39")
-			(name "unconnected-(U1-IO12-Pad20)")
+			(name "unconnected-(U1-IO13-Pad17)")
 			(class "Default")
 			(node
 				(ref "U1")
-				(pin "20")
-				(pinfunction "IO12_20")
+				(pin "17")
+				(pinfunction "IO13_17")
 				(pintype "bidirectional+no_connect")
 			)
 		)
 		(net
 			(code "40")
-			(name "unconnected-(U1-IO13-Pad21)")
+			(name "unconnected-(U1-IO14-Pad18)")
 			(class "Default")
 			(node
 				(ref "U1")
-				(pin "21")
-				(pinfunction "IO13_21")
+				(pin "18")
+				(pinfunction "IO14_18")
 				(pintype "bidirectional+no_connect")
 			)
 		)
 		(net
 			(code "41")
-			(name "unconnected-(U1-IO14-Pad22)")
+			(name "unconnected-(U1-IO15-Pad19)")
 			(class "Default")
 			(node
 				(ref "U1")
-				(pin "22")
-				(pinfunction "IO14_22")
+				(pin "19")
+				(pinfunction "IO15_19")
 				(pintype "bidirectional+no_connect")
 			)
 		)
 		(net
 			(code "42")
-			(name "unconnected-(U1-IO15-Pad8)")
+			(name "unconnected-(U1-IO21-Pad25)")
 			(class "Default")
 			(node
 				(ref "U1")
-				(pin "8")
-				(pinfunction "IO15_8")
+				(pin "25")
+				(pinfunction "IO21_25")
 				(pintype "bidirectional+no_connect")
 			)
 		)
 		(net
 			(code "43")
-			(name "unconnected-(U1-IO21-Pad23)")
+			(name "unconnected-(U1-IO26-Pad26)")
 			(class "Default")
 			(node
 				(ref "U1")
-				(pin "23")
-				(pinfunction "IO21_23")
+				(pin "26")
+				(pinfunction "IO26_26")
 				(pintype "bidirectional+no_connect")
 			)
 		)
 		(net
 			(code "44")
-			(name "unconnected-(U1-IO35-Pad28)")
+			(name "unconnected-(U1-IO33-Pad28)")
 			(class "Default")
 			(node
 				(ref "U1")
 				(pin "28")
-				(pinfunction "IO35_28")
+				(pinfunction "IO33_28")
 				(pintype "bidirectional+no_connect")
 			)
 		)
 		(net
 			(code "45")
-			(name "unconnected-(U1-IO36-Pad29)")
+			(name "unconnected-(U1-IO34-Pad29)")
 			(class "Default")
 			(node
 				(ref "U1")
 				(pin "29")
-				(pinfunction "IO36_29")
+				(pinfunction "IO34_29")
 				(pintype "bidirectional+no_connect")
 			)
 		)
 		(net
 			(code "46")
-			(name "unconnected-(U1-IO37-Pad30)")
+			(name "unconnected-(U1-IO35-Pad31)")
 			(class "Default")
 			(node
 				(ref "U1")
-				(pin "30")
-				(pinfunction "IO37_30")
+				(pin "31")
+				(pinfunction "IO35_31")
 				(pintype "bidirectional+no_connect")
 			)
 		)
 		(net
 			(code "47")
-			(name "unconnected-(U1-IO38-Pad31)")
+			(name "unconnected-(U1-IO36-Pad32)")
 			(class "Default")
 			(node
 				(ref "U1")
-				(pin "31")
-				(pinfunction "IO38_31")
+				(pin "32")
+				(pinfunction "IO36_32")
 				(pintype "bidirectional+no_connect")
 			)
 		)
 		(net
 			(code "48")
-			(name "unconnected-(U1-IO39-Pad32)")
+			(name "unconnected-(U1-IO37-Pad33)")
 			(class "Default")
 			(node
 				(ref "U1")
-				(pin "32")
-				(pinfunction "IO39_32")
+				(pin "33")
+				(pinfunction "IO37_33")
 				(pintype "bidirectional+no_connect")
 			)
 		)
 		(net
 			(code "49")
-			(name "unconnected-(U1-IO40-Pad33)")
+			(name "unconnected-(U1-IO38-Pad34)")
 			(class "Default")
 			(node
 				(ref "U1")
-				(pin "33")
-				(pinfunction "IO40_33")
+				(pin "34")
+				(pinfunction "IO38_34")
 				(pintype "bidirectional+no_connect")
 			)
 		)
 		(net
 			(code "50")
-			(name "unconnected-(U1-IO41-Pad34)")
+			(name "unconnected-(U1-IO39-Pad35)")
 			(class "Default")
 			(node
 				(ref "U1")
-				(pin "34")
-				(pinfunction "IO41_34")
+				(pin "35")
+				(pinfunction "IO39_35")
 				(pintype "bidirectional+no_connect")
 			)
 		)
 		(net
 			(code "51")
-			(name "unconnected-(U1-IO42-Pad35)")
+			(name "unconnected-(U1-IO40-Pad36)")
 			(class "Default")
 			(node
 				(ref "U1")
-				(pin "35")
-				(pinfunction "IO42_35")
+				(pin "36")
+				(pinfunction "IO40_36")
 				(pintype "bidirectional+no_connect")
 			)
 		)
 		(net
 			(code "52")
-			(name "unconnected-(U1-IO45-Pad26)")
+			(name "unconnected-(U1-IO41-Pad37)")
 			(class "Default")
 			(node
 				(ref "U1")
-				(pin "26")
-				(pinfunction "IO45_26")
+				(pin "37")
+				(pinfunction "IO41_37")
 				(pintype "bidirectional+no_connect")
 			)
 		)
 		(net
 			(code "53")
-			(name "unconnected-(U1-IO46-Pad16)")
+			(name "unconnected-(U1-IO42-Pad38)")
 			(class "Default")
 			(node
 				(ref "U1")
-				(pin "16")
-				(pinfunction "IO46_16")
+				(pin "38")
+				(pinfunction "IO42_38")
 				(pintype "bidirectional+no_connect")
 			)
 		)
 		(net
 			(code "54")
-			(name "unconnected-(U1-IO47-Pad24)")
+			(name "unconnected-(U1-IO45-Pad41)")
 			(class "Default")
 			(node
 				(ref "U1")
-				(pin "24")
-				(pinfunction "IO47_24")
+				(pin "41")
+				(pinfunction "IO45_41")
 				(pintype "bidirectional+no_connect")
+			)
+		)
+		(net
+			(code "55")
+			(name "unconnected-(U1-IO46-Pad44)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "44")
+				(pinfunction "IO46_44")
+				(pintype "bidirectional+no_connect")
+			)
+		)
+		(net
+			(code "56")
+			(name "unconnected-(U1-IO47-Pad27)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "27")
+				(pinfunction "IO47_27")
+				(pintype "bidirectional+no_connect")
+			)
+		)
+		(net
+			(code "57")
+			(name "unconnected-(U1-RXD0-Pad40)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "40")
+				(pinfunction "RXD0_40")
+				(pintype "bidirectional+no_connect")
+			)
+		)
+		(net
+			(code "58")
+			(name "unconnected-(U1-TXD0-Pad39)")
+			(class "Default")
+			(node
+				(ref "U1")
+				(pin "39")
+				(pinfunction "TXD0_39")
+				(pintype "bidirectional+no_connect")
+			)
+		)
+		(net
+			(code "59")
+			(name "unconnected-(U2-NC-Pad4)")
+			(class "Default")
+			(node
+				(ref "U2")
+				(pin "4")
+				(pinfunction "NC_4")
+				(pintype "no_connect")
 			)
 		)
 	)

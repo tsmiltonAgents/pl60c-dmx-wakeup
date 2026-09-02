@@ -35,8 +35,8 @@ def build():
     d.add(Part('U4', 'Power_Protection:USBLC6-2SC6', 'USBLC6-2SC6', SOT23_6,
                {'1': 'USB_D+', '6': 'USB_D+', '3': 'USB_D-', '4': 'USB_D-', '2': 'GND', '5': 'VBUS'},
                lcsc='C7519', mpn='USBLC6-2SC6', desc='USB ESD protection array', sch_pos=(100, 100), pcb_pos=(6.4, 27.0), pcb_rot=0, **B))
-    d.add(Part('F1', 'Device:Polyfuse', '0.75A PTC', 'Fuse:Fuse_0805_2012Metric', {'1': 'VBUS', '2': '+5V'},
-               lcsc='C7472571', mpn='0805L075/6AR', desc='PTC resettable fuse 0805, 0.75 A hold, 6 V', sch_pos=(70, 40), pcb_pos=(13.6, 18.5), **B))
+    d.add(Part('F1', 'Device:Polyfuse', '1A PTC', 'Fuse:Fuse_1206_3216Metric', {'1': 'VBUS', '2': '+5V'},
+               lcsc='C5358568', mpn='BSMD1206-100-30V', desc='PTC resettable fuse 1206, 1 A hold / 1.8 A trip', sch_pos=(70, 40), pcb_pos=(13.6, 18.5), **B))
     d.add(Part('C1', 'Device:C', '10uF', C0603, {'1': '+5V', '2': 'GND'}, lcsc='C19702', desc='10uF 10V X5R 0603', sch_pos=(82, 50), pcb_pos=(10.6, 18.4), pcb_rot=90, **B))
     d.add(Part('U2', 'Regulator_Linear:AP2112K-3.3', 'AP2112K-3.3', SOT23_5,
                {'1': '+5V', '2': 'GND', '3': '+5V', '4': None, '5': '+3V3'}, lcsc='C51118', mpn='AP2112K-3.3TRG1', desc='LDO 3.3V 600mA SOT-23-5',
@@ -58,8 +58,8 @@ def build():
     for n in [1, 2, 42, 43] + list(range(46, 66)):
         U1.pins[str(n)] = 'GND'
     d.add(U1)
-    d.add(Part('C4', 'Device:C', '10uF', C0603, {'1': '+3V3', '2': 'GND'}, lcsc='C19702', desc='10uF 10V X5R 0603', sch_pos=(150, 40), pcb_pos=(12.5, 3.0), **B))
-    d.add(Part('C5', 'Device:C', '100nF', C0402, {'1': '+3V3', '2': 'GND'}, lcsc='C1525', desc='100nF 16V X7R 0402', sch_pos=(158, 40), pcb_pos=(3.5, 8.0), **B))
+    d.add(Part('C4', 'Device:C', '10uF', C0603, {'1': '+3V3', '2': 'GND'}, lcsc='C19702', desc='10uF 10V X5R 0603', sch_pos=(150, 40), pcb_pos=(3.0, 15.0), pcb_rot=90, **B))
+    d.add(Part('C5', 'Device:C', '100nF', C0402, {'1': '+3V3', '2': 'GND'}, lcsc='C1525', desc='100nF 16V X7R 0402', sch_pos=(158, 40), pcb_pos=(1.5, 13.0), pcb_rot=90, **B))
     d.add(Part('R3', 'Device:R', '10k', R0402, {'1': '+3V3', '2': 'EN'}, lcsc='C25744', desc='10k 0402', sch_pos=(150, 65), pcb_pos=(3.5, 10.0), **B))
     d.add(Part('C6', 'Device:C', '1uF', C0402, {'1': 'EN', '2': 'GND'}, lcsc='C52923', desc='1uF 25V X5R 0402 (EN reset delay)', sch_pos=(158, 78), pcb_pos=(3.5, 12.0), **B))
     d.add(Part('R4', 'Device:R', '10k', R0402, {'1': '+3V3', '2': 'IO0_BOOT'}, lcsc='C25744', desc='10k 0402', sch_pos=(150, 110), pcb_pos=(11.3, 8.0), **B))
@@ -71,7 +71,7 @@ def build():
                {'1': 'DMX_RX', '2': 'DMX_DE', '3': 'DMX_DE', '4': 'DMX_TX', '5': 'GND', '6': 'DMX_A', '7': 'DMX_B', '8': '+3V3'},
                lcsc='C8963', mpn='SP3485EN-L/TR', desc='RS-485 transceiver 3.3 V half-duplex SOIC-8', sch_pos=(300, 60), pcb_pos=(15.2, 9.8), pcb_rot=90, **B))
     d.add(Part('C7', 'Device:C', '100nF', C0402, {'1': '+3V3', '2': 'GND'}, lcsc='C1525', desc='100nF 16V X7R 0402', sch_pos=(280, 45), pcb_pos=(14.5, 5.0), **B))
-    d.add(Part('R7', 'Device:R', '10k', R0402, {'1': 'DMX_DE', '2': 'GND'}, lcsc='C25744', desc='10k 0402 (DE pull-down)', sch_pos=(282, 90), pcb_pos=(14.7, 14.5), **B))
+    d.add(Part('R7', 'Device:R', '10k', R0402, {'1': 'DMX_DE', '2': 'GND'}, lcsc='C25744', desc='10k 0402 (DE pull-down)', sch_pos=(282, 90), pcb_pos=(16.3, 14.8), **B))
     d.add(Part('D1', 'Diode:SM712_SOT23', 'PSM712', SOT23, {'1': 'DMX_A', '2': 'DMX_B', '3': 'GND'},
                lcsc='C32677', mpn='PSM712-LF-T7', desc='RS-485 TVS array +12/-7 V SOT-23', sch_pos=(330, 90), pcb_pos=(17.9, 19.4), pcb_rot=90, **B))
     d.add(Part('R6', 'Device:R', '120R', R0402, {'1': 'DMX_A', '2': 'DMX_B'}, lcsc='C25079', desc='120R termination - DNP', sch_pos=(345, 65), pcb_pos=(18.6, 14.4), pcb_rot=0, dnp=True, **B))
@@ -85,15 +85,16 @@ def build():
                {'4': '+3V3', '1': None, '2': 'GND', '3': 'LED_DATA_R'},
                lcsc='C52917434', mpn='WS2812B-2020-V6', desc='Addressable RGB LED 2x2 mm (powered from 3V3 as on Espressif devkits)', sch_pos=(160, 195), pcb_pos=(17.1, 4.0), pcb_rot=90))
     d.add(Part('R8', 'Device:R', '330R', R0402, {'1': 'LED_DATA', '2': 'LED_DATA_R'}, lcsc='C25104', desc='330R 0402 series (WS2812 data)', sch_pos=(145, 215), pcb_pos=(11.3, 12.0), **B))
-    d.add(Part('C8', 'Device:C', '100nF', C0402, {'1': '+3V3', '2': 'GND'}, lcsc='C1525', desc='100nF 16V X7R 0402', sch_pos=(180, 195), pcb_pos=(9.5, 13.5), **B))
+    d.add(Part('C8', 'Device:C', '100nF', C0402, {'1': '+3V3', '2': 'GND'}, lcsc='C1525', desc='100nF 16V X7R 0402', sch_pos=(180, 195), pcb_pos=(12.5, 3.0), **B))
     d.add(Part('R5', 'Device:R', '10k', R0402, {'1': '+3V3', '2': 'BTN_USER'}, lcsc='C25744', desc='10k 0402', sch_pos=(200, 195), pcb_pos=(11.3, 10.0), **B))
     d.add(Part('SW3', 'Switch:SW_Push', 'USER', SW_TACT, {'1': 'BTN_USER', '2': 'GND'}, lcsc='C720477', mpn='TS-1088-AR02016', desc='Tactile switch 3.9x3x2 mm SMD (snooze / manual on)', sch_pos=(200, 215), pcb_pos=(15.3, 26.0)))
-    d.add(Part('R9', 'Device:R', '1k', R0402, {'1': 'BUZZER', '2': 'Q1_B'}, lcsc='C11702', desc='1k 0402', sch_pos=(222, 250), pcb_pos=(6.0, 2.5), **B))
-    d.add(Part('Q1', 'Transistor_BJT:S8050', 'S8050', SOT23, {'2': 'Q1_B', '1': 'GND', '3': 'BZ_N'},
+    d.add(Part('R9', 'Device:R', '470R', R0402, {'1': 'BUZZER', '2': 'Q1_B'}, lcsc='C25117', desc='470R 0402 base resistor', sch_pos=(222, 250), pcb_pos=(6.0, 2.5), **B))
+    d.add(Part('Q1', 'Transistor_BJT:BC817', 'S8050', SOT23, {'1': 'Q1_B', '2': 'GND', '3': 'BZ_N'},   # SOT-23 J3Y: 1=B 2=E 3=C (datasheet)
                lcsc='C2146', mpn='S8050', desc='NPN 0.5A SOT-23 buzzer driver', sch_pos=(240, 250), pcb_pos=(3.0, 4.0), **B))
-    d.add(Part('D3', 'Device:D_Schottky', 'B5819W', 'Diode_SMD:D_SOD-123', {'1': '+5V', '2': 'BZ_N'}, lcsc='C8598', mpn='B5819W SL', desc='Schottky flyback diode SOD-123', sch_pos=(232, 225), pcb_pos=(8.5, 4.5), **B))
-    d.add(Part('TP5', 'Connector:TestPoint', 'BZ+', TP, {'1': '+5V'}, desc='External buzzer pad (+5V)', sch_pos=(245, 200), pcb_pos=(6.0, 15.0), **B))
-    d.add(Part('TP6', 'Connector:TestPoint', 'BZ-', TP, {'1': 'BZ_N'}, desc='External buzzer pad (driver collector)', sch_pos=(255, 200), pcb_pos=(3.0, 15.0), **B))
+    d.add(Part('D3', 'Device:D_Schottky', 'B5819W', 'Diode_SMD:D_SOD-123', {'1': 'BZ_P', '2': 'BZ_N'}, lcsc='C8598', mpn='B5819W SL', desc='Schottky flyback diode SOD-123', sch_pos=(232, 225), pcb_pos=(8.5, 4.5), **B))
+    d.add(Part('R10', 'Device:R', '10R', 'Resistor_SMD:R_1206_3216Metric', {'1': '+5V', '2': 'BZ_P'}, lcsc='C17903', desc='10R 1206 250mW buzzer series resistor', sch_pos=(225, 212), pcb_pos=(12.9, 15.4), **B))
+    d.add(Part('TP5', 'Connector:TestPoint', 'BZ+', TP, {'1': 'BZ_P'}, desc='External buzzer pad (+5V via 10R)', sch_pos=(245, 200), pcb_pos=(6.5, 14.9), **B))
+    d.add(Part('TP6', 'Connector:TestPoint', 'BZ-', TP, {'1': 'BZ_N'}, desc='External buzzer pad (driver collector)', sch_pos=(255, 200), pcb_pos=(9.2, 14.9), **B))
     # ------------------------------------------------ test pads (I2C expansion, UART0)
     d.texts += [('Test pads: I2C expansion (RTC / sensor)', 272, 165, 2.5, True)]
     d.boxes += [(270, 158, 412, 230)]
@@ -109,6 +110,6 @@ def build():
         ('DMX mini rev A', 32.0, 14.5, 0.8, 0, 'B.SilkS', True),
         ('DMX OUT', 25.5, 3.0, 0.8, 0, 'B.SilkS', True),
         ('3V3 GND SDA SCL', 32.5, 23.5, 0.8, 0, 'B.SilkS', True),
-        ('BZ- BZ+', 4.5, 16.9, 0.8, 0, 'B.SilkS', True),
+        ('BZ+ BZ-', 7.0, 16.8, 0.8, 0, 'B.SilkS', True),
     ]
     return d
