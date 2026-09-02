@@ -10,7 +10,7 @@ C8,100nF,,C1525,Capacitor_SMD:C_0402_1005Metric,,100nF 16V X7R 0402
 D1,PSM712,PSM712-LF-T7,C32677,Package_TO_SOT_SMD:SOT-23,,RS-485 TVS array +12/-7 V SOT-23
 D2,WS2812B-2020,WS2812B-2020-V6,C52917434,LED_SMD:LED_WS2812B-2020_PLCC4_2.0x2.0mm,,Addressable RGB LED 2x2 mm (powered from 3V3 as on Espressif devkits)
 D3,B5819W,B5819W SL,C8598,Diode_SMD:D_SOD-123,,Schottky flyback diode SOD-123
-F1,0.75A PTC,0805L075/6AR,C7472571,Fuse:Fuse_0805_2012Metric,,"PTC resettable fuse 0805, 0.75 A hold, 6 V"
+F1,1A PTC,BSMD1206-100-30V,C5358568,Fuse:Fuse_1206_3216Metric,,"PTC resettable fuse 1206, 1 A hold / 1.8 A trip"
 J1,USB-C 16P,TYPE-C-31-M-12,C165948,Connector_USB:USB_C_Receptacle_HRO_TYPE-C-31-M-12,,"USB-C receptacle 16P, USB 2.0 (HRO TYPE-C-31-M-12)"
 J2,XLR-5 female (DMX OUT),NC5FAH,C368501,Connector_Audio:Jack_XLR_Neutrik_NC5FAH_Horizontal,,"Neutrik XLR 5-pin female, horizontal PCB mount (DMX OUT)"
 Q1,S8050,S8050,C2146,Package_TO_SOT_SMD:SOT-23,,NPN 0.5A SOT-23 buzzer driver
@@ -22,14 +22,15 @@ R5,10k,,C25744,Resistor_SMD:R_0402_1005Metric,,10k 0402
 R6,120R,,C25079,Resistor_SMD:R_0402_1005Metric,yes,120R termination - DNP
 R7,10k,,C25744,Resistor_SMD:R_0402_1005Metric,,10k 0402 (DE pull-down)
 R8,330R,,C25104,Resistor_SMD:R_0402_1005Metric,,330R 0402 series (WS2812 data)
-R9,1k,,C11702,Resistor_SMD:R_0402_1005Metric,,1k 0402
+R9,470R,,C25117,Resistor_SMD:R_0402_1005Metric,,470R 0402 base resistor
+R10,10R,,C17903,Resistor_SMD:R_1206_3216Metric,,10R 1206 250mW buzzer series resistor
 SW2,BOOT,TS-1088-AR02016,C720477,Button_Switch_SMD:SW_SPST_TS-1088-xR020,,Tactile switch 3.9x3x2 mm SMD
 SW3,USER,TS-1088-AR02016,C720477,Button_Switch_SMD:SW_SPST_TS-1088-xR020,,Tactile switch 3.9x3x2 mm SMD (snooze / manual on)
 TP1,+3V3,,,TestPoint:TestPoint_Pad_1.5x1.5mm,,Test pad 1.5 mm
 TP2,GND,,,TestPoint:TestPoint_Pad_1.5x1.5mm,,Test pad 1.5 mm
 TP3,EXP_SDA,,,TestPoint:TestPoint_Pad_1.5x1.5mm,,Test pad 1.5 mm
 TP4,EXP_SCL,,,TestPoint:TestPoint_Pad_1.5x1.5mm,,Test pad 1.5 mm
-TP5,BZ+,,,TestPoint:TestPoint_Pad_1.5x1.5mm,,External buzzer pad (+5V)
+TP5,BZ+,,,TestPoint:TestPoint_Pad_1.5x1.5mm,,External buzzer pad (+5V via 10R)
 TP6,BZ-,,,TestPoint:TestPoint_Pad_1.5x1.5mm,,External buzzer pad (driver collector)
 U1,ESP32-S3-MINI-1-N8,ESP32-S3-MINI-1-N8,C2913206,RF_Module:ESP32-S2-MINI-1,,"ESP32-S3 module 15.4x20.5 mm, 8 MB flash, PCB antenna (same land pattern as ESP32-S2-MINI-1)"
 U2,AP2112K-3.3,AP2112K-3.3TRG1,C51118,Package_TO_SOT_SMD:SOT-23-5,,LDO 3.3V 600mA SOT-23-5

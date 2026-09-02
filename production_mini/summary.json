@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-02T14:26:34",
+ "generated": "2026-09-02T14:53:10",
  "gerber_files": [
   "pl60c_dmx_mini-B_Cu.gbl",
   "pl60c_dmx_mini-B_Mask.gbs",
@@ -18,8 +18,8 @@
   "pl60c_dmx_mini-PTH.drl",
   "pl60c_dmx_mini-job.gbrjob"
  ],
- "bom_lines": 20,
- "placed_parts": 29,
+ "bom_lines": 21,
+ "placed_parts": 30,
  "notes": [
   "R6 is DNP (not placed): 120R termination - DNP"
  ]
