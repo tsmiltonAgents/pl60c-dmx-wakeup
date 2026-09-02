@@ -105,6 +105,11 @@ def build(out_path):
             net = p.pins.get(pad.GetNumber())
             if net:
                 pad.SetNet(nets[net])
+            # JLCPCB: keep drills >= 0.3 mm (module thermal vias in the library are 0.2 mm)
+            if pad.GetDrillSize().x and pad.GetDrillSize().x < FromMM(0.3):
+                pad.SetDrillSize(VECTOR2I(FromMM(0.3), FromMM(0.3)))
+                if pad.GetSize().x < FromMM(0.6):
+                    pad.SetSize(VECTOR2I(FromMM(0.6), FromMM(0.6)))
         board.Add(fp)
         p._fp = fp
     # ---------------- outline ----------------
@@ -120,7 +125,7 @@ def build(out_path):
         add_zone(board, pcbnew.F_Cu, None, [(x1, y1), (x2, y1), (x2, y2), (x1, y2)], 'keepout', keepout=True)
     # ---------------- silkscreen ----------------
     for (txt, x, y, size, rot, layer, mirror) in d.silk:
-        layer = board.GetLayerID(layer) if isinstance(layer, str) else layer
+        layer = {'F.SilkS': pcbnew.F_SilkS, 'B.SilkS': pcbnew.B_SilkS, 'F.Fab': pcbnew.F_Fab}[layer] if isinstance(layer, str) else layer
         add_text(board, txt, x, y, layer=layer, size=size, thick=max(0.12, size * 0.15), rot=rot, mirror=mirror)
     pcbnew.SaveBoard(out_path, board)
     return board, d

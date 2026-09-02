@@ -71,7 +71,7 @@ def build():
                 'A5': 'CC1', 'B5': 'CC2', 'A6': 'USB_D+', 'B6': 'USB_D+', 'A7': 'USB_D-', 'B7': 'USB_D-',
                 'A8': None, 'B8': None},
                lcsc='C165948', mpn='TYPE-C-31-M-12', desc='USB-C receptacle 16P, USB 2.0 (HRO TYPE-C-31-M-12)',
-               sch_pos=(45, 65), pcb_pos=(4.3, 31), pcb_rot=90))
+               sch_pos=(45, 65), pcb_pos=(3.1, 31), pcb_rot=270))
     d.add(Part('R1', 'Device:R', '5.1k', R0603, {'1': 'CC1', '2': 'GND'}, lcsc='C25905', desc='5.1k 0603 1% (USB-C CC pull-down)',
                sch_pos=(75, 80), pcb_pos=(12, 26.5), pcb_rot=90))
     d.add(Part('R2', 'Device:R', '5.1k', R0603, {'1': 'CC2', '2': 'GND'}, lcsc='C25905', desc='5.1k 0603 1% (USB-C CC pull-down)',
@@ -108,11 +108,11 @@ def build():
     d.add(U1)
     d.add(Part('C4', 'Device:C', '10uF', C0805, {'1': '+3V3', '2': 'GND'}, lcsc='C15850', desc='10uF 25V X5R 0805', sch_pos=(150, 40), pcb_pos=(17.5, 3.5), pcb_rot=0))
     d.add(Part('C5', 'Device:C', '100nF', C0603, {'1': '+3V3', '2': 'GND'}, lcsc='C14663', desc='100nF 50V X7R 0603', sch_pos=(158, 40), pcb_pos=(18, 7), pcb_rot=90))
-    d.add(Part('R3', 'Device:R', '10k', R0603, {'1': '+3V3', '2': 'EN'}, lcsc='C25804', desc='10k 0603', sch_pos=(150, 65), pcb_pos=(9, 42.5), pcb_rot=0))
-    d.add(Part('C6', 'Device:C', '1uF', C0603, {'1': 'EN', '2': 'GND'}, lcsc='C15849', desc='1uF 50V X7R 0603', sch_pos=(158, 78), pcb_pos=(13.5, 42.5), pcb_rot=0))
-    d.add(Part('SW1', 'Switch:SW_Push', 'RESET', SW_TACT, {'1': 'EN', '2': 'GND'}, lcsc='C318884', desc='Tactile switch 6x6 SMD', sch_pos=(150, 90), pcb_pos=(11, 48), pcb_rot=0))
-    d.add(Part('R4', 'Device:R', '10k', R0603, {'1': '+3V3', '2': 'IO0_BOOT'}, lcsc='C25804', desc='10k 0603', sch_pos=(150, 110), pcb_pos=(22, 42.5), pcb_rot=0))
-    d.add(Part('SW2', 'Switch:SW_Push', 'BOOT', SW_TACT, {'1': 'IO0_BOOT', '2': 'GND'}, lcsc='C318884', desc='Tactile switch 6x6 SMD', sch_pos=(150, 130), pcb_pos=(22, 48), pcb_rot=0))
+    d.add(Part('R3', 'Device:R', '10k', R0603, {'1': '+3V3', '2': 'EN'}, lcsc='C25804', desc='10k 0603', sch_pos=(150, 65), pcb_pos=(10.5, 42.5), pcb_rot=0))
+    d.add(Part('C6', 'Device:C', '1uF', C0603, {'1': 'EN', '2': 'GND'}, lcsc='C15849', desc='1uF 50V X7R 0603', sch_pos=(158, 78), pcb_pos=(15, 42.5), pcb_rot=0))
+    d.add(Part('SW1', 'Switch:SW_Push', 'RESET', SW_TACT, {'1': 'EN', '2': 'GND'}, lcsc='C318884', desc='Tactile switch 6x6 SMD', sch_pos=(150, 90), pcb_pos=(12.5, 48), pcb_rot=0))
+    d.add(Part('R4', 'Device:R', '10k', R0603, {'1': '+3V3', '2': 'IO0_BOOT'}, lcsc='C25804', desc='10k 0603', sch_pos=(150, 110), pcb_pos=(23.5, 42.5), pcb_rot=0))
+    d.add(Part('SW2', 'Switch:SW_Push', 'BOOT', SW_TACT, {'1': 'IO0_BOOT', '2': 'GND'}, lcsc='C318884', desc='Tactile switch 6x6 SMD', sch_pos=(150, 130), pcb_pos=(23.5, 48), pcb_rot=0))
     # =============================== DMX / RS-485 (x 270..410) ===============================
     d.texts += [('DMX512 output (RS-485, 3.3 V transceiver)', 272, 20, 2.5, True)]
     d.boxes += [(270, 14, 412, 120)]
@@ -136,17 +136,17 @@ def build():
     d.boxes += [(138, 158, 262, 285)]
     d.add(Part('D2', 'LED:WS2812B', 'WS2812B', 'LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm',
                {'1': '+3V3', '2': None, '3': 'GND', '4': 'LED_DATA_R'},
-               lcsc='C2761795', mpn='WS2812B-B/T', desc='Addressable RGB LED 5050 (powered from 3V3 as on ESP32-S3-DevKitC)', sch_pos=(160, 195), pcb_pos=(42, 48.5), pcb_rot=0))
-    d.add(Part('R8', 'Device:R', '330R', R0603, {'1': 'LED_DATA', '2': 'LED_DATA_R'}, lcsc='C23138', desc='330R 0603 series (WS2812 data)', sch_pos=(145, 210), sch_rot=90, pcb_pos=(42, 43.5), pcb_rot=0))
-    d.add(Part('C8', 'Device:C', '100nF', C0603, {'1': '+3V3', '2': 'GND'}, lcsc='C14663', desc='100nF 50V X7R 0603', sch_pos=(180, 195), pcb_pos=(37.5, 43.5), pcb_rot=0))
-    d.add(Part('R5', 'Device:R', '10k', R0603, {'1': '+3V3', '2': 'BTN_USER'}, lcsc='C25804', desc='10k 0603', sch_pos=(200, 195), pcb_pos=(33, 42.5), pcb_rot=0))
-    d.add(Part('SW3', 'Switch:SW_Push', 'USER', SW_TACT, {'1': 'BTN_USER', '2': 'GND'}, lcsc='C318884', desc='Tactile switch 6x6 SMD (snooze / manual on)', sch_pos=(200, 215), pcb_pos=(33, 48), pcb_rot=0))
-    d.add(Part('R9', 'Device:R', '1k', R0603, {'1': 'BUZZER', '2': 'Q1_B'}, lcsc='C21190', desc='1k 0603', sch_pos=(220, 250), sch_rot=90, pcb_pos=(54, 37), pcb_rot=0))
+               lcsc='C2761795', mpn='WS2812B-B/T', desc='Addressable RGB LED 5050 (powered from 3V3 as on ESP32-S3-DevKitC)', sch_pos=(160, 195), pcb_pos=(43.5, 48.5), pcb_rot=0))
+    d.add(Part('R8', 'Device:R', '330R', R0603, {'1': 'LED_DATA', '2': 'LED_DATA_R'}, lcsc='C23138', desc='330R 0603 series (WS2812 data)', sch_pos=(145, 210), sch_rot=90, pcb_pos=(43.5, 43.5), pcb_rot=0))
+    d.add(Part('C8', 'Device:C', '100nF', C0603, {'1': '+3V3', '2': 'GND'}, lcsc='C14663', desc='100nF 50V X7R 0603', sch_pos=(180, 195), pcb_pos=(39, 43.5), pcb_rot=0))
+    d.add(Part('R5', 'Device:R', '10k', R0603, {'1': '+3V3', '2': 'BTN_USER'}, lcsc='C25804', desc='10k 0603', sch_pos=(200, 195), pcb_pos=(34.5, 42.5), pcb_rot=0))
+    d.add(Part('SW3', 'Switch:SW_Push', 'USER', SW_TACT, {'1': 'BTN_USER', '2': 'GND'}, lcsc='C318884', desc='Tactile switch 6x6 SMD (snooze / manual on)', sch_pos=(200, 215), pcb_pos=(34.5, 48), pcb_rot=0))
+    d.add(Part('R9', 'Device:R', '1k', R0603, {'1': 'BUZZER', '2': 'Q1_B'}, lcsc='C21190', desc='1k 0603', sch_pos=(220, 250), sch_rot=90, pcb_pos=(50.5, 37), pcb_rot=0))
     d.add(Part('Q1', 'Transistor_BJT:S8050', 'S8050', SOT23, {'2': 'Q1_B', '1': 'GND', '3': 'BZ_N'},
-               lcsc='C2146', mpn='S8050', desc='NPN 0.5A SOT-23 buzzer driver', sch_pos=(240, 250), pcb_pos=(58.5, 37), pcb_rot=0))
-    d.add(Part('D3', 'Diode:1N4148W', '1N4148W', 'Diode_SMD:D_SOD-123', {'1': '+5V', '2': 'BZ_N'}, lcsc='C81598', desc='Flyback diode SOD-123', sch_pos=(255, 225), sch_rot=90, pcb_pos=(63, 36.5), pcb_rot=0))
+               lcsc='C2146', mpn='S8050', desc='NPN 0.5A SOT-23 buzzer driver', sch_pos=(240, 250), pcb_pos=(55, 37), pcb_rot=0))
+    d.add(Part('D3', 'Diode:1N4148W', '1N4148W', 'Diode_SMD:D_SOD-123', {'1': '+5V', '2': 'BZ_N'}, lcsc='C81598', desc='Flyback diode SOD-123', sch_pos=(255, 225), sch_rot=90, pcb_pos=(59.5, 37), pcb_rot=0))
     d.add(Part('BZ1', 'Device:Buzzer', 'MLT-8530', 'Buzzer_Beeper:MagneticBuzzer_CUI_CMT-8504-100-SMT', {'1': '+5V', '2': 'BZ_N'},
-               lcsc='C94599', mpn='MLT-8530', desc='Magnetic buzzer 8.5 mm SMD, 3-5 V, passive (drive with PWM ~2.7 kHz)', sch_pos=(245, 200), sch_rot=0, pcb_pos=(69.5, 43.5), pcb_rot=0))
+               lcsc='C94599', mpn='MLT-8530', desc='Magnetic buzzer 8.5 mm SMD, 3-5 V, passive (drive with PWM ~2.7 kHz)', sch_pos=(245, 200), sch_rot=0, pcb_pos=(69, 41.5), pcb_rot=0))
     # =============================== Expansion / debug headers (x 270..410, y 130..200) ===============================
     d.texts += [('Expansion (I2C RTC / sensor) and UART0 debug headers', 272, 165, 2.5, True)]
     d.boxes += [(270, 158, 412, 230)]
@@ -164,12 +164,12 @@ def build():
     d.keepouts = [(14, 0, 46, 2.5)]   # strip next to the antenna (antenna itself hangs off the top edge)
     d.silk = [
         ('DMX OUT', 66, 5.5, 1.2, 0, 'F.SilkS', False),
-        ('1=GND 2=D- 3=D+', 68, 35.2, 0.8, 0, 'F.SilkS', False),
-        ('USB-C 5V', 12, 40 - 17, 0.8, 90, 'F.SilkS', False),
-        ('RESET', 11, 52.6, 0.8, 0, 'F.SilkS', False),
-        ('BOOT', 22, 52.6, 0.8, 0, 'F.SilkS', False),
-        ('USER', 33, 52.6, 0.8, 0, 'F.SilkS', False),
-        ('GND  D-  D+', 55.6, 41.5, 0.8, 0, 'F.SilkS', False),
+        ('1=GND 2=D- 3=D+', 69, 34.8, 0.8, 0, 'F.SilkS', False),
+        ('USB-C 5V', 12, 23.5, 0.8, 0, 'F.SilkS', False),
+        ('RESET', 12.5, 52.3, 0.8, 0, 'F.SilkS', False),
+        ('BOOT', 23.5, 52.3, 0.8, 0, 'F.SilkS', False),
+        ('USER', 34.5, 52.3, 0.8, 0, 'F.SilkS', False),
+        ('GND  D-  D+', 55.6, 40.6, 0.8, 0, 'F.SilkS', False),
         ('PL60C DMX wake-up rev A', 30, 30, 1.0, 0, 'F.SilkS', False),
         ('amodo design 2026', 30, 32, 0.8, 0, 'F.SilkS', False),
     ]
