@@ -10,9 +10,6 @@ def route(board_path, passes=40):
     build = os.path.join(ROOT, 'build'); os.makedirs(build, exist_ok=True)
     dsn = os.path.join(build, 'pl60c_dmx.dsn'); ses = os.path.join(build, 'pl60c_dmx.ses')
     board = pcbnew.LoadBoard(board_path)
-    # remove any existing tracks/vias before re-routing
-    for t in list(board.GetTracks()):
-        board.Remove(t)
     # export with a slightly larger clearance than the DRC rule so rounding in the router never trips DRC
     ns = board.GetDesignSettings().m_NetSettings
     for nc in [ns.GetDefaultNetclass()] + [ns.GetNetClassByName(n) for n in ['Power']]:

@@ -15,7 +15,7 @@ def drc_json(board_path):
     return rep
 
 def items(v):
-    return [(it['pos']['x'] / 1e6, it['pos']['y'] / 1e6, it.get('description', '')) for it in v.get('items', [])]
+    return [(it['pos']['x'], it['pos']['y'], it.get('description', '')) for it in v.get('items', [])]  # positions are mm
 
 def refill_save(board, path):
     filler = pcbnew.ZONE_FILLER(board); filler.Fill(board.Zones())
