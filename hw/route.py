@@ -10,6 +10,11 @@ def route(board_path, passes=40):
     build = os.path.join(ROOT, 'build'); os.makedirs(build, exist_ok=True)
     dsn = os.path.join(build, 'pl60c_dmx.dsn'); ses = os.path.join(build, 'pl60c_dmx.ses')
     board = pcbnew.LoadBoard(board_path)
+    # Route GND with real tracks too: take the pours out of the DSN so the router does not assume a plane,
+    # then put them back and fill after import. The pour then only adds copper on top of a complete routing.
+    zones = [z for z in board.Zones()]
+    for z in zones:
+        board.Remove(z)
     # export with a slightly larger clearance than the DRC rule so rounding in the router never trips DRC
     ns = board.GetDesignSettings().m_NetSettings
     for nc in [ns.GetDefaultNetclass()] + [ns.GetNetClassByName(n) for n in ['Power']]:
@@ -28,6 +33,8 @@ def route(board_path, passes=40):
         print(open(os.path.join(build, 'freerouting.log')).read()[-3000:])
         raise SystemExit('freerouting produced no .ses')
     assert pcbnew.ImportSpecctraSES(board, ses), 'SES import failed'
+    for z in zones:
+        board.Add(z)
     filler = pcbnew.ZONE_FILLER(board)
     filler.Fill(board.Zones())
     pcbnew.SaveBoard(board_path, board)

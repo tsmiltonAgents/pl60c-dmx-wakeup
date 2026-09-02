@@ -103,7 +103,7 @@ class Obstacles:
                 if pad.GetNetname() != 'GND':
                     self.rects.append(_pad_rect(pad))
                 elif pad.GetAttribute() != pcbnew.PAD_ATTRIB_SMD:
-                    self.circles.append((pad.GetPosition().x / 1e6, pad.GetPosition().y / 1e6, pad.GetSize().x / 2e6, 'GND'))
+                    self.circles.append((pad.GetPosition().x / 1e6, pad.GetPosition().y / 1e6, max(pad.GetSize().x, pad.GetSize().y) / 2e6, 'GND'))
         for t in board.GetTracks():
             if t.GetClass() == 'PCB_VIA':
                 self.circles.append((t.GetPosition().x / 1e6, t.GetPosition().y / 1e6, t.GetWidth() / 2e6, t.GetNetname()))
@@ -158,6 +158,9 @@ def stitch_gnd(board, d, gnd, W, H):
     obs = Obstacles(board, W, H)
     n_pad = 0; smd = []
     for fp in board.GetFootprints():
+        # footprints that already own a through-hole GND pad (USB shell, module EP vias) reach the back pour by themselves
+        if any(p.GetNetname() == 'GND' and p.GetAttribute() != pcbnew.PAD_ATTRIB_SMD for p in fp.Pads()):
+            continue
         for pad in fp.Pads():
             if pad.GetNetname() == 'GND' and pad.GetAttribute() == pcbnew.PAD_ATTRIB_SMD:
                 smd.append((pad, fp))
@@ -169,7 +172,7 @@ def stitch_gnd(board, d, gnd, W, H):
     n_grid = 0
     for gx in range(5, int(W) - 3, 5):
         for gy in range(5, int(H) - 3, 5):
-            if obs.via_ok(gx, gy, extra=0.8):
+            if obs.via_ok(gx, gy, extra=2.0):
                 add_via(board, gnd, gx, gy); obs.add_via(gx, gy); n_grid += 1
     print(f'GND stitching: {n_pad}/{len(smd)} SMD GND pads got a via, {n_grid} grid vias')
 

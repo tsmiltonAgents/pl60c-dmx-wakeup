@@ -28,7 +28,7 @@ def fix(board_path, rounds=4):
         gnd_pts = []
         for u in unc:
             for (x, y, desc) in u:
-                if '[GND]' in desc and 'Zone' not in desc:
+                if '[GND]' in desc and desc.startswith(('Pad', 'PTH pad')):
                     gnd_pts.append((x, y, desc))
         print(f'round {rnd}: {len(unc)} unconnected, {len(gnd_pts)} GND anchor items')
         if not gnd_pts:
@@ -55,19 +55,29 @@ def fix(board_path, rounds=4):
         refill_save(board, board_path)
         if added == 0:
             break
-    # remove dangling GND vias (grid vias that landed in a spot with pour on one side only)
-    for rnd in range(3):
+    # remove dangling GND vias/tracks (grid vias that landed where only one pour reaches them)
+    for rnd in range(4):
         rep = drc_json(board_path)
-        dang = [items(v)[0] for v in rep.get('violations', []) if v.get('type') == 'via_dangling']
-        dang = [(x, y) for (x, y, desc) in dang if '[GND]' in desc]
+        dang = [items(v)[0] for v in rep.get('violations', []) if v.get('type') in ('via_dangling', 'track_dangling')]
+        dang = [(x, y, desc) for (x, y, desc) in dang if '[GND]' in desc]
         if not dang: break
         board = pcbnew.LoadBoard(board_path)
         removed = 0
         for t in list(board.GetTracks()):
-            if t.GetClass() == 'PCB_VIA' and t.GetNetname() == 'GND':
+            if t.GetNetname() != 'GND': continue
+            if t.GetClass() == 'PCB_VIA':
                 vx, vy = t.GetPosition().x / 1e6, t.GetPosition().y / 1e6
-                if any(math.hypot(vx - x, vy - y) < 0.05 for (x, y) in dang):
+                if any(math.hypot(vx - x, vy - y) < 0.05 for (x, y, d) in dang if d.startswith('Via')):
                     board.Remove(t); removed += 1
+            else:
+                for (x, y, d) in dang:
+                    if not d.startswith('Track'): continue
+                    for e in (t.GetStart(), t.GetEnd()):
+                        if math.hypot(e.x / 1e6 - x, e.y / 1e6 - y) < 0.05:
+                            board.Remove(t); removed += 1; break
+                    else:
+                        continue
+                    break
         print(f'removed {removed} dangling GND vias')
         refill_save(board, board_path)
     rep = drc_json(board_path)
