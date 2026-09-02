@@ -1,0 +1,20 @@
+(kicad_sch
+	(version 20260306)
+	(generator "eeschema")
+	(generator_version "10.0")
+	(uuid "e63f84e3-7254-5f79-8caa-7afae8cc707c")
+	(paper "A3")
+	(title_block
+		(title "PL60C DMX wake-up lamp controller")
+		(date "2026-09-02")
+		(rev "A")
+		(company "amodo design")
+	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+	(embedded_fonts no)
+	(lib_symbols)
+)

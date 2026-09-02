@@ -143,7 +143,7 @@ def write_schematic(design, path, proj_name):
     for (x1, y1, x2, y2) in design.boxes:
         items.append(_rect(x1, y1, x2, y2))
     lib_symbols = [S('lib_symbols')] + [lib_cache[k] for k in sorted(lib_cache)]
-    doc = [S('kicad_sch'), [S('version'), 20250114], [S('generator'), 'eeschema'], [S('generator_version'), '9.0'],
+    doc = [S('kicad_sch'), [S("version"), 20260306], [S("generator"), "eeschema"], [S("generator_version"), "10.0"],
            [S('uuid'), root_uuid], [S('paper'), design.paper],
            [S('title_block'), [S('title'), design.title], [S('date'), design.date], [S('rev'), design.rev], [S('company'), design.company]],
            lib_symbols] + items + [[S('sheet_instances'), [S('path'), '/', [S('page'), '1']]], [S('embedded_fonts'), S('no')]]

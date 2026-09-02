@@ -1,0 +1,84 @@
+ERC report (2026-09-02T12:50:12, Encoding UTF8)
+Report includes: Errors, Warnings
+
+***** Sheet /
+[power_pin_not_driven]: Input Power pin not driven by any Output Power pins
+    ; error
+    @(30.48 mm, 29.21 mm): Symbol #PWR0104 Pin 1 [Power input, Line]
+[power_pin_not_driven]: Input Power pin not driven by any Output Power pins
+    ; error
+    @(43.18 mm, 24.13 mm): Symbol #PWR0101 Pin 1 [Power input, Line]
+[power_pin_not_driven]: Input Power pin not driven by any Output Power pins
+    ; error
+    @(58.42 mm, 41.91 mm): Symbol #PWR0103 Pin 1 [Power input, Line]
+[isolated_pin_label]: Label connected to only one pin
+    ; warning
+    @(22.86 mm, 54.61 mm): Label 'D2'
+[isolated_pin_label]: Label connected to only one pin
+    ; warning
+    @(22.86 mm, 57.15 mm): Label '*D3'
+[isolated_pin_label]: Label connected to only one pin
+    ; warning
+    @(22.86 mm, 59.69 mm): Label 'D4'
+[isolated_pin_label]: Label connected to only one pin
+    ; warning
+    @(22.86 mm, 62.23 mm): Label '*D5'
+[isolated_pin_label]: Label connected to only one pin
+    ; warning
+    @(22.86 mm, 64.77 mm): Label '*D6'
+[isolated_pin_label]: Label connected to only one pin
+    ; warning
+    @(22.86 mm, 67.31 mm): Label 'D7'
+[isolated_pin_label]: Label connected to only one pin
+    ; warning
+    @(22.86 mm, 69.85 mm): Label 'D8'
+[isolated_pin_label]: Label connected to only one pin
+    ; warning
+    @(22.86 mm, 72.39 mm): Label '*D9'
+[isolated_pin_label]: Label connected to only one pin
+    ; warning
+    @(50.80 mm, 24.13 mm): Label 'DTR'
+[isolated_pin_label]: Label connected to only one pin
+    ; warning
+    @(66.04 mm, 85.09 mm): Label 'SDA/A4'
+[isolated_pin_label]: Label connected to only one pin
+    ; warning
+    @(66.04 mm, 87.63 mm): Label 'SCL/A5'
+[isolated_pin_label]: Label connected to only one pin
+    ; warning
+    @(66.04 mm, 95.25 mm): Label 'A6'
+[isolated_pin_label]: Label connected to only one pin
+    ; warning
+    @(66.04 mm, 97.79 mm): Label 'A7'
+[isolated_pin_label]: Label connected to only one pin
+    ; warning
+    @(71.12 mm, 54.61 mm): Label 'A3'
+[isolated_pin_label]: Label connected to only one pin
+    ; warning
+    @(71.12 mm, 57.15 mm): Label 'A2'
+[isolated_pin_label]: Label connected to only one pin
+    ; warning
+    @(71.12 mm, 59.69 mm): Label 'A1'
+[isolated_pin_label]: Label connected to only one pin
+    ; warning
+    @(71.12 mm, 62.23 mm): Label 'A0'
+[isolated_pin_label]: Label connected to only one pin
+    ; warning
+    @(71.12 mm, 64.77 mm): Label 'SCK/D13'
+[isolated_pin_label]: Label connected to only one pin
+    ; warning
+    @(71.12 mm, 67.31 mm): Label 'MISO/D12'
+[isolated_pin_label]: Label connected to only one pin
+    ; warning
+    @(71.12 mm, 69.85 mm): Label 'MOSI/*D11'
+[isolated_pin_label]: Label connected to only one pin
+    ; warning
+    @(71.12 mm, 72.39 mm): Label 'SS/*D10'
+
+ ** ERC messages: 24  Errors 3  Warnings 21
+
+ ** Ignored checks:
+    - Global label only appears once in the schematic
+    - Four connection points are joined together
+    - SPICE model issue
+    - Assigned footprint doesn't match footprint filters
