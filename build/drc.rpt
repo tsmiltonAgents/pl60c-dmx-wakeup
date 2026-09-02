@@ -1,16 +1,8 @@
 ** Drc report for pl60c_dmx.kicad_pcb **
-** Created on 2026-09-02T13:22:22 **
+** Created on 2026-09-02T13:23:40 **
 ** Report includes: Errors, Warnings, Exclusions **
 
-** Found 10 DRC violations **
-[silk_edge_clearance]: Silkscreen clipped by board edge
-    Rule: board setup constraints silk; warning
-    @(80.0000 mm, 2.5000 mm): Segment on Edge.Cuts
-    @(80.1200 mm, 7.6900 mm): Segment of J2 on F.Silkscreen
-[silk_edge_clearance]: Silkscreen clipped by board edge
-    Rule: board setup constraints silk; warning
-    @(80.0000 mm, 2.5000 mm): Segment on Edge.Cuts
-    @(80.1200 mm, 33.2300 mm): Segment of J2 on F.Silkscreen
+** Found 6 DRC violations **
 [silk_edge_clearance]: Silkscreen clipped by board edge
     Rule: board setup constraints silk; warning
     @(2.5000 mm, 0.0000 mm): Segment on Edge.Cuts
@@ -21,28 +13,20 @@
     @(39.2000 mm, -6.1500 mm): Segment of U1 on F.Silkscreen
 [silk_edge_clearance]: Silkscreen clipped by board edge
     Rule: board setup constraints silk; warning
+    @(80.0000 mm, 2.5000 mm): Segment on Edge.Cuts
+    @(80.1200 mm, 7.6900 mm): Segment of J2 on F.Silkscreen
+[silk_edge_clearance]: Silkscreen clipped by board edge
+    Rule: board setup constraints silk; warning
+    @(80.0000 mm, 2.5000 mm): Segment on Edge.Cuts
+    @(80.1200 mm, 33.2300 mm): Segment of J2 on F.Silkscreen
+[silk_edge_clearance]: Silkscreen clipped by board edge
+    Rule: board setup constraints silk; warning
     @(0.0000 mm, 51.5000 mm): Segment on Edge.Cuts
     @(1.1000 mm, 26.3000 mm): Segment of J1 on F.Silkscreen
 [silk_edge_clearance]: Silkscreen clipped by board edge
     Rule: board setup constraints silk; warning
     @(0.0000 mm, 51.5000 mm): Segment on Edge.Cuts
     @(1.1000 mm, 35.7000 mm): Segment of J1 on F.Silkscreen
-[silk_over_copper]: Silkscreen clipped by solder mask
-    Local override; warning
-    @(40.0000 mm, 27.0000 mm): PCB text 'github.com/tsmiltonAgents/pl60c-dmx-wakeup' on B.Silkscreen
-    @(47.5000 mm, 27.0800 mm): PTH pad 3 [TXD0] of J5
-[silk_over_copper]: Silkscreen clipped by solder mask
-    Local override; warning
-    @(40.0000 mm, 30.0000 mm): PCB text 'PL60C DMX wake-up rev A  2026-09' on B.Silkscreen
-    @(47.5000 mm, 29.6200 mm): PTH pad 4 [RXD0] of J5
-[silk_over_copper]: Silkscreen clipped by solder mask
-    Local override; warning
-    @(40.0000 mm, 27.0000 mm): PCB text 'github.com/tsmiltonAgents/pl60c-dmx-wakeup' on B.Silkscreen
-    @(43.0000 mm, 27.0800 mm): PTH pad 3 [EXP_SDA] of J4
-[silk_over_copper]: Silkscreen clipped by solder mask
-    Local override; warning
-    @(40.0000 mm, 30.0000 mm): PCB text 'PL60C DMX wake-up rev A  2026-09' on B.Silkscreen
-    @(43.0000 mm, 29.6200 mm): PTH pad 4 [EXP_SCL] of J4
 
 ** Found 0 unconnected pads **
 

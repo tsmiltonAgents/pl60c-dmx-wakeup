@@ -174,7 +174,7 @@ def build():
         ('GND  D-  D+', 55.6, 40.6, 0.8, 0, 'F.SilkS', False),
         ('PL60C DMX wake-up rev A', 30, 30, 1.0, 0, 'F.SilkS', False),
         ('amodo design 2026', 30, 32, 0.8, 0, 'F.SilkS', False),
-        ('github.com/tsmiltonAgents/pl60c-dmx-wakeup', 40, 27, 1.0, 0, 'B.SilkS', True),
-        ('PL60C DMX wake-up rev A  2026-09', 40, 30, 1.0, 0, 'B.SilkS', True),
+        ('github.com/tsmiltonAgents/pl60c-dmx-wakeup', 26, 29, 0.8, 0, 'B.SilkS', True),
+        ('PL60C DMX wake-up rev A  2026-09', 26, 31.5, 0.8, 0, 'B.SilkS', True),
     ]
     return d
